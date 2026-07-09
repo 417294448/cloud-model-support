@@ -1,0 +1,9 @@
+# Build/script output
+# vertex_test.json is build_vertex_matrix.py's --limit test output
+vertex_test.json
+
+# gcloud catalog dump (input to build_vertex_matrix.py via --catalog-file; ~5MB, regeneratable)
+all_models.json
+
+# Logs
+*.log
