@@ -1,0 +1,3269 @@
+{
+  "id": "gcp",
+  "name": "GCP Vertex AI",
+  "logo": "G",
+  "accent": "#4285f4",
+  "accentInk": "#04121f",
+  "subtitle": "Which Model Garden models are available in which Vertex AI region, probed live via <code>GET {region}-aiplatform.googleapis.com/v1/publishers/&lt;publisher&gt;/models/&lt;model&gt;</code>. <b>Managed API</b> models (Gemini, PaLM, Claude) can be called directly; <b>Self-deploy</b> models (Llama, Mistral, Qwen, DeepSeek, etc.) must be deployed to your own endpoint and region availability reflects catalog presence, not GPU/TPU capacity.",
+  "source": {
+    "url": "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations",
+    "label": "Generative AI on Vertex AI locations (Google Cloud docs)"
+  },
+  "axisLabel": "Deployment type",
+  "groupLabel": "Publisher",
+  "unit": "model",
+  "chipMode": "flat",
+  "caps": [
+    {
+      "k": "api",
+      "badge": "Managed API",
+      "full": "Directly callable via the Vertex AI managed API (Model-as-a-Service)",
+      "color": "#3fb950",
+      "group": "Managed API"
+    },
+    {
+      "k": "deploy",
+      "badge": "Self-deploy",
+      "full": "Deploy-it-yourself Model Garden model (GPU/TPU endpoint)",
+      "color": "#f0a132",
+      "group": "Self-deploy"
+    }
+  ],
+  "pipGroups": [
+    {
+      "label": "Managed API",
+      "color": "#3fb950",
+      "keys": [
+        "api"
+      ]
+    },
+    {
+      "label": "Self-deploy",
+      "color": "#f0a132",
+      "keys": [
+        "deploy"
+      ]
+    }
+  ],
+  "defA": "us-central1",
+  "defB": "europe-west4",
+  "groups": [
+    "AI21 Labs",
+    "Advimman",
+    "Aisingapore",
+    "Anthropic",
+    "Autogluon Ai",
+    "BAAI",
+    "Black Forest Labs",
+    "Bytedance",
+    "Cambai",
+    "Contextualai",
+    "Cross Encoder",
+    "Csm",
+    "Dandelin",
+    "DeepSeek",
+    "Elevenlabs",
+    "Google",
+    "Hidream Ai",
+    "Ifzhang",
+    "Impira",
+    "Instantx",
+    "Intfloat",
+    "Jinaai",
+    "Liuhaotian",
+    "Lllyasviel",
+    "Lmsys",
+    "Meta",
+    "Microsoft",
+    "MiniMax",
+    "Mistral AI",
+    "Mongodb",
+    "Moonshot AI",
+    "NVIDIA",
+    "Nari Labs",
+    "OpenAI",
+    "Openlm Research",
+    "Qodo",
+    "Qwen",
+    "Runwayml",
+    "Salesforce",
+    "Sesame",
+    "Stability AI",
+    "Thudm",
+    "Tiiuae",
+    "Timbrooks",
+    "Virtueai",
+    "Wan Ai",
+    "Weiboai",
+    "Writer",
+    "Xiaomimimo",
+    "Z.AI",
+    "xAI"
+  ],
+  "generated": "2026-07-09",
+  "regions": [
+    {
+      "code": "asia-east1",
+      "name": "Taiwan",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "asia-east2",
+      "name": "Hong Kong",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "asia-northeast1",
+      "name": "Tokyo",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "asia-northeast3",
+      "name": "Seoul",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "asia-south1",
+      "name": "Mumbai",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "asia-south2",
+      "name": "Delhi",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "asia-southeast1",
+      "name": "Singapore",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "asia-southeast2",
+      "name": "Jakarta",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "australia-southeast1",
+      "name": "Sydney",
+      "group": "Asia Pacific"
+    },
+    {
+      "code": "europe-central2",
+      "name": "Warsaw",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-north1",
+      "name": "Finland",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-southwest1",
+      "name": "Madrid",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-west1",
+      "name": "Belgium",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-west2",
+      "name": "London",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-west3",
+      "name": "Frankfurt",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-west4",
+      "name": "Netherlands",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-west6",
+      "name": "Zurich",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-west8",
+      "name": "Milan",
+      "group": "Europe"
+    },
+    {
+      "code": "europe-west9",
+      "name": "Paris",
+      "group": "Europe"
+    },
+    {
+      "code": "me-central1",
+      "name": "Doha",
+      "group": "Middle East"
+    },
+    {
+      "code": "me-central2",
+      "name": "Dammam",
+      "group": "Middle East"
+    },
+    {
+      "code": "me-west1",
+      "name": "Tel Aviv",
+      "group": "Middle East"
+    },
+    {
+      "code": "northamerica-northeast1",
+      "name": "Montreal",
+      "group": "Americas"
+    },
+    {
+      "code": "northamerica-northeast2",
+      "name": "Toronto",
+      "group": "Americas"
+    },
+    {
+      "code": "southamerica-east1",
+      "name": "Sao Paulo",
+      "group": "Americas"
+    },
+    {
+      "code": "us-central1",
+      "name": "Iowa",
+      "group": "Americas"
+    },
+    {
+      "code": "us-east1",
+      "name": "South Carolina",
+      "group": "Americas"
+    },
+    {
+      "code": "us-east4",
+      "name": "Northern Virginia",
+      "group": "Americas"
+    },
+    {
+      "code": "us-east5",
+      "name": "Columbus",
+      "group": "Americas"
+    },
+    {
+      "code": "us-south1",
+      "name": "Dallas",
+      "group": "Americas"
+    },
+    {
+      "code": "us-west1",
+      "name": "Oregon",
+      "group": "Americas"
+    },
+    {
+      "code": "us-west4",
+      "name": "Las Vegas",
+      "group": "Americas"
+    }
+  ],
+  "models": [
+    {
+      "g": "AI21 Labs",
+      "n": "jamba-large-1.6",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-east4": 2
+      }
+    },
+    {
+      "g": "Advimman",
+      "n": "lama",
+      "v": "lama",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Aisingapore",
+      "n": "gemma-sea-lion-v4",
+      "v": "gemma-sea-lion-v4-27b-it-fp8-dynamic",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-fable-5",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-haiku-4-5",
+      "v": "20251001",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-opus-4-1",
+      "v": "20250805",
+      "card": null,
+      "s": {
+        "us-east5": 1,
+        "europe-west1": 1,
+        "us-central1": 1,
+        "europe-west4": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-opus-4-5",
+      "v": "20251101",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-opus-4-6",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-opus-4-7",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-opus-4-8",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-sonnet-4-5",
+      "v": "20250929",
+      "card": null,
+      "s": {
+        "us-east5": 1,
+        "asia-southeast1": 1,
+        "europe-west1": 1,
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-sonnet-4-6",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
+      "n": "claude-sonnet-5",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Autogluon Ai",
+      "n": "autogluon",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "BAAI",
+      "n": "bge",
+      "v": "llm-embedder",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Black Forest Labs",
+      "n": "flux-2-klein-4b",
+      "v": "flux.2-klein-base-4b-fp8",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Black Forest Labs",
+      "n": "flux1-schnell",
+      "v": "flux.1-schnell",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Bytedance",
+      "n": "stable-diffusion-xl-lightning",
+      "v": "sdxl-lightning",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Cambai",
+      "n": "mars7",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Cambai",
+      "n": "mars8",
+      "v": "latest",
+      "card": null,
+      "s": {
+        "europe-west2": 2,
+        "us-central1": 2,
+        "europe-west4": 2,
+        "asia-southeast1": 2,
+        "asia-south2": 2
+      }
+    },
+    {
+      "g": "Contextualai",
+      "n": "rerank-v2-instruct",
+      "v": "6b-nvfp4",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Cross Encoder",
+      "n": "cross-encoder",
+      "v": "ms-marco-tinybert-l2-v2",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Csm",
+      "n": "cube",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-west1": 2,
+        "us-central1": 2,
+        "us-east4": 2
+      }
+    },
+    {
+      "g": "Dandelin",
+      "n": "vilt-b32-finetuned-vqa",
+      "v": "vilt-b32-finetuned-vqa",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-ocr",
+      "v": "deepseek-ocr",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-ocr-2",
+      "v": "deepseek-ocr-2",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-ocr-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-r1",
+      "v": "deepseek-r1-q4_k_m-gguf",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east4": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-r1-0528-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-west1": 2,
+        "asia-southeast1": 2,
+        "us-central1": 2,
+        "asia-south1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-v3",
+      "v": "deepseek-v3-base",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east4": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-v3-1",
+      "v": "deepseek-v3-1-terminus",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-v3-2",
+      "v": "deepseek-v3-2-speciale",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-v3.1-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-v3.2-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "asia-southeast1": 2,
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
+      "n": "deepseek-v4",
+      "v": "deepseek-v4-pro",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Elevenlabs",
+      "n": "elevenlabs-tts-v2-5",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-east1": 2,
+        "us-east4": 2,
+        "asia-south2": 2,
+        "us-west1": 2,
+        "asia-southeast1": 2,
+        "us-central1": 2,
+        "asia-south1": 2,
+        "asia-southeast2": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "alphagenome-request",
+      "v": "alphagenome-request-002",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "automl-e2e",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "automl-vision-image-classification",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "automl-vision-image-object-detection",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "bart-large-cnn",
+      "v": "bart-large-cnn",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "bert-base",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "bert-base-uncased",
+      "v": "bert-base-uncased",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "chirp-2",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "chirp-3",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "cloudnerf-pytorch-zipnerf",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "codegemma",
+      "v": "codegemma-7b-it",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "content-moderation",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "cxr-foundation",
+      "v": "cxr-foundation",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "derm-foundation",
+      "v": "derm-foundation",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "diffusiongemma",
+      "v": "diffusiongemma-26b-a4b-it",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "dito",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "earth-ai-imagery-mammut-eap-10-2025",
+      "v": "earth-ai-imagery-mammut-eap-10-2025",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "earth-ai-imagery-owlvit-eap-10-2025",
+      "v": "earth-ai-imagery-owlvit-eap-10-2025",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "embeddinggemma",
+      "v": "embeddinggemma-300m",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "f-vlm-jax",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "face-detector",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "functiongemma",
+      "v": "function-gemma-270m",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-computer-use-preview-10-2025",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-flash",
+      "v": "default",
+      "card": null,
+      "s": {
+        "southamerica-east1": 1,
+        "europe-west1": 1,
+        "europe-west2": 1,
+        "us-west1": 1,
+        "us-central1": 1,
+        "europe-southwest1": 1,
+        "asia-south1": 1,
+        "europe-west4": 1,
+        "us-south1": 1,
+        "europe-north1": 1,
+        "europe-west9": 1,
+        "asia-northeast1": 1,
+        "us-east5": 1,
+        "us-east1": 1,
+        "europe-west3": 1,
+        "us-east4": 1,
+        "us-west4": 1,
+        "australia-southeast1": 1,
+        "europe-west8": 1,
+        "northamerica-northeast1": 1,
+        "europe-central2": 1,
+        "asia-northeast3": 1,
+        "asia-southeast1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-flash-image",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-west1": 1,
+        "us-central1": 1,
+        "europe-southwest1": 1,
+        "europe-west4": 1,
+        "us-south1": 1,
+        "europe-north1": 1,
+        "us-east5": 1,
+        "us-east1": 1,
+        "us-east4": 1,
+        "us-west4": 1,
+        "europe-west8": 1,
+        "europe-central2": 1,
+        "europe-west1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-flash-lite",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-east4": 2,
+        "europe-west8": 2,
+        "northamerica-northeast1": 2,
+        "europe-central2": 2,
+        "us-west4": 2,
+        "us-west1": 2,
+        "asia-southeast1": 2,
+        "us-central1": 2,
+        "europe-southwest1": 2,
+        "europe-west1": 2,
+        "us-east1": 2,
+        "europe-west4": 2,
+        "us-south1": 2,
+        "europe-north1": 2,
+        "europe-west9": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-flash-lite-preview-09-2025",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-flash-preview-09-2025",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-flash-tts",
+      "v": "default",
+      "card": null,
+      "s": {
+        "europe-north1": 1,
+        "us-east5": 1,
+        "us-east1": 1,
+        "us-east4": 1,
+        "europe-southwest1": 1,
+        "europe-west8": 1,
+        "europe-west9": 1,
+        "northamerica-northeast1": 1,
+        "europe-central2": 1,
+        "europe-west3": 1,
+        "us-west4": 1,
+        "southamerica-east1": 1,
+        "europe-west2": 1,
+        "us-west1": 1,
+        "us-central1": 1,
+        "europe-west1": 1,
+        "europe-west4": 1,
+        "us-south1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-pro",
+      "v": "default",
+      "card": null,
+      "s": {
+        "europe-west1": 1,
+        "us-west1": 1,
+        "us-central1": 1,
+        "europe-southwest1": 1,
+        "europe-west4": 1,
+        "us-south1": 1,
+        "europe-north1": 1,
+        "europe-west9": 1,
+        "asia-northeast1": 1,
+        "us-east5": 1,
+        "us-east1": 1,
+        "us-east4": 1,
+        "us-west4": 1,
+        "europe-west8": 1,
+        "northamerica-northeast1": 1,
+        "europe-central2": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-2.5-pro-tts",
+      "v": "default",
+      "card": null,
+      "s": {
+        "europe-west3": 1,
+        "us-east4": 1,
+        "us-west4": 1,
+        "europe-central2": 1,
+        "europe-west1": 1,
+        "europe-west4": 1,
+        "us-west1": 1,
+        "us-east1": 1,
+        "us-central1": 1,
+        "europe-southwest1": 1,
+        "us-south1": 1,
+        "europe-west8": 1,
+        "europe-north1": 1,
+        "europe-west9": 1,
+        "us-east5": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3-flash-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3-pro-image",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3-pro-image-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3-pro-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3.1-flash-image",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3.1-flash-image-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3.1-flash-lite",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3.1-flash-lite-image",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3.1-flash-lite-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3.1-flash-tts-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3.1-pro-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-3.5-flash",
+      "v": "default",
+      "card": null,
+      "s": {
+        "asia-southeast1": 1,
+        "asia-south1": 1,
+        "europe-west4": 1,
+        "asia-northeast1": 1,
+        "us-central1": 1,
+        "northamerica-northeast1": 1,
+        "europe-west3": 1,
+        "southamerica-east1": 1,
+        "europe-west2": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-embedding-001",
+      "v": "default",
+      "card": null,
+      "s": {
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "us-south1": 2,
+        "europe-north1": 2,
+        "europe-west9": 2,
+        "asia-northeast1": 2,
+        "europe-west6": 2,
+        "us-east5": 2,
+        "us-east1": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
+        "europe-west8": 2,
+        "me-central2": 2,
+        "northamerica-northeast1": 2,
+        "europe-central2": 2,
+        "asia-northeast3": 2,
+        "asia-southeast1": 2,
+        "us-west4": 2,
+        "asia-east1": 2,
+        "australia-southeast1": 2,
+        "southamerica-east1": 2,
+        "me-central1": 2,
+        "europe-west2": 2,
+        "asia-east2": 2,
+        "us-west1": 2,
+        "me-west1": 2,
+        "us-central1": 2,
+        "europe-southwest1": 2,
+        "asia-south1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-embedding-2",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-live-2.5-flash-native-audio",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-east5": 2,
+        "us-east1": 2,
+        "us-east4": 2,
+        "us-west4": 2,
+        "europe-west8": 2,
+        "europe-central2": 2,
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "europe-southwest1": 2,
+        "europe-north1": 2,
+        "us-south1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-omni-flash-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemma",
+      "v": "gemma-7b-it-gg-hf",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemma-4-26b-a4b-it-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemma2",
+      "v": "gemma-2-9b-it",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemma3",
+      "v": "gemma-3-4b-pt",
+      "card": null,
+      "s": {
+        "asia-southeast1": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemma3n",
+      "v": "gemma-3n-e4b-it",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemma4",
+      "v": "gemma-4-e4b-it",
+      "card": null,
+      "s": {
+        "asia-southeast1": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "hear",
+      "v": "hear",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "image-segmentation-001",
+      "v": "default",
+      "card": null,
+      "s": {
+        "asia-northeast1": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
+        "us-west4": 2,
+        "northamerica-northeast1": 2,
+        "asia-northeast3": 2,
+        "asia-southeast1": 2,
+        "europe-west1": 2,
+        "europe-west2": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "europe-west4": 2,
+        "europe-west9": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imageclassification-efficientnet",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imageclassification-proprietary-efficientnet",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imageclassification-proprietary-maxvit",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imageclassification-proprietary-vit",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imageclassification-vit",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imageobjectdetection-proprietary-spinenet",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imageobjectdetection-proprietary-yolo",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imageobjectdetection-yolo",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imagesegmentation-deeplabv3",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "imagewatermarkdetector",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "jax-owl-vit-v2",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "keras-yolov8",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "label-detector-pali-001",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "language-v1-analyze-entity-sentiment",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "language-v1-analyze-sentiment",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "language-v1-analyze-syntax",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "language-v1-classify-text-v1",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "language-v1-moderate-text",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "lyria-002",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "lyria-3-clip-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "lyria-3-pro-preview",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "mammut",
+      "v": "mammut-vqa",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "medasr",
+      "v": "medasr",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "medgemma",
+      "v": "medgemma-4b-pt",
+      "card": null,
+      "s": {
+        "us-west1": 2,
+        "asia-southeast1": 2,
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "medsiglip",
+      "v": "medsiglip-448",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "multimodalembedding",
+      "v": "001",
+      "card": null,
+      "s": {
+        "europe-north1": 2,
+        "asia-east2": 2,
+        "asia-northeast1": 2,
+        "europe-west6": 2,
+        "us-east5": 2,
+        "us-east1": 2,
+        "us-east4": 2,
+        "europe-southwest1": 2,
+        "europe-west8": 2,
+        "europe-west9": 2,
+        "me-central2": 2,
+        "northamerica-northeast1": 2,
+        "europe-central2": 2,
+        "asia-northeast3": 2,
+        "europe-west3": 2,
+        "us-west4": 2,
+        "asia-east1": 2,
+        "australia-southeast1": 2,
+        "southamerica-east1": 2,
+        "me-central1": 2,
+        "europe-west2": 2,
+        "us-west1": 2,
+        "asia-southeast1": 2,
+        "me-west1": 2,
+        "us-central1": 2,
+        "asia-south1": 2,
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "us-south1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "object-detector",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "occupancy-analytics",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "owlvit-base-patch32",
+      "v": "owlvit-base-patch32",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "paligemma",
+      "v": "paligemma2-3b-pt-896",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "path-foundation",
+      "v": "path-foundation",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "people-blur",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "pic2word",
+      "v": "pic2word",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "ppe-detector",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "pretrained-form-parser",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "pretrained-ocr",
+      "v": "002",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "product-recognizer",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "pt-test",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "resnet50",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "shieldgemma2",
+      "v": "shieldgemma-2-4b-it",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "t5-1.1",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "t5-flan",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "t5gemma",
+      "v": "t5gemma",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "tab-net",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "tag-recognizer",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "text-detector",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "text-embedding-005",
+      "v": "default",
+      "card": null,
+      "s": {
+        "australia-southeast1": 2,
+        "southamerica-east1": 2,
+        "europe-west8": 2,
+        "europe-west2": 2,
+        "europe-central2": 2,
+        "asia-northeast3": 2,
+        "asia-southeast1": 2,
+        "asia-east1": 2,
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "me-central1": 2,
+        "asia-east2": 2,
+        "us-west1": 2,
+        "me-west1": 2,
+        "us-central1": 2,
+        "europe-southwest1": 2,
+        "asia-south1": 2,
+        "us-south1": 2,
+        "europe-north1": 2,
+        "europe-west9": 2,
+        "me-central2": 2,
+        "asia-northeast1": 2,
+        "northamerica-northeast1": 2,
+        "europe-west6": 2,
+        "us-east5": 2,
+        "us-east1": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
+        "us-west4": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "text-embedding-large-exp-03-07",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "text-multilingual-embedding-002",
+      "v": "default",
+      "card": null,
+      "s": {
+        "europe-west4": 2,
+        "us-south1": 2,
+        "europe-north1": 2,
+        "europe-west9": 2,
+        "me-central2": 2,
+        "asia-northeast1": 2,
+        "europe-west6": 2,
+        "us-east5": 2,
+        "europe-west3": 2,
+        "us-east1": 2,
+        "us-east4": 2,
+        "us-west4": 2,
+        "europe-west8": 2,
+        "northamerica-northeast1": 2,
+        "europe-central2": 2,
+        "asia-northeast3": 2,
+        "asia-southeast1": 2,
+        "asia-east1": 2,
+        "australia-southeast1": 2,
+        "southamerica-east1": 2,
+        "europe-west1": 2,
+        "me-central1": 2,
+        "europe-west2": 2,
+        "asia-east2": 2,
+        "us-west1": 2,
+        "me-west1": 2,
+        "us-central1": 2,
+        "europe-southwest1": 2,
+        "asia-south1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "text-translation",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "textembedding-gecko",
+      "v": "latest",
+      "card": null,
+      "s": {
+        "me-west1": 2,
+        "us-central1": 2,
+        "europe-southwest1": 2,
+        "asia-south1": 2,
+        "europe-west4": 2,
+        "us-south1": 2,
+        "europe-north1": 2,
+        "europe-west9": 2,
+        "me-central2": 2,
+        "asia-northeast1": 2,
+        "europe-west6": 2,
+        "us-east5": 2,
+        "europe-west3": 2,
+        "us-east1": 2,
+        "us-east4": 2,
+        "us-west4": 2,
+        "australia-southeast1": 2,
+        "europe-west8": 2,
+        "northamerica-northeast1": 2,
+        "europe-central2": 2,
+        "asia-northeast3": 2,
+        "asia-southeast1": 2,
+        "asia-east1": 2,
+        "southamerica-east1": 2,
+        "europe-west1": 2,
+        "me-central1": 2,
+        "europe-west2": 2,
+        "asia-east2": 2,
+        "us-west1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "tfvision-movinet-var",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "tfvision-movinet-vcn",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "tfvision-yolov7",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "timesfm",
+      "v": "timesfm-2.5",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "translate-llm",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "translategemma",
+      "v": "translategemma-4b-it",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "txgemma",
+      "v": "txgemma-9b-predict",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "vehicle-detector",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "veo-2.0-generate-001",
+      "v": "experimental",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west3": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "veo-3.0-fast-generate-001",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "veo-3.0-generate-001",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "veo-3.1-fast-generate-001",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "veo-3.1-generate-001",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "veo-3.1-lite-generate-001",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "video-speech-transcription",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "video-text-detection",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "virtual-try-on-001",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1,
+        "europe-southwest1": 1,
+        "europe-west1": 1,
+        "europe-west4": 1,
+        "us-south1": 1,
+        "europe-north1": 1,
+        "europe-west9": 1,
+        "asia-northeast1": 1,
+        "us-east5": 1,
+        "us-east1": 1,
+        "us-east4": 1,
+        "europe-west8": 1,
+        "northamerica-northeast1": 1,
+        "europe-central2": 1,
+        "us-west4": 1,
+        "us-west1": 1,
+        "asia-southeast1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "vit-jax",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "weather-next-v2",
+      "v": "weather-next-v2",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Google",
+      "n": "weathernext",
+      "v": "weathernext-001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Hidream Ai",
+      "n": "hidream-i1",
+      "v": "hidream-i1-full",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Ifzhang",
+      "n": "bytetrack-multi-object-tracking",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Impira",
+      "n": "layoutlm-document-qa",
+      "v": "layoutlm-document-qa",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Instantx",
+      "n": "instant-id",
+      "v": "instantid",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Intfloat",
+      "n": "e5",
+      "v": "multilingual-e5-small",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Intfloat",
+      "n": "multilingual-e5-large-instruct-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Jinaai",
+      "n": "jina-embeddings-v3",
+      "v": "default",
+      "card": null,
+      "s": {
+        "northamerica-northeast2": 2,
+        "us-west1": 2,
+        "europe-west6": 2,
+        "us-central1": 2,
+        "asia-south1": 2,
+        "me-central2": 2,
+        "asia-northeast1": 2,
+        "asia-northeast3": 2,
+        "europe-west3": 2,
+        "us-east1": 2,
+        "us-east4": 2,
+        "us-west4": 2,
+        "europe-west2": 2,
+        "asia-southeast1": 2,
+        "asia-east1": 2,
+        "asia-southeast2": 2,
+        "europe-west1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Liuhaotian",
+      "n": "pytorch-llava",
+      "v": "llava-v1.6-vicuna-7b-hf",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Lllyasviel",
+      "n": "control-net",
+      "v": "sd-controlnet-canny",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Lmsys",
+      "n": "lmsys-vicuna-7b",
+      "v": "vicuna-7b-v1.5-16k",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "codellama-7b-hf",
+      "v": "codellama-7b-python-hf",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "faster-r-cnn",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "imagebind",
+      "v": "imagebind-zero-shot-classification",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama-2-quantized",
+      "v": "llama-2-7b-gptq",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama-3.3-70b-instruct-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "asia-southeast1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama-4-maverick-17b-128e-instruct-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama-guard",
+      "v": "llama-guard-4-12b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama2",
+      "v": "llama-2-7b-chat",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama3",
+      "v": "meta-llama-3-8b-instruct",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama3-2",
+      "v": "llama-3.2-90b-vision-instruct",
+      "card": null,
+      "s": {
+        "us-east5": 2,
+        "asia-southeast1": 2,
+        "europe-west4": 2,
+        "us-west1": 2,
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama3-3",
+      "v": "llama-3.3-70b-instruct",
+      "card": null,
+      "s": {
+        "asia-southeast1": 2,
+        "europe-west4": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama3_1",
+      "v": "llama-3.1-8b-instruct-quantized-w8a8",
+      "card": null,
+      "s": {
+        "us-east5": 2,
+        "asia-southeast1": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "llama4",
+      "v": "llama-4-scout-17b-16e",
+      "card": null,
+      "s": {
+        "asia-southeast1": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-east5": 2,
+        "us-east4": 2,
+        "asia-south2": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "mask-r-cnn",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "nllb",
+      "v": "nllb-200-distilled-600m",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "prompt-guard",
+      "v": "prompt-guard-86m",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "retinanet",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "roberta-large",
+      "v": "roberta-large",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "sam3",
+      "v": "segment-anything-3",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "segment-anything",
+      "v": "sam-vit-large",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "xlm-roberta-large",
+      "v": "xlm-roberta-large",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Microsoft",
+      "n": "bio-gpt",
+      "v": "biogpt",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Microsoft",
+      "n": "microsoft-biomedclip",
+      "v": "biomedclip",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Microsoft",
+      "n": "phi3",
+      "v": "phi-3.5-moe-instruct",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Microsoft",
+      "n": "phi4",
+      "v": "phi-4-reasoning-plus",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "MiniMax",
+      "n": "minimax-m2",
+      "v": "minimax-m2.7",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "MiniMax",
+      "n": "minimax-m2-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east1": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "codestral-2",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "codestral-2501-self-deploy",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "ministral-3",
+      "v": "ministral-3-3b-base-2512",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "mistral",
+      "v": "mistral-nemo-instruct-2407",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "mistral-large-3",
+      "v": "mistral-large-3-instruct-2512",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "mistral-medium-3",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "mistral-ocr-2505",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "mistral-small-2503",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Mistral AI",
+      "n": "mixtral",
+      "v": "mixtral-8x7b-v0.1",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Mongodb",
+      "n": "voyage-3.5-lite",
+      "v": "latest",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Mongodb",
+      "n": "voyage-4",
+      "v": "latest",
+      "card": null,
+      "s": {
+        "us-west4": 2,
+        "us-east4": 2,
+        "australia-southeast1": 2,
+        "europe-west2": 2,
+        "asia-northeast3": 2,
+        "asia-southeast1": 2,
+        "asia-east1": 2,
+        "europe-west1": 2,
+        "northamerica-northeast2": 2,
+        "us-west1": 2,
+        "me-west1": 2,
+        "us-central1": 2,
+        "asia-south1": 2,
+        "europe-west4": 2,
+        "europe-north1": 2,
+        "me-central2": 2,
+        "asia-northeast1": 2,
+        "europe-west6": 2,
+        "us-east5": 2,
+        "europe-west3": 2,
+        "us-east1": 2
+      }
+    },
+    {
+      "g": "Mongodb",
+      "n": "voyage-4-large",
+      "v": "latest",
+      "card": null,
+      "s": {
+        "europe-north1": 2,
+        "asia-northeast1": 2,
+        "asia-northeast3": 2,
+        "us-east5": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
+        "us-west4": 2,
+        "australia-southeast1": 2,
+        "europe-west2": 2,
+        "asia-southeast1": 2,
+        "asia-east1": 2,
+        "me-west1": 2,
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "northamerica-northeast2": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "asia-south1": 2
+      }
+    },
+    {
+      "g": "Mongodb",
+      "n": "voyage-4-lite",
+      "v": "latest",
+      "card": null,
+      "s": {
+        "australia-southeast1": 2,
+        "europe-west2": 2,
+        "asia-southeast1": 2,
+        "asia-east1": 2,
+        "me-west1": 2,
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "northamerica-northeast2": 2,
+        "us-west1": 2,
+        "europe-west6": 2,
+        "us-central1": 2,
+        "asia-south1": 2,
+        "europe-north1": 2,
+        "me-central2": 2,
+        "asia-northeast1": 2,
+        "asia-northeast3": 2,
+        "us-east5": 2,
+        "us-east1": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
+        "us-west4": 2
+      }
+    },
+    {
+      "g": "Mongodb",
+      "n": "voyage-multimodal-3.5",
+      "v": "latest",
+      "card": null,
+      "s": {
+        "us-west1": 2,
+        "europe-west6": 2,
+        "us-central1": 2,
+        "asia-south1": 2,
+        "europe-north1": 2,
+        "me-central2": 2,
+        "asia-northeast1": 2,
+        "asia-northeast3": 2,
+        "us-east5": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
+        "us-west4": 2,
+        "australia-southeast1": 2,
+        "europe-west2": 2,
+        "asia-southeast1": 2,
+        "asia-east1": 2,
+        "me-west1": 2,
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "northamerica-northeast2": 2
+      }
+    },
+    {
+      "g": "Moonshot AI",
+      "n": "kimi-k2",
+      "v": "kimi-k2-thinking",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Moonshot AI",
+      "n": "kimi-k2-5",
+      "v": "kimi-k2.5",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Moonshot AI",
+      "n": "kimi-k2-6",
+      "v": "kimi-k2.6",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Moonshot AI",
+      "n": "kimi-k2-7",
+      "v": "kimi-k2.7-code",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Moonshot AI",
+      "n": "kimi-k2-thinking-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-east1": 2,
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "NVIDIA",
+      "n": "cosmos",
+      "v": "cosmos-1.0-diffusion-7b-video2world",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "NVIDIA",
+      "n": "llama-nemotron-super",
+      "v": "49b",
+      "card": null,
+      "s": {
+        "europe-north1": 2,
+        "asia-northeast1": 2,
+        "us-east5": 2,
+        "europe-west3": 2,
+        "us-east1": 2,
+        "us-east4": 2,
+        "asia-northeast3": 2,
+        "us-west4": 2,
+        "asia-south2": 2,
+        "australia-southeast1": 2,
+        "europe-west2": 2,
+        "us-west1": 2,
+        "asia-southeast1": 2,
+        "me-west1": 2,
+        "us-central1": 2,
+        "asia-south1": 2,
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "us-south1": 2,
+        "northamerica-northeast2": 2
+      }
+    },
+    {
+      "g": "NVIDIA",
+      "n": "nemotron-nano-12b-v2-vl",
+      "v": "1.5.0",
+      "card": null,
+      "s": {
+        "asia-southeast1": 2,
+        "me-west1": 2,
+        "europe-west1": 2,
+        "europe-west4": 2,
+        "northamerica-northeast2": 2,
+        "us-west1": 2,
+        "us-east1": 2,
+        "us-central1": 2,
+        "asia-south1": 2,
+        "us-south1": 2,
+        "europe-north1": 2,
+        "asia-northeast1": 2,
+        "asia-northeast3": 2,
+        "us-east5": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
+        "us-west4": 2,
+        "asia-south2": 2,
+        "australia-southeast1": 2,
+        "europe-west2": 2
+      }
+    },
+    {
+      "g": "NVIDIA",
+      "n": "nemotron-v3",
+      "v": "nemotron-3-ultra-550b-a55b-nvfp4",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "NVIDIA",
+      "n": "nemotron-v3-super-120b",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Nari Labs",
+      "n": "dia-1.6b",
+      "v": "dia-1.6b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "OpenAI",
+      "n": "clip-vit-base-patch32",
+      "v": "clip-vit-base-patch32",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "OpenAI",
+      "n": "gpt-oss",
+      "v": "gpt-oss-20b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "OpenAI",
+      "n": "gpt-oss-120b-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-east1": 2,
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "OpenAI",
+      "n": "openclip",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "OpenAI",
+      "n": "whisper-large",
+      "v": "whisper-large-v3-turbo",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Openlm Research",
+      "n": "openllama",
+      "v": "open_llama_7b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qodo",
+      "n": "qodo-embed-1-7b-v1",
+      "v": "001",
+      "card": null,
+      "s": {
+        "europe-west4": 2,
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen-image",
+      "v": "qwen-image-edit-2509",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen2",
+      "v": "qwen2.5-7b-instruct",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3",
+      "v": "qwen3-8b-fp8",
+      "card": null,
+      "s": {
+        "us-west1": 2,
+        "us-central1": 2,
+        "us-east5": 2,
+        "asia-southeast1": 2,
+        "europe-west4": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-235b-a22b-instruct-2507-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-south1": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-5",
+      "v": "qwen3.5-9b-base",
+      "card": null,
+      "s": {
+        "us-west1": 2,
+        "asia-southeast1": 2,
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-6",
+      "v": "qwen3.6-35b-a3b-fp8",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-coder",
+      "v": "qwen3-coder-480b-a35b-instruct-fp8",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-coder-480b-a35b-instruct-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-south1": 2,
+        "asia-south2": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-coder-next",
+      "v": "qwen3-coder-next",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-embedding",
+      "v": "qwen3-embedding-8b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-next",
+      "v": "qwen3-next-80b-a3b-thinking",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-next-80b-a3b-instruct-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-next-80b-a3b-thinking-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwen3-vl",
+      "v": "qwen3-vl-8b-thinking-fp8",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Qwen",
+      "n": "qwq",
+      "v": "qwq-32b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Runwayml",
+      "n": "stable-diffusion-inpainting",
+      "v": "kandinsky-2-2-decoder-inpaint",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Salesforce",
+      "n": "blip-image-captioning-base",
+      "v": "blip-image-captioning-base",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Salesforce",
+      "n": "blip-vqa-base",
+      "v": "blip-vqa-base",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Salesforce",
+      "n": "blip2-opt-2.7-b",
+      "v": "blip2-opt-2.7b-visual-question-answering",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Sesame",
+      "n": "csm",
+      "v": "csm-1b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Stability AI",
+      "n": "stable-diffusion-2-1",
+      "v": "stable-diffusion-2-1",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Stability AI",
+      "n": "stable-diffusion-4x-upscaler",
+      "v": "stable-diffusion-x4-upscaler",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Stability AI",
+      "n": "stable-diffusion-xl-base",
+      "v": "stable-diffusion-xl-base-1.0",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Stability AI",
+      "n": "stable-diffusion-xl-lcm",
+      "v": "stable-diffusion-xl-base-1.0",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Thudm",
+      "n": "cogvideox",
+      "v": "cogvideox-2b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Tiiuae",
+      "n": "falcon-instruct-7b-peft",
+      "v": "falcon-7b-instruct",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Timbrooks",
+      "n": "instruct-pix2pix",
+      "v": "instruct-pix2pix",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Virtueai",
+      "n": "virtueguard-text-lite",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Wan Ai",
+      "n": "wan2-1",
+      "v": "wan2.1-t2v-14b-diffusers",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Wan Ai",
+      "n": "wan2-2",
+      "v": "wan2.2-ti2v-5b-diffusers",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Weiboai",
+      "n": "vibethinker",
+      "v": "vibethinker-3b",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Writer",
+      "n": "palmyra-x4",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Xiaomimimo",
+      "n": "xiaomimimo",
+      "v": "mimo-v2.5",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Z.AI",
+      "n": "glm-4.5",
+      "v": "glm-4.5-fp8",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Z.AI",
+      "n": "glm-4.7",
+      "v": "glm-4.7-nvfp4",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Z.AI",
+      "n": "glm-4.7-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "asia-southeast1": 2
+      }
+    },
+    {
+      "g": "Z.AI",
+      "n": "glm-5",
+      "v": "glm-5.1-fp8",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Z.AI",
+      "n": "glm-5-2",
+      "v": "glm-5.2-fp8",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Z.AI",
+      "n": "glm-5-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "europe-north1": 2,
+        "us-east1": 2
+      }
+    },
+    {
+      "g": "Z.AI",
+      "n": "glm-image",
+      "v": "glm-image",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Z.AI",
+      "n": "glm-ocr",
+      "v": "glm-ocr",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "xAI",
+      "n": "grok-4.1-fast-non-reasoning",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east4": 2
+      }
+    },
+    {
+      "g": "xAI",
+      "n": "grok-4.1-fast-reasoning",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east4": 2
+      }
+    },
+    {
+      "g": "xAI",
+      "n": "grok-4.20-non-reasoning",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east4": 2
+      }
+    },
+    {
+      "g": "xAI",
+      "n": "grok-4.20-reasoning",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east4": 2
+      }
+    },
+    {
+      "g": "xAI",
+      "n": "grok-4.3",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    }
+  ]
+}
