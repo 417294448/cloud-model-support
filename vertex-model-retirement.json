@@ -1,0 +1,331 @@
+{
+  "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-versions",
+  "sections": [
+    {
+      "category": "Gemini models",
+      "models": [
+        {
+          "model": "gemini-3.5-flash",
+          "release_date": "2026-05-19",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "May 19, 2027 or later",
+          "replacement": null
+        },
+        {
+          "model": "gemini-3.1-flash-lite",
+          "release_date": "2026-05-07",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "May 7, 2027 or later",
+          "replacement": null
+        },
+        {
+          "model": "gemini-live-2.5-flash-native-audio",
+          "release_date": "2025-12-12",
+          "release_date_note": null,
+          "retirement_date": "2026-12-13",
+          "retirement_date_note": null,
+          "replacement": null
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "release_date": "2025-06-17",
+          "release_date_note": null,
+          "retirement_date": "2026-10-16",
+          "retirement_date_note": null,
+          "replacement": "Gemini 3.5 Flash"
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "release_date": "2025-06-17",
+          "release_date_note": null,
+          "retirement_date": "2026-10-16",
+          "retirement_date_note": null,
+          "replacement": "Gemini 3.1 Flash-Lite or Gemini 3.5 Flash"
+        },
+        {
+          "model": "gemini-2.5-flash-lite",
+          "release_date": "2025-07-22",
+          "release_date_note": null,
+          "retirement_date": "2026-10-16",
+          "retirement_date_note": null,
+          "replacement": "Gemini 3.1 Flash-Lite or Gemma 4"
+        }
+      ]
+    },
+    {
+      "category": "Gemini image models",
+      "models": [
+        {
+          "model": "gemini-3.1-flash-image",
+          "release_date": "2026-05-28",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "May 28, 2027 or later",
+          "replacement": null
+        },
+        {
+          "model": "gemini-3-pro-image",
+          "release_date": "2026-05-28",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "May 28, 2027 or later",
+          "replacement": null
+        },
+        {
+          "model": "gemini-2.5-flash-image",
+          "release_date": "2025-10-02",
+          "release_date_note": null,
+          "retirement_date": "2026-10-02",
+          "retirement_date_note": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Veo models",
+      "models": [
+        {
+          "model": "veo-3.1-generate-001",
+          "release_date": "2025-11-17",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "veo-3.1-fast-generate-001",
+          "release_date": "2025-11-17",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "veo-3.0-generate-001",
+          "release_date": "2025-07-29",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "veo-3.0-fast-generate-001",
+          "release_date": "2025-07-29",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "veo-2.0-generate-001",
+          "release_date": "2025-05-27",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Embeddings models",
+      "models": [
+        {
+          "model": "gemini-embedding-001",
+          "release_date": "2025-05-20",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No sooner than May 20, 2028",
+          "replacement": null
+        },
+        {
+          "model": "text-embedding-005",
+          "release_date": "2024-11-18",
+          "release_date_note": null,
+          "retirement_date": "2027-04-01",
+          "retirement_date_note": null,
+          "replacement": null
+        },
+        {
+          "model": "text-embedding-004",
+          "release_date": "2024-05-14",
+          "release_date_note": null,
+          "retirement_date": "2027-04-01",
+          "retirement_date_note": null,
+          "replacement": null
+        },
+        {
+          "model": "text-multilingual-embedding-002",
+          "release_date": "2024-05-14",
+          "release_date_note": null,
+          "retirement_date": "2027-04-01",
+          "retirement_date_note": null,
+          "replacement": null
+        },
+        {
+          "model": "multimodalembedding@001",
+          "release_date": "2024-02-12",
+          "release_date_note": null,
+          "retirement_date": "2027-04-01",
+          "retirement_date_note": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Models available for shorter availability periods",
+      "models": [
+        {
+          "model": "gemini-3.1-flash-lite-image",
+          "release_date": "2026-06-30",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Retired models",
+      "models": [
+        {
+          "model": "gemini-2.0-flash",
+          "release_date": "2025-02-05",
+          "release_date_note": null,
+          "retirement_date": "2026-06-01",
+          "retirement_date_note": null,
+          "replacement": "gemini-3.1-flash-lite"
+        },
+        {
+          "model": "gemini-2.0-flash-lite",
+          "release_date": "2025-02-25",
+          "release_date_note": null,
+          "retirement_date": "2026-06-01",
+          "retirement_date_note": null,
+          "replacement": "gemini-3.1-flash-lite"
+        },
+        {
+          "model": "gemini-1.5-pro-001",
+          "release_date": "2024-05-24",
+          "release_date_note": null,
+          "retirement_date": "2025-05-24",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash"
+        },
+        {
+          "model": "gemini-1.5-pro-002",
+          "release_date": "2024-09-24",
+          "release_date_note": null,
+          "retirement_date": "2025-09-24",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash"
+        },
+        {
+          "model": "gemini-1.5-flash-001",
+          "release_date": "2024-05-24",
+          "release_date_note": null,
+          "retirement_date": "2025-05-24",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash-lite"
+        },
+        {
+          "model": "gemini-1.5-flash-002",
+          "release_date": "2024-09-24",
+          "release_date_note": null,
+          "retirement_date": "2025-09-24",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash-lite"
+        },
+        {
+          "model": "textembedding-gecko@003",
+          "release_date": "2023-12-12",
+          "release_date_note": null,
+          "retirement_date": "2025-05-24",
+          "retirement_date_note": null,
+          "replacement": "gemini-embedding-001"
+        },
+        {
+          "model": "textembedding-gecko-multilingual@001",
+          "release_date": "2023-11-02",
+          "release_date_note": null,
+          "retirement_date": "2025-05-24",
+          "retirement_date_note": null,
+          "replacement": "gemini-embedding-001"
+        },
+        {
+          "model": "gemini-1.0-pro-001",
+          "release_date": "2024-02-15",
+          "release_date_note": null,
+          "retirement_date": "2025-04-21",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash"
+        },
+        {
+          "model": "gemini-1.0-pro-002",
+          "release_date": "2024-04-09",
+          "release_date_note": null,
+          "retirement_date": "2025-04-21",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash"
+        },
+        {
+          "model": "gemini-1.0-pro-vision-001",
+          "release_date": "2024-02-15",
+          "release_date_note": null,
+          "retirement_date": "2025-04-21",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash"
+        },
+        {
+          "model": "text-bison",
+          "release_date": "2023-05",
+          "release_date_note": null,
+          "retirement_date": "2025-04-21",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash-lite"
+        },
+        {
+          "model": "chat-bison",
+          "release_date": "2023-05",
+          "release_date_note": null,
+          "retirement_date": "2025-04-21",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash-lite"
+        },
+        {
+          "model": "code-gecko",
+          "release_date": "2023-05",
+          "release_date_note": null,
+          "retirement_date": "2025-04-21",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash-lite"
+        },
+        {
+          "model": "textembedding-gecko@002",
+          "release_date": "2023-11-02",
+          "release_date_note": null,
+          "retirement_date": "2025-04-21",
+          "retirement_date_note": null,
+          "replacement": "gemini-embedding-001"
+        },
+        {
+          "model": "textembedding-gecko@001",
+          "release_date": "2023-06-07",
+          "release_date_note": null,
+          "retirement_date": "2025-04-21",
+          "retirement_date_note": null,
+          "replacement": "gemini-embedding-001"
+        },
+        {
+          "model": "imagetext",
+          "release_date": "2023-06-07",
+          "release_date_note": null,
+          "retirement_date": "2025-09-24",
+          "retirement_date_note": null,
+          "replacement": "gemini-2.5-flash-image"
+        }
+      ]
+    }
+  ]
+}
