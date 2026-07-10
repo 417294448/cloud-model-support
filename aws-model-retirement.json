@@ -1,0 +1,341 @@
+{
+  "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+  "models": [
+    {
+      "provider": "AI21 Labs",
+      "model_name": "Jamba 1.5 Large",
+      "model_id": "ai21.jamba-1-5-large-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1"
+          ],
+          "legacy_date": "May 26, 2026",
+          "eol_date": "November 26, 2026",
+          "public_extended_access_start_date": "August 26, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "AI21 Labs",
+      "model_name": "Jamba 1.5 Mini",
+      "model_id": "ai21.jamba-1-5-mini-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1"
+          ],
+          "legacy_date": "May 26, 2026",
+          "eol_date": "November 26, 2026",
+          "public_extended_access_start_date": "August 26, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Canvas",
+      "model_id": "amazon.nova-canvas-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "eu-west-1",
+            "us-east-1"
+          ],
+          "legacy_date": "March 30, 2026",
+          "eol_date": "September 30, 2026",
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Reel",
+      "model_id": "amazon.nova-reel-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "eu-west-1",
+            "us-east-1"
+          ],
+          "legacy_date": "March 30, 2026",
+          "eol_date": "September 30, 2026",
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Reel",
+      "model_id": "amazon.nova-reel-v1:1",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1"
+          ],
+          "legacy_date": "March 30, 2026",
+          "eol_date": "September 30, 2026",
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Premier",
+      "model_id": "amazon.nova-premier-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "March 13, 2026",
+          "eol_date": "September 14, 2026",
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Sonic",
+      "model_id": "amazon.nova-sonic-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "eu-north-1",
+            "us-east-1"
+          ],
+          "legacy_date": "March 13, 2026",
+          "eol_date": "September 14, 2026",
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Anthropic",
+      "model_name": "Claude Opus 4.1",
+      "model_id": "anthropic.claude-opus-4-1-20250805-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "July 8, 2026",
+          "eol_date": "January 8, 2027",
+          "public_extended_access_start_date": "October 8, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Anthropic",
+      "model_name": "Claude Sonnet 4",
+      "model_id": "anthropic.claude-sonnet-4-20250514-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2",
+            "ap-east-2",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "me-central-1",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-7",
+            "il-central-1"
+          ],
+          "legacy_date": "April 14, 2026",
+          "eol_date": "October 14, 2026",
+          "public_extended_access_start_date": "July 14, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Anthropic",
+      "model_name": "Claude 3 Haiku",
+      "model_id": "anthropic.claude-3-haiku-20240307-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "eu-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "March 10, 2026",
+          "eol_date": "September 10, 2026",
+          "public_extended_access_start_date": "June 10, 2026"
+        },
+        {
+          "regions": [
+            "us-gov-east-1",
+            "us-gov-west-1"
+          ],
+          "legacy_date": "March 10, 2026",
+          "eol_date": "September 10, 2026",
+          "public_extended_access_start_date": "June 10, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Anthropic",
+      "model_name": "Claude 3 Sonnet",
+      "model_id": "anthropic.claude-3-sonnet-20240229-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "eu-west-1",
+            "eu-west-3",
+            "us-east-1",
+            "us-west-2"
+          ],
+          "legacy_date": "January 30, 2026",
+          "eol_date": "July 30, 2026",
+          "public_extended_access_start_date": null
+        },
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-southeast-2"
+          ],
+          "legacy_date": "January 30, 2026",
+          "eol_date": "July 30, 2026",
+          "public_extended_access_start_date": "April 30, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Anthropic",
+      "model_name": "Claude 3.5 Sonnet",
+      "model_id": "anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-southeast-2"
+          ],
+          "legacy_date": "January 30, 2026",
+          "eol_date": "July 30, 2026",
+          "public_extended_access_start_date": "April 30, 2026"
+        },
+        {
+          "regions": [
+            "us-gov-east-1",
+            "us-gov-west-1"
+          ],
+          "legacy_date": "January 30, 2026",
+          "eol_date": "July 30, 2026",
+          "public_extended_access_start_date": "April 30, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Anthropic",
+      "model_name": "Claude 3.5 Sonnet v2",
+      "model_id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-northeast-3",
+            "ap-south-2",
+            "ap-southeast-2"
+          ],
+          "legacy_date": "January 30, 2026",
+          "eol_date": "July 30, 2026",
+          "public_extended_access_start_date": "April 30, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Anthropic",
+      "model_name": "Claude 3.7 Sonnet",
+      "model_id": "anthropic.claude-3-7-sonnet-20250219-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-gov-east-1",
+            "us-gov-west-1"
+          ],
+          "legacy_date": "January 30, 2026",
+          "eol_date": "July 30, 2026",
+          "public_extended_access_start_date": "April 30, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Cohere",
+      "model_name": "Command R",
+      "model_id": "cohere.command-r-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-west-2"
+          ],
+          "legacy_date": "February 19, 2026",
+          "eol_date": "August 19, 2026",
+          "public_extended_access_start_date": "May 19, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "Cohere",
+      "model_name": "Command R+",
+      "model_id": "cohere.command-r-plus-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-west-2"
+          ],
+          "legacy_date": "February 19, 2026",
+          "eol_date": "August 19, 2026",
+          "public_extended_access_start_date": "May 19, 2026"
+        }
+      ]
+    },
+    {
+      "provider": "TwelveLabs",
+      "model_name": "Marengo Embed v2.7",
+      "model_id": "twelvelabs.marengo-embed-2-7-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-2",
+            "eu-west-1",
+            "us-east-1"
+          ],
+          "legacy_date": "May 29, 2026",
+          "eol_date": "November 30, 2026",
+          "public_extended_access_start_date": "August 29, 2026"
+        }
+      ]
+    }
+  ]
+}

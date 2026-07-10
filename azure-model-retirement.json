@@ -1,0 +1,1260 @@
+{
+  "source": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule",
+  "sections": [
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "Azure OpenAI",
+      "models": [
+        {
+          "model": "codex-mini",
+          "version": "2025-05-16",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-11-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4.1",
+          "version": "2025-04-14",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-14",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4.1-mini",
+          "version": "2025-04-14",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-14",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4.1-nano",
+          "version": "2025-04-14",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-14",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4o",
+          "version": "2024-05-13",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-01",
+          "replacement": "gpt-5.1"
+        },
+        {
+          "model": "gpt-4o",
+          "version": "2024-08-06",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-01",
+          "replacement": "gpt-5.1"
+        },
+        {
+          "model": "gpt-4o",
+          "version": "2024-08-06-ev3",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-03-31",
+          "replacement": "gpt-5.1"
+        },
+        {
+          "model": "gpt-4o",
+          "version": "2024-11-20",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-01",
+          "replacement": "gpt-5.1"
+        },
+        {
+          "model": "gpt-4o-mini",
+          "version": "2024-07-18",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-01",
+          "replacement": "gpt-4.1-mini"
+        },
+        {
+          "model": "gpt-4o-mini-transcribe",
+          "version": "2025-03-20",
+          "lifecycle": "GA",
+          "retirement_date": "2026-10-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4o-mini-transcribe",
+          "version": "2025-12-15",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4o-mini-tts",
+          "version": "2025-03-20",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4o-mini-tts",
+          "version": "2025-12-15",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4o-transcribe",
+          "version": "2025-03-20",
+          "lifecycle": "GA",
+          "retirement_date": "2026-10-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-4o-transcribe-diarize",
+          "version": "2025-10-15",
+          "lifecycle": "GA",
+          "retirement_date": "2026-10-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5",
+          "version": "2025-08-07",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-06",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5-chat",
+          "version": "2025-08-07",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-06-29",
+          "replacement": "gpt-chat-latest"
+        },
+        {
+          "model": "gpt-5-chat",
+          "version": "2025-10-03",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-05-13",
+          "replacement": "gpt-chat-latest"
+        },
+        {
+          "model": "gpt-5-codex",
+          "version": "2025-09-15",
+          "lifecycle": "GA",
+          "retirement_date": "2027-03-17",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5-mini",
+          "version": "2025-08-07",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-06",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5-nano",
+          "version": "2025-08-07",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-06",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5-pro",
+          "version": "2025-10-06",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-07",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.1",
+          "version": "2025-11-13",
+          "lifecycle": "GA",
+          "retirement_date": "2027-05-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.1-chat",
+          "version": "2025-11-13",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-06-29",
+          "replacement": "gpt-chat-latest"
+        },
+        {
+          "model": "gpt-5.1-codex",
+          "version": "2025-11-13",
+          "lifecycle": "GA",
+          "retirement_date": "2027-05-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.1-codex-max",
+          "version": "2025-12-04",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-05",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.1-codex-mini",
+          "version": "2025-11-13",
+          "lifecycle": "GA",
+          "retirement_date": "2027-05-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.2",
+          "version": "2025-12-11",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-12",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.2-chat",
+          "version": "2025-12-11",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-05-13",
+          "replacement": "gpt-chat-latest"
+        },
+        {
+          "model": "gpt-5.2-chat",
+          "version": "2026-02-10",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-06-29",
+          "replacement": "gpt-chat-latest"
+        },
+        {
+          "model": "gpt-5.2-codex",
+          "version": "2026-01-14",
+          "lifecycle": "GA",
+          "retirement_date": "2027-01-14",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.3-chat",
+          "version": "2026-03-03",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-06-29",
+          "replacement": "gpt-chat-latest"
+        },
+        {
+          "model": "gpt-5.3-codex",
+          "version": "2026-02-24",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-25",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.4",
+          "version": "2026-03-05",
+          "lifecycle": "GA",
+          "retirement_date": "2027-03-05",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "version": "2026-03-17",
+          "lifecycle": "GA",
+          "retirement_date": "2027-03-18",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.4-nano",
+          "version": "2026-03-17",
+          "lifecycle": "GA",
+          "retirement_date": "2027-03-18",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.4-pro",
+          "version": "2026-03-05",
+          "lifecycle": "GA",
+          "retirement_date": "2027-03-06",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.5",
+          "version": "2026-04-24",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-23",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.6-luna",
+          "version": "2026-07-09",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-09",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.6-sol",
+          "version": "2026-07-09",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-09",
+          "replacement": null
+        },
+        {
+          "model": "gpt-5.6-terra",
+          "version": "2026-07-09",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-09",
+          "replacement": null
+        },
+        {
+          "model": "gpt-audio",
+          "version": "2025-08-28",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-28",
+          "replacement": null
+        },
+        {
+          "model": "gpt-audio-1.5",
+          "version": "2026-02-23",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-23",
+          "replacement": null
+        },
+        {
+          "model": "gpt-audio-mini",
+          "version": "2025-10-06",
+          "lifecycle": "GA",
+          "retirement_date": "2026-09-21",
+          "replacement": null
+        },
+        {
+          "model": "gpt-audio-mini",
+          "version": "2025-12-15",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-chat-latest",
+          "version": "2026-05-05",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-05",
+          "replacement": null
+        },
+        {
+          "model": "gpt-chat-latest",
+          "version": "2026-05-28",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-28",
+          "replacement": null
+        },
+        {
+          "model": "gpt-chat-latest",
+          "version": "2026-06-24",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-28",
+          "replacement": null
+        },
+        {
+          "model": "gpt-image-1",
+          "version": "2025-04-15",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-23",
+          "replacement": null
+        },
+        {
+          "model": "gpt-image-1-mini",
+          "version": "2025-10-06",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-07",
+          "replacement": null
+        },
+        {
+          "model": "gpt-image-1.5",
+          "version": "2025-12-16",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-16",
+          "replacement": null
+        },
+        {
+          "model": "gpt-image-2",
+          "version": "2026-04-21",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-21",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime",
+          "version": "2025-08-28",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-28",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime-1.5",
+          "version": "2026-02-23",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-23",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime-2",
+          "version": "2026-05-06",
+          "lifecycle": "GA",
+          "retirement_date": "2027-05-06",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime-2.1",
+          "version": "2026-07-07",
+          "lifecycle": "GA",
+          "retirement_date": "2027-06-25",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime-2.1-mini",
+          "version": "2026-07-07",
+          "lifecycle": "GA",
+          "retirement_date": "2027-06-25",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime-mini",
+          "version": "2025-10-06",
+          "lifecycle": "GA",
+          "retirement_date": "2026-07-23",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime-mini",
+          "version": "2025-12-15",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
+        {
+          "model": "o1",
+          "version": "2024-12-17",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-09-16",
+          "replacement": null
+        },
+        {
+          "model": "o1-pro",
+          "version": "2025-03-19",
+          "lifecycle": "GA",
+          "retirement_date": "2026-09-18",
+          "replacement": null
+        },
+        {
+          "model": "o3",
+          "version": "2025-04-16",
+          "lifecycle": "GA",
+          "retirement_date": "2026-10-16",
+          "replacement": null
+        },
+        {
+          "model": "o3-deep-research",
+          "version": "2025-06-26",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-26",
+          "replacement": null
+        },
+        {
+          "model": "o3-mini",
+          "version": "2025-01-31",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-01",
+          "replacement": "o4-mini"
+        },
+        {
+          "model": "o3-pro",
+          "version": "2025-06-10",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-10",
+          "replacement": null
+        },
+        {
+          "model": "o4-mini",
+          "version": "2025-04-16",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-16",
+          "replacement": null
+        },
+        {
+          "model": "sora-2",
+          "version": "2025-10-06",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-15",
+          "replacement": "sora-2 (2025-12-08)"
+        },
+        {
+          "model": "sora-2",
+          "version": "2025-12-08",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-09-15",
+          "replacement": null
+        },
+        {
+          "model": "text-embedding-3-large",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-15",
+          "replacement": null
+        },
+        {
+          "model": "text-embedding-3-small",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-15",
+          "replacement": null
+        },
+        {
+          "model": "text-embedding-ada-002",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-15",
+          "replacement": null
+        },
+        {
+          "model": "text-embedding-ada-002",
+          "version": "2",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-15",
+          "replacement": null
+        },
+        {
+          "model": "tts",
+          "version": "001",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
+        {
+          "model": "tts-hd",
+          "version": "001",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
+        {
+          "model": "whisper",
+          "version": "001",
+          "lifecycle": "GA",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "Black Forest Labs",
+      "models": [
+        {
+          "model": "FLUX-1.1-pro",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "FLUX.1-Kontext-pro",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "FLUX.2-flex",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "FLUX.2-pro",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "Cohere",
+      "models": [
+        {
+          "model": "Cohere-rerank-v4.0-fast",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Cohere-rerank-v4.0-pro",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "cohere-command-a",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Cohere-command-a-plus-05-2026",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-13",
+          "replacement": null
+        },
+        {
+          "model": "embed-v-4-0",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "DeepSeek",
+      "models": [
+        {
+          "model": "DeepSeek-R1",
+          "version": "1",
+          "lifecycle": "Legacy",
+          "retirement_date": "2026-08-13",
+          "replacement": "DeepSeek-V4-Pro"
+        },
+        {
+          "model": "DeepSeek-R1-0528",
+          "version": "1",
+          "lifecycle": "Legacy",
+          "retirement_date": "2026-07-13",
+          "replacement": "DeepSeek-V4-Pro"
+        },
+        {
+          "model": "DeepSeek-V3-0324",
+          "version": "1",
+          "lifecycle": "Legacy",
+          "retirement_date": "2026-07-13",
+          "replacement": "DeepSeek-V4-Flash"
+        },
+        {
+          "model": "DeepSeek-V3.1",
+          "version": "1",
+          "lifecycle": "Legacy",
+          "retirement_date": "2026-07-13",
+          "replacement": "DeepSeek-V4-Flash"
+        },
+        {
+          "model": "DeepSeek-V3.2",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "DeepSeek-V3.2-Speciale",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "DeepSeek-V4-Flash",
+          "version": "2026-04-23",
+          "lifecycle": "GA",
+          "retirement_date": "2027-08-20",
+          "replacement": null
+        },
+        {
+          "model": "DeepSeek-V4-Pro",
+          "version": "2026-04-23",
+          "lifecycle": "GA",
+          "retirement_date": "2027-08-20",
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "Meta",
+      "models": [
+        {
+          "model": "Llama-3.3-70B-Instruct",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "Microsoft",
+      "models": [
+        {
+          "model": "model-router",
+          "version": "2025-05-19",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-30",
+          "replacement": null
+        },
+        {
+          "model": "model-router",
+          "version": "2025-08-07",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-30",
+          "replacement": null
+        },
+        {
+          "model": "model-router",
+          "version": "2025-11-18",
+          "lifecycle": "GA",
+          "retirement_date": "2027-05-20",
+          "replacement": null
+        },
+        {
+          "model": "MAI-Image-2e",
+          "version": "2026-04-09",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-15",
+          "replacement": "MAI-Image-2.5-Flash"
+        },
+        {
+          "model": "MAI-Image-2",
+          "version": "2026-02-20",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-15",
+          "replacement": "MAI-Image-2.5"
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "Mistral AI",
+      "models": [
+        {
+          "model": "Mistral-Large-3",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "mistral-document-ai-2505",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2026-07-15",
+          "replacement": "mistral-document-ai-2512, mistral-ocr-4-0"
+        },
+        {
+          "model": "mistral-document-ai-2512",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": "mistral-ocr-4-0"
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "MoonshotAI",
+      "models": [
+        {
+          "model": "Kimi-K2.5",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-01-26",
+          "replacement": null
+        },
+        {
+          "model": "Kimi-K2.6",
+          "version": "2026-04-20",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-04-16",
+          "replacement": null
+        },
+        {
+          "model": "Kimi-K2.7-Code",
+          "version": "2026-06-12",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-03",
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "OpenAI-OSS",
+      "models": [
+        {
+          "model": "gpt-oss-120b",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models sold by Azure",
+      "provider": "xAI",
+      "models": [
+        {
+          "model": "grok-3",
+          "version": "1",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-05-01",
+          "replacement": "grok-4"
+        },
+        {
+          "model": "grok-3-mini",
+          "version": "1",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-05-01",
+          "replacement": "grok-4-1-fast-reasoning"
+        },
+        {
+          "model": "grok-4",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "grok-4-1-fast-non-reasoning",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "grok-4-1-fast-reasoning",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "grok-4-20-non-reasoning",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-04-06",
+          "replacement": null
+        },
+        {
+          "model": "grok-4-20-reasoning",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-04-06",
+          "replacement": null
+        },
+        {
+          "model": "grok-4-fast-non-reasoning",
+          "version": "1",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-05-01",
+          "replacement": "grok-4-1-fast-non-reasoning"
+        },
+        {
+          "model": "grok-4-fast-reasoning",
+          "version": "1",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-05-01",
+          "replacement": "grok-4-1-fast-reasoning"
+        },
+        {
+          "model": "grok-code-fast-1",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "Anthropic",
+      "models": [
+        {
+          "model": "claude-haiku-4-5",
+          "version": null,
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-19",
+          "replacement": null
+        },
+        {
+          "model": "claude-mythos-preview (gated research preview)",
+          "version": null,
+          "lifecycle": "Preview",
+          "retirement_date": "2027-04-02",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-4-1",
+          "version": null,
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-05",
+          "replacement": "claude-opus-4-8"
+        },
+        {
+          "model": "claude-opus-4-5",
+          "version": null,
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-19",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-4-6",
+          "version": null,
+          "lifecycle": "Preview",
+          "retirement_date": "2027-02-02",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-4-7",
+          "version": null,
+          "lifecycle": "Preview",
+          "retirement_date": "2027-04-06",
+          "replacement": null
+        },
+        {
+          "model": "claude-sonnet-4-5",
+          "version": null,
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-19",
+          "replacement": null
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "version": null,
+          "lifecycle": "Preview",
+          "retirement_date": "2027-02-10",
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "Cohere",
+      "models": [
+        {
+          "model": "Cohere-command-r-08-2024",
+          "version": "1",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-05-12",
+          "replacement": null
+        },
+        {
+          "model": "Cohere-command-r-plus-08-2024",
+          "version": "1",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-05-12",
+          "replacement": null
+        },
+        {
+          "model": "Cohere-rerank-v3.5",
+          "version": "1",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-05-14",
+          "replacement": "Cohere-rerank-v4.0-pro, Cohere-rerank-v4.0-fast"
+        },
+        {
+          "model": "Cohere-embed-v3-english",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Cohere-embed-v3-multilingual",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "Fireworks",
+      "models": [
+        {
+          "model": "FW-DeepSeek-V3.1",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-DeepSeek-V3.2",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-GLM-4.7",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-GLM-5",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-GLM-5.1",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-GPT-OSS-120B",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-Kimi-K2-Instruct-0905",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-Kimi-K2-Thinking",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-Kimi-K2.5",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-MiniMax-M2.5",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-Qwen3-14B",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-07-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-Qwen3.5-122B-A10B",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-01",
+          "replacement": null
+        },
+        {
+          "model": "FW-Qwen3.5-397B-A17B",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-01",
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "Meta",
+      "models": [
+        {
+          "model": "Llama-3.2-11B-Vision-Instruct",
+          "version": null,
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-06-13",
+          "replacement": null
+        },
+        {
+          "model": "Llama-3.2-90B-Vision-Instruct",
+          "version": null,
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-06-13",
+          "replacement": null
+        },
+        {
+          "model": "Llama-4-Scout-17B-16E-Instruct",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Meta-Llama-3.1-405B-Instruct",
+          "version": null,
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-06-13",
+          "replacement": null
+        },
+        {
+          "model": "Meta-Llama-3.1-8B",
+          "version": null,
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-06-13",
+          "replacement": null
+        },
+        {
+          "model": "Meta-Llama-3.1-8B-Instruct",
+          "version": null,
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-06-13",
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "Microsoft",
+      "models": [
+        {
+          "model": "Phi-4",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Phi-4-mini-instruct",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Phi-4-mini-reasoning",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Phi-4-multimodal-instruct",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Phi-4-reasoning",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "Mistral AI",
+      "models": [
+        {
+          "model": "Codestral-2501",
+          "version": "2",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Ministral-3B",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "Mistral-large",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "mistral-medium-2505",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "mistral-small-2503",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": null,
+          "replacement": null
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "Nixtla",
+      "models": [
+        {
+          "model": "TimeGEN-1",
+          "version": "1",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-08-31",
+          "replacement": "TimeGPT-1, TimegGPT-2.1"
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "NTT Data",
+      "models": [
+        {
+          "model": "tsuzumi-7b",
+          "version": "2",
+          "lifecycle": "Legacy",
+          "retirement_date": "2026-08-31",
+          "replacement": "tsuzumi2"
+        }
+      ]
+    },
+    {
+      "category": "Foundry Models from partners and community",
+      "provider": "StabilityAI",
+      "models": [
+        {
+          "model": "Stable-Diffusion-3.5-Large",
+          "version": "1",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-07-31",
+          "replacement": null
+        },
+        {
+          "model": "Stable-Image-Core",
+          "version": "1",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-07-31",
+          "replacement": null
+        },
+        {
+          "model": "Stable-Image-Ultra",
+          "version": "1",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-07-31",
+          "replacement": null
+        }
+      ]
+    }
+  ]
+}
