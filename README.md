@@ -1,157 +1,274 @@
 # cloud-model-support
 
-AWS Bedrock / Azure Foundry / GCP Vertex AI 三家云厂商的模型 × 区域可用性、生命周期（退役）状态、部署/推理模式对比页面。
+A comparison page for AWS Bedrock, Azure Foundry, and GCP Vertex AI: model × region availability, lifecycle/retirement status, and deployment/inference modes.
 
-**`index.html` 是唯一的产物**：一个不依赖构建工具、不发起任何网络请求的单文件静态页面。所有数据都以 JSON 的形式内嵌在文件里的：
+## Table of Contents
+
+- [Overview](#overview)
+- [Quick Start](#quick-start)
+- [Prerequisites](#prerequisites)
+- [Architecture](#architecture)
+- [Repository Layout](#repository-layout)
+- [`index.html` Data Schema](#indexhtml-data-schema)
+- [Data Pipelines](#data-pipelines)
+  - [GCP Vertex AI](#gcp-vertex-ai--fully-automated)
+  - [Azure Foundry](#azure-foundry)
+  - [AWS Bedrock](#aws-bedrock)
+- [Refreshing Data with the `refresh-model-data` Skill](#refreshing-data-with-the-refresh-model-data-skill)
+- [Manual Merge Recipe](#manual-merge-recipe)
+- [Page Features](#page-features)
+- [Known Limitations](#known-limitations)
+
+## Overview
+
+`index.html` is the **only build artifact**: a single-file static page with no build step and no runtime network calls. All data is embedded as JSON directly in the file:
 
 ```html
 <script id="data" type="application/json">{"providers":[{...aws}, {...azure}, {...gcp}]}</script>
 ```
 
-页面加载时用 `JSON.parse(document.getElementById("data").textContent)` 读出这段 JSON，此后全部是纯前端渲染，没有任何 fetch/XHR。**本地预览直接双击 `index.html` 即可**（或者 `python -m http.server` 起个静态服务器打开，效果一样）。
+On load, the page reads this blob via `JSON.parse(document.getElementById("data").textContent)` and renders entirely client-side from there — no fetch, no XHR.
 
-其余所有 `.json` 文件都是"原料"或"半成品"——它们本身不会被 `index.html` 读取，而是通过人工/脚本处理后，**手动拼进** `index.html` 内嵌 JSON 里对应 provider 的 `models` 数组（以及 `caps`/`capDefGroups` 等描述字段）。这份文档就是讲清楚：每个模块的数据从哪来、怎么生成、怎么合并回 `index.html`。
+Every other `.json` file in this repository is raw material or an intermediate artifact. None of them are read by `index.html` directly; each is scraped or generated, then merged into the embedded JSON's matching provider (`models[]`, and occasionally `caps`/`capDefGroups`). This document explains where each piece of data comes from, how it's produced, and how to merge it back — by hand or via the bundled `refresh-model-data` skill.
 
-## 目录结构一览
+## Quick Start
 
-| 文件 | 所属模块 | 内容 | 生成方式 |
+Open `index.html` directly in a browser, or serve it locally:
+
+```bash
+python -m http.server
+```
+
+No dependencies, no build step.
+
+## Prerequisites
+
+Only needed if you're refreshing data, not for viewing the page:
+
+| Tool | Used for | Check |
+|---|---|---|
+| `gcloud` CLI, authenticated, with access to a GCP project | Region probing for the GCP module | `gcloud auth print-access-token` |
+| Python 3 + `requests` | Running `build_vertex_matrix.py` | `python -c "import requests"` |
+| Node.js | All table-parsing / merge scripts | `node --version` |
+| `curl` | Fetching vendor documentation pages | Preinstalled on most systems |
+
+## Architecture
+
+```
+                    ┌───────────────────────────────────────────┐
+                    │                index.html                   │
+                    │   <script id="data"> embedded JSON,          │
+                    │   rendered entirely client-side              │
+                    └───────────────────────────────────────────┘
+                                       ▲
+                    merged by hand / script (see "Manual Merge Recipe")
+                                       │
+   ┌───────────────────────┬──────────┴──────────┬───────────────────────┐
+   │           AWS          │        Azure         │          GCP           │
+   │  models-region-        │  azure-model-        │  build_vertex_matrix.py│
+   │  compatibility.html    │  openai/others-      │  ← gcloud + REST probe │
+   │  (scraped directly,    │  ava.json            │  → vertex.json         │
+   │  no intermediate file) │  (semi-structured)   │  + vertex-model-       │
+   │  + aws-model-          │  + azure-model-      │  retirement.json       │
+   │  retirement.json       │  retirement.json     │                        │
+   │  + aws-model-runtime&  │                      │                        │
+   │  mantle.json           │                      │                        │
+   └───────────────────────┴──────────────────────┴───────────────────────┘
+```
+
+## Repository Layout
+
+| File | Module | Content | How it's produced |
 |---|---|---|---|
-| `index.html` | — | 最终页面，内嵌全部数据 | 手工合并各模块数据后的产物 |
-| `build_vertex_matrix.py` | GCP | 探测 Vertex AI 模型 × 区域可用性的脚本 | 手写 Python 脚本 |
-| `vertex_all_models.json` | GCP | `gcloud ai model-garden models list` 的原始目录快照（624 个模型），作为 `--catalog-file` 复用输入 | `gcloud` 命令输出 |
-| `vertex.json` | GCP | `build_vertex_matrix.py` 的输出，可直接作为 `gcp` provider 对象拼进 `index.html` | 脚本生成 |
-| `vertex_test.json` | GCP | `--limit` 参数下的小规模测试输出（已 `.gitignore`） | 脚本生成 |
-| `vertex-model-retirement.json` | GCP | Gemini/Veo/Embedding 模型的发布日期、退役日期、替代模型 | 抓取官方文档整理 |
-| `azure-model-openai-ava.json` | Azure | Azure OpenAI 官方模型在 Global Standard / Data Zone / Regional 三种部署类型下的区域可用性（按 Americas/EMEA/APAC 分 tab） | 抓取官方文档整理 |
-| `azure-model-others-ava.json` | Azure | 第三方/社区模型（Anthropic、Meta、Mistral 等）的 serverless 可用性、market 覆盖国家 | 抓取官方文档整理 |
-| `azure-model-retirement.json` | Azure | Azure Foundry 模型退役计划（lifecycle/retirement_date/replacement） | 抓取官方文档整理 |
-| `aws-model-retirement.json` | AWS | Bedrock 模型的 Legacy/EOL 日期，按 region 分组 | 抓取官方文档整理 |
-| `aws-model-runtime&mantle.json` | AWS | 每个 Bedrock 模型是否支持经典 Runtime API / 新的 Mantle API | 抓取官方文档整理 |
-| `build.log` / `err.log` | GCP | `build_vertex_matrix.py` 运行日志（已 `.gitignore`） | 脚本运行产物 |
+| `index.html` | — | The final page, with all data embedded | Merged output of every module below |
+| `build_vertex_matrix.py` | GCP | Probes Vertex AI model × region availability | Hand-written Python script |
+| `vertex_all_models.json` | GCP | Raw catalog snapshot from `gcloud ai model-garden models list`, reused via `--catalog-file` | `gcloud` output |
+| `vertex.json` | GCP | Output of `build_vertex_matrix.py`; can be dropped in as the `gcp` provider object | Script-generated |
+| `vertex_test.json` | GCP | Small smoke-test output from `--limit` (gitignored) | Script-generated |
+| `vertex-model-retirement.json` | GCP | Release/retirement dates and replacements for Gemini/Veo/Embedding models | Scraped from official docs |
+| `azure-model-openai-ava.json` | Azure | Azure OpenAI model region availability (Global Standard / Data Zone / Regional) | Scraped from official docs |
+| `azure-model-others-ava.json` | Azure | Third-party/community model (Anthropic, Meta, Mistral, ...) serverless availability | Scraped from official docs |
+| `azure-model-retirement.json` | Azure | Azure Foundry model retirement schedule (lifecycle/retirement_date/replacement) | Scraped from official docs |
+| `aws-model-retirement.json` | AWS | Bedrock model Legacy/EOL dates, grouped by region | Scraped from official docs |
+| `aws-model-runtime&mantle.json` | AWS | Whether each Bedrock model supports the classic Runtime API vs. the newer Mantle API | Scraped from official docs |
+| `build.log` / `err.log` | GCP | `build_vertex_matrix.py` run logs (gitignored) | Script run artifact |
+| `.claude/skills/refresh-model-data/` | All | Claude Code skill that automates the refresh pipeline | See [below](#refreshing-data-with-the-refresh-model-data-skill) |
 
-> AWS 和 Azure 目前**没有**类似 `vertex.json` 的"主体模型×区域矩阵"原始文件——它们的模型×区域数据是直接人工/AI 抓取整理后写入 `index.html` 的，过程见下文「Azure 主数据」「AWS 主数据」两节。
+> AWS and Azure currently have **no** raw "model × region matrix" file analogous to `vertex.json` — their model × region data is scraped and written directly into `index.html`. See the per-module sections below.
 
-## `index.html` 内嵌数据结构
+## `index.html` Data Schema
 
-`providers` 数组里每个 provider 对象的关键字段：
+Each object in the `providers` array has these top-level fields:
 
-| 字段 | 说明 |
+| Field | Description |
 |---|---|
-| `id` / `name` / `logo` / `accent` / `accentInk` | 标识、显示名、logo key、主题色 |
-| `subtitle` | 页头一句话简介，支持内嵌 `<code>`/`<b>` |
-| `source` | `{url, label}`，页脚"Data extracted from"链接 |
-| `note` | 可选，页脚第二行说明文字（比如"Deprecated 徽章的含义和来源链接"） |
-| `axisLabel` / `groupLabel` / `unit` | 轴标签（如 "Inference mode"）、分组标签（如 "Provider"）、单位（"model"） |
-| `chipMode` | `"flat"`（AWS，一排 chip）或 `"grouped"`（Azure，按 group 分组的 chip） |
-| `caps` | 该 provider 的"能力位"定义数组，每项 `{k, badge, full, color, group, scope?}`，`k` 是位掩码里的键 |
-| `pipGroups` | 矩阵视图里色块（pip）分组，`{label, color, keys[]}` |
-| `capDefGroups` | 页头"定义卡片"条的数据源，`[{title, items:[{label,color,full}]}]`，没有就不显示这条 |
+| `id` / `name` / `logo` / `accent` / `accentInk` | Identifier, display name, logo key, theme colors |
+| `subtitle` | One-line header description; supports inline `<code>`/`<b>` |
+| `source` | `{url, label}` — rendered as the "Data extracted from" footer link |
+| `note` | Optional second footer line (e.g. explaining what a "Deprecated" badge means and linking its source) |
+| `axisLabel` / `groupLabel` / `unit` | Axis label (e.g. "Inference mode"), grouping label (e.g. "Provider"), unit noun ("model") |
+| `chipMode` | `"flat"` (AWS — one row of chips) or `"grouped"` (Azure — chips grouped by category) |
+| `caps` | This provider's "capability bit" definitions, each `{k, badge, full, color, group, scope?}`; `k` is the bitmask key |
+| `pipGroups` | Pip-color groupings used in the matrix view, `{label, color, keys[]}` |
+| `capDefGroups` | Data source for the header's definition-card strip, `[{title, items:[{label,color,full}]}]`; omit to hide the strip |
 | `regions` | `[{code, name, group}]` |
-| `groups` | 该 provider 下所有 `g`（分组/厂商名）的去重列表 |
-| `generated` | 数据快照日期 |
-| `models` | 见下表 |
+| `groups` | Deduplicated list of every `g` (vendor/publisher) under this provider |
+| `generated` | Snapshot date |
+| `models` | See below |
 
-每个 `models[]` 条目的字段：
+Each entry in `models[]`:
 
-| 字段 | 说明 |
+| Field | Description |
 |---|---|
-| `g` | 分组名（AWS/GCP 是模型提供方，如 "Anthropic"；Azure 同理） |
-| `n` | 模型名/ID |
-| `v` | 版本号，`null` 表示无版本区分 |
-| `card` | 模型文档链接，`null` 则不加链接 |
-| `s` | `{region_code: bitmask}`，bitmask 由该 provider 的 `caps` 顺序决定（第 i 个 cap 对应 `1<<i`） |
-| `lifecycle` | 可选，`"GA"`/`"Preview"`/`"Deprecated"`/`"Legacy"`/`"Retired"`/`"EOL"`，非 `"GA"` 才会显示徽章 |
-| `retirementDate` | 可选，配合 `lifecycle` 显示的退役日期（也可以是一段说明文字，如 "No retirement date announced"） |
-| `replacement` | 可选，推荐的替代模型文字 |
-| `offer` | 可选（目前只有 Azure 在用），`{label, short, detail}`，市场销售范围徽章 |
-| `api` | 可选（目前只有 AWS 在用），`{rt: bool, mt: bool}`，是否支持 Runtime API / Mantle API |
+| `g` | Group name (the underlying model publisher, e.g. "Anthropic", for AWS/GCP; same idea for Azure) |
+| `n` | Model name/ID |
+| `v` | Version string, or `null` if the model has no version distinction |
+| `card` | Link to the model's documentation card, or `null` |
+| `s` | `{region_code: bitmask}` — bit order follows this provider's `caps` array (the i-th cap is `1 << i`) |
+| `lifecycle` | Optional: `"GA"` / `"Preview"` / `"Deprecated"` / `"Legacy"` / `"Retired"` / `"EOL"`. A badge only renders when this is set and isn't `"GA"` |
+| `retirementDate` | Optional retirement date shown alongside `lifecycle` (can also be free text, e.g. "No retirement date announced") |
+| `replacement` | Optional recommended-replacement text |
+| `offer` | Optional (Azure only today), `{label, short, detail}` — marketplace availability badge |
+| `api` | Optional (AWS only today), `{rt: bool, mt: bool}` — Runtime API / Mantle API support |
 
-## 各模块数据链路详解
+## Data Pipelines
 
-### GCP Vertex AI —— 唯一全自动化的模块
+### GCP Vertex AI — fully automated
 
 ```
-gcloud ai model-garden models list  ──►  vertex_all_models.json（目录快照，可选缓存）
+gcloud ai model-garden models list  ──►  vertex_all_models.json (catalog snapshot, cacheable)
                                               │
                                               ▼
-                        build_vertex_matrix.py（探测每个模型在每个 region 的真实可用性）
+                        build_vertex_matrix.py (probes real per-region availability)
                                               │
                                               ▼
-                                         vertex.json  ──► 手动整体替换 index.html 里 id=="gcp" 的 provider 对象
+                                         vertex.json  ──► replaces the "gcp" provider object in index.html
 ```
 
-`gcloud ai model-garden models list` 本身不带 `--region` 参数，返回的是全局目录；要拿到"这个模型在这个 region 是否可用"，只能对每个 `(publisher, model_id, region)` 组合去探测 Vertex AI 的 regional REST 端点：
+`gcloud ai model-garden models list` has no `--region` flag — it returns the global catalog. To find out whether a given model is available in a given region, the script probes Vertex AI's regional REST endpoint for every `(publisher, model_id, region)` combination:
 
 ```
 GET https://{region}-aiplatform.googleapis.com/v1/publishers/{publisher}/models/{model_id}
 ```
 
-`200` = 可用，`404` = 该 region 不可用，`403` = 存在但被 EULA/访问权限挡住（与 region 无关）。
+`200` = available, `404` = unavailable in that region, `403` = exists but gated behind an EULA/access grant (unrelated to region).
 
-**更新步骤：**
+**Running it manually:**
 
 ```bash
-# 前置条件：本机装好 gcloud CLI，且已 gcloud auth login，有一个可用的 billing/quota project
+# Prerequisite: gcloud CLI installed, authenticated, with access to a billing/quota project
 
-# 方式一：全量重新拉取目录 + 探测（较慢，几千次 HTTP 请求）
+# Option 1: full refresh — re-fetches the catalog too (slower, thousands of HTTP requests)
 python build_vertex_matrix.py --project <YOUR_PROJECT_ID> --output vertex.json
 
-# 方式二：复用已缓存的目录快照，只重新探测可用性（更快，调试常用）
+# Option 2: reuse the cached catalog snapshot, only re-probe availability (faster; recommended for routine updates)
 python build_vertex_matrix.py --project <YOUR_PROJECT_ID> \
   --catalog-file vertex_all_models.json --output vertex.json
 
-# 常用可选参数
-#   --regions us-central1,europe-west4      只探测指定 region（默认内置 ~35 个）
-#   --workers 30                            并发探测数（默认 30）
-#   --limit 20                              只取前 N 个模型，快速冒烟测试用 --output vertex_test.json
+# Common flags
+#   --regions us-central1,europe-west4      probe only specific regions (defaults to ~35 built-in)
+#   --workers 30                            concurrent probe workers (default 30)
+#   --limit 20                              cap to the first N models — useful with --output vertex_test.json for a quick smoke test
 ```
 
-跑完之后，把 `vertex.json` 的完整 JSON 内容整体替换 `index.html` 内嵌数据里 `providers` 数组中 `id:"gcp"` 的那个对象即可（`vertex.json` 本身的字段就是拼进去后要长的样子，见「合并回 index.html 的通用方法」）。
+Once it's done, splice `vertex.json` into `index.html` with `apply_update.js replace-from-provider` (see the skill section below, or the equivalent manual recipe further down).
 
-**Vertex 的模型生命周期数据**（`vertex-model-retirement.json`）是单独抓取的，来源：
+**Vertex's lifecycle data** (`vertex-model-retirement.json`) is scraped separately, from:
 
-- <https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-versions#gemini-models> —— Gemini / Gemini image / Veo / Embeddings 模型的发布日期、退役日期、替代模型
+- <https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-versions#gemini-models> — release date, retirement date, and replacement model for Gemini / Gemini image / Veo / Embeddings models
 
-抓取方式是"人工/AI 辅助"而非脚本：用 `curl` 把文档页面整页 HTML 存下来，正则提取 `<table>` 逐行解析成结构化 JSON（各 `<table>` 的表头、所在小节标题决定分类），日期统一转成 `YYYY-MM-DD`，无法精确解析的日期保留原文到 `*_note` 字段。
+This is script-assisted rather than fully automated: fetch the doc page with `curl`, regex-extract every `<table>` and parse it row by row into structured JSON (a table's heading/section title determines its category), normalize dates to `YYYY-MM-DD`, and keep the raw text in a `*_note` field whenever a date can't be parsed exactly.
 
 ### Azure Foundry
 
-Azure 目前分成"主数据"（模型×区域可用性）和"生命周期数据"两部分，**均无自动化脚本**，全靠抓文档页面 + 人工整理：
+Azure splits into "primary data" (model × region availability) and "lifecycle data," and **neither is fully scripted today**:
 
-**主数据来源两个文件：**
+**Primary data comes from two files:**
 
-| 文件 | 来源文档 |
+| File | Source |
 |---|---|
-| `azure-model-openai-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/foundry-models/concepts/models-sold-directly-by-azure-region-availability> —— Azure OpenAI 官方模型，按 Global Standard / Data Zone / Regional 三种部署类型，每种再按 Americas/EMEA/APAC 分 tab，列出每个模型在每个 region 的可用性（`true`/`false`） |
-| `azure-model-others-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/how-to/deploy-models-serverless-availability> —— 第三方/社区 serverless 模型（Anthropic、Meta、Mistral、Cohere 等），按 provider + deployment_type 分组，附市场销售范围国家列表 |
+| `azure-model-openai-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/foundry-models/concepts/models-sold-directly-by-azure-region-availability> — Azure OpenAI models, broken down by deployment type (Global Standard / Data Zone / Regional) and then by region tab (Americas/EMEA/APAC), listing per-region availability |
+| `azure-model-others-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/how-to/deploy-models-serverless-availability> — third-party/community serverless models (Anthropic, Meta, Mistral, Cohere, ...), grouped by provider and deployment type, with marketplace country coverage |
 
-这两个文件是"半结构化的原始抓取结果"，还需要人工转换成 `index.html` 里 Azure provider `models[]` 的 `{g, n, v, s, offer, lifecycle, ...}` 格式（`s` 里的 bitmask 要按 Azure `caps` 定义的 8 种部署类型顺序编码：`gs/dzs/std/gpm/dzpm/rpm/gb/dzb`，见 `index.html` 里 `azure.caps`）。这一步目前没有脚本化，更新时建议：
+Both files are semi-structured scrape output and still need to be converted into `index.html`'s Azure `models[]` shape (`{g, n, v, s, offer, lifecycle, ...}` — the `s` bitmask is encoded in the order of Azure's 8 deployment-type `caps`: `gs/dzs/std/gpm/dzpm/rpm/gb/dzb`, see `azure.caps` in `index.html`). **This conversion step currently can't be safely automated** — see [Known Limitations](#known-limitations).
 
-1. 重新抓取上面两个文档页面（`curl` 整页 HTML，Node 脚本解析 `<table>`），覆盖 `azure-model-openai-ava.json` / `azure-model-others-ava.json`；
-2. 和 `index.html` 里现有的 Azure `models[]` 做一次 diff（按 `g`+`n` 对比），手动更新新增/下架/区域变化的模型；
-3. 如果懒得手动 diff，也可以整体重新生成 Azure provider 对象再替换（参考「合并回 index.html 的通用方法」的思路自己写一版转换脚本）。
-
-**生命周期数据**（`azure-model-retirement.json`），来源 <https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule>，结构是 `sections[]`（按 category/provider 分组）里每个模型的 `{model, version, lifecycle, retirement_date, replacement}`。合并方式见下方通用流程。
+**Lifecycle data** (`azure-model-retirement.json`) comes from <https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule>, structured as `sections[]` (grouped by category/provider), each containing `{model, version, lifecycle, retirement_date, replacement}`. This page's structure is simple and low-risk, so the `refresh-model-data` skill can scrape and parse it safely.
 
 ### AWS Bedrock
 
-**主数据**（模型 × In-Region/Geo/Global 推理模式可用性）同样没有独立的原始文件，直接来源 <https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html>，抓取整理后直接写入 `index.html` 里 AWS provider 的 `models[]`（`s` 里的 bitmask 对应 `in`=1 / `geo`=2 / `global`=4）。
+**Primary data** (model × In-Region/Geo/Global inference-mode availability) also has no standalone raw file — it's scraped directly from <https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html> and written straight into `index.html`'s AWS `models[]` (`s`'s bitmask: `in`=1 / `geo`=2 / `global`=4).
 
-**两份附加数据**：
+This page has a few structural quirks worth knowing about (the `refresh-model-data` skill's parser already handles them; keep them in mind if you're writing your own):
 
-| 文件 | 来源文档 | 内容 |
+1. Each model is its **own `<table>`** (with a `<caption>` holding the model name and its model-card link) — it's *not* one big table per vendor.
+2. Availability is rendered as `<img src=".../icon-yes.png">` / `icon-no.png`, not as text.
+3. Some models (where one display name maps to multiple underlying model IDs) have **two `<table>`s sharing the same `<caption>`** — their region data must be unioned into a single record, not treated as two models or overwritten.
+4. Models nearing retirement can show a literal cell value like `Legacy (EOL: YYYY-MM-DD)` instead of a yes-icon — that still counts as *available* (just scheduled to retire); only an explicit no-icon means unavailable.
+
+**Two supplementary files:**
+
+| File | Source | Content |
 |---|---|---|
-| `aws-model-retirement.json` | <https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html> | 每个模型按 region 分组的 `legacy_date`（进入 Legacy 状态）/ `eol_date`（彻底下线）/ `public_extended_access_start_date` |
-| `aws-model-runtime&mantle.json` | <https://docs.aws.amazon.com/bedrock/latest/userguide/models-endpoint-availability.html> | 每个模型的 `bedrock_runtime`（经典 Runtime API）/ `bedrock_mantle`（新 Mantle API）布尔支持情况 |
+| `aws-model-retirement.json` | <https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html> | Per-model, per-region-group `legacy_date` (enters Legacy status), `eol_date` (fully retired), and `public_extended_access_start_date` |
+| `aws-model-runtime&mantle.json` | <https://docs.aws.amazon.com/bedrock/latest/userguide/models-endpoint-availability.html> | Per-model `bedrock_runtime` (classic Runtime API) / `bedrock_mantle` (newer Mantle API) boolean support |
 
-合并方式见下方通用流程；`index.html` 里 AWS 模型的 `lifecycle`/`retirementDate`/`replacement` 用的是 `aws-model-retirement.json`（Legacy→`"Legacy"`，EOL→`"EOL"`），`api.rt`/`api.mt` 用的是 `aws-model-runtime&mantle.json`。
+`index.html`'s AWS `lifecycle`/`retirementDate`/`replacement` fields come from `aws-model-retirement.json` (Legacy → `"Legacy"`, EOL → `"EOL"`; `retirementDate` is the `eol_date`). `api.rt`/`api.mt` come from `aws-model-runtime&mantle.json`.
 
-## 合并回 `index.html` 的通用方法
+## Refreshing Data with the `refresh-model-data` Skill
 
-`index.html` 的内嵌 JSON 在文件里是**单独一行**（几十万字符），普通编辑器/`Read` 工具按行读会很卡，**不要手动改这一行**。统一用 Node 脚本读出、改对象、再整体写回：
+`.claude/skills/refresh-model-data/` is a Claude Code skill that codifies the fetch → parse → merge pipeline above into a reusable playbook and scripts, so refreshing data doesn't mean re-deriving the page structures and parsing logic from scratch every time.
+
+### What it does
+
+- Refreshes GCP, then AWS, then Azure's lifecycle data, in that order;
+- Writes the result to a **new file, `index-new.html`** — it never overwrites `index.html`, so you can diff and review before promoting it;
+- Overwrites the underlying raw `.json` files along the way (`vertex.json`, `vertex-model-retirement.json`, `aws-model-retirement.json`, `aws-model-runtime&mantle.json`, `azure-model-retirement.json`);
+- Prints a change summary when it's done: model count deltas per provider, added/removed model names, and how many models had lifecycle fields change.
+
+### Invoking it
+
+Just ask, in normal language — e.g. "refresh the model data" or "check for new or retired models" — and Claude Code will pick it up. It's also fine to name it explicitly and pass a GCP project id:
+
+> Run refresh-model-data for a full refresh, using GCP project `<your-project-id>`.
+
+### Prerequisites and behavior
+
+- **If GCP credentials are missing, it stops and asks you** rather than silently skipping GCP and continuing with AWS/Azure — a partial run is much easier to notice and fix than one that quietly looks complete but is missing a whole module.
+- It needs a GCP billing/quota project id (see [Prerequisites](#prerequisites)); the skill will ask for one if you don't supply it.
+- By default it reuses the cached model catalog in `vertex_all_models.json` and only re-probes region availability (faster); a full catalog re-fetch is only needed to pick up brand-new publishers/models.
+- **Azure's primary model × region data is out of scope for automation today** — the skill skips it and explains why in its final report, refreshing only Azure's lifecycle data. See [Known Limitations](#known-limitations).
+
+### Output and next steps
+
+Once it's done, open `index-new.html`, spot-check a few tabs (especially anything flagged as changed), and promote it manually:
+
+```bash
+mv index-new.html index.html
+```
+
+The skill deliberately doesn't do this swap for you — it only produces a candidate file and a change report; adopting it is your call.
+
+### Skill internals
+
+```
+.claude/skills/refresh-model-data/
+├── SKILL.md                  # the playbook: what each phase does, what to do when something looks off
+└── scripts/
+    ├── fetch_doc.sh           # curl with a browser UA (works around WebFetch failing on some vendor doc domains)
+    ├── extract_tables.js      # pulls every <table> on a page into structured rows, tagged with the nearest heading/caption
+    └── apply_update.js        # the only script allowed to touch index.html's data: replace-models / replace-from-provider / patch / validate
+```
+
+`apply_update.js`'s safety design: it refuses to write to any `--out` path whose filename is literally `index.html`, regardless of `--in` — so a multi-phase run can safely read and write the same `index-new.html` over and over without ever touching the real page. Every write is followed by automatic re-validation (the data blob still parses as JSON, the page script's syntax is still valid) and a printed diff of model counts and changed fields.
+
+## Manual Merge Recipe
+
+If you'd rather not use the skill, here's the same logic `apply_update.js` implements internally, done by hand.
+
+The JSON embedded in `index.html` lives on a **single line** (hundreds of thousands of characters) — regular editors and line-based tools choke on it. **Don't hand-edit that line.** Always read it out, mutate the parsed object, and write the whole thing back:
 
 ```js
-// merge-example.js —— 以"把某个附加 json 的字段合并进某个 provider 的 models[]"为通用模板
+// merge-example.js -- generic template for merging a supplementary JSON file into one provider's models[]
 const fs = require('fs');
 const path = 'index.html';
 const html = fs.readFileSync(path, 'utf8');
@@ -164,40 +281,52 @@ const data = JSON.parse(html.slice(start, end));
 const target = data.providers.find(p => p.id === 'aws'); // 'aws' | 'azure' | 'gcp'
 const extra = JSON.parse(fs.readFileSync('aws-model-retirement.json', 'utf8'));
 
-// 按 g（分组/provider 名）+ n（模型名）建 key 做匹配，把 extra 里的字段写回 target.models
+// Match on g (group/provider name) + n (model name), then write the matched
+// fields back onto target.models
 const lookup = new Map();
 extra.models.forEach(m => lookup.set(m.provider + '|' + m.model_name, m));
 target.models.forEach(mo => {
   const src = lookup.get(mo.g + '|' + mo.n);
   if (!src) return;
-  // ...按需要写 mo.lifecycle / mo.retirementDate / mo.replacement / mo.api 等字段
+  // ... set mo.lifecycle / mo.retirementDate / mo.replacement / mo.api etc. as needed
 });
 
+// Write to a new file (e.g. index-new.html) rather than overwriting index.html directly
 const newHtml = html.slice(0, start) + JSON.stringify(data) + html.slice(end);
-fs.writeFileSync(path, newHtml, 'utf8');
+fs.writeFileSync('index-new.html', newHtml, 'utf8');
 ```
 
-跑法：`node merge-example.js`。要点：
+Key points:
 
-- **永远用整体 `JSON.stringify(data)` 重新写回**那一行，不要手动拼字符串改局部，否则极易破坏 JSON 转义。
-- 匹配 key 优先用 `g`+`n`（分组+模型名）；个别模型名里带 `@version`（如 GCP 的 `multimodalembedding@001`）要额外尝试 `` `${n}@${v}` `` 兜底匹配。
-- 合并完用 `node --check` 或 `new Function(...)` 校验 `<script>` 里的主逻辑脚本语法没坏掉，再用浏览器打开肉眼确认。
-- 如果某个模型在附加数据源里已经找不到了（比如已经从产品目录下线的老模型），就没有"位置"可以挂徽章——这属于正常情况，不用特殊处理。
+- **Always write the whole blob back with `JSON.stringify(data)`** — never hand-splice strings for a partial edit, it's very easy to break the JSON escaping that way.
+- Prefer matching on `g` + `n` (group + model name). A few model names carry an `@version` suffix (e.g. GCP's `multimodalembedding@001`) — fall back to matching `` `${n}@${v}` `` for those.
+- After merging, run the validation snippet below before eyeballing it in a browser.
+- If a model from the supplementary source can no longer be found in the target list (e.g. it was already pulled from the product catalog), there's simply nowhere to attach the badge — that's expected, no special handling needed.
 
-**校验脚本模板**（合并后建议都跑一遍）：
+**Validation snippet** (run this after every merge):
 
 ```bash
 node -e "
 const fs=require('fs');
-const html=fs.readFileSync('index.html','utf8');
-JSON.parse(html.match(/<script id=\"data\" type=\"application\/json\">([\s\S]*?)<\/script>/)[1]); // 数据段能 parse
-new Function(html.match(/<script>([\s\S]*)<\/script>\s*<\/body>/)[1]);                             // 逻辑脚本语法没坏
+const html=fs.readFileSync('index-new.html','utf8');
+JSON.parse(html.match(/<script id=\"data\" type=\"application\/json\">([\s\S]*?)<\/script>/)[1]); // data blob parses
+new Function(html.match(/<script>([\s\S]*)<\/script>\s*<\/body>/)[1]);                             // page script syntax is intact
 console.log('OK');
 "
 ```
 
-## 页面本身的功能速览
+## Page Features
 
-- 三个 provider 之间切换（顶部 switcher）会重置所有筛选条件；页面内的四个视图 tab（By Region / Compare Regions / By Model / Full Matrix）切换只清空搜索框和分组筛选，其余筛选保留。
-- 每个 provider 的"能力位"（`caps`）定义了模型×区域矩阵里的列含义（AWS 是推理模式，Azure 是部署类型，GCP 是 Managed API/Self-deploy），页头的 `capDefGroups` 卡片给这些概念一句话定义。
-- `lifecycle`/`retirementDate`/`replacement`/`offer`/`api` 都是可选字段，缺失就不显示对应徽章，也不会影响"Lifecycle 过滤"/"API surface 过滤"控件的显隐（这些控件由 `P.models.some(...)` 动态判断是否要出现）。
+- Switching providers (top switcher) resets every filter. Switching between the four in-page view tabs (By Region / Compare Regions / By Model / Full Matrix) only clears the search box and group filter — other filters persist.
+- Each provider's "capability bits" (`caps`) define what the columns in the model × region matrix mean (inference mode for AWS, deployment type for Azure, Managed API/Self-deploy for GCP); the header's `capDefGroups` cards give each one a one-line definition.
+- `lifecycle` / `retirementDate` / `replacement` / `offer` / `api` are all optional fields — when absent, the corresponding badge simply doesn't render, and it doesn't affect whether the "Lifecycle" / "API surface" filter controls are shown (those are computed dynamically via `P.models.some(...)`).
+
+## Known Limitations
+
+**Azure's primary model × region data can't be safely automated yet.** In a browser, `models-sold-directly-by-azure-region-availability` looks like a clean "deployment type × geography" tabbed interface. In the underlying markup, however, it's actually **41 separate `<table>` elements** — every tab panel's HTML is fully present in the DOM at once, with JavaScript only toggling visibility — not the "3 region tabs × 6-8 deployment categories" structure one might reasonably expect from the rendered page. Without manually verifying which deployment-type/region category each of those 41 tables belongs to, a regex-based mapping is likely to produce data that's wrong but looks plausible — which is worse than not refreshing at all.
+
+As a result:
+
+- The `refresh-model-data` skill skips this part and only refreshes Azure's lifecycle data (`azure-model-retirement.json`), which comes from a much simpler, lower-risk page.
+- Updating Azure's model × region data today requires either manually reconciling all 41 tables against their deployment-type/region categories, or investing in a proper structural analysis of the page and turning the result into a new, dedicated parser that can then be folded into the skill.
+- Until that work happens, newly released Azure models that aren't already in `azure.models` won't appear on the page.
