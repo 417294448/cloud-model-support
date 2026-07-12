@@ -223,7 +223,7 @@ This page has a few structural quirks worth knowing about (the `refresh-model-da
 - Refreshes GCP, then AWS, then Azure's lifecycle data, in that order;
 - Writes the result to a **new file, `index-new.html`** — it never overwrites `index.html`, so you can diff and review before promoting it;
 - Overwrites the underlying raw `.json` files along the way (`vertex.json`, `vertex-model-retirement.json`, `aws-model-retirement.json`, `aws-model-runtime&mantle.json`, `azure-model-retirement.json`);
-- Prints a change summary when it's done: model count deltas per provider, added/removed model names, and how many models had lifecycle fields change.
+- Finishes with `apply_update.js diff index.html index-new.html` — a structural, JSON-aware diff (a plain text diff is useless on this file; the whole data blob is one line) that reports, per provider, regions/groups added or removed, model count deltas, added/removed model names, and a field-by-field diff for every model present on both sides (region-support bitmask changes decoded into cap badges, not raw numbers). This is what makes the change summary authoritative instead of a paraphrase of scattered per-step console output — it also catches a model that kept its identity but had its region support or lifecycle dates silently change, which the per-step `replace-models`/`patch` output alone would miss.
 
 ### Invoking it
 
@@ -256,10 +256,10 @@ The skill deliberately doesn't do this swap for you — it only produces a candi
 └── scripts/
     ├── fetch_doc.sh           # curl with a browser UA (works around WebFetch failing on some vendor doc domains)
     ├── extract_tables.js      # pulls every <table> on a page into structured rows, tagged with the nearest heading/caption
-    └── apply_update.js        # the only script allowed to touch index.html's data: replace-models / replace-from-provider / patch / validate
+    └── apply_update.js        # the only script allowed to touch index.html's data: replace-models / replace-from-provider / patch / diff / validate
 ```
 
-`apply_update.js`'s safety design: it refuses to write to any `--out` path whose filename is literally `index.html`, regardless of `--in` — so a multi-phase run can safely read and write the same `index-new.html` over and over without ever touching the real page. Every write is followed by automatic re-validation (the data blob still parses as JSON, the page script's syntax is still valid) and a printed diff of model counts and changed fields.
+`apply_update.js`'s safety design: it refuses to write to any `--out` path whose filename is literally `index.html`, regardless of `--in` — so a multi-phase run can safely read and write the same `index-new.html` over and over without ever touching the real page. Every write is followed by automatic re-validation (the data blob still parses as JSON, the page script's syntax is still valid) and a printed diff of model counts and changed fields. Its `diff` subcommand does the same JSON-aware comparison standalone, between any two index.html-shaped files, and is what the skill runs as its final step (see "Refreshing Data" above).
 
 ## Manual Merge Recipe
 
