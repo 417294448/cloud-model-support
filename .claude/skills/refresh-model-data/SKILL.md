@@ -18,8 +18,19 @@ This produces:
 - `scripts/fetch_doc.sh <url> <out-file>` -- fetches a page via `curl` with a browser User-Agent. Use this instead of WebFetch for every vendor doc page: WebFetch has failed with "Unable to verify if domain is safe" on `docs.aws.amazon.com` and `docs.cloud.google.com` in past runs. curl has no such gate.
 - `scripts/extract_tables.js <html-file> [--index N]` -- pulls every `<table>` out of a fetched page into plain-text rows, tagged with the nearest heading. Run without `--index` first to see how many tables there are and what their headers look like; run with `--index N` to dump one table's full rows once you know which one you need.
 - `scripts/apply_update.js` -- the only thing allowed to touch `index.html`'s embedded data. See "Applying changes" below.
+- `scripts/build_azure_models.js` -- converts `azure-model-openai-ava.json` + `azure-model-others-ava.json` (+ optionally `azure-model-retirement.json`) into the `azure.models[]`/`azure.groups` shape `apply_update.js replace-models` expects. See Phase 3 below -- read its header comment before using it, there are several non-obvious dedup/inference rules baked in.
 
-## Before anything else: preflight the GCP credential
+## Determine this run's scope, before doing anything else
+
+This skill can refresh all three providers, or just one. Read the user's request and decide `scope` = `{gcp, aws, azure}` (full run) or a subset before touching any of the phases below:
+
+- They named a provider ("check if Azure has new models", "refresh AWS's retirement dates", "只刷新一下GCP的数据") -> scope is that provider only.
+- They asked generically ("refresh the data", "check for updates", no provider mentioned) -> scope is all three, the default full run.
+- If it's ambiguous which they mean, ask rather than guess -- a wrong guess here means either doing unwanted work (including possibly hitting the GCP credential gate below for a request that had nothing to do with GCP) or silently skipping something they wanted.
+
+Run *only* the phase(s) for providers in scope. Skip the GCP preflight check entirely when GCP isn't in scope -- it exists to unblock Phase 1, not as a mandatory gate for every invocation of this skill. A request to refresh Azure alone should never stop to ask about `gcloud` credentials.
+
+## If GCP is in scope: preflight the GCP credential
 
 The GCP phase needs an authenticated `gcloud` and a project ID. Check this *first*, before spending time on AWS/Azure, so you're not stuck mid-run deciding what to do about it:
 
@@ -33,9 +44,13 @@ Take the GCP project ID from whatever the user passed when invoking this skill. 
 
 ## Chaining multiple updates into one index-new.html
 
-A full run touches the same file three times (GCP, then AWS, then Azure). The **first** `apply_update.js` call in a run reads `index.html` and writes `index-new.html`. **Every call after that** reads `index-new.html` and writes `index-new.html` again (in place) -- it already exists as the working copy at that point. Don't re-read `index.html` for later phases or you'll throw away earlier phases' changes.
+This only matters when more than one provider is in scope. A full run touches the same file three times (GCP, then AWS, then Azure). The **first** `apply_update.js` call in the run reads `index.html` and writes `index-new.html`. **Every call after that** -- including later steps within the same provider's phase, and every subsequent provider's phase -- reads `index-new.html` and writes `index-new.html` again (in place), since it already exists as the working copy at that point. Don't re-read `index.html` partway through or you'll throw away earlier changes.
+
+If only one provider is in scope, there's no chaining to think about: that provider's first `apply_update.js` call reads `index.html` and writes `index-new.html`, and every later call in that same phase reads/writes `index-new.html` (a "run" of one phase still has multiple `apply_update.js` calls -- e.g. AWS's model matrix, lifecycle, and runtime/mantle steps -- so the same "first call reads index.html, rest read index-new.html" rule still applies *within* that one phase).
 
 ## Phase 1 -- GCP Vertex AI
+
+*(Skip this whole phase if `gcp` isn't in this run's scope.)*
 
 1. Rebuild the model x region matrix. Reuse the cached catalog dump by default -- it's much faster and the catalog (which publishers/models exist at all) changes far less often than region availability. Only pass a full re-fetch if the user specifically wants brand-new publishers/models that might be missing from the cache:
 
@@ -77,6 +92,8 @@ A full run touches the same file three times (GCP, then AWS, then Azure). The **
 
 ## Phase 2 -- AWS Bedrock
 
+*(Skip this whole phase if `aws` isn't in this run's scope.)*
+
 1. Main model x inference-mode matrix (no intermediate file -- scraped straight into the page):
 
    ```bash
@@ -116,15 +133,40 @@ A full run touches the same file three times (GCP, then AWS, then Azure). The **
 
 ## Phase 3 -- Azure Foundry
 
-Same shape as AWS, three fetches (full source URLs are in README.md's file inventory table):
+*(Skip this whole phase if `azure` isn't in this run's scope.)*
 
-| Source page | Feeds |
-|---|---|
-| `models-sold-directly-by-azure-region-availability` | `azure-model-openai-ava.json` -> part of `azure` provider's `models[]` |
-| `deploy-models-serverless-availability` | `azure-model-others-ava.json` -> rest of `azure` provider's `models[]` (third-party/community models) |
-| `model-retirement-schedule` | `azure-model-retirement.json` -> patch `lifecycle`/`retirementDate`/`replacement` |
+Same shape as AWS, three fetches -- each row below is one supplementary file and the exact page it's scraped from (also mirrored in README.md's "Azure Foundry" pipeline section under Data Pipelines, not the Repository Layout table, which only says "scraped from official docs" and doesn't repeat the URLs):
 
-Azure's `s` bitmask has 8 positions (`gs/dzs/std/gpm/dzpm/rpm/gb/dzb` -- see `index.html`'s `azure.caps`, or README.md). Merge the OpenAI-model table data and the others-model data into one array before calling `replace-models` on the `azure` provider, same pattern as AWS phase 2 step 1.
+| File | Source URL | Feeds |
+|---|---|---|
+| `azure-model-openai-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/foundry-models/concepts/models-sold-directly-by-azure-region-availability> | most of `azure` provider's `models[]` -- see note below, it's not just OpenAI |
+| `azure-model-others-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-from-partners> | rest of `azure` provider's `models[]` (third-party/community models) |
+| `azure-model-retirement.json` | <https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule> | patch `lifecycle`/`retirementDate`/`replacement` |
+
+`azure-model-retirement.json` already carries this as a top-level `"source"` field you can read directly from the file. `azure-model-openai-ava.json` and `azure-model-others-ava.json` don't (a pre-existing inconsistency) -- their source is only documented here and in README.md, so don't rely on the files being self-describing the way the other supplementary JSON files (`aws-model-retirement.json`, `aws-model-runtime&mantle.json`, `vertex-model-retirement.json`) are.
+
+**`azure-model-others-ava.json`'s source URL changes over time -- verify it before trusting it.** The "classic" doc tree (`foundry-classic/...`) and the current one (`foundry/...`) are parallel, independently-edited branches for two different Foundry portal experiences; Microsoft periodically retires a classic URL and 301-redirects it into the current tree. Before re-fetching, `curl -sIL` the URL above and confirm it still resolves to itself (no redirect) and its `<meta name="ms.date">` looks recent -- if it 301s somewhere else, or the classic and current versions of the page have diverged (compare their `ms.date` and table row counts), update this table and README.md's copy of it, don't just silently follow the redirect.
+
+**`azure-model-openai-ava.json` is not limited to OpenAI models.** Its `standard`/`provisioned`/`batch` trees each have an `openai` category *and* an `other_sold_by_azure` (sometimes also `other_model_collections`) category. Those "other" categories are models Azure sells **directly** (not via third-party marketplace billing) from other publishers -- observed so far: DeepSeek, Cohere (rerank v4 / command-a), Black Forest Labs (FLUX), Moonshot AI (Kimi), xAI (grok), Meta (Llama-3.3 / Llama-4-Maverick), Microsoft (MAI-Image, Phi-4 family), Mistral (Mistral-Large-3, mistral-medium-3-5). This is a large chunk of `azure.models` and easy to miss if you only look at the file's name.
+
+**Converting both files into `azure.models[]` shape is now scripted** -- `scripts/build_azure_models.js` handles the bitmask construction (`gs/dzs/std/gpm/dzpm/rpm/gb/dzb`, 8 positions, see `index.html`'s `azure.caps` or README.md), publisher (`g`) inference for the "other_sold_by_azure" models (by name prefix -- read the script's header comment before adding a new provider, since an unrecognized prefix gets tagged `UNKNOWN:<name>` and printed to stderr instead of silently misfiled), `offer` badge construction, and de-duplication when a model appears in both files (prefer `azure-model-openai-ava.json`'s data -- it has real region support, `azure-model-others-ava.json`'s entry for the same model is often just a capability-table placeholder with no matrix data, e.g. the Phi-4 family):
+
+```bash
+node .claude/skills/refresh-model-data/scripts/build_azure_models.js \
+  --openai azure-model-openai-ava.json \
+  --others azure-model-others-ava.json \
+  --retirement azure-model-retirement.json \
+  --out-models azure-models-built.json \
+  --out-groups azure-groups-built.json
+
+node .claude/skills/refresh-model-data/scripts/apply_update.js replace-models \
+  index-new.html azure azure-models-built.json --out index-new.html \
+  --groups azure-groups-built.json --generated $(date +%Y-%m-%d)
+```
+
+Read the script's stderr output: it reports OA/others counts, which (g,n) pairs were skipped as duplicates, and any `UNKNOWN:` group it couldn't infer. A provider present in `index.html` today but absent from both source files (observed: Nixtla, Stability AI) will legitimately disappear from the output -- `replace-models`/`diff` will report it as "removed," which is expected until a 3rd source covers it, not a bug in the script.
+
+What's still NOT automated: turning the raw HTML of `models-sold-directly-by-azure-region-availability` into the structured `azure-model-openai-ava.json` shape in the first place. See [Known Limitations](#known-limitations) -- that page's tabbed UI hides 41 separate `<table>` elements in the DOM, and mis-mapping which deployment-type/region category each belongs to produces wrong-but-plausible data. `build_azure_models.js` trusts that `azure-model-openai-ava.json`/`azure-model-others-ava.json` are already correctly structured; it doesn't re-derive that structure from HTML.
 
 ## Writing a patch.json
 
@@ -152,10 +194,13 @@ node .claude/skills/refresh-model-data/scripts/apply_update.js diff index.html i
 
 This re-parses both files fresh and prints, per provider: regions/groups added or removed, model count before -> after, added/removed model names, and a field-by-field diff for every model present on both sides (region-bitmask changes decoded into cap badges, not raw numbers). A plain text/line diff (`diff`, `git diff`) is useless here -- the whole data blob is one line -- so this command is the only way to see a real diff. `--out` is optional but recommended -- it writes the same report to a dated text file (gitignored scratch output, not something to commit) so the human reviewer has something to open and read alongside `index-new.html` instead of only your paraphrase of it.
 
+Running `diff` needs no adjustment for a scoped (single-provider) run -- providers outside scope were never touched, so they'll simply show no changes. `apply_update.js diff` still works the same way.
+
 Build the final report from this output:
 
-- Per provider: the regions/groups/model-count deltas and the changed-model list this command printed.
-- Anything skipped (e.g. GCP, if the user chose to skip it at the preflight step) and why.
+- State the scope up front: which provider(s) this run actually touched, so a scoped run is never mistaken for a full one (e.g. "This was an Azure-only refresh, per your request -- AWS and GCP were not touched.").
+- Per provider in scope: the regions/groups/model-count deltas and the changed-model list this command printed.
+- Anything left out and *why*, distinguishing the two different reasons: out of scope (the user didn't ask for it this run) vs. skipped due to a blocker (e.g. GCP creds unavailable at the preflight step, mid-run).
 - Flag anything that looks like a regression rather than a genuine upstream update -- e.g. a `lifecycle`/`retirementDate` that went from a real value to `null`, or a model that lost most of its regions -- and call it out explicitly rather than reporting it as routine.
 - A reminder that `index-new.html` is a candidate, not a done deal: suggest they open it and spot-check a couple of tabs, and only replace `index.html` with it once they're satisfied (e.g. `mv index-new.html index.html`) -- don't do that swap yourself unless they explicitly ask you to.
 

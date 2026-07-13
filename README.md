@@ -181,18 +181,18 @@ This is script-assisted rather than fully automated: fetch the doc page with `cu
 
 ### Azure Foundry
 
-Azure splits into "primary data" (model × region availability) and "lifecycle data," and **neither is fully scripted today**:
+Azure splits into "primary data" (model × region availability) and "lifecycle data." Producing the two primary-data JSON files from raw HTML is **not fully scripted today**; converting them into `index.html`'s shape once they exist **is**.
 
 **Primary data comes from two files:**
 
 | File | Source |
 |---|---|
-| `azure-model-openai-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/foundry-models/concepts/models-sold-directly-by-azure-region-availability> — Azure OpenAI models, broken down by deployment type (Global Standard / Data Zone / Regional) and then by region tab (Americas/EMEA/APAC), listing per-region availability |
-| `azure-model-others-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/how-to/deploy-models-serverless-availability> — third-party/community serverless models (Anthropic, Meta, Mistral, Cohere, ...), grouped by provider and deployment type, with marketplace country coverage |
+| `azure-model-openai-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/foundry-models/concepts/models-sold-directly-by-azure-region-availability> — despite the filename, **not just OpenAI**: broken down by deployment type (Global Standard / Data Zone / Regional / Provisioned / Batch) and then by region tab (Americas/EMEA/APAC/MEA), each deployment type has an `openai` category *and* an `other_sold_by_azure` (sometimes `other_model_collections`) category covering models Azure sells directly from other publishers — observed so far: DeepSeek, Cohere (rerank v4 / command-a), Black Forest Labs (FLUX), Moonshot AI (Kimi), xAI (grok), Meta (Llama-3.3 / Llama-4-Maverick), Microsoft (MAI-Image, Phi-4 family), Mistral (Mistral-Large-3, mistral-medium-3-5) |
+| `azure-model-others-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-from-partners> — third-party/community **marketplace** (serverless) models (Anthropic, Meta, Mistral, Cohere, ...), grouped by provider and deployment type, with marketplace country coverage. **This URL moves**: Microsoft periodically retires an old `foundry-classic/...` path and 301-redirects it into the current `foundry/...` tree (this exact thing happened between this file's original scrape and 2026-07) — re-verify with `curl -sIL` before assuming the URL above is still current |
 
-Both files are semi-structured scrape output and still need to be converted into `index.html`'s Azure `models[]` shape (`{g, n, v, s, offer, lifecycle, ...}` — the `s` bitmask is encoded in the order of Azure's 8 deployment-type `caps`: `gs/dzs/std/gpm/dzpm/rpm/gb/dzb`, see `azure.caps` in `index.html`). **This conversion step currently can't be safely automated** — see [Known Limitations](#known-limitations).
+Both files are semi-structured scrape output. Converting them into `index.html`'s Azure `models[]` shape (`{g, n, v, s, offer, lifecycle, ...}` — the `s` bitmask is encoded in the order of Azure's 8 deployment-type `caps`: `gs/dzs/std/gpm/dzpm/rpm/gb/dzb`, see `azure.caps` in `index.html`) is now handled by `.claude/skills/refresh-model-data/scripts/build_azure_models.js` — see the skill's Phase 3 section for usage and the non-obvious rules it encodes (publisher inference for `other_sold_by_azure` models, de-duplication when a model appears in both files with `azure-model-openai-ava.json` preferred). What's **not** automated is producing these two files fresh from HTML in the first place — see [Known Limitations](#known-limitations).
 
-**Lifecycle data** (`azure-model-retirement.json`) comes from <https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule>, structured as `sections[]` (grouped by category/provider), each containing `{model, version, lifecycle, retirement_date, replacement}`. This page's structure is simple and low-risk, so the `refresh-model-data` skill can scrape and parse it safely.
+**Lifecycle data** (`azure-model-retirement.json`) comes from <https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule>, structured as `sections[]` (grouped by category/provider), each containing `{model, version, lifecycle, retirement_date, replacement}`. This page's structure is simple and low-risk, so the `refresh-model-data` skill can scrape and parse it safely. Note some sections (e.g. Anthropic) use API slug names (`claude-opus-4-6`) while the region-availability pages use display names (`Claude Opus 4.6`) — `build_azure_models.js` bridges this with a slug-normalized fallback match.
 
 ### AWS Bedrock
 
@@ -220,7 +220,7 @@ This page has a few structural quirks worth knowing about (the `refresh-model-da
 
 ### What it does
 
-- Refreshes GCP, then AWS, then Azure's lifecycle data, in that order;
+- By default, refreshes GCP, then AWS, then Azure's lifecycle data, in that order. It can also be scoped to just one provider — see "Invoking it" below — in which case only that provider's phase runs (and the GCP credential preflight is skipped entirely if GCP isn't the one in scope);
 - Writes the result to a **new file, `index-new.html`** — it never overwrites `index.html`, so you can diff and review before promoting it;
 - Overwrites the underlying raw `.json` files along the way (`vertex.json`, `vertex-model-retirement.json`, `aws-model-retirement.json`, `aws-model-runtime&mantle.json`, `azure-model-retirement.json`);
 - Finishes with `apply_update.js diff index.html index-new.html` — a structural, JSON-aware diff (a plain text diff is useless on this file; the whole data blob is one line) that reports, per provider, regions/groups added or removed, model count deltas, added/removed model names, and a field-by-field diff for every model present on both sides (region-support bitmask changes decoded into cap badges, not raw numbers). This is what makes the change summary authoritative instead of a paraphrase of scattered per-step console output — it also catches a model that kept its identity but had its region support or lifecycle dates silently change, which the per-step `replace-models`/`patch` output alone would miss.
@@ -231,12 +231,14 @@ Just ask, in normal language — e.g. "refresh the model data" or "check for new
 
 > Run refresh-model-data for a full refresh, using GCP project `<your-project-id>`.
 
+It also understands a request scoped to a single provider — e.g. "check if Azure has any new models" or "refresh AWS's retirement dates" — and will run only that provider's phase, leaving the other two untouched (and never prompting for GCP credentials unless GCP is the one you asked about).
+
 ### Prerequisites and behavior
 
-- **If GCP credentials are missing, it stops and asks you** rather than silently skipping GCP and continuing with AWS/Azure — a partial run is much easier to notice and fix than one that quietly looks complete but is missing a whole module.
+- **If GCP is in scope for the run and credentials are missing, it stops and asks you** rather than silently skipping GCP and continuing with AWS/Azure — an unexpectedly-partial run is much easier to notice and fix than one that quietly looks complete but is missing a whole module. (This is different from a *deliberately* scoped single-provider run, which is expected to only touch the provider you asked for.)
 - It needs a GCP billing/quota project id (see [Prerequisites](#prerequisites)); the skill will ask for one if you don't supply it.
 - By default it reuses the cached model catalog in `vertex_all_models.json` and only re-probes region availability (faster); a full catalog re-fetch is only needed to pick up brand-new publishers/models.
-- **Azure's primary model × region data is out of scope for automation today** — the skill skips it and explains why in its final report, refreshing only Azure's lifecycle data. See [Known Limitations](#known-limitations).
+- **Re-fetching Azure's primary model × region data from HTML is still out of scope for automation** — see [Known Limitations](#known-limitations). If `azure-model-openai-ava.json`/`azure-model-others-ava.json` are already up to date (or have been refreshed by hand this run), `build_azure_models.js` + `apply_update.js replace-models` can still convert them into `index.html`'s Azure `models[]` — that conversion step itself is scripted, just not the HTML scrape that produces those two files.
 
 ### Output and next steps
 
@@ -323,10 +325,11 @@ console.log('OK');
 
 ## Known Limitations
 
-**Azure's primary model × region data can't be safely automated yet.** In a browser, `models-sold-directly-by-azure-region-availability` looks like a clean "deployment type × geography" tabbed interface. In the underlying markup, however, it's actually **41 separate `<table>` elements** — every tab panel's HTML is fully present in the DOM at once, with JavaScript only toggling visibility — not the "3 region tabs × 6-8 deployment categories" structure one might reasonably expect from the rendered page. Without manually verifying which deployment-type/region category each of those 41 tables belongs to, a regex-based mapping is likely to produce data that's wrong but looks plausible — which is worse than not refreshing at all.
+**Re-scraping Azure's primary model × region data from HTML can't be safely automated yet — but converting an already-structured scrape into `index.html`'s shape now is.** In a browser, `models-sold-directly-by-azure-region-availability` looks like a clean "deployment type × geography" tabbed interface. In the underlying markup, however, it's actually **41 separate `<table>` elements** — every tab panel's HTML is fully present in the DOM at once, with JavaScript only toggling visibility — not the "3 region tabs × 6-8 deployment categories" structure one might reasonably expect from the rendered page. Without manually verifying which deployment-type/region category each of those 41 tables belongs to, a regex-based mapping is likely to produce data that's wrong but looks plausible — which is worse than not refreshing at all. The same caution applies to `azure-model-others-ava.json`'s source page, and to a compounding issue there: Microsoft occasionally retires the "classic" doc URL and 301-redirects it into the current (non-classic) doc tree, so the URL recorded in this README and in the skill can go stale even when nothing about the *scraping logic* changed — verify the URL still resolves to itself before trusting a cached copy of these instructions.
 
 As a result:
 
-- The `refresh-model-data` skill skips this part and only refreshes Azure's lifecycle data (`azure-model-retirement.json`), which comes from a much simpler, lower-risk page.
-- Updating Azure's model × region data today requires either manually reconciling all 41 tables against their deployment-type/region categories, or investing in a proper structural analysis of the page and turning the result into a new, dedicated parser that can then be folded into the skill.
-- Until that work happens, newly released Azure models that aren't already in `azure.models` won't appear on the page.
+- The `refresh-model-data` skill doesn't re-derive `azure-model-openai-ava.json`/`azure-model-others-ava.json` from HTML on its own; it only refreshes Azure's lifecycle data (`azure-model-retirement.json`) automatically, which comes from a much simpler, lower-risk page.
+- **Once those two files exist and are current** (freshly hand-scraped, or already up to date), `.claude/skills/refresh-model-data/scripts/build_azure_models.js` converts them into `index.html`'s Azure `models[]`/`groups` shape — bitmask construction, publisher inference for `azure-model-openai-ava.json`'s `other_sold_by_azure` category, offer-badge construction, and de-duplication between the two files are all handled by that script. Feed its output to `apply_update.js replace-models`. This conversion step is no longer a from-scratch manual derivation.
+- What remains manual is producing/refreshing the two source JSON files themselves: reconciling `models-sold-directly-by-azure-region-availability`'s 41 tables against their deployment-type/region categories (or building a dedicated parser for it), and re-fetching `azure-model-others-ava.json`'s source page (checking first whether its URL has moved).
+- Until the HTML-scraping side is automated, newly released Azure models won't appear on the page until someone manually refreshes `azure-model-openai-ava.json`/`azure-model-others-ava.json` and re-runs `build_azure_models.js`.
