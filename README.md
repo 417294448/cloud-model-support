@@ -220,7 +220,7 @@ This page has a few structural quirks worth knowing about (the `refresh-model-da
 
 ### What it does
 
-- Refreshes GCP, then AWS, then Azure's lifecycle data, in that order;
+- By default, refreshes GCP, then AWS, then Azure's lifecycle data, in that order. It can also be scoped to just one provider — see "Invoking it" below — in which case only that provider's phase runs (and the GCP credential preflight is skipped entirely if GCP isn't the one in scope);
 - Writes the result to a **new file, `index-new.html`** — it never overwrites `index.html`, so you can diff and review before promoting it;
 - Overwrites the underlying raw `.json` files along the way (`vertex.json`, `vertex-model-retirement.json`, `aws-model-retirement.json`, `aws-model-runtime&mantle.json`, `azure-model-retirement.json`);
 - Finishes with `apply_update.js diff index.html index-new.html` — a structural, JSON-aware diff (a plain text diff is useless on this file; the whole data blob is one line) that reports, per provider, regions/groups added or removed, model count deltas, added/removed model names, and a field-by-field diff for every model present on both sides (region-support bitmask changes decoded into cap badges, not raw numbers). This is what makes the change summary authoritative instead of a paraphrase of scattered per-step console output — it also catches a model that kept its identity but had its region support or lifecycle dates silently change, which the per-step `replace-models`/`patch` output alone would miss.
@@ -231,9 +231,11 @@ Just ask, in normal language — e.g. "refresh the model data" or "check for new
 
 > Run refresh-model-data for a full refresh, using GCP project `<your-project-id>`.
 
+It also understands a request scoped to a single provider — e.g. "check if Azure has any new models" or "refresh AWS's retirement dates" — and will run only that provider's phase, leaving the other two untouched (and never prompting for GCP credentials unless GCP is the one you asked about).
+
 ### Prerequisites and behavior
 
-- **If GCP credentials are missing, it stops and asks you** rather than silently skipping GCP and continuing with AWS/Azure — a partial run is much easier to notice and fix than one that quietly looks complete but is missing a whole module.
+- **If GCP is in scope for the run and credentials are missing, it stops and asks you** rather than silently skipping GCP and continuing with AWS/Azure — an unexpectedly-partial run is much easier to notice and fix than one that quietly looks complete but is missing a whole module. (This is different from a *deliberately* scoped single-provider run, which is expected to only touch the provider you asked for.)
 - It needs a GCP billing/quota project id (see [Prerequisites](#prerequisites)); the skill will ask for one if you don't supply it.
 - By default it reuses the cached model catalog in `vertex_all_models.json` and only re-probes region availability (faster); a full catalog re-fetch is only needed to pick up brand-new publishers/models.
 - **Azure's primary model × region data is out of scope for automation today** — the skill skips it and explains why in its final report, refreshing only Azure's lifecycle data. See [Known Limitations](#known-limitations).
