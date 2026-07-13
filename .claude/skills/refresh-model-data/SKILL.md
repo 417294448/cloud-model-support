@@ -18,6 +18,7 @@ This produces:
 - `scripts/fetch_doc.sh <url> <out-file>` -- fetches a page via `curl` with a browser User-Agent. Use this instead of WebFetch for every vendor doc page: WebFetch has failed with "Unable to verify if domain is safe" on `docs.aws.amazon.com` and `docs.cloud.google.com` in past runs. curl has no such gate.
 - `scripts/extract_tables.js <html-file> [--index N]` -- pulls every `<table>` out of a fetched page into plain-text rows, tagged with the nearest heading. Run without `--index` first to see how many tables there are and what their headers look like; run with `--index N` to dump one table's full rows once you know which one you need.
 - `scripts/apply_update.js` -- the only thing allowed to touch `index.html`'s embedded data. See "Applying changes" below.
+- `scripts/build_azure_models.js` -- converts `azure-model-openai-ava.json` + `azure-model-others-ava.json` (+ optionally `azure-model-retirement.json`) into the `azure.models[]`/`azure.groups` shape `apply_update.js replace-models` expects. See Phase 3 below -- read its header comment before using it, there are several non-obvious dedup/inference rules baked in.
 
 ## Determine this run's scope, before doing anything else
 
@@ -138,13 +139,34 @@ Same shape as AWS, three fetches -- each row below is one supplementary file and
 
 | File | Source URL | Feeds |
 |---|---|---|
-| `azure-model-openai-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/foundry-models/concepts/models-sold-directly-by-azure-region-availability> | part of `azure` provider's `models[]` (Azure OpenAI models) |
-| `azure-model-others-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/how-to/deploy-models-serverless-availability> | rest of `azure` provider's `models[]` (third-party/community models) |
+| `azure-model-openai-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry-classic/foundry-models/concepts/models-sold-directly-by-azure-region-availability> | most of `azure` provider's `models[]` -- see note below, it's not just OpenAI |
+| `azure-model-others-ava.json` | <https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-from-partners> | rest of `azure` provider's `models[]` (third-party/community models) |
 | `azure-model-retirement.json` | <https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule> | patch `lifecycle`/`retirementDate`/`replacement` |
 
 `azure-model-retirement.json` already carries this as a top-level `"source"` field you can read directly from the file. `azure-model-openai-ava.json` and `azure-model-others-ava.json` don't (a pre-existing inconsistency) -- their source is only documented here and in README.md, so don't rely on the files being self-describing the way the other supplementary JSON files (`aws-model-retirement.json`, `aws-model-runtime&mantle.json`, `vertex-model-retirement.json`) are.
 
-Azure's `s` bitmask has 8 positions (`gs/dzs/std/gpm/dzpm/rpm/gb/dzb` -- see `index.html`'s `azure.caps`, or README.md). Merge the OpenAI-model table data and the others-model data into one array before calling `replace-models` on the `azure` provider, same pattern as AWS phase 2 step 1.
+**`azure-model-others-ava.json`'s source URL changes over time -- verify it before trusting it.** The "classic" doc tree (`foundry-classic/...`) and the current one (`foundry/...`) are parallel, independently-edited branches for two different Foundry portal experiences; Microsoft periodically retires a classic URL and 301-redirects it into the current tree. Before re-fetching, `curl -sIL` the URL above and confirm it still resolves to itself (no redirect) and its `<meta name="ms.date">` looks recent -- if it 301s somewhere else, or the classic and current versions of the page have diverged (compare their `ms.date` and table row counts), update this table and README.md's copy of it, don't just silently follow the redirect.
+
+**`azure-model-openai-ava.json` is not limited to OpenAI models.** Its `standard`/`provisioned`/`batch` trees each have an `openai` category *and* an `other_sold_by_azure` (sometimes also `other_model_collections`) category. Those "other" categories are models Azure sells **directly** (not via third-party marketplace billing) from other publishers -- observed so far: DeepSeek, Cohere (rerank v4 / command-a), Black Forest Labs (FLUX), Moonshot AI (Kimi), xAI (grok), Meta (Llama-3.3 / Llama-4-Maverick), Microsoft (MAI-Image, Phi-4 family), Mistral (Mistral-Large-3, mistral-medium-3-5). This is a large chunk of `azure.models` and easy to miss if you only look at the file's name.
+
+**Converting both files into `azure.models[]` shape is now scripted** -- `scripts/build_azure_models.js` handles the bitmask construction (`gs/dzs/std/gpm/dzpm/rpm/gb/dzb`, 8 positions, see `index.html`'s `azure.caps` or README.md), publisher (`g`) inference for the "other_sold_by_azure" models (by name prefix -- read the script's header comment before adding a new provider, since an unrecognized prefix gets tagged `UNKNOWN:<name>` and printed to stderr instead of silently misfiled), `offer` badge construction, and de-duplication when a model appears in both files (prefer `azure-model-openai-ava.json`'s data -- it has real region support, `azure-model-others-ava.json`'s entry for the same model is often just a capability-table placeholder with no matrix data, e.g. the Phi-4 family):
+
+```bash
+node .claude/skills/refresh-model-data/scripts/build_azure_models.js \
+  --openai azure-model-openai-ava.json \
+  --others azure-model-others-ava.json \
+  --retirement azure-model-retirement.json \
+  --out-models azure-models-built.json \
+  --out-groups azure-groups-built.json
+
+node .claude/skills/refresh-model-data/scripts/apply_update.js replace-models \
+  index-new.html azure azure-models-built.json --out index-new.html \
+  --groups azure-groups-built.json --generated $(date +%Y-%m-%d)
+```
+
+Read the script's stderr output: it reports OA/others counts, which (g,n) pairs were skipped as duplicates, and any `UNKNOWN:` group it couldn't infer. A provider present in `index.html` today but absent from both source files (observed: Nixtla, Stability AI) will legitimately disappear from the output -- `replace-models`/`diff` will report it as "removed," which is expected until a 3rd source covers it, not a bug in the script.
+
+What's still NOT automated: turning the raw HTML of `models-sold-directly-by-azure-region-availability` into the structured `azure-model-openai-ava.json` shape in the first place. See [Known Limitations](#known-limitations) -- that page's tabbed UI hides 41 separate `<table>` elements in the DOM, and mis-mapping which deployment-type/region category each belongs to produces wrong-but-plausible data. `build_azure_models.js` trusts that `azure-model-openai-ava.json`/`azure-model-others-ava.json` are already correctly structured; it doesn't re-derive that structure from HTML.
 
 ## Writing a patch.json
 
