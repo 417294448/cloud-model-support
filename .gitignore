@@ -5,5 +5,8 @@ vertex_test.json
 # gcloud catalog dump (input to build_vertex_matrix.py via --catalog-file; ~5MB, regeneratable)
 all_models.json
 
+# refresh-model-data skill's optional diff report (apply_update.js diff --out) -- scratch output, regeneratable
+refresh-diff-*.txt
+
 # Logs
 *.log

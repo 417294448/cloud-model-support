@@ -143,11 +143,20 @@ All the "lifecycle/retirement" merges (AWS x2, Azure, GCP) share one shape:
 
 ## Final report
 
-Compile what each `apply_update.js` call already printed into one message back to the user -- you don't need to re-derive any of this, it's in your terminal output from each step:
+Once every phase has written its last `index-new.html`, run one authoritative structural diff against the original -- don't rely on recalling each `apply_update.js` call's own printed output from earlier in the run, that only shows added/removed models and aggregate field-change *counts*. It never shows a model that kept its `(g,n,v)` key but had its region support, lifecycle, or dates actually change, which is the most common kind of real update:
 
-- Per provider: model count before -> after, added model names, removed model names.
-- Per patch: how many models changed and which fields.
+```bash
+node .claude/skills/refresh-model-data/scripts/apply_update.js diff index.html index-new.html \
+  --out "refresh-diff-$(date +%Y-%m-%d).txt"
+```
+
+This re-parses both files fresh and prints, per provider: regions/groups added or removed, model count before -> after, added/removed model names, and a field-by-field diff for every model present on both sides (region-bitmask changes decoded into cap badges, not raw numbers). A plain text/line diff (`diff`, `git diff`) is useless here -- the whole data blob is one line -- so this command is the only way to see a real diff. `--out` is optional but recommended -- it writes the same report to a dated text file (gitignored scratch output, not something to commit) so the human reviewer has something to open and read alongside `index-new.html` instead of only your paraphrase of it.
+
+Build the final report from this output:
+
+- Per provider: the regions/groups/model-count deltas and the changed-model list this command printed.
 - Anything skipped (e.g. GCP, if the user chose to skip it at the preflight step) and why.
+- Flag anything that looks like a regression rather than a genuine upstream update -- e.g. a `lifecycle`/`retirementDate` that went from a real value to `null`, or a model that lost most of its regions -- and call it out explicitly rather than reporting it as routine.
 - A reminder that `index-new.html` is a candidate, not a done deal: suggest they open it and spot-check a couple of tabs, and only replace `index.html` with it once they're satisfied (e.g. `mv index-new.html index.html`) -- don't do that swap yourself unless they explicitly ask you to.
 
 ## When a doc page doesn't match what's documented here
