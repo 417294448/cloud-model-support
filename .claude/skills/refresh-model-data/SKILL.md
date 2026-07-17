@@ -1,13 +1,14 @@
 ---
 name: refresh-model-data
-description: Refreshes AWS Bedrock / Azure Foundry / GCP Vertex AI model availability, lifecycle, and retirement data for the cloud-model-support project by re-scraping each vendor's official docs, then regenerates a new index-new.html -- never overwriting the existing index.html so a human can review the diff first. Use this whenever the user asks to refresh, update, sync, or regenerate the model data or the page for this repo, wants to check whether new models were released or old ones retired, or wants an up-to-date index-new.html -- even if they just say "check for updates" or "refresh the data" without naming the skill. Only applies inside the cloud-model-support repo (the one with index.html and the *-model-*.json files at its root).
+description: Refreshes AWS Bedrock / Azure Foundry / GCP Vertex AI model availability, lifecycle, and retirement data for the cloud-model-support project by re-scraping each vendor's official docs, builds a new index-new.html, then promotes it: the previous index.html is renamed to index-old.html and index-new.html is renamed to index.html. Use this whenever the user asks to refresh, update, sync, or regenerate the model data or the page for this repo, wants to check whether new models were released or old ones retired, or wants the page updated -- even if they just say "check for updates" or "refresh the data" without naming the skill. Only applies inside the cloud-model-support repo (the one with index.html and the *-model-*.json files at its root).
 ---
 
 # Refresh cloud-model-support's model data
 
 This produces:
 
-- **`index-new.html`** next to the existing `index.html`. This skill never writes to `index.html` itself. Every step below scrapes a vendor doc page whose structure could have silently changed since last time, so the safety net is: always land in a new file, always print what changed, let a human decide whether to promote it.
+- **`index-new.html`** built next to the existing `index.html`. Every step below scrapes a vendor doc page whose structure could have silently changed since last time, so all edits land in this new file first and get diffed against the original before anything is promoted.
+- Once the diff report is generated (see "Final report" below), the skill **promotes it automatically**: the existing `index.html` is renamed to `index-old.html` (overwriting any previous `index-old.html`), then `index-new.html` is renamed to `index.html`. This keeps the previous version around as a one-generation backup while `index.html` always ends the run holding the freshly scraped data.
 - Refreshed copies of the per-provider auxiliary files at the repo root (`vertex.json`, `vertex-model-retirement.json`, `aws-model-retirement.json`, `aws-model-runtime&mantle.json`, `azure-model-openai-ava.json`, `azure-model-others-ava.json`, `azure-model-retirement.json`). These ARE overwritten in place -- they're raw scrape outputs, not the deployed page.
 - A summary report of what actually changed.
 
@@ -202,7 +203,19 @@ Build the final report from this output:
 - Per provider in scope: the regions/groups/model-count deltas and the changed-model list this command printed.
 - Anything left out and *why*, distinguishing the two different reasons: out of scope (the user didn't ask for it this run) vs. skipped due to a blocker (e.g. GCP creds unavailable at the preflight step, mid-run).
 - Flag anything that looks like a regression rather than a genuine upstream update -- e.g. a `lifecycle`/`retirementDate` that went from a real value to `null`, or a model that lost most of its regions -- and call it out explicitly rather than reporting it as routine.
-- A reminder that `index-new.html` is a candidate, not a done deal: suggest they open it and spot-check a couple of tabs, and only replace `index.html` with it once they're satisfied (e.g. `mv index-new.html index.html`) -- don't do that swap yourself unless they explicitly ask you to.
+
+## Promoting index-new.html
+
+After the diff report above is written, promote the result -- this is a standard, automatic step of every run, not something to ask permission for:
+
+```bash
+mv index.html index-old.html
+mv index-new.html index.html
+```
+
+Do this for every run regardless of scope (full or single-provider) as long as at least one phase actually ran and produced an `index-new.html`. `index-old.html` is overwritten each run -- it only ever holds the immediately-prior version, not a history. Mention the swap in the final report (e.g. "Promoted index-new.html to index.html; the previous version is saved as index-old.html.") so the human still knows to spot-check `index.html` and can recover the prior version from `index-old.html` if the diff turns out to hide a problem.
+
+If a run is aborted mid-way (e.g. a doc page didn't match what's documented, see below) and no usable `index-new.html` was produced, skip the promotion entirely -- don't rename a partial or non-existent file.
 
 ## When a doc page doesn't match what's documented here
 
