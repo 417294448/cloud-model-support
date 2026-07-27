@@ -13,6 +13,14 @@
           "replacement": null
         },
         {
+          "model": "gemini-3.5-flash-lite",
+          "release_date": "2026-07-21",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "July 21, 2027 or later",
+          "replacement": null
+        },
+        {
           "model": "gemini-3.1-flash-lite",
           "release_date": "2026-05-07",
           "release_date_note": null,
@@ -42,7 +50,7 @@
           "release_date_note": null,
           "retirement_date": "2026-10-16",
           "retirement_date_note": null,
-          "replacement": "Gemini 3.1 Flash-Lite or Gemini 3.5 Flash"
+          "replacement": "Gemini 3.5 Flash-Lite or Gemini 3.1 Flash-Lite"
         },
         {
           "model": "gemini-2.5-flash-lite",
@@ -91,7 +99,7 @@
           "release_date": "2025-11-17",
           "release_date_note": null,
           "retirement_date": null,
-          "retirement_date_note": "No retirement date announced",
+          "retirement_date_note": "November 17, 2026 or later",
           "replacement": null
         },
         {
@@ -99,32 +107,32 @@
           "release_date": "2025-11-17",
           "release_date_note": null,
           "retirement_date": null,
-          "retirement_date_note": "No retirement date announced",
+          "retirement_date_note": "November 17, 2026 or later",
           "replacement": null
         },
         {
           "model": "veo-3.0-generate-001",
           "release_date": "2025-07-29",
           "release_date_note": null,
-          "retirement_date": null,
-          "retirement_date_note": "No retirement date announced",
-          "replacement": null
+          "retirement_date": "2026-06-30",
+          "retirement_date_note": null,
+          "replacement": "veo-3.1-generate-001"
         },
         {
           "model": "veo-3.0-fast-generate-001",
           "release_date": "2025-07-29",
           "release_date_note": null,
-          "retirement_date": null,
-          "retirement_date_note": "No retirement date announced",
-          "replacement": null
+          "retirement_date": "2026-06-30",
+          "retirement_date_note": null,
+          "replacement": "veo-3.1-fast-generate-001"
         },
         {
           "model": "veo-2.0-generate-001",
           "release_date": "2025-05-27",
           "release_date_note": null,
-          "retirement_date": null,
-          "retirement_date_note": "No retirement date announced",
-          "replacement": null
+          "retirement_date": "2026-06-30",
+          "retirement_date_note": null,
+          "replacement": "veo-3.1-generate-001"
         }
       ]
     },
@@ -177,11 +185,19 @@
       "category": "Models available for shorter availability periods",
       "models": [
         {
+          "model": "gemini-3.6-flash",
+          "release_date": "2026-07-21",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
           "model": "gemini-3.1-flash-lite-image",
           "release_date": "2026-06-30",
           "release_date_note": null,
           "retirement_date": null,
-          "retirement_date_note": null,
+          "retirement_date_note": "No retirement date announced",
           "replacement": null
         }
       ]

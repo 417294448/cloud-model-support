@@ -24222,6 +24222,619 @@
   },
   {
     "launchStage": "GA",
+    "name": "publishers/nvidia/models/cosmos3-nano",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=8080",
+            "--model=nvidia/Cosmos3-Nano",
+            "--tensor-parallel-size=8"
+          ],
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "nvidia/cosmos3-nano"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/ping",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260713_0916_RC01",
+          "ports": [
+            {
+              "containerPort": 8080
+            }
+          ],
+          "predictRoute": "/generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_B200",
+            "machineType": "a4-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"What is deep learning?\"\n                }\n            ],\n            \"max_tokens\": 1024,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+        },
+        "deployTaskName": "vLLM 256K context",
+        "modelDisplayName": "Cosmos3-Nano"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=8080",
+                "--model=nvidia/Cosmos3-Nano",
+                "--tensor-parallel-size=8"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/cosmos3-nano"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260713_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 8080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"What is deep learning?\"\n                }\n            ],\n            \"max_tokens\": 1024,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 256K context",
+            "modelDisplayName": "Cosmos3-Nano"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=8080",
+                "--model=nvidia/Cosmos3-Nano",
+                "--tensor-parallel-size=8"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/cosmos3-nano"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260713_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 8080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"What is deep learning?\"\n                }\n            ],\n            \"max_tokens\": 1024,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 256K context",
+            "modelDisplayName": "Cosmos3-Nano"
+          }
+        ]
+      }
+    },
+    "versionId": "cosmos3-nano"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/nvidia/models/cosmos3-nano",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=8080",
+            "--model=nvidia/Cosmos3-Super",
+            "--tensor-parallel-size=8"
+          ],
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "nvidia/cosmos3-super"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/ping",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260713_0916_RC01",
+          "ports": [
+            {
+              "containerPort": 8080
+            }
+          ],
+          "predictRoute": "/generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_B200",
+            "machineType": "a4-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"What is deep learning?\"\n                }\n            ],\n            \"max_tokens\": 1024,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+        },
+        "deployTaskName": "vLLM 256K context",
+        "modelDisplayName": "Cosmos3-Super"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=8080",
+                "--model=nvidia/Cosmos3-Super",
+                "--tensor-parallel-size=8"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/cosmos3-super"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260713_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 8080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"What is deep learning?\"\n                }\n            ],\n            \"max_tokens\": 1024,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 256K context",
+            "modelDisplayName": "Cosmos3-Super"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=8080",
+                "--model=nvidia/Cosmos3-Super",
+                "--tensor-parallel-size=8",
+                "--max-model-len=32768"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/cosmos3-super"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260713_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 8080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"What is deep learning?\"\n                }\n            ],\n            \"max_tokens\": 1024,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 32K context",
+            "modelDisplayName": "Cosmos3-Super"
+          }
+        ]
+      }
+    },
+    "versionId": "cosmos3-super"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/nvidia/models/cosmos3-nano",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model-path=nvidia/Cosmos3-Super-Image2Video",
+            "--tp=8",
+            "--trust-remote-code"
+          ],
+          "env": [
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            },
+            {
+              "name": "MODEL_ID",
+              "value": "nvidia/Cosmos3-Super-Image2Video"
+            },
+            {
+              "name": "TASK",
+              "value": "image-to-video"
+            },
+            {
+              "name": "DIFFUSION_MODEL",
+              "value": "true"
+            }
+          ],
+          "healthRoute": "/health",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-sglang-serve:airlock-v0.5.15.0710.rc1",
+          "ports": [
+            {
+              "containerPort": 7080
+            }
+          ],
+          "predictRoute": "/vertex_generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_B200",
+            "machineType": "a4-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"A cat waving a sign that says hello world\",\n            \"image\": \"https://huggingface.co/datasets/YiYiXu/testing-images/resolve/main/wan_i2v_input.JPG\"\n        }\n    ]\n}\n"
+        },
+        "deployTaskName": "SGLang 256K context",
+        "modelDisplayName": "Cosmos3-Super-Image2Video"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model-path=nvidia/Cosmos3-Super-Image2Video",
+                "--tp=8",
+                "--trust-remote-code"
+              ],
+              "env": [
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                },
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/Cosmos3-Super-Image2Video"
+                },
+                {
+                  "name": "TASK",
+                  "value": "image-to-video"
+                },
+                {
+                  "name": "DIFFUSION_MODEL",
+                  "value": "true"
+                }
+              ],
+              "healthRoute": "/health",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-sglang-serve:airlock-v0.5.15.0710.rc1",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/vertex_generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"A cat waving a sign that says hello world\",\n            \"image\": \"https://huggingface.co/datasets/YiYiXu/testing-images/resolve/main/wan_i2v_input.JPG\"\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "SGLang 256K context",
+            "modelDisplayName": "Cosmos3-Super-Image2Video"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model-path=nvidia/Cosmos3-Super-Image2Video",
+                "--tp=8",
+                "--trust-remote-code"
+              ],
+              "env": [
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                },
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/Cosmos3-Super-Image2Video"
+                },
+                {
+                  "name": "TASK",
+                  "value": "image-to-video"
+                },
+                {
+                  "name": "DIFFUSION_MODEL",
+                  "value": "true"
+                }
+              ],
+              "healthRoute": "/health",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-sglang-serve:airlock-v0.5.15.0710.rc1",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/vertex_generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_H100_80GB",
+                "machineType": "a3-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"A cat waving a sign that says hello world\",\n            \"image\": \"https://huggingface.co/datasets/YiYiXu/testing-images/resolve/main/wan_i2v_input.JPG\"\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "SGLang 256K context",
+            "modelDisplayName": "Cosmos3-Super-Image2Video"
+          }
+        ]
+      }
+    },
+    "versionId": "cosmos3-super-image2video"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/nvidia/models/cosmos3-nano",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model-path=nvidia/Cosmos3-Super-Text2Image",
+            "--tp=8",
+            "--trust-remote-code"
+          ],
+          "env": [
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            },
+            {
+              "name": "MODEL_ID",
+              "value": "nvidia/Cosmos3-Super-Text2Image"
+            },
+            {
+              "name": "TASK",
+              "value": "text-to-image"
+            },
+            {
+              "name": "DIFFUSION_MODEL",
+              "value": "true"
+            }
+          ],
+          "healthRoute": "/health",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-sglang-serve:airlock-v0.5.15.0710.rc1",
+          "ports": [
+            {
+              "containerPort": 7080
+            }
+          ],
+          "predictRoute": "/vertex_generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_B200",
+            "machineType": "a4-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"A cat holding a sign that says hello world\"\n        }\n    ],\n    \"parameters\": {\n        \"num_inference_steps\": 50,\n        \"guidance_scale\": 1.5,\n        \"width\": 1024,\n        \"height\": 1024\n    }\n}\n"
+        },
+        "deployTaskName": "SGLang 256K context",
+        "modelDisplayName": "Cosmos3-Super-Text2Image"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model-path=nvidia/Cosmos3-Super-Text2Image",
+                "--tp=8",
+                "--trust-remote-code"
+              ],
+              "env": [
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                },
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/Cosmos3-Super-Text2Image"
+                },
+                {
+                  "name": "TASK",
+                  "value": "text-to-image"
+                },
+                {
+                  "name": "DIFFUSION_MODEL",
+                  "value": "true"
+                }
+              ],
+              "healthRoute": "/health",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-sglang-serve:airlock-v0.5.15.0710.rc1",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/vertex_generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"A cat holding a sign that says hello world\"\n        }\n    ],\n    \"parameters\": {\n        \"num_inference_steps\": 50,\n        \"guidance_scale\": 1.5,\n        \"width\": 1024,\n        \"height\": 1024\n    }\n}\n"
+            },
+            "deployTaskName": "SGLang 256K context",
+            "modelDisplayName": "Cosmos3-Super-Text2Image"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model-path=nvidia/Cosmos3-Super-Text2Image",
+                "--tp=8",
+                "--trust-remote-code"
+              ],
+              "env": [
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                },
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/Cosmos3-Super-Text2Image"
+                },
+                {
+                  "name": "TASK",
+                  "value": "text-to-image"
+                },
+                {
+                  "name": "DIFFUSION_MODEL",
+                  "value": "true"
+                }
+              ],
+              "healthRoute": "/health",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-sglang-serve:airlock-v0.5.15.0710.rc1",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/vertex_generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_H100_80GB",
+                "machineType": "a3-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"A cat holding a sign that says hello world\"\n        }\n    ],\n    \"parameters\": {\n        \"num_inference_steps\": 50,\n        \"guidance_scale\": 1.5,\n        \"width\": 1024,\n        \"height\": 1024\n    }\n}\n"
+            },
+            "deployTaskName": "SGLang 256K context",
+            "modelDisplayName": "Cosmos3-Super-Text2Image"
+          }
+        ]
+      }
+    },
+    "versionId": "cosmos3-super-text2image"
+  },
+  {
+    "launchStage": "GA",
     "name": "publishers/google/models/functiongemma",
     "openSourceCategory": "GOOGLE_OWNED_OSS_WITH_GOOGLE_CHECKPOINT",
     "supportedActions": {
@@ -25053,22 +25666,13 @@
       "deploy": {
         "containerSpec": {
           "args": [
-            "--model=gs://vertex-model-garden-restricted-us/gemma/gemma-1.1-7b-it",
-            "--host=0.0.0.0",
-            "--port=7080",
-            "--log_level=INFO",
-            "--enable_jit",
-            "--load_format=auto",
-            "--tensor_parallel_size=4",
-            "--data_parallel_size=1",
-            "--num_blocks=2048",
-            "--block_size=32",
-            "--enable_prefix_cache_hbm"
-          ],
-          "command": [
             "python",
             "-m",
-            "hex_llm.server.api_server"
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model=gs://vertex-model-garden-restricted-us/gemma/gemma-1.1-7b-it",
+            "--tensor-parallel-size=1"
           ],
           "env": [
             {
@@ -25078,22 +25682,10 @@
             {
               "name": "DEPLOY_SOURCE",
               "value": "UI_NATIVE_MODEL"
-            },
-            {
-              "name": "PJRT_DEVICE",
-              "value": "TPU"
-            },
-            {
-              "name": "RAY_DEDUP_LOGS",
-              "value": "0"
-            },
-            {
-              "name": "RAY_USAGE_STATS_ENABLED",
-              "value": "0"
             }
           ],
-          "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/vertex-ai-restricted/vertex-vision-model-garden-dockers/hex-llm-serve:stable",
+          "healthRoute": "/health",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260701_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
@@ -25103,14 +25695,16 @@
         },
         "dedicatedResources": {
           "machineSpec": {
-            "machineType": "ct5lp-hightpu-4t"
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n    \"instances\": [\n        {\n          \"prompt\": \"What is machine learning?\",\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+          "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"What is machine learning? Please, answer in pirate-speak.\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
         },
-        "deployTaskName": "ct5lp-hightpu-4t",
+        "deployTaskName": "vLLM 8K context",
         "modelDisplayName": "gemma-1.1-7b-it",
         "publicArtifactUri": "gs://vertex-model-garden-restricted-us/gemma.tar.gz"
       },
@@ -25123,6 +25717,51 @@
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=gs://vertex-model-garden-restricted-us/gemma/gemma-1.1-7b-it",
+                "--tensor-parallel-size=1"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "google/gemma-1.1-7b-it"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/health",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260701_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"What is machine learning? Please, answer in pirate-speak.\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 8K context",
+            "modelDisplayName": "gemma-1.1-7b-it",
+            "publicArtifactUri": "gs://vertex-model-garden-restricted-us/gemma.tar.gz"
+          },
           {
             "containerSpec": {
               "args": [
@@ -27791,12 +28430,10 @@
             "python",
             "-m",
             "vllm.entrypoints.api_server",
-            "--model=gs://vertex-model-garden-restricted-us/gemma/gemma-7b-it",
             "--host=0.0.0.0",
             "--port=7080",
-            "--tensor-parallel-size=4",
-            "--max-num-seqs=128",
-            "--max-num-batched-tokens=1024"
+            "--model=gs://vertex-model-garden-restricted-us/gemma/gemma-7b-it",
+            "--tensor-parallel-size=1"
           ],
           "env": [
             {
@@ -27808,8 +28445,8 @@
               "value": "UI_NATIVE_MODEL"
             }
           ],
-          "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/vllm-inference-tpu.0-11.ubuntu2204.py312:model-garden.vllm-tpu-release_20251015.00_p0",
+          "healthRoute": "/health",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260701_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
@@ -27819,15 +28456,18 @@
         },
         "dedicatedResources": {
           "machineSpec": {
-            "machineType": "ct6e-standard-4t"
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"prompt\": \"What is 1+1?\",\n      \"max_tokens\": 200\n    }\n  ]\n}\n"
+          "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"What is machine learning? Please, answer in pirate-speak.\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
         },
-        "deployTaskName": "vLLM TPU 8K context",
-        "modelDisplayName": "gemma-7b-it"
+        "deployTaskName": "vLLM 8K context",
+        "modelDisplayName": "gemma-7b-it",
+        "publicArtifactUri": "gs://vertex-model-garden-restricted-us/gemma.tar.gz"
       },
       "deployGke": {
         "gkeYamlConfigs": [
@@ -27838,6 +28478,51 @@
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=gs://vertex-model-garden-restricted-us/gemma/gemma-7b-it",
+                "--tensor-parallel-size=1"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "google/gemma-7b-it"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/health",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260701_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"What is machine learning? Please, answer in pirate-speak.\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 8K context",
+            "modelDisplayName": "gemma-7b-it",
+            "publicArtifactUri": "gs://vertex-model-garden-restricted-us/gemma.tar.gz"
+          },
           {
             "containerSpec": {
               "args": [
@@ -48281,8 +48966,15 @@
       "deploy": {
         "containerSpec": {
           "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
             "--model=Qwen/Qwen3-30B-A3B-Instruct-2507",
-            "--tp=2",
+            "--tensor-parallel-size=2",
+            "--enable-expert-parallel",
+            "--enable-chunked-prefill",
             "--revision=61082d4deaa4785f64943b443cbc2b5de7524fad"
           ],
           "deploymentTimeout": "7200s",
@@ -48297,30 +48989,78 @@
             }
           ],
           "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:20250428-1803-rc0",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
             }
           ],
-          "predictRoute": "/vertex_generate"
+          "predictRoute": "/generate"
         },
         "dedicatedResources": {
           "machineSpec": {
             "acceleratorCount": 2,
-            "acceleratorType": "NVIDIA_H100_80GB",
-            "machineType": "a3-highgpu-2g"
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-96"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"<|im_start|>user What is the best way to diagnose and fix a flickering light in my house?<|im_end|><|im_start|>assistant\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 1028,\n      \"temperature\": 0.6,\n      \"top_p\": 0.95,\n      \"top_k\": 20,\n      \"min_p\": 0\n    }\n  }\n}\n"
+          "sampleRequest": "{\n  \"instances\": [\n      {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"Give me a short introduction to large language model.\"\n              }\n          ],\n          \"max_tokens\": 128,\n          \"temperature\": 0.6,\n          \"top_p\": 1.0,\n          \"top_k\": -1\n      }\n  ]\n}\n"
         },
-        "deployTaskName": "SGLang 256K context",
+        "deployTaskName": "vLLM 262K context",
         "modelDisplayName": "Qwen3-30B-A3B-Instruct-2507"
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=Qwen/Qwen3-30B-A3B-Instruct-2507",
+                "--tensor-parallel-size=2",
+                "--enable-expert-parallel",
+                "--enable-chunked-prefill",
+                "--revision=61082d4deaa4785f64943b443cbc2b5de7524fad"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "Qwen/Qwen3-30B-A3B-Instruct-2507"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 2,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-96"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n      {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"Give me a short introduction to large language model.\"\n              }\n          ],\n          \"max_tokens\": 128,\n          \"temperature\": 0.6,\n          \"top_p\": 1.0,\n          \"top_k\": -1\n      }\n  ]\n}\n"
+            },
+            "deployTaskName": "vLLM 262K context",
+            "modelDisplayName": "Qwen3-30B-A3B-Instruct-2507"
+          },
           {
             "containerSpec": {
               "args": [
@@ -48452,8 +49192,14 @@
       "deploy": {
         "containerSpec": {
           "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
             "--model=Qwen/Qwen3-30B-A3B-Instruct-2507-FP8",
-            "--tp=1",
+            "--tensor-parallel-size=1",
+            "--enable-chunked-prefill",
             "--revision=a40867445b9a239591fb11e590cbd06394ebcf8a"
           ],
           "deploymentTimeout": "7200s",
@@ -48468,30 +49214,77 @@
             }
           ],
           "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:20250428-1803-rc0",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
             }
           ],
-          "predictRoute": "/vertex_generate"
+          "predictRoute": "/generate"
         },
         "dedicatedResources": {
           "machineSpec": {
             "acceleratorCount": 1,
-            "acceleratorType": "NVIDIA_H100_80GB",
-            "machineType": "a3-highgpu-1g"
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"<|im_start|>user What is the best way to diagnose and fix a flickering light in my house?<|im_end|><|im_start|>assistant\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 1028,\n      \"temperature\": 0.6,\n      \"top_p\": 0.95,\n      \"top_k\": 20,\n      \"min_p\": 0\n    }\n  }\n}\n"
+          "sampleRequest": "{\n  \"instances\": [\n      {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"Give me a short introduction to large language model.\"\n              }\n          ],\n          \"max_tokens\": 128,\n          \"temperature\": 0.6,\n          \"top_p\": 1.0,\n          \"top_k\": -1\n      }\n  ]\n}\n"
         },
-        "deployTaskName": "SGLang 256K context",
+        "deployTaskName": "vLLM 262K context",
         "modelDisplayName": "Qwen3-30B-A3B-Instruct-2507-FP8"
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=Qwen/Qwen3-30B-A3B-Instruct-2507-FP8",
+                "--tensor-parallel-size=1",
+                "--enable-chunked-prefill",
+                "--revision=a40867445b9a239591fb11e590cbd06394ebcf8a"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "Qwen/Qwen3-30B-A3B-Instruct-2507-FP8"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n      {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"Give me a short introduction to large language model.\"\n              }\n          ],\n          \"max_tokens\": 128,\n          \"temperature\": 0.6,\n          \"top_p\": 1.0,\n          \"top_k\": -1\n      }\n  ]\n}\n"
+            },
+            "deployTaskName": "vLLM 262K context",
+            "modelDisplayName": "Qwen3-30B-A3B-Instruct-2507-FP8"
+          },
           {
             "containerSpec": {
               "args": [
@@ -48761,9 +49554,15 @@
       "deploy": {
         "containerSpec": {
           "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
             "--model=Qwen/Qwen3-30B-A3B-Thinking-2507",
-            "--reasoning-parser=qwen3",
-            "--tp=2",
+            "--tensor-parallel-size=2",
+            "--enable-expert-parallel",
+            "--enable-chunked-prefill",
             "--revision=144afc2f379b542fdd4e85a1fcd5e1f79112d95d"
           ],
           "deploymentTimeout": "7200s",
@@ -48778,30 +49577,78 @@
             }
           ],
           "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:20250428-1803-rc0",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
             }
           ],
-          "predictRoute": "/vertex_generate"
+          "predictRoute": "/generate"
         },
         "dedicatedResources": {
           "machineSpec": {
             "acceleratorCount": 2,
-            "acceleratorType": "NVIDIA_H100_80GB",
-            "machineType": "a3-highgpu-2g"
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-96"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"<|im_start|>user What is the best way to diagnose and fix a flickering light in my house?<|im_end|><|im_start|>assistant\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 1028,\n      \"temperature\": 0.6,\n      \"top_p\": 0.95,\n      \"top_k\": 20,\n      \"min_p\": 0\n    }\n  }\n}\n"
+          "sampleRequest": "{\n  \"instances\": [\n      {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"Give me a short introduction to large language model.\"\n              }\n          ],\n          \"max_tokens\": 128,\n          \"temperature\": 0.6,\n          \"top_p\": 1.0,\n          \"top_k\": -1\n      }\n  ]\n}\n"
         },
-        "deployTaskName": "SGLang 256K context",
+        "deployTaskName": "vLLM 262K context",
         "modelDisplayName": "Qwen3-30B-A3B-Thinking-2507"
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=Qwen/Qwen3-30B-A3B-Thinking-2507",
+                "--tensor-parallel-size=2",
+                "--enable-expert-parallel",
+                "--enable-chunked-prefill",
+                "--revision=144afc2f379b542fdd4e85a1fcd5e1f79112d95d"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "Qwen/Qwen3-30B-A3B-Thinking-2507"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 2,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-96"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n      {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"Give me a short introduction to large language model.\"\n              }\n          ],\n          \"max_tokens\": 128,\n          \"temperature\": 0.6,\n          \"top_p\": 1.0,\n          \"top_k\": -1\n      }\n  ]\n}\n"
+            },
+            "deployTaskName": "vLLM 262K context",
+            "modelDisplayName": "Qwen3-30B-A3B-Thinking-2507"
+          },
           {
             "containerSpec": {
               "args": [
@@ -48935,9 +49782,14 @@
       "deploy": {
         "containerSpec": {
           "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
             "--model=Qwen/Qwen3-30B-A3B-Thinking-2507-FP8",
-            "--reasoning-parser=qwen3",
-            "--tp=1",
+            "--tensor-parallel-size=1",
+            "--enable-chunked-prefill",
             "--revision=60d80c83c53c3b611c642dbb8c942b3f90c5948a"
           ],
           "deploymentTimeout": "7200s",
@@ -48952,30 +49804,77 @@
             }
           ],
           "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:20250428-1803-rc0",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
             }
           ],
-          "predictRoute": "/vertex_generate"
+          "predictRoute": "/generate"
         },
         "dedicatedResources": {
           "machineSpec": {
             "acceleratorCount": 1,
-            "acceleratorType": "NVIDIA_H100_80GB",
-            "machineType": "a3-highgpu-1g"
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"<|im_start|>user What is the best way to diagnose and fix a flickering light in my house?<|im_end|><|im_start|>assistant\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 1028,\n      \"temperature\": 0.6,\n      \"top_p\": 0.95,\n      \"top_k\": 20,\n      \"min_p\": 0\n    }\n  }\n}\n"
+          "sampleRequest": "{\n  \"instances\": [\n      {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"Give me a short introduction to large language model.\"\n              }\n          ],\n          \"max_tokens\": 128,\n          \"temperature\": 0.6,\n          \"top_p\": 1.0,\n          \"top_k\": -1\n      }\n  ]\n}\n"
         },
-        "deployTaskName": "SGLang 256K context",
+        "deployTaskName": "vLLM 262K context",
         "modelDisplayName": "Qwen3-30B-A3B-Thinking-2507-FP8"
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=Qwen/Qwen3-30B-A3B-Thinking-2507-FP8",
+                "--tensor-parallel-size=1",
+                "--enable-chunked-prefill",
+                "--revision=60d80c83c53c3b611c642dbb8c942b3f90c5948a"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "Qwen/Qwen3-30B-A3B-Thinking-2507-FP8"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n      {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"Give me a short introduction to large language model.\"\n              }\n          ],\n          \"max_tokens\": 128,\n          \"temperature\": 0.6,\n          \"top_p\": 1.0,\n          \"top_k\": -1\n      }\n  ]\n}\n"
+            },
+            "deployTaskName": "vLLM 262K context",
+            "modelDisplayName": "Qwen3-30B-A3B-Thinking-2507-FP8"
+          },
           {
             "containerSpec": {
               "args": [
@@ -50606,14 +51505,13 @@
             "python",
             "-m",
             "vllm.entrypoints.api_server",
-            "--model=Qwen/Qwen3-4B-Instruct-2507",
             "--host=0.0.0.0",
             "--port=7080",
-            "--tensor-parallel-size=4",
-            "--max-num-seqs=128",
-            "--max-num-batched-tokens=1024",
+            "--model=qwen/qwen3-4b-instruct-2507",
+            "--tensor-parallel-size=1",
             "--revision=eb25fbe4f35f7147763bc24445679d1c00588d89"
           ],
+          "deploymentTimeout": "7200s",
           "env": [
             {
               "name": "MODEL_ID",
@@ -50625,7 +51523,7 @@
             }
           ],
           "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/vllm-inference-tpu.0-11.ubuntu2204.py312:model-garden.vllm-tpu-release_20251015.00_p0",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
@@ -50635,14 +51533,16 @@
         },
         "dedicatedResources": {
           "machineSpec": {
-            "machineType": "ct6e-standard-4t"
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"prompt\": \"What is 1+1?\",\n      \"max_tokens\": 200\n    }\n  ]\n}\n"
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
         },
-        "deployTaskName": "vLLM TPU 256K context",
+        "deployTaskName": "vLLM 256K context",
         "modelDisplayName": "Qwen3-4B-Instruct-2507"
       },
       "deployGke": {
@@ -50653,6 +51553,52 @@
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=qwen/qwen3-4b-instruct-2507",
+                "--tensor-parallel-size=1",
+                "--revision=eb25fbe4f35f7147763bc24445679d1c00588d89"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "Qwen/Qwen3-4B-Instruct-2507"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 256K context",
+            "modelDisplayName": "Qwen3-4B-Instruct-2507"
+          },
           {
             "containerSpec": {
               "args": [
@@ -51002,8 +51948,13 @@
       "deploy": {
         "containerSpec": {
           "args": [
-            "--model=Qwen/Qwen3-4B-Instruct-2507-FP8",
-            "--tp=1",
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model=qwen/qwen3-4b-instruct-2507-fp8",
+            "--tensor-parallel-size=1",
             "--revision=28b78bdb754a2a779208030433ca495f35d1ce34"
           ],
           "deploymentTimeout": "7200s",
@@ -51018,26 +51969,26 @@
             }
           ],
           "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:20250428-1803-rc0",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
             }
           ],
-          "predictRoute": "/vertex_generate"
+          "predictRoute": "/generate"
         },
         "dedicatedResources": {
           "machineSpec": {
             "acceleratorCount": 1,
-            "acceleratorType": "NVIDIA_L4",
-            "machineType": "g2-standard-12"
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"<|im_start|>user What is the best way to diagnose and fix a flickering light in my house?<|im_end|><|im_start|>assistant\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 1028,\n      \"temperature\": 0.6,\n      \"top_p\": 0.95,\n      \"top_k\": 20,\n      \"min_p\": 0\n    }\n  }\n}\n"
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
         },
-        "deployTaskName": "SGLang 32K context",
+        "deployTaskName": "vLLM 256K context",
         "modelDisplayName": "Qwen3-4B-Instruct-2507-FP8"
       },
       "deployGke": {
@@ -51048,6 +51999,52 @@
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=qwen/qwen3-4b-instruct-2507-fp8",
+                "--tensor-parallel-size=1",
+                "--revision=28b78bdb754a2a779208030433ca495f35d1ce34"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "Qwen/Qwen3-4B-Instruct-2507-FP8"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 256K context",
+            "modelDisplayName": "Qwen3-4B-Instruct-2507-FP8"
+          },
           {
             "containerSpec": {
               "args": [
@@ -51348,9 +52345,14 @@
       "deploy": {
         "containerSpec": {
           "args": [
-            "--model=Qwen/Qwen3-4B-Thinking-2507",
-            "--tool-call-parser=qwen25",
-            "--tp=2",
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model=qwen/qwen3-4b-thinking-2507",
+            "--tensor-parallel-size=1",
+            "--reasoning-parser=qwen3",
             "--revision=768f209d9ea81521153ed38c47d515654e938aea"
           ],
           "deploymentTimeout": "7200s",
@@ -51365,26 +52367,26 @@
             }
           ],
           "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:20250428-1803-rc0",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
             }
           ],
-          "predictRoute": "/vertex_generate"
+          "predictRoute": "/generate"
         },
         "dedicatedResources": {
           "machineSpec": {
-            "acceleratorCount": 2,
-            "acceleratorType": "NVIDIA_H100_80GB",
-            "machineType": "a3-highgpu-2g"
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"<|im_start|>user What is the best way to diagnose and fix a flickering light in my house?<|im_end|><|im_start|>assistant\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 1028,\n      \"temperature\": 0.6,\n      \"top_p\": 0.95,\n      \"top_k\": 20,\n      \"min_p\": 0\n    }\n  }\n}\n"
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
         },
-        "deployTaskName": "SGLang 256K context",
+        "deployTaskName": "vLLM 256K context",
         "modelDisplayName": "Qwen3-4B-Thinking-2507"
       },
       "deployGke": {
@@ -51395,6 +52397,53 @@
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=qwen/qwen3-4b-thinking-2507",
+                "--tensor-parallel-size=1",
+                "--reasoning-parser=qwen3",
+                "--revision=768f209d9ea81521153ed38c47d515654e938aea"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "Qwen/Qwen3-4B-Thinking-2507"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 256K context",
+            "modelDisplayName": "Qwen3-4B-Thinking-2507"
+          },
           {
             "containerSpec": {
               "args": [
@@ -51527,8 +52576,14 @@
       "deploy": {
         "containerSpec": {
           "args": [
-            "--model=Qwen/Qwen3-4B-Thinking-2507-FP8",
-            "--tp=1",
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model=qwen/qwen3-4b-thinking-2507-fp8",
+            "--tensor-parallel-size=1",
+            "--reasoning-parser=qwen3",
             "--revision=953532f942706930ec4bb870569932ef63038fdf"
           ],
           "deploymentTimeout": "7200s",
@@ -51543,26 +52598,26 @@
             }
           ],
           "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:20250428-1803-rc0",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
             }
           ],
-          "predictRoute": "/vertex_generate"
+          "predictRoute": "/generate"
         },
         "dedicatedResources": {
           "machineSpec": {
             "acceleratorCount": 1,
-            "acceleratorType": "NVIDIA_L4",
-            "machineType": "g2-standard-12"
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"<|im_start|>user What is the best way to diagnose and fix a flickering light in my house?<|im_end|><|im_start|>assistant\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 1028,\n      \"temperature\": 0.6,\n      \"top_p\": 0.95,\n      \"top_k\": 20,\n      \"min_p\": 0\n    }\n  }\n}\n"
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
         },
-        "deployTaskName": "SGLang 32K context",
+        "deployTaskName": "vLLM 256K context",
         "modelDisplayName": "Qwen3-4B-Thinking-2507-FP8"
       },
       "deployGke": {
@@ -51573,6 +52628,53 @@
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=qwen/qwen3-4b-thinking-2507-fp8",
+                "--tensor-parallel-size=1",
+                "--reasoning-parser=qwen3",
+                "--revision=953532f942706930ec4bb870569932ef63038fdf"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "Qwen/Qwen3-4B-Thinking-2507-FP8"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260505_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 256K context",
+            "modelDisplayName": "Qwen3-4B-Thinking-2507-FP8"
+          },
           {
             "containerSpec": {
               "args": [
@@ -55498,46 +56600,27 @@
       "deploy": {
         "containerSpec": {
           "args": [
-            "--model=microsoft/Phi-4",
-            "--host=0.0.0.0",
-            "--port=7080",
-            "--log_level=INFO",
-            "--enable_jit",
-            "--load_format=auto",
-            "--tensor_parallel_size=4",
-            "--data_parallel_size=1",
-            "--max_model_len=16384",
-            "--hbm_utilization_factor=0.8"
-          ],
-          "command": [
             "python",
             "-m",
-            "hex_llm.server.api_server"
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model=microsoft/Phi-4",
+            "--tensor-parallel-size=1",
+            "--revision=187ef0342fff0eb3333be9f00389385e95ef0b61"
           ],
           "env": [
             {
               "name": "MODEL_ID",
-              "value": "Phi-4"
+              "value": "microsoft/Phi-4"
             },
             {
               "name": "DEPLOY_SOURCE",
               "value": "UI_NATIVE_MODEL"
-            },
-            {
-              "name": "PJRT_DEVICE",
-              "value": "TPU"
-            },
-            {
-              "name": "RAY_DEDUP_LOGS",
-              "value": "0"
-            },
-            {
-              "name": "RAY_USAGE_STATS_ENABLED",
-              "value": "0"
             }
           ],
-          "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/vertex-ai-restricted/vertex-vision-model-garden-dockers/hex-llm-serve:stable",
+          "healthRoute": "/health",
+          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260701_0916_RC01",
           "ports": [
             {
               "containerPort": 7080
@@ -55547,18 +56630,65 @@
         },
         "dedicatedResources": {
           "machineSpec": {
-            "machineType": "ct5lp-hightpu-4t"
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
           },
           "maxReplicaCount": 1
         },
         "deployMetadata": {
-          "sampleRequest": "{\n    \"instances\": [\n        {\n          \"prompt\": \"What is machine learning?\",\n          \"max_tokens\": 100,\n          \"temperature\": 1.0,\n          \"top_p\": 1.0,\n          \"top_k\": 10\n        }\n    ]\n}\n"
+          "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"What is machine learning? Please, answer in pirate-speak.\"\n              }\n          ],\n          \"max_tokens\": 100,\n          \"temperature\": 1.0,\n          \"top_p\": 1.0,\n          \"top_k\": 10\n        }\n    ]\n}\n"
         },
-        "deployTaskName": "ct5lp-hightpu-4t",
+        "deployTaskName": "vLLM 16K context",
         "modelDisplayName": "Phi-4"
       },
       "multiDeployVertex": {
         "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=microsoft/Phi-4",
+                "--tensor-parallel-size=1",
+                "--revision=187ef0342fff0eb3333be9f00389385e95ef0b61"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "microsoft/Phi-4"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/health",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260701_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"What is machine learning? Please, answer in pirate-speak.\"\n              }\n          ],\n          \"max_tokens\": 100,\n          \"temperature\": 1.0,\n          \"top_p\": 1.0,\n          \"top_k\": 10\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 16K context",
+            "modelDisplayName": "Phi-4"
+          },
           {
             "containerSpec": {
               "args": [
@@ -57316,6 +58446,343 @@
       }
     },
     "versionId": "llama-4-scout-17b-16e"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/meta/models/llama4",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "--model=gs://vertex-model-garden-restricted-us/llama4/Llama-4-Scout-17B-16E-Instruct",
+            "--attention-backend=fa3",
+            "--context-length=131072",
+            "--chat-template=llama-4",
+            "--tp=8",
+            "--enable-multimodal",
+            "--tool-call-parser=pythonic",
+            "--chat-template=sglang/examples/chat_template/tool_chat_template_llama4_pythonic.jinja",
+            "--speculative-algo=EAGLE3",
+            "--speculative-draft-model-path=gs://vertex-model-garden-restricted-us/llama4/Llama-4-Scout-17B-16E-Instruct-EAGLE3-20250829/",
+            "--speculative-num-steps=3",
+            "--speculative-eagle-topk=4",
+            "--speculative-num-draft-tokens=8"
+          ],
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/health",
+          "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:model-garden.sglang-0-4-release_20250831.00_p0",
+          "ports": [
+            {
+              "containerPort": 30000
+            }
+          ],
+          "predictRoute": "/vertex_generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_H100_80GB",
+            "machineType": "a3-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"What is machine learning?\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 128\n    }\n  }\n}\n"
+        },
+        "deployTaskName": "SGLang 128K context 1 host with Speculative Decoding",
+        "modelDisplayName": "Llama-4-Scout-17B-16E-Instruct"
+      },
+      "deployGke": {
+        "gkeYamlConfigs": [
+          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: llama-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: llama-server\n  template:\n    metadata:\n      labels:\n        app: llama-server\n        ai.gke.io/model: Llama-4-Scout-17B-16E-Instruct\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: model-garden\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250417_0916_RC01\n        resources:\n          requests:\n            cpu: 146\n            memory: 1311Gi\n            ephemeral-storage: 600Gi\n            nvidia.com/gpu : 8\n          limits:\n            cpu: 146\n            memory: 1311Gi\n            ephemeral-storage: 600Gi\n            nvidia.com/gpu : 8\n        args:\n        - python3\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=7080\n        - --swap-space=16\n        - --max-model-len=1310720\n        - --limit_mm_per_prompt='image=5'\n        - --enable-auto-tool-choice\n        - --tool-call-parser=llama3_json\n        - \"--override-generation-config='{\\\"attn_temperature_tuning\\\": true}'\"\n        - --disable-log-stats\n        - --model=meta-llama/Llama-4-Scout-17B-16E-Instruct\n        - --tensor-parallel-size=8\n        env:\n        - name: MODEL_ID\n          value: 'meta-llama/Llama-4-Scout-17B-16E-Instruct'\n        - name: DEPLOY_SOURCE\n          value: 'UI_NATIVE_MODEL'\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-h100-80gb\n",
+          "apiVersion: v1\nkind: Service\nmetadata:\n  name: llama-service\nspec:\n  selector:\n    app: llama-server\n  type: ClusterIP\n  ports:\n  - protocol: TCP\n    port: 8000\n    targetPort: 7080\n",
+          "apiVersion: v1\nkind: Secret\nmetadata:\n  name: hf-secret\ntype: Opaque\nstringData:\n  hf_api_token: {{HF_TOKEN}}\n"
+        ]
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "--model=gs://vertex-model-garden-restricted-us/llama4/Llama-4-Scout-17B-16E-Instruct",
+                "--attention-backend=fa3",
+                "--context-length=131072",
+                "--chat-template=llama-4",
+                "--tp=8",
+                "--enable-multimodal",
+                "--tool-call-parser=pythonic",
+                "--chat-template=sglang/examples/chat_template/tool_chat_template_llama4_pythonic.jinja",
+                "--speculative-algo=EAGLE3",
+                "--speculative-draft-model-path=gs://vertex-model-garden-restricted-us/llama4/Llama-4-Scout-17B-16E-Instruct-EAGLE3-20250829/",
+                "--speculative-num-steps=3",
+                "--speculative-eagle-topk=4",
+                "--speculative-num-draft-tokens=8"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/health",
+              "imageUri": "us-docker.pkg.dev/deeplearning-platform-release/vertex-model-garden/sglang-serve.cu124.0-4.ubuntu2204.py310:model-garden.sglang-0-4-release_20250831.00_p0",
+              "ports": [
+                {
+                  "containerPort": 30000
+                }
+              ],
+              "predictRoute": "/vertex_generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_H100_80GB",
+                "machineType": "a3-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"text\": \"What is machine learning?\"\n    }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 128\n    }\n  }\n}\n"
+            },
+            "deployTaskName": "SGLang 128K context 1 host with Speculative Decoding",
+            "modelDisplayName": "Llama-4-Scout-17B-16E-Instruct"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "python3",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--swap-space=16",
+                "--max-model-len=131072",
+                "--gpu-memory-utilization=0.95",
+                "--enable-auto-tool-choice",
+                "--tool-call-parser=llama4_json",
+                "--override-generation-config.attn_temperature_tuning=true",
+                "--model=gs://vertex-model-garden-restricted-us/llama4/Llama-4-Scout-17B-16E-Instruct",
+                "--tensor-parallel-size=4"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20251205_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 4,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-192"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"What is machine learning? Please, answer in pirate-speak.\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 128K context length",
+            "modelDisplayName": "Llama-4-Scout-17B-16E-Instruct"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "python3",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--swap-space=16",
+                "--max-model-len=1310720",
+                "--limit_mm_per_prompt='image=5'",
+                "--enable-auto-tool-choice",
+                "--tool-call-parser=llama3_json",
+                "--override-generation-config='{\"attn_temperature_tuning\": true}'",
+                "--disable-log-stats",
+                "--model=gs://vertex-model-garden-restricted-us/llama4/Llama-4-Scout-17B-16E-Instruct",
+                "--tensor-parallel-size=8"
+              ],
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250417_0916_RC01",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_H100_80GB",
+                "machineType": "a3-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "labels": {
+                "faster-deployment-available-regions": "us-central1",
+                "show-faster-deployment-option": "true"
+              },
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"What is machine learning? Please, answer in pirate-speak.\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 1280K context 1 host",
+            "modelDisplayName": "Llama-4-Scout-17B-16E-Instruct"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "--model=gs://vertex-model-garden-restricted-us/llama4/Llama-4-Scout-17B-16E-Instruct",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--log_level=INFO",
+                "--enable_jit",
+                "--load_format=auto",
+                "--tensor_parallel_size=16",
+                "--num_hosts=4",
+                "--max_model_len=8192",
+                "--max_running_seqs=256",
+                "--decode_seqs_padding=128",
+                "--data_parallel_size=1",
+                "--hbm_utilization_factor=0.7"
+              ],
+              "command": [
+                "python",
+                "-m",
+                "hex_llm.server.api_server"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                },
+                {
+                  "name": "PJRT_DEVICE",
+                  "value": "TPU"
+                },
+                {
+                  "name": "RAY_DEDUP_LOGS",
+                  "value": "0"
+                },
+                {
+                  "name": "RAY_USAGE_STATS_ENABLED",
+                  "value": "0"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai-restricted/vertex-vision-model-garden-dockers/hex-llm-serve:stable",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "machineType": "ct5lp-hightpu-4t",
+                "tpuTopology": "4x4"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"prompt\": \"What is machine learning?\",\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "Hex-LLM 8K context 4 hosts 16 TPU v5e chips total",
+            "modelDisplayName": "Llama-4-Scout-17B-16E-Instruct"
+          }
+        ]
+      },
+      "openNotebook": {
+        "references": {
+          "us-central1": {
+            "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_integration_with_agent.ipynb"
+          }
+        },
+        "resourceDescription": "Deployment And Integration With Agent.",
+        "resourceTitle": "Notebook",
+        "resourceUseCase": "Deployment And Integration With Agent",
+        "title": "Open Notebook"
+      },
+      "openNotebooks": {
+        "notebooks": [
+          {
+            "references": {
+              "us-central1": {
+                "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_llama4_deployment.ipynb"
+              }
+            },
+            "title": "Open Notebook"
+          },
+          {
+            "references": {
+              "us-central1": {
+                "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_llama4_deployment.ipynb"
+              }
+            },
+            "resourceDescription": "Deploy Llama 4 models.",
+            "resourceTitle": "Notebook",
+            "resourceUseCase": "Deployment",
+            "supportsWorkbench": true,
+            "title": "Open Notebook"
+          },
+          {
+            "references": {
+              "us-central1": {
+                "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_integration_with_agent.ipynb"
+              }
+            },
+            "resourceDescription": "Deployment And Integration With Agent.",
+            "resourceTitle": "Notebook",
+            "resourceUseCase": "Deployment And Integration With Agent",
+            "title": "Open Notebook"
+          }
+        ]
+      }
+    },
+    "versionId": "llama-4-scout-17b-16e-instruct"
   },
   {
     "launchStage": "GA",
@@ -60236,6 +61703,9 @@
           },
           "maxReplicaCount": 1
         },
+        "deployMetadata": {
+          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"input\": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],\n      \"horizon\": 12\n    }\n  ]\n}\n"
+        },
         "deployTaskName": "NVIDIA_L4",
         "modelDisplayName": "timesfm-2.0"
       },
@@ -60282,6 +61752,9 @@
               },
               "maxReplicaCount": 1
             },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"input\": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],\n      \"horizon\": 12\n    }\n  ]\n}\n"
+            },
             "deployTaskName": "NVIDIA_L4",
             "modelDisplayName": "timesfm-2.0"
           },
@@ -60323,6 +61796,9 @@
                 "machineType": "n1-standard-8"
               },
               "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"input\": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],\n      \"horizon\": 12\n    }\n  ]\n}\n"
             },
             "deployTaskName": "CPU",
             "modelDisplayName": "timesfm-2.0"
@@ -60401,6 +61877,9 @@
           },
           "maxReplicaCount": 1
         },
+        "deployMetadata": {
+          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"input\": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],\n      \"horizon\": 12\n    }\n  ]\n}\n"
+        },
         "deployTaskName": "NVIDIA_L4_Dynamic",
         "modelDisplayName": "timesfm-2.5"
       },
@@ -60447,6 +61926,9 @@
               },
               "maxReplicaCount": 1
             },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"input\": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],\n      \"horizon\": 12\n    }\n  ]\n}\n"
+            },
             "deployTaskName": "NVIDIA_L4_Dynamic",
             "modelDisplayName": "timesfm-2.5"
           },
@@ -60490,6 +61972,9 @@
                 "machineType": "g2-standard-8"
               },
               "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"input\": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],\n      \"horizon\": 12\n    }\n  ]\n}\n"
             },
             "deployTaskName": "NVIDIA_L4_Large_Context_8192_Horizon_1024",
             "modelDisplayName": "timesfm-2.5"
@@ -60535,6 +62020,9 @@
               },
               "maxReplicaCount": 1
             },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"input\": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],\n      \"horizon\": 12\n    }\n  ]\n}\n"
+            },
             "deployTaskName": "NVIDIA_L4_Small_Context_512_Horizon_128",
             "modelDisplayName": "timesfm-2.5"
           },
@@ -60576,6 +62064,9 @@
                 "machineType": "n1-standard-8"
               },
               "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"input\": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],\n      \"horizon\": 12\n    }\n  ]\n}\n"
             },
             "deployTaskName": "CPU_Small_Context_512_Horizon_128",
             "modelDisplayName": "timesfm-2.5"
@@ -60660,7 +62151,7 @@
       },
       "deployGke": {
         "gkeYamlConfigs": [
-          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-27b\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: user-guide\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: \"29\"\n            memory: \"116Gi\"\n            ephemeral-storage: \"120Gi\"\n            nvidia.com/gpu: 4\n          limits:\n            cpu: \"29\"\n            memory: \"116Gi\"\n            ephemeral-storage: \"120Gi\"\n            nvidia.com/gpu: 4\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-27b\n        - --tensor-parallel-size=4\n        - --swap-space=1\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        - --disable-log-stats\n        env:\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: MODEL_ID\n          value: google/gemma-2-27b\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
+          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-27b\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: user-guide\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: \"29\"\n            memory: \"116Gi\"\n            ephemeral-storage: \"120Gi\"\n            nvidia.com/gpu: 4\n          limits:\n            cpu: \"29\"\n            memory: \"116Gi\"\n            ephemeral-storage: \"120Gi\"\n            nvidia.com/gpu: 4\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-27b\n        - --tensor-parallel-size=4\n        - --swap-space=1\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        env:\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: MODEL_ID\n          value: google/gemma-2-27b\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
           "apiVersion: v1\nkind: Service\nmetadata:\n  name: llm-service\nspec:\n  selector:\n    app: gemma-server\n  type: ClusterIP\n  ports:\n  - protocol: TCP\n    port: 8000\n    targetPort: 8000\n",
           "apiVersion: v1\nkind: Secret\nmetadata:\n  name: hf-secret\ntype: Opaque\nstringData:\n  hf_api_token: {{HF_TOKEN}}\n"
         ]
@@ -60723,8 +62214,7 @@
                 "--tensor-parallel-size=2",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -60772,8 +62262,7 @@
                 "--tensor-parallel-size=8",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -60821,8 +62310,7 @@
                 "--tensor-parallel-size=1",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -60870,8 +62358,7 @@
                 "--tensor-parallel-size=4",
                 "--swap-space=1",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -61030,7 +62517,7 @@
       },
       "deployGke": {
         "gkeYamlConfigs": [
-          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-27b-it\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: user-guide\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: \"29\"\n            memory: \"116Gi\"\n            ephemeral-storage: \"120Gi\"\n            nvidia.com/gpu: 4\n          limits:\n            cpu: \"29\"\n            memory: \"116Gi\"\n            ephemeral-storage: \"120Gi\"\n            nvidia.com/gpu: 4\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-27b-it\n        - --tensor-parallel-size=4\n        - --swap-space=1\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        - --disable-log-stats\n        env:\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: MODEL_ID\n          value: google/gemma-2-27b-it\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
+          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-27b-it\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: user-guide\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: \"29\"\n            memory: \"116Gi\"\n            ephemeral-storage: \"120Gi\"\n            nvidia.com/gpu: 4\n          limits:\n            cpu: \"29\"\n            memory: \"116Gi\"\n            ephemeral-storage: \"120Gi\"\n            nvidia.com/gpu: 4\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-27b-it\n        - --tensor-parallel-size=4\n        - --swap-space=1\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        env:\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: MODEL_ID\n          value: google/gemma-2-27b-it\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
           "apiVersion: v1\nkind: Service\nmetadata:\n  name: llm-service\nspec:\n  selector:\n    app: gemma-server\n  type: ClusterIP\n  ports:\n  - protocol: TCP\n    port: 8000\n    targetPort: 8000\n",
           "apiVersion: v1\nkind: Secret\nmetadata:\n  name: hf-secret\ntype: Opaque\nstringData:\n  hf_api_token: {{HF_TOKEN}}\n"
         ]
@@ -61143,8 +62630,7 @@
                 "--tensor-parallel-size=2",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -61192,8 +62678,7 @@
                 "--tensor-parallel-size=8",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -61241,8 +62726,7 @@
                 "--tensor-parallel-size=1",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -61294,8 +62778,7 @@
                 "--tensor-parallel-size=4",
                 "--swap-space=1",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -61483,7 +62966,7 @@
       },
       "deployGke": {
         "gkeYamlConfigs": [
-          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-2b\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: model-garden\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: 2\n            memory: 34Gi\n            ephemeral-storage: 10Gi\n            nvidia.com/gpu: 1\n          limits:\n            cpu: 2\n            memory: 34Gi\n            ephemeral-storage: 10Gi\n            nvidia.com/gpu: 1\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-2b\n        - --tensor-parallel-size=1\n        - --swap-space=16\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        - --disable-log-stats\n        env:\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: MODEL_ID\n          value: google/gemma-2-2b\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
+          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-2b\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: model-garden\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: 2\n            memory: 34Gi\n            ephemeral-storage: 10Gi\n            nvidia.com/gpu: 1\n          limits:\n            cpu: 2\n            memory: 34Gi\n            ephemeral-storage: 10Gi\n            nvidia.com/gpu: 1\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-2b\n        - --tensor-parallel-size=1\n        - --swap-space=16\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        env:\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: MODEL_ID\n          value: google/gemma-2-2b\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
           "apiVersion: v1\nkind: Service\nmetadata:\n  name: llm-service\nspec:\n  selector:\n    app: gemma-server\n  type: ClusterIP\n  ports:\n  - protocol: TCP\n    port: 8000\n    targetPort: 8000\n",
           "apiVersion: v1\nkind: Secret\nmetadata:\n  name: hf-secret\ntype: Opaque\nstringData:\n  hf_api_token: {{HF_TOKEN}}\n"
         ]
@@ -61565,7 +63048,6 @@
                 "--tensor-parallel-size=1",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--disable-log-stats",
                 "--enable-lora",
                 "--max-loras=1",
                 "--max-cpu-loras=8",
@@ -61746,7 +63228,7 @@
       },
       "deployGke": {
         "gkeYamlConfigs": [
-          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-2b-it\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: model-garden\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: 2\n            memory: 34Gi\n            ephemeral-storage: 10Gi\n            nvidia.com/gpu: 1\n          limits:\n            cpu: 2\n            memory: 34Gi\n            ephemeral-storage: 10Gi\n            nvidia.com/gpu: 1\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-2b-it\n        - --tensor-parallel-size=1\n        - --swap-space=16\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        - --disable-log-stats\n        env:\n        - name: MODEL_ID\n          value: google/gemma-2-2b-it\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
+          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-2b-it\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: model-garden\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: 2\n            memory: 34Gi\n            ephemeral-storage: 10Gi\n            nvidia.com/gpu: 1\n          limits:\n            cpu: 2\n            memory: 34Gi\n            ephemeral-storage: 10Gi\n            nvidia.com/gpu: 1\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-2b-it\n        - --tensor-parallel-size=1\n        - --swap-space=16\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        env:\n        - name: MODEL_ID\n          value: google/gemma-2-2b-it\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
           "apiVersion: v1\nkind: Service\nmetadata:\n  name: llm-service\nspec:\n  selector:\n    app: gemma-server\n  type: ClusterIP\n  ports:\n  - protocol: TCP\n    port: 8000\n    targetPort: 8000\n",
           "apiVersion: v1\nkind: Secret\nmetadata:\n  name: hf-secret\ntype: Opaque\nstringData:\n  hf_api_token: {{HF_TOKEN}}\n"
         ]
@@ -61828,7 +63310,6 @@
                 "--tensor-parallel-size=1",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--disable-log-stats",
                 "--enable-lora",
                 "--max-loras=1",
                 "--max-cpu-loras=8",
@@ -62021,7 +63502,7 @@
       },
       "deployGke": {
         "gkeYamlConfigs": [
-          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-9b\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: user-guide\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: \"16\"\n            memory: \"58Gi\"\n            ephemeral-storage: \"80Gi\"\n            nvidia.com/gpu: 2\n          limits:\n            cpu: \"16\"\n            memory: \"58Gi\"\n            ephemeral-storage: \"80Gi\"\n            nvidia.com/gpu: 2\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-9b\n        - --tensor-parallel-size=2\n        - --swap-space=16\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        - --disable-log-stats\n        env:\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: MODEL_ID\n          value: google/gemma-2-9b\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
+          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-9b\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: user-guide\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: \"16\"\n            memory: \"58Gi\"\n            ephemeral-storage: \"80Gi\"\n            nvidia.com/gpu: 2\n          limits:\n            cpu: \"16\"\n            memory: \"58Gi\"\n            ephemeral-storage: \"80Gi\"\n            nvidia.com/gpu: 2\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-9b\n        - --tensor-parallel-size=2\n        - --swap-space=16\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        env:\n        - name: DEPLOY_SOURCE\n          value: \"UI_NATIVE_MODEL\"\n        - name: MODEL_ID\n          value: google/gemma-2-9b\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
           "apiVersion: v1\nkind: Service\nmetadata:\n  name: llm-service\nspec:\n  selector:\n    app: gemma-server\n  type: ClusterIP\n  ports:\n  - protocol: TCP\n    port: 8000\n    targetPort: 8000\n",
           "apiVersion: v1\nkind: Secret\nmetadata:\n  name: hf-secret\ntype: Opaque\nstringData:\n  hf_api_token: {{HF_TOKEN}}\n"
         ]
@@ -62103,8 +63584,7 @@
                 "--tensor-parallel-size=2",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -62155,8 +63635,7 @@
                 "--tensor-parallel-size=1",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -62204,8 +63683,7 @@
                 "--tensor-parallel-size=1",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -62380,7 +63858,7 @@
       },
       "deployGke": {
         "gkeYamlConfigs": [
-          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-9b-it\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: user-guide\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: \"16\"\n            memory: \"58Gi\"\n            ephemeral-storage: \"80Gi\"\n            nvidia.com/gpu: 2\n          limits:\n            cpu: \"16\"\n            memory: \"58Gi\"\n            ephemeral-storage: \"80Gi\"\n            nvidia.com/gpu: 2\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-9b-it\n        - --tensor-parallel-size=1\n        - --swap-space=16\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        - --disable-log-stats\n        - --max-model-len=2048\n        env:\n        - name: MODEL_ID\n          value: google/gemma-2-9b-it\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
+          "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: gemma-deployment\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: gemma-server\n  template:\n    metadata:\n      labels:\n        app: gemma-server\n        ai.gke.io/model: gemma-2-9b-it\n        ai.gke.io/inference-server: vllm\n        examples.ai.gke.io/source: user-guide\n    spec:\n      containers:\n      - name: inference-server\n        image: us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250114_0916_RC00_maas\n        resources:\n          requests:\n            cpu: \"16\"\n            memory: \"58Gi\"\n            ephemeral-storage: \"80Gi\"\n            nvidia.com/gpu: 2\n          limits:\n            cpu: \"16\"\n            memory: \"58Gi\"\n            ephemeral-storage: \"80Gi\"\n            nvidia.com/gpu: 2\n        args:\n        - python\n        - -m\n        - vllm.entrypoints.api_server\n        - --host=0.0.0.0\n        - --port=8000\n        - --model=google/gemma-2-9b-it\n        - --tensor-parallel-size=1\n        - --swap-space=16\n        - --gpu-memory-utilization=0.95\n        - --enable-chunked-prefill\n        - --max-model-len=2048\n        env:\n        - name: MODEL_ID\n          value: google/gemma-2-9b-it\n        - name: HUGGING_FACE_HUB_TOKEN\n          valueFrom:\n            secretKeyRef:\n              name: hf-secret\n              key: hf_api_token\n        volumeMounts:\n        - mountPath: /dev/shm\n          name: dshm\n      volumes:\n      - name: dshm\n        emptyDir:\n          medium: Memory\n      nodeSelector:\n        cloud.google.com/gke-accelerator: nvidia-l4\n",
           "apiVersion: v1\nkind: Service\nmetadata:\n  name: llm-service\nspec:\n  selector:\n    app: gemma-server\n  type: ClusterIP\n  ports:\n  - protocol: TCP\n    port: 8000\n    targetPort: 8000\n",
           "apiVersion: v1\nkind: Secret\nmetadata:\n  name: hf-secret\ntype: Opaque\nstringData:\n  hf_api_token: {{HF_TOKEN}}\n"
         ]
@@ -62462,8 +63940,7 @@
                 "--tensor-parallel-size=2",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -62514,8 +63991,7 @@
                 "--tensor-parallel-size=1",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -62563,8 +64039,7 @@
                 "--tensor-parallel-size=1",
                 "--swap-space=16",
                 "--gpu-memory-utilization=0.95",
-                "--enable-chunked-prefill",
-                "--disable-log-stats"
+                "--enable-chunked-prefill"
               ],
               "env": [
                 {
@@ -86069,6 +87544,41 @@
   },
   {
     "launchStage": "GA",
+    "name": "publishers/anthropic/models/claude-opus-5",
+    "openSourceCategory": "PROPRIETARY",
+    "supportedActions": {
+      "openNotebook": {
+        "references": {
+          "us-central1": {
+            "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/generative_ai/anthropic_claude_intro.ipynb"
+          }
+        },
+        "title": "Open Notebook"
+      },
+      "openNotebooks": {
+        "notebooks": [
+          {
+            "references": {
+              "us-central1": {
+                "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/generative_ai/anthropic_claude_intro.ipynb"
+              }
+            },
+            "title": "Open Notebook"
+          }
+        ]
+      },
+      "requestAccess": {
+        "references": {
+          "us-central1": {
+            "uri": "https://console.cloud.google.com/vertex-ai/model-garden/questionnaire?model=publishers/anthropic/models/claude-opus-5&mp=anthropic/anthropic-904.cloudpartnerservices.goog&service=anthropic-904.cloudpartnerservices.goog&enableLoggingDisclaimer=true&enableWebsearchDisclaimer=true"
+          }
+        }
+      }
+    },
+    "versionId": "default"
+  },
+  {
+    "launchStage": "GA",
     "name": "publishers/cross-encoder/models/cross-encoder",
     "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
     "supportedActions": {
@@ -107571,18 +109081,6 @@
     "versionId": "qwen3-next-80b-a3b-thinking"
   },
   {
-    "launchStage": "PUBLIC_PREVIEW",
-    "name": "publishers/google/models/gemini-2.5-flash-preview-09-2025",
-    "openSourceCategory": "PROPRIETARY",
-    "versionId": "default"
-  },
-  {
-    "launchStage": "PUBLIC_PREVIEW",
-    "name": "publishers/google/models/gemini-2.5-flash-lite-preview-09-2025",
-    "openSourceCategory": "PROPRIETARY",
-    "versionId": "default"
-  },
-  {
     "launchStage": "GA",
     "name": "publishers/google/models/gemini-2.5-flash-image",
     "publisherModelTemplate": "projects/{project}/locations/{location}/publishers/google/models/gemini-2.5-flash-image@default",
@@ -111796,21 +113294,6 @@
     "versionId": "default"
   },
   {
-    "launchStage": "PUBLIC_PREVIEW",
-    "name": "publishers/google/models/gemini-3-pro-image-preview",
-    "publisherModelTemplate": "projects/{project}/locations/{location}/publishers/google/models/gemini-3-pro-image-preview@default",
-    "supportedActions": {
-      "openGenerationAiStudio": {
-        "references": {
-          "us-central1": {
-            "uri": "https://console.cloud.google.com/vertex-ai/generative/multimodal/create/text?model=gemini-3-pro-image-preview"
-          }
-        }
-      }
-    },
-    "versionId": "default"
-  },
-  {
     "launchStage": "GA",
     "name": "publishers/deepseek-ai/models/deepseek-ocr-maas",
     "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
@@ -113008,128 +114491,6 @@
             "python",
             "-m",
             "vllm.entrypoints.api_server",
-            "--model=gs://vertex-model-garden-restricted-us/huggingface/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16/",
-            "--host=0.0.0.0",
-            "--port=7080",
-            "--gpu-memory-utilization=0.95",
-            "--disable-log-requests",
-            "--reasoning-parser=deepseek_r1",
-            "--tool-call-parser=qwen3_coder",
-            "--enable-auto-tool-choice",
-            "--trust-remote-code",
-            "--dtype=auto",
-            "--served-model-name=NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16",
-            "--tensor-parallel-size=4",
-            "--max-num-batched-tokens=16394",
-            "--max-num-seqs=1024",
-            "--max-model-len=130712"
-          ],
-          "env": [
-            {
-              "name": "MODEL_ID",
-              "value": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16"
-            },
-            {
-              "name": "DEPLOY_SOURCE",
-              "value": "UI_NATIVE_MODEL"
-            }
-          ],
-          "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20251212_0916_RC01",
-          "ports": [
-            {
-              "containerPort": 7080
-            }
-          ],
-          "predictRoute": "/generate"
-        },
-        "dedicatedResources": {
-          "machineSpec": {
-            "acceleratorCount": 4,
-            "acceleratorType": "NVIDIA_H100_80GB",
-            "machineType": "a3-highgpu-4g"
-          },
-          "maxReplicaCount": 1
-        },
-        "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"prompt\": \"What is 1+1?\",\n      \"max_tokens\": 200\n    }\n  ]\n}\n"
-        },
-        "deployTaskName": "vLLM 128K context",
-        "modelDisplayName": "NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16"
-      },
-      "multiDeployVertex": {
-        "multiDeployVertex": [
-          {
-            "containerSpec": {
-              "args": [
-                "python",
-                "-m",
-                "vllm.entrypoints.api_server",
-                "--model=gs://vertex-model-garden-restricted-us/huggingface/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16/",
-                "--host=0.0.0.0",
-                "--port=7080",
-                "--gpu-memory-utilization=0.95",
-                "--disable-log-requests",
-                "--reasoning-parser=deepseek_r1",
-                "--tool-call-parser=qwen3_coder",
-                "--enable-auto-tool-choice",
-                "--trust-remote-code",
-                "--dtype=auto",
-                "--served-model-name=NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16",
-                "--tensor-parallel-size=4",
-                "--max-num-batched-tokens=16394",
-                "--max-num-seqs=1024",
-                "--max-model-len=130712"
-              ],
-              "env": [
-                {
-                  "name": "MODEL_ID",
-                  "value": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16"
-                },
-                {
-                  "name": "DEPLOY_SOURCE",
-                  "value": "UI_NATIVE_MODEL"
-                }
-              ],
-              "healthRoute": "/ping",
-              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20251212_0916_RC01",
-              "ports": [
-                {
-                  "containerPort": 7080
-                }
-              ],
-              "predictRoute": "/generate"
-            },
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 4,
-                "acceleratorType": "NVIDIA_H100_80GB",
-                "machineType": "a3-highgpu-4g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"prompt\": \"What is 1+1?\",\n      \"max_tokens\": 200\n    }\n  ]\n}\n"
-            },
-            "deployTaskName": "vLLM 128K context",
-            "modelDisplayName": "NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16"
-          }
-        ]
-      }
-    },
-    "versionId": "nemotron-3-nano-30b-a3b-base-bf16"
-  },
-  {
-    "launchStage": "GA",
-    "name": "publishers/nvidia/models/nemotron-v3",
-    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
-    "supportedActions": {
-      "deploy": {
-        "containerSpec": {
-          "args": [
-            "python",
-            "-m",
-            "vllm.entrypoints.api_server",
             "--model=gs://vertex-model-garden-restricted-us/huggingface/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/",
             "--host=0.0.0.0",
             "--port=7080",
@@ -113362,201 +114723,6 @@
       }
     },
     "versionId": "nemotron-3-nano-30b-a3b-fp8"
-  },
-  {
-    "launchStage": "GA",
-    "name": "publishers/nvidia/models/nemotron-v3",
-    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
-    "supportedActions": {
-      "deploy": {
-        "containerSpec": {
-          "args": [
-            "python",
-            "-m",
-            "vllm.entrypoints.api_server",
-            "--model=gs://vertex-model-garden-restricted-us/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16/",
-            "--host=0.0.0.0",
-            "--port=7080",
-            "--served-model-name=NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16",
-            "--async-scheduling",
-            "--dtype=auto",
-            "--kv-cache-dtype=fp8",
-            "--tensor-parallel-size=8",
-            "--pipeline-parallel-size=1",
-            "--data-parallel-size=1",
-            "--swap-space=16",
-            "--trust-remote-code",
-            "--gpu-memory-utilization=0.9",
-            "--enable-chunked-prefill",
-            "--mamba-ssm-cache-dtype=float16",
-            "--max-num-seqs=512",
-            "--max-cudagraph-capture-size=1024"
-          ],
-          "env": [
-            {
-              "name": "MODEL_ID",
-              "value": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16"
-            },
-            {
-              "name": "DEPLOY_SOURCE",
-              "value": "UI_NATIVE_MODEL"
-            },
-            {
-              "name": "VLLM_FLASHINFER_MOE_BACKEND",
-              "value": "throughput"
-            }
-          ],
-          "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260220_0916_RC01",
-          "ports": [
-            {
-              "containerPort": 7080
-            }
-          ],
-          "predictRoute": "/generate"
-        },
-        "dedicatedResources": {
-          "machineSpec": {
-            "acceleratorCount": 8,
-            "acceleratorType": "NVIDIA_H200_141GB",
-            "machineType": "a3-ultragpu-8g"
-          },
-          "maxReplicaCount": 1
-        },
-        "deployMetadata": {
-          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"What is a car?\",\n            \"max_tokens\": 128,\n            \"top_k\": 1\n        }\n    ]\n}\n"
-        },
-        "deployTaskName": "vLLM 128K context",
-        "modelDisplayName": "NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16"
-      },
-      "multiDeployVertex": {
-        "multiDeployVertex": [
-          {
-            "containerSpec": {
-              "args": [
-                "python",
-                "-m",
-                "vllm.entrypoints.api_server",
-                "--model=gs://vertex-model-garden-restricted-us/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16/",
-                "--host=0.0.0.0",
-                "--port=7080",
-                "--served-model-name=NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16",
-                "--async-scheduling",
-                "--dtype=auto",
-                "--kv-cache-dtype=fp8",
-                "--tensor-parallel-size=8",
-                "--pipeline-parallel-size=1",
-                "--data-parallel-size=1",
-                "--swap-space=16",
-                "--trust-remote-code",
-                "--gpu-memory-utilization=0.9",
-                "--enable-chunked-prefill",
-                "--mamba-ssm-cache-dtype=float16",
-                "--max-num-seqs=512",
-                "--max-cudagraph-capture-size=1024"
-              ],
-              "env": [
-                {
-                  "name": "MODEL_ID",
-                  "value": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16"
-                },
-                {
-                  "name": "DEPLOY_SOURCE",
-                  "value": "UI_NATIVE_MODEL"
-                },
-                {
-                  "name": "VLLM_FLASHINFER_MOE_BACKEND",
-                  "value": "throughput"
-                }
-              ],
-              "healthRoute": "/ping",
-              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260220_0916_RC01",
-              "ports": [
-                {
-                  "containerPort": 7080
-                }
-              ],
-              "predictRoute": "/generate"
-            },
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_H200_141GB",
-                "machineType": "a3-ultragpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"What is a car?\",\n            \"max_tokens\": 128,\n            \"top_k\": 1\n        }\n    ]\n}\n"
-            },
-            "deployTaskName": "vLLM 128K context",
-            "modelDisplayName": "NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16"
-          },
-          {
-            "containerSpec": {
-              "args": [
-                "python",
-                "-m",
-                "vllm.entrypoints.api_server",
-                "--model=gs://vertex-model-garden-restricted-us/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16/",
-                "--host=0.0.0.0",
-                "--port=7080",
-                "--served-model-name=NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16",
-                "--async-scheduling",
-                "--dtype=auto",
-                "--kv-cache-dtype=fp8",
-                "--tensor-parallel-size=8",
-                "--pipeline-parallel-size=1",
-                "--data-parallel-size=1",
-                "--swap-space=16",
-                "--trust-remote-code",
-                "--gpu-memory-utilization=0.9",
-                "--enable-chunked-prefill",
-                "--mamba-ssm-cache-dtype=float16",
-                "--max-num-seqs=512",
-                "--max-cudagraph-capture-size=1024"
-              ],
-              "env": [
-                {
-                  "name": "MODEL_ID",
-                  "value": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16"
-                },
-                {
-                  "name": "DEPLOY_SOURCE",
-                  "value": "UI_NATIVE_MODEL"
-                },
-                {
-                  "name": "VLLM_FLASHINFER_MOE_BACKEND",
-                  "value": "throughput"
-                }
-              ],
-              "healthRoute": "/ping",
-              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20260220_0916_RC01",
-              "ports": [
-                {
-                  "containerPort": 7080
-                }
-              ],
-              "predictRoute": "/generate"
-            },
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_B200",
-                "machineType": "a4-highgpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"prompt\": \"What is a car?\",\n            \"max_tokens\": 128,\n            \"top_k\": 1\n        }\n    ]\n}\n"
-            },
-            "deployTaskName": "vLLM 128K context",
-            "modelDisplayName": "NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16"
-          }
-        ]
-      }
-    },
-    "versionId": "nemotron-3-super-120b-a12b-base-bf16"
   },
   {
     "launchStage": "GA",
@@ -114876,177 +116042,6 @@
   },
   {
     "launchStage": "GA",
-    "name": "publishers/mistralai/models/ministral-3",
-    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
-    "supportedActions": {
-      "deploy": {
-        "containerSpec": {
-          "args": [
-            "python",
-            "-m",
-            "vllm.entrypoints.api_server",
-            "--model=mistralai/Ministral-3-3B-Base-2512",
-            "--host=0.0.0.0",
-            "--port=7080",
-            "--tensor-parallel-size=1",
-            "--gpu-memory-utilization=0.9",
-            "--swap-space=16",
-            "--disable-log-stats",
-            "--tokenizer-mode=mistral",
-            "--config-format=mistral",
-            "--load-format=mistral",
-            "--enable-auto-tool-choice",
-            "--tool-call-parser=mistral"
-          ],
-          "deploymentTimeout": "7200s",
-          "env": [
-            {
-              "name": "MODEL_ID",
-              "value": "mistralai/Ministral-3-3B-Base-2512"
-            },
-            {
-              "name": "DEPLOY_SOURCE",
-              "value": "UI_NATIVE_MODEL"
-            }
-          ],
-          "healthRoute": "/ping",
-          "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20251205_0916_RC01",
-          "ports": [
-            {
-              "containerPort": 7080
-            }
-          ],
-          "predictRoute": "/generate"
-        },
-        "dedicatedResources": {
-          "machineSpec": {
-            "acceleratorCount": 1,
-            "acceleratorType": "NVIDIA_H100_80GB",
-            "machineType": "a3-highgpu-1g"
-          },
-          "maxReplicaCount": 1
-        },
-        "deployMetadata": {
-          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"prompt\" : \"The capital of France is\",\n      \"max_tokens\": 128,\n      \"temperature\": 0.1,\n      \"top_p\": 0.95,\n      \"raw_response\": true\n    }\n  ]\n}\n"
-        },
-        "deployTaskName": "vLLM 256k context",
-        "modelDisplayName": "mistralai/Ministral-3-3B-Base-2512"
-      },
-      "multiDeployVertex": {
-        "multiDeployVertex": [
-          {
-            "containerSpec": {
-              "args": [
-                "python",
-                "-m",
-                "vllm.entrypoints.api_server",
-                "--model=mistralai/Ministral-3-3B-Base-2512",
-                "--host=0.0.0.0",
-                "--port=7080",
-                "--tensor-parallel-size=1",
-                "--gpu-memory-utilization=0.9",
-                "--swap-space=16",
-                "--disable-log-stats",
-                "--tokenizer-mode=mistral",
-                "--config-format=mistral",
-                "--load-format=mistral",
-                "--enable-auto-tool-choice",
-                "--tool-call-parser=mistral"
-              ],
-              "deploymentTimeout": "7200s",
-              "env": [
-                {
-                  "name": "MODEL_ID",
-                  "value": "mistralai/Ministral-3-3B-Base-2512"
-                },
-                {
-                  "name": "DEPLOY_SOURCE",
-                  "value": "UI_NATIVE_MODEL"
-                }
-              ],
-              "healthRoute": "/ping",
-              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20251205_0916_RC01",
-              "ports": [
-                {
-                  "containerPort": 7080
-                }
-              ],
-              "predictRoute": "/generate"
-            },
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 1,
-                "acceleratorType": "NVIDIA_H100_80GB",
-                "machineType": "a3-highgpu-1g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"prompt\" : \"The capital of France is\",\n      \"max_tokens\": 128,\n      \"temperature\": 0.1,\n      \"top_p\": 0.95,\n      \"raw_response\": true\n    }\n  ]\n}\n"
-            },
-            "deployTaskName": "vLLM 256k context",
-            "modelDisplayName": "mistralai/Ministral-3-3B-Base-2512"
-          },
-          {
-            "containerSpec": {
-              "args": [
-                "python",
-                "-m",
-                "vllm.entrypoints.api_server",
-                "--model=mistralai/Ministral-3-3B-Base-2512",
-                "--host=0.0.0.0",
-                "--port=7080",
-                "--tensor-parallel-size=2",
-                "--gpu-memory-utilization=0.9",
-                "--swap-space=16",
-                "--disable-log-stats",
-                "--tokenizer-mode=mistral",
-                "--config-format=mistral",
-                "--load-format=mistral",
-                "--enable-auto-tool-choice",
-                "--tool-call-parser=mistral"
-              ],
-              "deploymentTimeout": "7200s",
-              "env": [
-                {
-                  "name": "MODEL_ID",
-                  "value": "mistralai/Ministral-3-3B-Base-2512"
-                },
-                {
-                  "name": "DEPLOY_SOURCE",
-                  "value": "UI_NATIVE_MODEL"
-                }
-              ],
-              "healthRoute": "/ping",
-              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20251205_0916_RC01",
-              "ports": [
-                {
-                  "containerPort": 7080
-                }
-              ],
-              "predictRoute": "/generate"
-            },
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 2,
-                "acceleratorType": "NVIDIA_L4",
-                "machineType": "g2-standard-24"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"prompt\" : \"The capital of France is\",\n      \"max_tokens\": 128,\n      \"temperature\": 0.1,\n      \"top_p\": 0.95,\n      \"raw_response\": true\n    }\n  ]\n}\n"
-            },
-            "deployTaskName": "vLLM 256k context",
-            "modelDisplayName": "mistralai/Ministral-3-3B-Base-2512"
-          }
-        ]
-      }
-    },
-    "versionId": "ministral-3-3b-base-2512"
-  },
-  {
-    "launchStage": "GA",
     "name": "publishers/mistralai/models/mistral-large-3",
     "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
     "supportedActions": {
@@ -115703,5 +116698,35 @@
       }
     },
     "versionId": "alphagenome-request-002"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/google/models/gemini-3.5-flash-lite",
+    "publisherModelTemplate": "projects/{project}/locations/{location}/publishers/google/models/gemini-3.5-flash-lite@default",
+    "supportedActions": {
+      "openGenerationAiStudio": {
+        "references": {
+          "us-central1": {
+            "uri": "https://console.cloud.google.com/vertex-ai/generative/multimodal/create/text?model=gemini-3.5-flash-lite"
+          }
+        }
+      }
+    },
+    "versionId": "default"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/google/models/gemini-3.6-flash",
+    "publisherModelTemplate": "projects/{project}/locations/{location}/publishers/google/models/gemini-3.6-flash@default",
+    "supportedActions": {
+      "openGenerationAiStudio": {
+        "references": {
+          "us-central1": {
+            "uri": "https://console.cloud.google.com/vertex-ai/generative/multimodal/create/text?model=gemini-3.6-flash"
+          }
+        }
+      }
+    },
+    "versionId": "default"
   }
 ]
