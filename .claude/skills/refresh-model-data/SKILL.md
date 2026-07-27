@@ -21,6 +21,8 @@ This produces:
 - `scripts/apply_update.js` -- the only thing allowed to touch `index.html`'s embedded data. See "Applying changes" below.
 - `scripts/build_azure_models.js` -- converts `azure-model-openai-ava.json` + `azure-model-others-ava.json` (+ optionally `azure-model-retirement.json`) into the `azure.models[]`/`azure.groups` shape `apply_update.js replace-models` expects. See Phase 3 below -- read its header comment before using it, there are several non-obvious dedup/inference rules baked in.
 
+**`/tmp` paths and Windows.** The examples below write scratch files to `/tmp/...`. That's fine on macOS/Linux, and on Windows *as long as the file only moves between bash and node* (they agree on `/tmp`). But **never hand a `/tmp` path to `python` on Windows** -- native-Windows python resolves `/tmp` to a different directory than bash/node do, so a file bash/node wrote to `/tmp/x.json` is `FileNotFoundError` when python reads `--catalog-file /tmp/x.json`. Use a relative, repo-local path (e.g. `mini-catalog.json`) for anything python reads. Also: the ~5 MB `vertex_all_models.json` contains non-ASCII that python's default Windows codec (gbk) rejects -- parse it with `node`, or `open(..., encoding="utf-8")` if you must use python.
+
 ## Determine this run's scope, before doing anything else
 
 This skill can refresh all three providers, or just one. Read the user's request and decide `scope` = `{gcp, aws, azure}` (full run) or a subset before touching any of the phases below:
@@ -33,7 +35,14 @@ Run *only* the phase(s) for providers in scope. Skip the GCP preflight check ent
 
 ## If GCP is in scope: preflight the GCP credential
 
-The GCP phase needs an authenticated `gcloud` and a project ID. Check this *first*, before spending time on AWS/Azure, so you're not stuck mid-run deciding what to do about it:
+The GCP phase needs an authenticated `gcloud` and a project ID. Before anything else, have the user run these two prerequisites -- the first opens a browser for interactive login, so you can't run it for them (suggest they type `! gcloud auth login` in the prompt so its output lands here):
+
+```bash
+gcloud auth login
+gcloud config set project <PROJECT_ID>
+```
+
+Then verify the credential is actually live:
 
 ```bash
 gcloud auth print-access-token >/dev/null 2>&1 && echo AUTHED || echo NOT_AUTHED
@@ -53,15 +62,34 @@ If only one provider is in scope, there's no chaining to think about: that provi
 
 *(Skip this whole phase if `gcp` isn't in this run's scope.)*
 
-1. Rebuild the model x region matrix. Reuse the cached catalog dump by default -- it's much faster and the catalog (which publishers/models exist at all) changes far less often than region availability. Only pass a full re-fetch if the user specifically wants brand-new publishers/models that might be missing from the cache:
+1. Rebuild the model x region matrix. Reuse the cached catalog dump by default -- it's much faster and the catalog (which publishers/models exist at all) changes far less often than region availability:
 
    ```bash
    python build_vertex_matrix.py --project <PROJECT_ID> --catalog-file vertex_all_models.json --output vertex.json
-   # full refresh instead (slower -- re-lists the whole Model Garden catalog too):
-   #   python build_vertex_matrix.py --project <PROJECT_ID> --output vertex.json
    ```
 
    This overwrites `vertex.json` in place -- expected, it's a build artifact.
+
+   **The cached catalog can be stale and silently drop brand-new models.** `vertex_all_models.json` is a snapshot from whenever it was last refreshed; models released since won't be in it, won't be probed, and won't appear in `vertex.json` -- and you can't tell from the matrix build alone. One signal (checked after step 3, once you have the retirement doc): cross-check the doc's *active* model IDs (everywhere except the "Retired models" section) against `vertex.json`'s `models[]`; if the doc lists a model `vertex.json` lacks, the cache predates that model's release. Once you suspect staleness, don't reach for a full re-fetch -- use the targeted probe below. It also catches new models the retirement doc *doesn't* cover (e.g. Anthropic, NVIDIA), because it diffs the catalog itself rather than relying on the doc.
+
+   **A full re-probe stalls on GCP quota -- probe only the new entries and merge instead.** Running `build_vertex_matrix.py` with no `--catalog-file` (the "full refresh" path) shortly after a prior build frequently stalls at ~20%: GCP rate-limits the burst of ~10000 regional probes and all 30 workers back off at once; the process stays alive (~185 MB) but progress stops for minutes, and killing + re-running hits the same wall. Instead, refresh just the catalog, diff it against the prior cache to find newly-added entries, probe *only those*, and merge into the matrix you already built today (whose region data is fresh -- no need to re-probe existing models):
+
+   ```bash
+   # 1. refresh the catalog cache (overwrites vertex_all_models.json in place):
+   gcloud ai model-garden models list --billing-project <PROJECT_ID> --format=json --limit=unlimited > vertex_all_models.json
+   # 2. diff old vs new catalog to get the ADDED entry objects. Parse with node, NOT python --
+   #    the ~5MB JSON has non-ASCII that python's default Windows codec (gbk) rejects; node reads utf-8 fine:
+   #      added = newCatalog.filter(e => !oldNames.has(e.name))   // oldNames = Set of old entry .name
+   # 3. write those added entries to a mini-catalog. Use a RELATIVE path, never /tmp on Windows
+   #    (see "/tmp paths and Windows" in Tooling below):
+   #      fs.writeFileSync("mini-catalog.json", JSON.stringify(added))
+   # 4. probe only the new models:
+   python build_vertex_matrix.py --project <PROJECT_ID> --catalog-file mini-catalog.json --output vertex-newonly.json --workers 8
+   # 5. merge vertex-newonly.json into vertex.json (dedupe by g+n+v, union groups, assert caps match):
+   node -e 'const fs=require("fs");const v=JSON.parse(fs.readFileSync("vertex.json"));const n=JSON.parse(fs.readFileSync("vertex-newonly.json"));if(JSON.stringify(v.caps)!==JSON.stringify(n.caps))throw Error("caps differ -- do not merge");const ex=new Set(v.models.map(m=>m.g+"|"+m.n+"|"+m.v));for(const m of n.models){const k=m.g+"|"+m.n+"|"+m.v;if(!ex.has(k)){v.models.push(m);ex.add(k);}}for(const g of n.groups){if(!v.groups.includes(g))v.groups.push(g);}fs.writeFileSync("vertex.json",JSON.stringify(v,null,2));'
+   ```
+
+   This yields the same matrix a full re-fetch would, minus re-probing the models you already probed today -- faster, and it doesn't stall. `mini-catalog.json` and `vertex-newonly.json` are scratch (not tracked); delete them after the merge.
 
 2. Splice it into the page:
 
@@ -70,7 +98,16 @@ If only one provider is in scope, there's no chaining to think about: that provi
      index.html gcp vertex.json --out index-new.html --generated $(date +%Y-%m-%d)
    ```
 
-   Read the printed added/removed list. If a large chunk of models suddenly vanished, that's more likely a `gcloud` auth/quota hiccup than a real product change -- sanity-check before trusting it.
+   Read the printed added/removed list. If a large chunk of models suddenly vanished, that's more likely a `gcloud` auth/quota hiccup than a real product change -- sanity-check by probing a couple of the vanished models directly before trusting it. The script sends an `x-goog-user-project: <PROJECT_ID>` header on every probe; your manual curl must too, or *every* region returns `403` and looks like EULA-gating when it's really just a missing billing-project header:
+
+   ```bash
+   TOKEN=$(gcloud auth print-access-token)
+   curl -s -o /dev/null -w "%{http_code}\n" \
+     -H "Authorization: Bearer $TOKEN" -H "x-goog-user-project: <PROJECT_ID>" \
+     "https://<region>-aiplatform.googleapis.com/v1/publishers/<publisher>/models/<model_id>"
+   # 200 = available in that region | 404 = not deployed there | 403 = exists but EULA-gated
+   # (region-independent; the script counts these as "restricted", NOT available)
+   ```
 
 3. Refresh the Gemini/Veo/Embeddings retirement data:
 
@@ -89,7 +126,9 @@ If only one provider is in scope, there's no chaining to think about: that provi
      index-new.html gcp /tmp/gcp-retirement-patch.json --out index-new.html
    ```
 
-   Match on `n`, falling back to `` `${n}@${v}` `` for versioned IDs like `multimodalembedding@001` that the doc writes with an `@version` suffix.
+   `vertex-model-retirement.json` carries `release_date`/`retirement_date`/`retirement_date_note`/`replacement` but **no `lifecycle` field** -- you derive it for the patch. The existing `index.html` data follows one consistent rule (an observed convention, not an authoritative source): an exact `retirement_date` (a real ISO date, not a `*_note`) **and** a non-empty `replacement` -> `"Deprecated"`; everything else -> `"Legacy"`. Set `retirementDate` to `retirement_date` when it's an exact date, otherwise to `retirement_date_note` (e.g. `"May 19, 2027 or later"`, `"No retirement date announced"`, `"No sooner than May 20, 2028"`). Edge case: a model whose retirement date has already passed but is still in the catalog (e.g. the Veo 3.0/2.0 series, retired 2026-06-30) still takes `"Deprecated"` under this rule -- leave it; don't invent `"Retired"`/`"EOL"`, the existing data never uses them.
+
+   Match with `matchKeys: ["n"]`. A few doc IDs carry an `@version` suffix (e.g. `multimodalembedding@001`); `build_vertex_matrix.py` stores those **split** -- `n="multimodalembedding"`, `v="001"` -- so `apply_update.js`'s `match.n` must be the **bare name with the `@version` stripped** (`"multimodalembedding"`), not the suffixed form, or it won't match. (Leave "Retired models"-section entries out of the patch entirely -- those models are already out of the catalog, so there's nothing to patch onto; `apply_update.js` would just report them unmatched.)
 
 ## Phase 2 -- AWS Bedrock
 
