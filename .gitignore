@@ -2,7 +2,10 @@
 # vertex_test.json is build_vertex_matrix.py's --limit test output
 vertex_test.json
 
-# gcloud catalog dump (input to build_vertex_matrix.py via --catalog-file; ~5MB, regeneratable)
+# gcloud catalog dump (input to build_vertex_matrix.py via --catalog-file; ~5MB, regeneratable).
+# NOTE: the actual file in this repo is vertex_all_models.json and it IS tracked in git
+# (kept as a catalog cache to avoid re-fetching). The bare name below only matches a
+# plain "all_models.json" should one ever appear; it does NOT match vertex_all_models.json.
 all_models.json
 
 # refresh-model-data skill's optional diff report (apply_update.js diff --out) -- scratch output, regeneratable
@@ -16,3 +19,6 @@ index-old.html
 
 # Logs
 *.log
+
+# Node dependencies (local tooling, e.g. jsdom used for render verification)
+node_modules/
