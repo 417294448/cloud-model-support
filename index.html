@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cloud LLM — Model × Region Cheat Sheet</title>
+<title id="metaTitle">Cloud LLM — Model × Region Cheat Sheet</title>
 <meta name="description" content="Compare foundation model availability, regions, and lifecycle across AWS Bedrock, Azure Foundry, and GCP Vertex AI." />
 <meta name="keywords" content="AWS Bedrock, Azure AI Foundry, GCP Vertex AI, foundation models, LLM comparison, model region availability, model lifecycle, Claude, GPT, Gemini, Llama, Mistral, Cohere, DeepSeek, Grok, xAI, Amazon Nova, cloud AI models, model deprecation, EOL models" />
 <meta property="og:type" content="website" />
@@ -44,7 +44,20 @@
   }
   .theme-toggle:hover{color:var(--ink);border-color:#37425f}
   .theme-toggle svg{width:18px;height:18px;display:block}
-  @media(max-width:640px){.theme-toggle{top:10px;right:10px;width:34px;height:34px}}
+  .lang-toggle{
+    position:fixed;top:18px;right:70px;z-index:30;height:38px;border-radius:10px;padding:0 13px;
+    display:grid;place-items:center;background:var(--panel);border:1px solid var(--border);color:var(--muted);
+    cursor:pointer;box-shadow:var(--shadow);transition:.15s;font-weight:700;font-size:12.5px;letter-spacing:.02em;
+  }
+  .lang-toggle:hover{color:var(--ink);border-color:#37425f}
+  .home-link{
+    position:fixed;top:18px;right:118px;z-index:30;height:38px;border-radius:10px;padding:0 13px;
+    display:flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--border);color:var(--muted);
+    cursor:pointer;box-shadow:var(--shadow);transition:.15s;font-weight:700;font-size:12.5px;letter-spacing:.02em;
+  }
+  .home-link:hover{color:var(--ink);border-color:#37425f;text-decoration:none}
+  .home-link svg{width:15px;height:15px;display:block}
+  @media(max-width:640px){.theme-toggle{top:10px;right:10px;width:34px;height:34px}.lang-toggle{top:10px;right:52px;height:34px;padding:0 10px}.home-link{top:10px;right:94px;height:34px;padding:0 10px}}
 
   /* site header */
   .site-head{margin-bottom:18px}
@@ -167,11 +180,13 @@
 </style>
 </head>
 <body>
+<a class="home-link" href="https://www.cloudproduct.top/" target="_blank" rel="noopener" data-i18n-aria="homeAria" aria-label="首页 Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span data-i18n="homeLink">首页</span></a>
+<button class="lang-toggle" id="langToggle" aria-label="Switch language / 切换语言">中</button>
 <button class="theme-toggle" id="themeToggle" title="Toggle light / dark theme" aria-label="Toggle light / dark theme"></button>
 <div class="wrap">
   <div class="site-head">
-    <h1 class="site-title">Cloud LLM Model Directory</h1>
-    <p class="site-tagline">Compare foundation model availability, regions &amp; lifecycle across AWS Bedrock, Azure Foundry, and GCP Vertex AI.</p>
+    <h1 class="site-title" data-i18n="siteTitle">Cloud LLM Model Directory</h1>
+    <p class="site-tagline" data-i18n="siteTagline">Compare foundation model availability, regions &amp; lifecycle across AWS Bedrock, Azure Foundry, and GCP Vertex AI.</p>
   </div>
   <div class="switcher" id="switcher"></div>
 
@@ -187,40 +202,40 @@
   <div class="capdefs" id="capDefs"></div>
 
   <div class="tabs">
-    <button class="tab active" data-view="region">By Region</button>
-    <button class="tab" data-view="compare">Compare Regions</button>
-    <button class="tab" data-view="model">By Model</button>
-    <button class="tab" data-view="matrix">Full Matrix</button>
+    <button class="tab active" data-view="region" data-i18n="tabRegion">By Region</button>
+    <button class="tab" data-view="compare" data-i18n="tabCompare">Compare Regions</button>
+    <button class="tab" data-view="model" data-i18n="tabModel">By Model</button>
+    <button class="tab" data-view="matrix" data-i18n="tabMatrix">Full Matrix</button>
   </div>
 
   <div class="controls">
     <div class="field" id="f-region">
-      <label id="f-region-lbl">Region</label>
+      <label id="f-region-lbl" data-i18n="lblRegion">Region</label>
       <select id="regionSel"></select>
     </div>
     <div class="field" id="f-regionB">
-      <label>Compare with</label>
+      <label data-i18n="lblCompareWith">Compare with</label>
       <select id="regionBSel"></select>
     </div>
     <div class="field" id="f-diff">
-      <label>Show</label>
-      <div><button class="minibtn" id="diffBtn">Differences only</button></div>
+      <label data-i18n="lblShow">Show</label>
+      <div><button class="minibtn" id="diffBtn" data-i18n="btnDiff">Differences only</button></div>
     </div>
     <div class="field" id="f-lifecycle">
-      <label>Lifecycle</label>
-      <div><button class="minibtn" id="lifecycleBtn">Hide retired/deprecated</button></div>
+      <label data-i18n="lblLifecycle">Lifecycle</label>
+      <div><button class="minibtn" id="lifecycleBtn" data-i18n="btnHideEol">Hide retired/deprecated</button></div>
     </div>
     <div class="field" id="f-api">
-      <label>API surface</label>
+      <label data-i18n="lblApi">API surface</label>
       <select id="apiSel">
-        <option value="">All</option>
-        <option value="rt">Runtime API only</option>
-        <option value="mt">Mantle API only</option>
+        <option value="" data-i18n="optAll">All</option>
+        <option value="rt" data-i18n="optRt">Runtime API only</option>
+        <option value="mt" data-i18n="optMt">Mantle API only</option>
       </select>
     </div>
     <div class="field grow">
-      <label>Search model</label>
-      <input type="search" id="q" placeholder="Search model name…" />
+      <label data-i18n="lblSearch">Search model</label>
+      <input type="search" id="q" data-i18n-ph="phSearch" placeholder="Search model name…" />
     </div>
     <div class="field">
       <label id="groupLbl">Group</label>
@@ -242,6 +257,11 @@
 <script>
 const ALL = JSON.parse(document.getElementById("data").textContent).providers;
 const $=s=>document.querySelector(s);
+// safe localStorage (privacy mode / sandboxed iframe / file:// may throw SecurityError)
+const store={
+  get(k){try{return window.localStorage.getItem(k);}catch(e){return null;}},
+  set(k,v){try{window.localStorage.setItem(k,v);}catch(e){}}
+};
 function hexRgba(h,a){h=h.replace("#","");const n=parseInt(h,16);return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${a})`;}
 
 // light / dark theme toggle
@@ -251,17 +271,103 @@ const THEME_ICONS={
 };
 function applyTheme(t){
   document.documentElement.classList.toggle("light",t==="light");
-  localStorage.setItem("theme",t);
+  store.set("theme",t);
   const btn=$("#themeToggle");
   btn.innerHTML=THEME_ICONS[t==="light"?"dark":"light"];
-  btn.title=t==="light"?"Switch to dark theme":"Switch to light theme";
+  const zh=(document.documentElement.lang||"en").toLowerCase().startsWith("zh");
+  btn.title=t==="light"?(zh?"切换到深色主题":"Switch to dark theme"):(zh?"切换到浅色主题":"Switch to light theme");
 }
 (function(){
-  const saved=localStorage.getItem("theme");
+  const saved=store.get("theme");
   const preferLight=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;
   applyTheme(saved||(preferLight?"light":"dark"));
   $("#themeToggle").onclick=()=>applyTheme(document.documentElement.classList.contains("light")?"dark":"light");
 })();
+
+// ---- i18n (English / 中文) ----
+const I18N={
+  en:{
+    siteTitle:"Cloud LLM Model Directory",
+    siteTagline:"Compare foundation model availability, regions & lifecycle across AWS Bedrock, Azure Foundry, and GCP Vertex AI.",
+    metaTitle:"Cloud LLM — Model × Region Cheat Sheet",
+    headTitle:"{name} — Model × Region Cheat Sheet",
+    headSubStats:"{m} {unit}s · {r} regions · {c} {axis}s.",
+    footerText:'Data extracted from <a href="{url}" target="_blank" rel="noopener">{label}</a> · snapshot {date}. Providers update availability frequently — always confirm against the live page before relying on it.',
+    tabRegion:"By Region",tabCompare:"Compare Regions",tabModel:"By Model",tabMatrix:"Full Matrix",
+    lblRegion:"Region",lblRegionA:"Region A",lblCompareWith:"Compare with",lblShow:"Show",lblLifecycle:"Lifecycle",lblApi:"API surface",lblSearch:"Search model",
+    btnDiff:"Differences only",btnHideEol:"Hide retired/deprecated",btnAll:"All",btnNone:"None",
+    optAll:"All",optRt:"Runtime API only",optMt:"Mantle API only",phSearch:"Search model name…",
+    cntRegion:'<b>{n}</b> {unit}{s} available in <b>{code}</b> ({name}) for the selected {axis}.',
+    cntCompare:'Comparing <b>{a}</b> ({an}) vs <b>{b}</b> ({bn}) for the selected {axis}.',
+    cntModel:'<b>{n}</b> {unit}{s} shown. Each card lists the regions where it runs.',
+    cntMatrix:'<b>{n}</b> {unit}s × <b>{r}</b> regions. Pips show {axis} availability (hover a cell for details).',
+    statBoth:"available in both",statOnlyA:"only in {a}",statOnlyB:"only in {b}",statDiff:"in both, {axis} differ",
+    secOnlyA:"Only in {a} — {an}",secOnlyB:"Only in {b} — {bn}",secDiff:"In both — {axis} differ",secSame:"In both — identical support",
+    thModel:"Model",
+    emptySelectAxis:"Select at least one {axisSing}.",
+    emptyNoMatchRegion:"No models match in this region for the selected {axis}.",
+    emptyPickTwo:"Pick two different regions to compare.",
+    emptyNoMatch:"No models match your filters.",
+    emptyNeither:"Neither region offers any model in the selected {axis}.",
+    emptyNoDiff:"No differences — both regions offer the same models in the selected {axis}. Turn off “Differences only” to see the shared list.",
+    notAvailAxis:"Not available in the selected {axis}.",
+    tipRuntime:"Available via the classic Bedrock Runtime API (InvokeModel/Converse).",
+    tipMantle:"Available via the Bedrock Mantle API.",
+    themeToDark:"Switch to dark theme",themeToLight:"Switch to light theme",
+    homeLink:"Home",homeAria:"Home — cloudproduct.top",
+    unitPlural:"s"
+  },
+  zh:{
+    siteTitle:"云端大模型目录",
+    siteTagline:"对比 AWS Bedrock、Azure Foundry、GCP Vertex AI 三大云平台上基础模型的可用性、区域与生命周期。",
+    metaTitle:"云端大模型 — 模型 × 区域速查表",
+    headTitle:"{name} — 模型 × 区域速查表",
+    headSubStats:"{m} 个{unit} · {r} 个区域 · {c} 种{axis}。",
+    footerText:'数据提取自 <a href="{url}" target="_blank" rel="noopener">{label}</a> · 快照日期 {date}。各云厂商会频繁更新可用性——使用前请务必以官方实时页面为准。',
+    tabRegion:"按区域",tabCompare:"区域对比",tabModel:"按模型",tabMatrix:"完整矩阵",
+    lblRegion:"区域",lblRegionA:"区域 A",lblCompareWith:"对比区域",lblShow:"显示",lblLifecycle:"生命周期",lblApi:"API 接口",lblSearch:"搜索模型",
+    btnDiff:"仅显示差异",btnHideEol:"隐藏已退役/弃用",btnAll:"全选",btnNone:"清空",
+    optAll:"全部",optRt:"仅 Runtime API",optMt:"仅 Mantle API",phSearch:"搜索模型名称…",
+    cntRegion:'在 <b>{code}</b>（{name}）所选{axis}下可用 <b>{n}</b> 个{unit}。',
+    cntCompare:'对比 <b>{a}</b>（{an}）与 <b>{b}</b>（{bn}）在所选{axis}下的差异。',
+    cntModel:'共显示 <b>{n}</b> 个{unit}，每张卡片列出其可用的区域。',
+    cntMatrix:'<b>{n}</b> 个{unit} × <b>{r}</b> 个区域。色点表示{axis}可用性（悬停查看详情）。',
+    statBoth:"两者均可用",statOnlyA:"仅 {a} 可用",statOnlyB:"仅 {b} 可用",statDiff:"两者皆有，但{axis}不同",
+    secOnlyA:"仅 {a} — {an}",secOnlyB:"仅 {b} — {bn}",secDiff:"两者皆有 — {axis}不同",secSame:"两者皆有 — 支持完全相同",
+    thModel:"模型",
+    emptySelectAxis:"请至少选择一种{axisSing}。",
+    emptyNoMatchRegion:"该区域在所选{axis}下没有匹配的模型。",
+    emptyPickTwo:"请选择两个不同的区域进行对比。",
+    emptyNoMatch:"没有符合筛选条件的模型。",
+    emptyNeither:"两个区域在所选{axis}下都不提供任何模型。",
+    emptyNoDiff:"没有差异 — 两个区域在所选{axis}下提供相同的模型。关闭“仅显示差异”可查看共同列表。",
+    notAvailAxis:"在所选{axis}下不可用。",
+    tipRuntime:"可通过经典 Bedrock Runtime API（InvokeModel/Converse）调用。",
+    tipMantle:"可通过 Bedrock Mantle API 调用。",
+    themeToDark:"切换到深色主题",themeToLight:"切换到浅色主题",
+    homeLink:"首页",homeAria:"首页 — cloudproduct.top",
+    unitPlural:""
+  }
+};
+let LANG=store.get("lang")||((navigator.language||"en").toLowerCase().startsWith("zh")?"zh":"en");
+function t(key,vars){
+  let s=(I18N[LANG]&&I18N[LANG][key])||I18N.en[key]||key;
+  if(vars)for(const k in vars)s=s.replace(new RegExp("\\{"+k+"\\}","g"),vars[k]);
+  return s;
+}
+// provider data-driven labels (group/axis) translated for zh, kept as data for en
+const GROUP_ZH={"provider":"提供方","publisher":"发布方"};
+const AXISLABEL_ZH={"inference mode":"推理模式","deployment type":"部署类型"};
+function groupLabelText(){return LANG==="zh"?(GROUP_ZH[P.groupLabel.toLowerCase()]||P.groupLabel):P.groupLabel;}
+function axisLabelText(){return LANG==="zh"?(AXISLABEL_ZH[P.axisLabel.toLowerCase()]||P.axisLabel):P.axisLabel;}
+function applyLang(){
+  document.documentElement.lang=LANG==="zh"?"zh-CN":"en";
+  const mt=$("#metaTitle");if(mt)mt.textContent=t("metaTitle");
+  document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=t(el.dataset.i18n);});
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});
+  document.querySelectorAll("[data-i18n-aria]").forEach(el=>{el.setAttribute("aria-label",t(el.dataset.i18nAria));});
+  $("#langToggle").textContent=LANG==="zh"?"EN":"中";
+}
 
 // vendor brand logos (SVG). Azure gradient ids are tokenised so multiple instances don't collide.
 const LOGOS={
@@ -330,12 +436,12 @@ function setProvider(id){
 
   // header
   $("#logo").innerHTML=logo(P.id);
-  $("#title").textContent=`${P.name} — Model × Region Cheat Sheet`;
-  $("#sub").innerHTML=`${P.subtitle} <span style="color:var(--faint)">${P.models.length} ${P.unit}s · ${P.regions.length} regions · ${P.caps.length} ${P.axisLabel.toLowerCase()}s.</span>`;
-  $("#groupLbl").textContent=P.groupLabel;
-  $("#axisLbl").textContent=P.axisLabel;
-  $("#q").placeholder=P.id==="aws"?"e.g. Claude Sonnet, Nova, Llama…":"e.g. gpt-5, o3, whisper, embedding…";
-  $("#footer").innerHTML=`Data extracted from <a href="${P.source.url}" target="_blank" rel="noopener">${P.source.label}</a> · snapshot ${P.generated}. Providers update availability frequently — always confirm against the live page before relying on it.${P.note?`<br><span style="color:var(--faint)">${P.note}</span>`:""}`;
+  $("#title").textContent=t("headTitle",{name:P.name});
+  $("#sub").innerHTML=`${P.subtitle} <span style="color:var(--faint)">${t("headSubStats",{m:P.models.length,unit:P.unit,r:P.regions.length,c:P.caps.length,axis:axisLabelText().toLowerCase()})}</span>`;
+  $("#groupLbl").textContent=groupLabelText();
+  $("#axisLbl").textContent=axisLabelText();
+  $("#q").placeholder=LANG==="zh"?"搜索模型名称…":(P.id==="aws"?"e.g. Claude Sonnet, Nova, Llama…":"e.g. gpt-5, o3, whisper, embedding…");
+  $("#footer").innerHTML=t("footerText",{url:P.source.url,label:P.source.label,date:P.generated})+(P.note?`<br><span style="color:var(--faint)">${P.note}</span>`:"");
 
   // legend
   $("#legend").innerHTML=PIPMASK.map(g=>`<span class="lg"><span class="dot" style="background:${g.color}"></span> ${g.label}</span>`).join("");
@@ -376,7 +482,7 @@ function buildRegionSelects(){
   $("#regionSel").value=state.region;$("#regionBSel").value=state.regionB;
 }
 function buildGroupSelect(){
-  const s=$("#catSel");s.innerHTML=`<option value="">All ${P.groupLabel.toLowerCase()}s</option>`;
+  const s=$("#catSel");s.innerHTML=`<option value="">${LANG==="zh"?"全部"+({"provider":"提供方","publisher":"发布方"}[P.groupLabel.toLowerCase()]||P.groupLabel):"All "+P.groupLabel.toLowerCase()+"s"}</option>`;
   P.groups.forEach(g=>{const o=document.createElement("option");o.value=g;o.textContent=g;s.appendChild(o);});
 }
 function buildChips(){
@@ -398,9 +504,9 @@ function buildChips(){
       box.appendChild(g);
     });
   }
-  const all=document.createElement("button");all.className="minibtn";all.textContent="All";
+  const all=document.createElement("button");all.className="minibtn";all.textContent=t("btnAll");
   all.onclick=()=>{state.deploy=new Set(P.caps.map(c=>c.k));document.querySelectorAll("#deployFilter .chip").forEach(c=>styleChip(c,capByK[c.dataset.k],true));render();};
-  const none=document.createElement("button");none.className="minibtn";none.textContent="None";
+  const none=document.createElement("button");none.className="minibtn";none.textContent=t("btnNone");
   none.onclick=()=>{state.deploy.clear();document.querySelectorAll("#deployFilter .chip").forEach(c=>styleChip(c,capByK[c.dataset.k],false));render();};
   box.appendChild(all);box.appendChild(none);
 }
@@ -437,7 +543,7 @@ function syncControls(){
   $("#f-region").style.display=(v==="region"||v==="compare")?"":"none";
   $("#f-regionB").style.display=v==="compare"?"":"none";
   $("#f-diff").style.display=v==="compare"?"":"none";
-  $("#f-region-lbl").textContent=v==="compare"?"Region A":"Region";
+  $("#f-region-lbl").textContent=v==="compare"?t("lblRegionA"):t("lblRegion");
   $("#f-lifecycle").style.display=hasLifecycle?"":"none";
   $("#f-api").style.display=hasApi?"":"none";
 }
@@ -472,8 +578,8 @@ function lifecycleTag(mo){
 function apiTag(mo){
   if(!mo.api)return "";
   let out="";
-  if(mo.api.rt)out+=`<span class="offer" title="Available via the classic Bedrock Runtime API (InvokeModel/Converse)."><span class="odot" style="background:#3fb950"></span>Runtime</span>`;
-  if(mo.api.mt)out+=`<span class="offer" title="Available via the Bedrock Mantle API."><span class="odot" style="background:#bc8cff"></span>Mantle</span>`;
+  if(mo.api.rt)out+=`<span class="offer" title="${t("tipRuntime")}"><span class="odot" style="background:#3fb950"></span>Runtime</span>`;
+  if(mo.api.mt)out+=`<span class="offer" title="${t("tipMantle")}"><span class="odot" style="background:#bc8cff"></span>Mantle</span>`;
   return out;
 }
 function nameCell(mo){
@@ -481,18 +587,21 @@ function nameCell(mo){
   return `${nm}${mo.v?` <span class="ver">${mo.v}</span>`:""}${offerTag(mo)}${lifecycleTag(mo)}${apiTag(mo)}`;
 }
 function emptyMsg(t){return `<div class="empty"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div>${t}</div></div>`;}
-const axisWord=()=>P.axisLabel.toLowerCase()+"(s)";
+// axis label ("Inference mode"/"Deployment type") — translated for zh, kept as-is for en
+const AXIS_ZH={"inference mode":"推理模式","deployment type":"部署类型"};
+const axisLow=()=>P.axisLabel.toLowerCase();
+const axisWord=()=>LANG==="zh"?(AXIS_ZH[axisLow()]||P.axisLabel):axisLow()+"(s)";
 
 function render(){
   const am=activeMask();
   const stage=$("#stage"),cnt=$("#count");
-  if(!am){cnt.innerHTML="";stage.innerHTML=emptyMsg(`Select at least one ${P.axisLabel.toLowerCase()}.`);return;}
+  if(!am){cnt.innerHTML="";stage.innerHTML=emptyMsg(t("emptySelectAxis",{axisSing:axisLow()}));return;}
 
   if(state.view==="region"){
     const r=regionByCode[state.region];
     const list=filterModels().map(mo=>({mo,mask:(mo.s[state.region]||0)&am})).filter(x=>x.mask);
-    cnt.innerHTML=`<b>${list.length}</b> ${P.unit}${list.length!==1?"s":""} available in <b>${r.code}</b> (${r.name}) for the selected ${axisWord()}.`;
-    if(!list.length){stage.innerHTML=emptyMsg(`No models match in this region for the selected ${axisWord()}.`);return;}
+    cnt.innerHTML=t("cntRegion",{n:list.length,unit:P.unit,s:list.length!==1?t("unitPlural"):"",code:r.code,name:r.name,axis:axisWord()});
+    if(!list.length){stage.innerHTML=emptyMsg(t("emptyNoMatchRegion",{axis:axisWord()}));return;}
     const byg={};list.forEach(x=>{(byg[x.mo.g]=byg[x.mo.g]||[]).push(x);});
     let html='<div class="grid">';
     P.groups.filter(g=>byg[g]).forEach(g=>{
@@ -504,26 +613,26 @@ function render(){
   }
   else if(state.view==="compare"){
     const A=regionByCode[state.region],B=regionByCode[state.regionB];
-    if(state.region===state.regionB){cnt.innerHTML="";stage.innerHTML=emptyMsg("Pick two different regions to compare.");return;}
+    if(state.region===state.regionB){cnt.innerHTML="";stage.innerHTML=emptyMsg(t("emptyPickTwo"));return;}
     const rows=filterModels().map(mo=>{
       const ma=(mo.s[state.region]||0)&am,mb=(mo.s[state.regionB]||0)&am;
       let c;if(ma&&mb)c=ma===mb?"same":"diff";else if(ma)c="onlyA";else if(mb)c="onlyB";else c="none";
       return{mo,ma,mb,cat:c};
     }).filter(x=>x.cat!=="none");
     const cats={onlyA:[],onlyB:[],diff:[],same:[]};rows.forEach(x=>cats[x.cat].push(x));
-    cnt.innerHTML=`Comparing <b>${A.code}</b> (${A.name}) vs <b>${B.code}</b> (${B.name}) for the selected ${axisWord()}.`;
+    cnt.innerHTML=t("cntCompare",{a:A.code,an:A.name,b:B.code,bn:B.name,axis:axisWord()});
     let html=`<div class="cmp-summary">
-      <div class="cmp-stat" style="border-left:3px solid #3fb950"><div class="num">${cats.same.length+cats.diff.length}</div><div class="lbl">available in both</div></div>
-      <div class="cmp-stat" style="border-left:3px solid var(--accent)"><div class="num">${cats.onlyA.length}</div><div class="lbl">only in ${A.code}</div></div>
-      <div class="cmp-stat" style="border-left:3px solid #bc8cff"><div class="num">${cats.onlyB.length}</div><div class="lbl">only in ${B.code}</div></div>
-      <div class="cmp-stat" style="border-left:3px solid #f0a132"><div class="num">${cats.diff.length}</div><div class="lbl">in both, ${axisWord()} differ</div></div>
+      <div class="cmp-stat" style="border-left:3px solid #3fb950"><div class="num">${cats.same.length+cats.diff.length}</div><div class="lbl">${t("statBoth")}</div></div>
+      <div class="cmp-stat" style="border-left:3px solid var(--accent)"><div class="num">${cats.onlyA.length}</div><div class="lbl">${t("statOnlyA",{a:A.code})}</div></div>
+      <div class="cmp-stat" style="border-left:3px solid #bc8cff"><div class="num">${cats.onlyB.length}</div><div class="lbl">${t("statOnlyB",{b:B.code})}</div></div>
+      <div class="cmp-stat" style="border-left:3px solid #f0a132"><div class="num">${cats.diff.length}</div><div class="lbl">${t("statDiff",{axis:axisWord()})}</div></div>
     </div>`;
     const sections=[
-      {key:"onlyA",label:`Only in ${A.code} — ${A.name}`,color:"var(--accent)"},
-      {key:"onlyB",label:`Only in ${B.code} — ${B.name}`,color:"#bc8cff"},
-      {key:"diff",label:`In both — ${axisWord()} differ`,color:"#f0a132"}
+      {key:"onlyA",label:t("secOnlyA",{a:A.code,an:A.name}),color:"var(--accent)"},
+      {key:"onlyB",label:t("secOnlyB",{b:B.code,bn:B.name}),color:"#bc8cff"},
+      {key:"diff",label:t("secDiff",{axis:axisWord()}),color:"#f0a132"}
     ];
-    if(!state.diffOnly)sections.push({key:"same",label:"In both — identical support",color:"#3fb950"});
+    if(!state.diffOnly)sections.push({key:"same",label:t("secSame"),color:"#3fb950"});
     const secHtml=sections.filter(s=>cats[s.key].length).map(s=>{
       const list=cats[s.key].sort((a,b)=>P.groups.indexOf(a.mo.g)-P.groups.indexOf(b.mo.g)||a.mo.n.localeCompare(b.mo.n));
       const body=list.map(x=>`<tr>
@@ -532,34 +641,34 @@ function render(){
         <td class="bcol"><span class="badges">${badges(x.mb)}</span></td></tr>`).join("");
       return `<div class="cmp-sec"><h4><span class="tag" style="background:${s.color}"></span>${s.label} <span class="n">· ${list.length}</span></h4>
         <div class="cmp-table-wrap"><table class="cmp"><thead><tr>
-          <th>Model</th><th class="bcol"><span class="rcode-h">${A.code}</span> · ${A.name}</th><th class="bcol"><span class="rcode-h">${B.code}</span> · ${B.name}</th>
+          <th>${t("thModel")}</th><th class="bcol"><span class="rcode-h">${A.code}</span> · ${A.name}</th><th class="bcol"><span class="rcode-h">${B.code}</span> · ${B.name}</th>
         </tr></thead><tbody>${body}</tbody></table></div></div>`;
     }).join("");
     html+=secHtml||emptyMsg(state.diffOnly
-      ?`No differences — both regions offer the same models in the selected ${axisWord()}. Turn off “Differences only” to see the shared list.`
-      :`Neither region offers any model in the selected ${axisWord()}.`);
+      ?t("emptyNoDiff",{axis:axisWord()})
+      :t("emptyNeither",{axis:axisWord()}));
     stage.innerHTML=html;
   }
   else if(state.view==="model"){
     const models=filterModels().filter(mo=>Object.values(mo.s).some(mask=>mask&am));
-    cnt.innerHTML=`<b>${models.length}</b> ${P.unit}${models.length!==1?"s":""} shown. Each card lists the regions where it runs.`;
-    if(!models.length){stage.innerHTML=emptyMsg("No models match your filters.");return;}
+    cnt.innerHTML=t("cntModel",{n:models.length,unit:P.unit,s:models.length!==1?t("unitPlural"):""});
+    if(!models.length){stage.innerHTML=emptyMsg(t("emptyNoMatch"));return;}
     let html='<div class="grid">';
     models.forEach(mo=>{
       const regs=P.regions.filter(r=>(mo.s[r.code]||0)&am);
       html+=`<div class="card"><div class="cat">${mo.g}</div><h3>${nameCell(mo)}</h3>`;
       regs.forEach(r=>{html+=`<div class="rowline"><span class="rcode">${r.code}</span><span class="rname">${r.name}</span><span class="badges">${badges(mo.s[r.code]&am)}</span></div>`;});
-      if(!regs.length)html+=`<div class="rowline"><span class="rname">Not available in the selected ${axisWord()}.</span></div>`;
+      if(!regs.length)html+=`<div class="rowline"><span class="rname">${t("notAvailAxis",{axis:axisWord()})}</span></div>`;
       html+='</div>';
     });
     stage.innerHTML=html+'</div>';
   }
   else{ // matrix
     const models=filterModels().filter(mo=>Object.values(mo.s).some(mask=>mask&am));
-    cnt.innerHTML=`<b>${models.length}</b> ${P.unit}s × <b>${P.regions.length}</b> regions. Pips show ${P.axisLabel.toLowerCase()} availability (hover a cell for details).`;
-    if(!models.length){stage.innerHTML=emptyMsg("No models match your filters.");return;}
+    cnt.innerHTML=t("cntMatrix",{n:models.length,unit:P.unit,r:P.regions.length,axis:axisLabelText().toLowerCase()});
+    if(!models.length){stage.innerHTML=emptyMsg(t("emptyNoMatch"));return;}
     const groups=[];P.regions.forEach(r=>{const last=groups[groups.length-1];if(last&&last.g===r.group)last.n++;else groups.push({g:r.group,n:1});});
-    let head1='<tr><th class="corner">Model</th>';groups.forEach(g=>head1+=`<th class="grp" colspan="${g.n}">${g.g}</th>`);head1+='</tr>';
+    let head1=`<tr><th class="corner">${t("thModel")}</th>`;groups.forEach(g=>head1+=`<th class="grp" colspan="${g.n}">${g.g}</th>`);head1+='</tr>';
     let head2='<tr><th class="corner"></th>';P.regions.forEach(r=>head2+=`<th title="${r.code} — ${r.name}"><span class="rc">${r.code}</span><span class="rn">${r.name}</span></th>`);head2+='</tr>';
     let body='';
     models.forEach(mo=>{
@@ -577,6 +686,15 @@ function render(){
   }
 }
 
+// language toggle: persist, re-fill static nodes, then re-render current provider
+$("#langToggle").onclick=()=>{
+  LANG=LANG==="zh"?"en":"zh";
+  store.set("lang",LANG);
+  applyLang();
+  applyTheme(document.documentElement.classList.contains("light")?"light":"dark"); // refresh theme tooltip lang
+  if(P)setProvider(P.id);
+};
+applyLang();
 setProvider(ALL[0].id);
 </script>
 </body>
