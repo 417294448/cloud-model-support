@@ -360,6 +360,63 @@ const GROUP_ZH={"provider":"提供方","publisher":"发布方"};
 const AXISLABEL_ZH={"inference mode":"推理模式","deployment type":"部署类型"};
 function groupLabelText(){return LANG==="zh"?(GROUP_ZH[P.groupLabel.toLowerCase()]||P.groupLabel):P.groupLabel;}
 function axisLabelText(){return LANG==="zh"?(AXISLABEL_ZH[P.axisLabel.toLowerCase()]||P.axisLabel):P.axisLabel;}
+// provider-specific copy translations — English data remains the source of truth
+const PROVIDER_ZH={
+  aws:{
+    subtitle:"哪些基础模型在哪些 AWS 区域可用，支持 <code>In-Region</code>、<code>Geo</code> 与 <code>Global</code> 三种推理模式。",
+    note:'<b>Legacy</b> / <b>EOL</b> 标签表示 Amazon Bedrock 模型的生命周期状态——Legacy/EOL 日期与详情请参见 <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html" target="_blank" rel="noopener">Model lifecycle</a> 页面。<b>API surface</b> 筛选器表示模型是否支持经典 Bedrock Runtime API 和/或新版 Mantle API——详情请参见 <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/models-endpoint-availability.html" target="_blank" rel="noopener">Endpoint availability by models</a> 页面。',
+    capFull:{
+      in:"你的请求完全停留在所选区域内部——用于严格的单区域数据处理。",
+      geo:"Bedrock 在同一地理范围内（美国、欧盟、日本或澳大利亚）自动路由，以获得更高吞吐量，且不会离开该地理范围。",
+      global:"Bedrock 在全球所有商用区域之间路由，以获得最高吞吐量和最低成本。"
+    },
+    capDefFull:{
+      "In-Region":"你的请求完全停留在所选区域内部——用于严格的单区域数据处理。",
+      "Geo":"Bedrock 在同一地理范围内（美国、欧盟、日本或澳大利亚）自动路由，以获得更高吞吐量，且不会离开该地理范围。",
+      "Global":"Bedrock 在全球所有商用区域之间路由，以获得最高吞吐量和最低成本。"
+    }
+  },
+  azure:{
+    subtitle:"哪些 Foundry 模型在哪些 Azure 区域可用。包括 <em>Azure 直接销售</em> 的模型（OpenAI，支持 Standard / Provisioned / Batch 部署类型）以及 <em>合作伙伴与社区</em> serverless 模型（仅 Standard）。",
+    note:'合作伙伴与社区模型（Anthropic、Cohere、Meta Llama、Microsoft、Mistral、NTT DATA）来自 <a href="https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-from-partners" target="_blank" rel="noopener">serverless（MaaS）可用性页面</a>，仅支持 Standard/serverless 部署。<b>Offer</b> 标签表示市场可用性（Global / US / Microsoft-managed 国家/地区——悬停查看国家/地区列表）。<b>Deprecated</b> / <b>Retired</b> / <b>Preview</b> 标签表示 Foundry Models 生命周期状态——退役日期与替代模型请参见 <a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule" target="_blank" rel="noopener">Model retirement schedule</a> 页面。',
+    capFull:{
+      gs:"Global Standard：按 token 计费，按需定价——无预留容量。",
+      dzs:"Data Zone Standard：按 token 计费，按需定价——在 Microsoft 指定地理范围内处理。",
+      std:"Standard / Regional：按 token 计费，按需定价——数据驻留在单一 Azure 区域。",
+      gpm:"Global Provisioned Managed：预留吞吐量容量，保证可预测的性能，全球范围部署。",
+      dzpm:"Data Zone Provisioned Managed：预留吞吐量容量，保证可预测的性能，在指定地理范围内处理。",
+      rpm:"Regional Provisioned Managed：预留吞吐量容量，保证可预测的性能，数据驻留在单一 Azure 区域。",
+      gb:"Global Batch：异步批量处理，折扣计费——无延迟保证，全球范围。",
+      dzb:"Data Zone Batch：异步批量处理，折扣计费——无延迟保证，在指定地理范围内处理。"
+    },
+    capDefFull:{
+      "Deployment type.Standard":"按 token 计费，按需定价——无预留容量。",
+      "Deployment type.Provisioned":"预留吞吐量容量，保证可预测、稳定的性能。",
+      "Deployment type.Batch":"异步批量处理，折扣计费——无延迟保证。",
+      "Data residency scope.Regional":"提示词和响应内容都停留在你部署到的单一 Azure 区域。",
+      "Data residency scope.Data Zone":"在 Microsoft 指定的地理范围（美国、欧盟或亚太）内任意处理。",
+      "Data residency scope.Global":"可能在模型已部署的任何 Azure 区域处理，覆盖全球。"
+    },
+    capDefTitle:{"Deployment type":"部署类型","Data residency scope":"数据驻留范围"}
+  },
+  gcp:{
+    subtitle:'哪些 Model Garden 模型在哪些 Vertex AI 区域可用，通过 <code>GET {region}-aiplatform.googleapis.com/v1/publishers/&lt;publisher&gt;/models/&lt;model&gt;</code> 实时探测。<b>Managed API</b> 模型（Gemini、PaLM、Claude）可直接调用；<b>Self-deploy</b> 模型（Llama、Mistral、Qwen、DeepSeek 等）必须部署到你自己的端点，区域可用性仅反映目录收录情况，不代表 GPU/TPU 容量。',
+    note:'<b>Deprecated</b> / <b>Legacy</b> 标签表示 Gemini 模型生命周期状态——退役日期与替代模型请参见 <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-versions#gemini-models" target="_blank" rel="noopener">Model versions</a> 页面。',
+    capFull:{
+      api:"通过 Vertex AI 托管 API 直接调用（Model-as-a-Service）。",
+      deploy:"需要自行部署的 Model Garden 模型（GPU/TPU 端点）。"
+    },
+    capDefFull:{
+      "Managed API":"通过 Vertex AI 托管 API 直接调用（Model-as-a-Service）。",
+      "Self-deploy":"需要自行部署的 Model Garden 模型（GPU/TPU 端点）。"
+    }
+  }
+};
+function providerSubtitle(){return LANG==="zh"&&PROVIDER_ZH[P.id]&&PROVIDER_ZH[P.id].subtitle?PROVIDER_ZH[P.id].subtitle:P.subtitle;}
+function providerNote(){return LANG==="zh"&&PROVIDER_ZH[P.id]&&PROVIDER_ZH[P.id].note?PROVIDER_ZH[P.id].note:P.note;}
+function capFullZh(k){return LANG==="zh"&&PROVIDER_ZH[P.id]&&PROVIDER_ZH[P.id].capFull&&PROVIDER_ZH[P.id].capFull[k]?PROVIDER_ZH[P.id].capFull[k]:capByK[k].full;}
+function capDefFullZh(label,full,title){if(LANG!=="zh"||!PROVIDER_ZH[P.id]||!PROVIDER_ZH[P.id].capDefFull)return full;const key=(title?title+".":"")+label;return PROVIDER_ZH[P.id].capDefFull[key]||PROVIDER_ZH[P.id].capDefFull[label]||full;}
+function capDefTitleZh(title){if(LANG!=="zh"||!PROVIDER_ZH[P.id]||!PROVIDER_ZH[P.id].capDefTitle)return title;return PROVIDER_ZH[P.id].capDefTitle[title]||title;}
 function applyLang(){
   document.documentElement.lang=LANG==="zh"?"zh-CN":"en";
   const mt=$("#metaTitle");if(mt)mt.textContent=t("metaTitle");
@@ -437,11 +494,11 @@ function setProvider(id){
   // header
   $("#logo").innerHTML=logo(P.id);
   $("#title").textContent=t("headTitle",{name:P.name});
-  $("#sub").innerHTML=`${P.subtitle} <span style="color:var(--faint)">${t("headSubStats",{m:P.models.length,unit:P.unit,r:P.regions.length,c:P.caps.length,axis:axisLabelText().toLowerCase()})}</span>`;
+  $("#sub").innerHTML=`${providerSubtitle()} <span style="color:var(--faint)">${t("headSubStats",{m:P.models.length,unit:P.unit,r:P.regions.length,c:P.caps.length,axis:axisLabelText().toLowerCase()})}</span>`;
   $("#groupLbl").textContent=groupLabelText();
   $("#axisLbl").textContent=axisLabelText();
   $("#q").placeholder=LANG==="zh"?"搜索模型名称…":(P.id==="aws"?"e.g. Claude Sonnet, Nova, Llama…":"e.g. gpt-5, o3, whisper, embedding…");
-  $("#footer").innerHTML=t("footerText",{url:P.source.url,label:P.source.label,date:P.generated})+(P.note?`<br><span style="color:var(--faint)">${P.note}</span>`:"");
+  $("#footer").innerHTML=t("footerText",{url:P.source.url,label:P.source.label,date:P.generated})+(P.note?`<br><span style="color:var(--faint)">${providerNote()}</span>`:"");
 
   // legend
   $("#legend").innerHTML=PIPMASK.map(g=>`<span class="lg"><span class="dot" style="background:${g.color}"></span> ${g.label}</span>`).join("");
@@ -452,8 +509,8 @@ function setProvider(id){
     capDefs.style.display="";
     capDefs.innerHTML=P.capDefGroups.map(g=>`
       <div class="capdefgrp">
-        ${g.title?`<div class="capdefgrp-title">${g.title}</div>`:""}
-        <div class="capdefgrp-row">${g.items.map(it=>`<div class="capdef"><span class="dot" style="background:${it.color}"></span><div><b>${it.label}</b><span>${it.full}</span></div></div>`).join("")}</div>
+        ${g.title?`<div class="capdefgrp-title">${capDefTitleZh(g.title)}</div>`:""}
+        <div class="capdefgrp-row">${g.items.map(it=>`<div class="capdef"><span class="dot" style="background:${it.color}"></span><div><b>${it.label}</b><span>${capDefFullZh(it.label,it.full,g.title)}</span></div></div>`).join("")}</div>
       </div>`).join("");
   } else {
     capDefs.style.display="none";capDefs.innerHTML="";
@@ -560,7 +617,7 @@ function filterModels(){
 function badges(mask){
   const b=P.caps.filter(c=>mask&BIT[c.k]);
   if(!b.length)return `<span class="b-off">—</span>`;
-  return b.map(c=>`<span class="b" style="background:${hexRgba(c.color,.16)};color:${c.color}" title="${c.full}">${c.badge}</span>`).join("");
+  return b.map(c=>`<span class="b" style="background:${hexRgba(c.color,.16)};color:${c.color}" title="${capFullZh(c.k)}">${c.badge}</span>`).join("");
 }
 const OFFERCLR={"Global":"#58a6ff","United States":"#f0a132","Microsoft-managed":"#3fb950"};
 function offerTag(mo){

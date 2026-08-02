@@ -3,6 +3,8 @@ name: refresh-model-data
 description: Refreshes AWS Bedrock / Azure Foundry / GCP Vertex AI model availability, lifecycle, and retirement data for the cloud-model-support project by re-scraping each vendor's official docs, builds a new index-new.html, then promotes it: the previous index.html is renamed to index-old.html and index-new.html is renamed to index.html. Use this whenever the user asks to refresh, update, sync, or regenerate the model data or the page for this repo, wants to check whether new models were released or old ones retired, or wants the page updated -- even if they just say "check for updates" or "refresh the data" without naming the skill. Only applies inside the cloud-model-support repo (the one with index.html and the *-model-*.json files at its root).
 ---
 
+> **同步提示**：本项目同时在 `.trae/rules/refresh-model-data.md` 维护了一份面向 Trae IDE 的 rule。若本 SKILL 中的 i18n 约定、脚本路径、刷新流程或安全校验规则发生变更，请同步更新 `.trae/rules/refresh-model-data.md`，确保两者保持一致。
+
 # Refresh cloud-model-support's model data
 
 This produces:
@@ -25,9 +27,17 @@ This produces:
 
 **The page's i18n / top-nav code is NOT scraped data -- `apply_update.js` preserves it, don't hand-edit the data line.** `index.html` carries hand-written features that live *outside* the `<script id="data">` blob: the English/中文 language toggle (`#langToggle`, the `I18N` dictionary, `t()`/`applyLang()`, all `data-i18n`/`data-i18n-ph`/`data-i18n-aria` attributes on static nodes) and the top-right nav buttons (首页/Home link to `https://www.cloudproduct.top/`, language toggle, theme toggle). Every `apply_update.js` subcommand (`replace-models` / `replace-from-provider` / `patch`) only splices the single data line via `html.slice(0, dataStart) + JSON.stringify(data) + html.slice(dataEnd)` -- it never rewrites the markup or logic around it, so all of this survives a refresh untouched (verified: `lang-toggle`/`home-link`/`I18N`/`首页`/`t("headTitle")` counts are identical before and after `patch` and `replace-from-provider`, and `validate` passes). Three corollaries:
 
-- **Never fix or translate a UI string by editing the embedded JSON's `subtitle`/`caps[].full`/`note`/`offer.detail` fields.** Those are presentation strings that refresh deliberately leaves alone (they're "hand-tuned presentation data" per `apply_update.js`'s own contract), but they are *data*, re-derived by `build_vertex_matrix.py` and the scrape phases, so editing them in the blob is both the wrong layer and not durable. UI text belongs in the `I18N` dictionary / `data-i18n` attributes (translated), data text stays English (current decision: the JSON's `subtitle`/`full`/`note`/`offer.detail` are intentionally NOT translated).
-- **If you add/change a translated UI string, edit the `I18N` dictionary and the static HTML, then run `apply_update.js validate index.html`** (or just `node --check` on the extracted logic script) to confirm the inline JS still parses -- the `validate` subcommand `new Function()`-checks the whole `<script>` and will catch a broken `t()` call or an unterminated template literal.
-- **`build_vertex_matrix.py` only regenerates the GCP provider object (data), not the page.** It writes `vertex.json` (consumed via `replace-from-provider`), so it has no interaction with the i18n/nav code at all -- no need to touch it when changing UI text, and changing UI text never requires re-running it.
+- **Never fix or translate a UI string by editing the embedded JSON's `subtitle`/`caps[].full`/`note`/`offer.detail` fields.** Those are presentation strings that refresh deliberately leaves alone (they're "hand-tuned presentation data" per `apply_update.js`'s own contract), but they are *data*, re-derived by `build_vertex_matrix.py` and the scrape phases, so editing them in the blob is both the wrong layer and not durable. **Data text stays English in the JSON blob.** Translations for provider-specific data-driven copy live in the inline JS's `PROVIDER_ZH` map:
+  - `subtitle` → `providerSubtitle()`
+  - `note` → `providerNote()`
+  - `caps[].full` tooltip text → `capFullZh(capKey)`
+  - `capDefGroups` item descriptions → `capDefFullZh(label, full, title)`
+  - `capDefGroups` titles (Azure) → `capDefTitleZh(title)`
+  
+  Generic UI text still belongs in the `I18N` dictionary / `data-i18n` attributes. Both dictionaries are preserved by every `apply_update.js` subcommand because they live outside the `<script id="data">` blob.
+- **If you add/change a translated UI string or provider copy, edit the appropriate map/dictionary in the inline JS, then run `apply_update.js validate index.html`** (or just `node --check` on the extracted logic script) to confirm the inline JS still parses -- the `validate` subcommand `new Function()`-checks the whole `<script>` and will catch a broken `t()` call, an unterminated template literal, or a syntax error in `PROVIDER_ZH`.
+- **When adding a new provider, add a matching `PROVIDER_ZH[id]` entry.** At minimum include `subtitle`, `note`, and `capFull`. If the provider uses `capDefGroups`, also include `capDefFull` and (when titles exist) `capDefTitle`. Until the entry is added, the page gracefully falls back to the English data text.
+- **`build_vertex_matrix.py` only regenerates the GCP provider object (data), not the page.** It writes `vertex.json` (consumed via `replace-from-provider`), so it has no interaction with the i18n/nav code at all -- no need to touch it when changing UI text, and changing UI text never requires re-running it. `replace-from-provider` intentionally copies only `models`/`regions`/`groups`/`generated` from `vertex.json`; `subtitle`/`caps`/`note`/`capDefGroups` stay as they are in `index.html`.
 
 ## Determine this run's scope, before doing anything else
 
