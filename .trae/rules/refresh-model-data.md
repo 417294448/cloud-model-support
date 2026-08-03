@@ -33,7 +33,7 @@
    - GCP：`build_vertex_matrix.py` + `apply_update.js replace-from-provider`
    - AWS：fetch_doc.sh + extract_tables.js + `apply_update.js replace-models` / `patch`
    - Azure：`build_azure_models.js` + `apply_update.js replace-models`
-5. **最终比对**：`apply_update.js diff index.html index-new.html --out refresh-diff-YYYY-MM-DD.txt`
+5. **最终比对**：`apply_update.js diff index.html index-new.html --out diffs/refresh-diff-YYYY-MM-DD.txt`
 6. **升级**：`mv index.html index-old.html && mv index-new.html index.html`
 
 ## 关键脚本路径

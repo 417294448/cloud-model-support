@@ -1,0 +1,46 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-07-10 -> 2026-07-14
+  models: 130 -> 130
+  added (3): [OpenAI] GPT-5.6 Sol, [OpenAI] GPT-5.6 Terra, [OpenAI] GPT-5.6 Luna
+  changed (17):
+    ~ [Amazon] Nova Canvas
+        s: +1 region(s) gained (us-east-1)
+    ~ [Amazon] Nova Reel [duplicate key: 2 -> 1 instances]
+    ~ [Anthropic] Claude 3 Haiku
+        s: +3 region(s) gained (us-east-2, ap-northeast-1, ap-southeast-2); 5 region(s) changed support: us-east-1: [Geo] -> [In-Region,Geo]; us-west-2: [Geo] -> [In-Region,Geo]; eu-central-1: [Geo] -> [In-Region,Geo]; eu-west-1: [Geo] -> [In-Region,Geo]; eu-west-3: [Geo] -> [In-Region,Geo]
+    ~ [Anthropic] Claude 3.5 Haiku
+        s: +3 region(s) gained (us-east-1, us-east-2, us-west-2)
+    ~ [Anthropic] Claude Opus 4.1
+        s: +3 region(s) gained (us-east-1, us-east-2, us-west-2)
+    ~ [Anthropic] Claude Opus 4.8
+        s: +2 region(s) gained (us-gov-west-1, us-gov-east-1)
+    ~ [Anthropic] Claude Sonnet 4
+        s: 1 region(s) changed support: us-east-2: [Global] -> [Geo,Global]
+    ~ [Anthropic] Claude Sonnet 5
+        s: 8 region(s) changed support: eu-central-1: [Global] -> [Geo,Global]; eu-central-2: [Global] -> [Geo,Global]; eu-north-1: [Global] -> [Geo,Global]; eu-south-1: [Global] -> [Geo,Global]; eu-south-2: [Global] -> [Geo,Global]; ...
+    ~ [Cohere] Command R
+        s: +2 region(s) gained (us-east-1, us-west-2)
+    ~ [Cohere] Command R+
+        s: +2 region(s) gained (us-east-1, us-west-2)
+    ~ [Meta] Llama 3.1 405B Instruct
+        s: +2 region(s) gained (us-east-2, us-west-2)
+    ~ [Meta] Llama 3.2 11B Instruct
+        s: +3 region(s) gained (us-east-1, us-east-2, us-west-2)
+    ~ [Meta] Llama 3.2 1B Instruct
+        s: +6 region(s) gained (us-east-1, us-east-2, us-west-2, eu-central-1, eu-west-1, eu-west-3)
+    ~ [Meta] Llama 3.2 3B Instruct
+        s: +6 region(s) gained (us-east-1, us-east-2, us-west-2, eu-central-1, eu-west-1, eu-west-3)
+    ~ [Meta] Llama 3.2 90B Instruct
+        s: +3 region(s) gained (us-east-1, us-east-2, us-west-2)
+    ~ [MiniMax] MiniMax M2.5 [duplicate key: 2 -> 1 instances]
+    ~ [Z.AI] GLM 5 [duplicate key: 2 -> 1 instances]
+
+=== azure ===
+  models: 151 -> 151
+  changed (0):
+
+=== gcp ===
+  models: 277 -> 277
+  changed (0):

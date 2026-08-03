@@ -245,10 +245,10 @@ Once every phase has written its last `index-new.html`, run one authoritative st
 
 ```bash
 node .claude/skills/refresh-model-data/scripts/apply_update.js diff index.html index-new.html \
-  --out "refresh-diff-$(date +%Y-%m-%d).txt"
+  --out "diffs/refresh-diff-$(date +%Y-%m-%d).txt"
 ```
 
-This re-parses both files fresh and prints, per provider: regions/groups added or removed, model count before -> after, added/removed model names, and a field-by-field diff for every model present on both sides (region-bitmask changes decoded into cap badges, not raw numbers). A plain text/line diff (`diff`, `git diff`) is useless here -- the whole data blob is one line -- so this command is the only way to see a real diff. `--out` is optional but recommended -- it writes the same report to a dated text file (gitignored scratch output, not something to commit) so the human reviewer has something to open and read alongside `index-new.html` instead of only your paraphrase of it.
+This re-parses both files fresh and prints, per provider: regions/groups added or removed, model count before -> after, added/removed model names, and a field-by-field diff for every model present on both sides (region-bitmask changes decoded into cap badges, not raw numbers). A plain text/line diff (`diff`, `git diff`) is useless here -- the whole data blob is one line -- so this command is the only way to see a real diff. `--out` is optional but recommended -- it writes the same report to a dated text file under `diffs/` (tracked, since these reports are part of the refresh history) so the human reviewer has something to open and read alongside `index-new.html` instead of only your paraphrase of it.
 
 Running `diff` needs no adjustment for a scoped (single-provider) run -- providers outside scope were never touched, so they'll simply show no changes. `apply_update.js diff` still works the same way.
 

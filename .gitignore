@@ -8,9 +8,6 @@ vertex_test.json
 # plain "all_models.json" should one ever appear; it does NOT match vertex_all_models.json.
 all_models.json
 
-# refresh-model-data skill's optional diff report (apply_update.js diff --out) -- scratch output, regeneratable
-refresh-diff-*.txt
-
 # refresh-model-data skill's working/backup files
 # index-new.html is the candidate file during a run; promoted to index.html (does not persist)
 # index-old.html is the immediately-prior index.html, overwritten each run (not a history)
