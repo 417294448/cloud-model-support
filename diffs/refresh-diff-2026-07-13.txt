@@ -1,0 +1,90 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  models: 130 -> 130
+  changed (0):
+
+=== azure ===
+  generated: 2026-07-10 -> 2026-07-13
+  groups removed (2): Nixtla, Stability AI
+  models: 167 -> 151
+  added (10): [Cohere] Cohere-embed-v3-english, [Cohere] Cohere-embed-v3-multilingual, [Meta Llama] Llama-4-Scout-17B-16E-Instruct, [Mistral] Mistral-small-2503, [Mistral] Mistral-medium-2505, [Mistral] Mistral-large, [Mistral] mistralai-Mistral-7B-Instruct-v01, [Mistral] mistralai-Mistral-7B-Instruct-v0-2, [Mistral] mistralai-Mixtral-8x7B-Instruct-v01, [Mistral] mistralai-Mixtral-8x22B-Instruct-v0-1
+  removed (26): [Cohere] Cohere Command R 08-2024, [Cohere] Cohere Command R+ 08-2024, [Cohere] Cohere Embed v3 - English, [Cohere] Cohere Embed v3 - Multilingual, [Cohere] Cohere Rerank v3.5, [Meta Llama] Llama 3.1 405B Instruct, [Meta Llama] Llama 3.1 8B Instruct, [Meta Llama] Llama 3.3 70B Instruct, [Meta Llama] Llama-3.2-11B-Vision-Instruct, [Meta Llama] Llama-3.2-1B, [Meta Llama] Llama-3.2-1B-Instruct, [Meta Llama] Llama-3.2-3B, [Meta Llama] Llama-3.2-3B-Instruct, [Meta Llama] Llama-3.2-90B-Vision-Instruct, [Meta Llama] Llama-3.3-70B-Instruct, [Meta Llama] Llama-Guard-3-11B-Vision, [Meta Llama] Llama-Guard-3-1B, [Microsoft] MAI-DS-R1, [Microsoft] Phi-4, [Mistral] Mistral Medium 3 (25.05), [Mistral] Mistral Small 25.03, [Mistral] mistral-document-ai-2505, [Nixtla] TimeGEN-1, [Stability AI] Stable Diffusion 3.5 Large, [Stability AI] Stable Image Core, ...
+  changed (24):
+    ~ [OpenAI] sora-2 (2025-10-06)
+        retirementDate: "2026-09-15" -> "2026-07-15"
+        replacement: null -> "sora-2 (2025-12-08)"
+    ~ [Anthropic] Claude Haiku 4.5
+        s: +7 region(s) gained (centralus, eastus, northcentralus, southcentralus, westcentralus, westus, westus3)
+    ~ [Anthropic] Claude Mythos 5
+        s: -2 region(s) lost (eastus2, swedencentral)
+    ~ [Anthropic] Claude Mythos Preview
+        s: -2 region(s) lost (eastus2, swedencentral)
+    ~ [Anthropic] Claude Opus 4.1
+        s: +1 region(s) gained (westcentralus)
+    ~ [Anthropic] Claude Opus 4.5
+        s: +1 region(s) gained (westcentralus)
+    ~ [Anthropic] Claude Opus 4.8
+        s: +7 region(s) gained (centralus, eastus, northcentralus, southcentralus, westcentralus, westus, westus3)
+    ~ [Anthropic] Claude Sonnet 4.5
+        s: +1 region(s) gained (westcentralus)
+    ~ [Anthropic] Claude Sonnet 5
+        s: +7 region(s) gained (centralus, eastus, northcentralus, southcentralus, westcentralus, westus, westus3)
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (1)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (2)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (3)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (4)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (5)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (9)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Microsoft] Phi-4 (2)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Microsoft] Phi-4 (3)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Microsoft] Phi-4 (4)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Microsoft] Phi-4 (5)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Microsoft] Phi-4 (6)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Microsoft] Phi-4 (7)
+        lifecycle: null -> "GA"
+        retirementDate: null -> null
+        replacement: null -> null
+    ~ [Mistral] Codestral-2501
+        s: +24 region(s) gained (australiaeast, brazilsouth, canadacentral, canadaeast, centralus, francecentral, germanywestcentral, italynorth, japaneast, japanwest, ...); 7 region(s) changed support: eastus: [Std·R] -> [Std·G]; eastus2: [Std·R] -> [Std·G]; northcentralus: [Std·R] -> [Std·G]; southcentralus: [Std·R] -> [Std·G]; swedencentral: [Std·R] -> [Std·G]; ...
+    ~ [Mistral] Ministral-3B
+        s: +24 region(s) gained (australiaeast, brazilsouth, canadacentral, canadaeast, centralus, francecentral, germanywestcentral, italynorth, japaneast, japanwest, ...); 7 region(s) changed support: eastus: [Std·R] -> [Std·G]; eastus2: [Std·R] -> [Std·G]; northcentralus: [Std·R] -> [Std·G]; southcentralus: [Std·R] -> [Std·G]; swedencentral: [Std·R] -> [Std·G]; ...
+    ~ [NTT DATA] tsuzumi-7b
+        s: -6 region(s) lost (eastus2, southcentralus, eastus, westus3, westus, northcentralus)
+
+=== gcp ===
+  models: 277 -> 277
+  changed (0):

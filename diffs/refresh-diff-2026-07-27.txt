@@ -1,0 +1,38 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  models: 130 -> 130
+  changed (0):
+
+=== azure ===
+  models: 151 -> 151
+  changed (0):
+
+=== gcp ===
+  generated: 2026-07-09 -> 2026-07-27
+  models: 277 -> 278
+  added (4): [Anthropic] claude-opus-5 (default), [Google] gemini-3.5-flash-lite (default), [Google] gemini-3.6-flash (default), [NVIDIA] cosmos3-nano (cosmos3-super-text2image)
+  removed (3): [Google] gemini-2.5-flash-lite-preview-09-2025 (default), [Google] gemini-2.5-flash-preview-09-2025 (default), [Google] gemini-3-pro-image-preview (default)
+  changed (7):
+    ~ [Google] gemini-2.5-flash (default)
+        replacement: "Gemini 3.1 Flash-Lite or Gemini 3.5 Flash" -> "Gemini 3.5 Flash-Lite or Gemini 3.1 Flash-Lite"
+    ~ [Google] gemini-3.1-flash-lite-image (default)
+        lifecycle: null -> "Legacy"
+        retirementDate: null -> "No retirement date announced"
+        replacement: null -> null
+    ~ [Google] veo-2.0-generate-001 (experimental)
+        lifecycle: "Legacy" -> "Deprecated"
+        retirementDate: "No retirement date announced" -> "2026-06-30"
+        replacement: null -> "veo-3.1-generate-001"
+    ~ [Google] veo-3.0-fast-generate-001 (default)
+        lifecycle: "Legacy" -> "Deprecated"
+        retirementDate: "No retirement date announced" -> "2026-06-30"
+        replacement: null -> "veo-3.1-fast-generate-001"
+    ~ [Google] veo-3.0-generate-001 (default)
+        lifecycle: "Legacy" -> "Deprecated"
+        retirementDate: "No retirement date announced" -> "2026-06-30"
+        replacement: null -> "veo-3.1-generate-001"
+    ~ [Google] veo-3.1-fast-generate-001 (default)
+        retirementDate: "No retirement date announced" -> "November 17, 2026 or later"
+    ~ [Google] veo-3.1-generate-001 (default)
+        retirementDate: "No retirement date announced" -> "November 17, 2026 or later"

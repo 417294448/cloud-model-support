@@ -1,0 +1,17 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-07-14 -> 2026-08-03
+  models: 130 -> 131
+  added (1): [Anthropic] Claude Opus 5
+  changed (1):
+    ~ [Anthropic] Claude Sonnet 5
+        s: 2 region(s) changed support: eu-north-1: [Geo,Global] -> [In-Region,Geo,Global]; ap-southeast-4: [Global] -> [In-Region,Geo,Global]
+
+=== azure ===
+  models: 151 -> 151
+  changed (0):
+
+=== gcp ===
+  models: 278 -> 278
+  changed (0):
