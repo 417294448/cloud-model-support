@@ -1,0 +1,55 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-08-03 -> 2026-08-07
+  models: 131 -> 131
+  changed (17):
+    ~ [AI21 Labs] Jamba 1.5 Large
+        replacement: null -> null
+    ~ [AI21 Labs] Jamba 1.5 Mini
+        replacement: null -> null
+    ~ [Amazon] Nova Canvas
+        replacement: null -> null
+    ~ [Amazon] Nova Premier
+        replacement: null -> null
+    ~ [Amazon] Nova Reel
+        replacement: null -> null
+    ~ [Amazon] Nova Sonic
+        replacement: null -> null
+    ~ [Anthropic] Claude 3 Haiku
+        replacement: null -> null
+    ~ [Anthropic] Claude 3 Sonnet
+        lifecycle: "Legacy" -> "EOL"
+        replacement: null -> null
+    ~ [Anthropic] Claude 3.5 Sonnet
+        s: -2 region(s) lost (us-gov-east-1, us-gov-west-1)
+        lifecycle: "Legacy" -> "EOL"
+        replacement: null -> null
+    ~ [Anthropic] Claude 3.5 Sonnet V2:0
+        lifecycle: "Legacy" -> "EOL"
+        replacement: null -> null
+    ~ [Anthropic] Claude 3.7 Sonnet
+        s: -2 region(s) lost (us-gov-east-1, us-gov-west-1)
+        lifecycle: "Legacy" -> "EOL"
+        replacement: null -> null
+    ~ [Anthropic] Claude Opus 4.1
+        replacement: null -> null
+    ~ [Anthropic] Claude Sonnet 4
+        replacement: null -> null
+    ~ [Anthropic] Claude Sonnet 5
+        s: +2 region(s) gained (us-gov-west-1, us-gov-east-1)
+    ~ [Cohere] Command R
+        replacement: null -> null
+    ~ [Cohere] Command R+
+        replacement: null -> null
+    ~ [TwelveLabs] Marengo Embed v2.7
+        replacement: null -> null
+
+=== azure ===
+  generated: 2026-07-13 -> 2026-08-07
+  models: 151 -> 151
+  changed (0):
+
+=== gcp ===
+  models: 278 -> 278
+  changed (0):
