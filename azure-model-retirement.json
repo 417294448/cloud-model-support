@@ -16,14 +16,14 @@
           "model": "gpt-4.1",
           "version": "2025-04-14",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-14",
+          "retirement_date": "2027-04-14",
           "replacement": null
         },
         {
           "model": "gpt-4.1-mini",
           "version": "2025-04-14",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-14",
+          "retirement_date": "2027-04-14",
           "replacement": null
         },
         {
@@ -44,29 +44,22 @@
           "model": "gpt-4o",
           "version": "2024-08-06",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-01",
-          "replacement": "gpt-5.1"
-        },
-        {
-          "model": "gpt-4o",
-          "version": "2024-08-06-ev3",
-          "lifecycle": "Deprecated",
-          "retirement_date": "2026-03-31",
+          "retirement_date": "2027-04-14",
           "replacement": "gpt-5.1"
         },
         {
           "model": "gpt-4o",
           "version": "2024-11-20",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-01",
+          "retirement_date": "2027-04-14",
           "replacement": "gpt-5.1"
         },
         {
           "model": "gpt-4o-mini",
           "version": "2024-07-18",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-01",
-          "replacement": "gpt-4.1-mini"
+          "retirement_date": "2027-04-14",
+          "replacement": null
         },
         {
           "model": "gpt-4o-mini-transcribe",
@@ -79,7 +72,7 @@
           "model": "gpt-4o-mini-transcribe",
           "version": "2025-12-15",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-15",
+          "retirement_date": "2027-06-15",
           "replacement": null
         },
         {
@@ -93,7 +86,7 @@
           "model": "gpt-4o-mini-tts",
           "version": "2025-12-15",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-15",
+          "retirement_date": "2027-06-15",
           "replacement": null
         },
         {
@@ -107,14 +100,14 @@
           "model": "gpt-4o-transcribe-diarize",
           "version": "2025-10-15",
           "lifecycle": "GA",
-          "retirement_date": "2026-10-15",
+          "retirement_date": "2027-04-15",
           "replacement": null
         },
         {
           "model": "gpt-5",
           "version": "2025-08-07",
           "lifecycle": "GA",
-          "retirement_date": "2027-02-06",
+          "retirement_date": "2027-02-09",
           "replacement": null
         },
         {
@@ -142,14 +135,14 @@
           "model": "gpt-5-mini",
           "version": "2025-08-07",
           "lifecycle": "GA",
-          "retirement_date": "2027-02-06",
+          "retirement_date": "2027-02-09",
           "replacement": null
         },
         {
           "model": "gpt-5-nano",
           "version": "2025-08-07",
           "lifecycle": "GA",
-          "retirement_date": "2027-02-06",
+          "retirement_date": "2027-02-09",
           "replacement": null
         },
         {
@@ -184,7 +177,7 @@
           "model": "gpt-5.1-codex-max",
           "version": "2025-12-04",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-05",
+          "retirement_date": "2027-05-18",
           "replacement": null
         },
         {
@@ -198,7 +191,7 @@
           "model": "gpt-5.2",
           "version": "2025-12-11",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-12",
+          "retirement_date": "2027-06-08",
           "replacement": null
         },
         {
@@ -219,7 +212,7 @@
           "model": "gpt-5.2-codex",
           "version": "2026-01-14",
           "lifecycle": "GA",
-          "retirement_date": "2027-01-14",
+          "retirement_date": "2027-07-13",
           "replacement": null
         },
         {
@@ -233,91 +226,91 @@
           "model": "gpt-5.3-codex",
           "version": "2026-02-24",
           "lifecycle": "GA",
-          "retirement_date": "2027-02-25",
+          "retirement_date": "2027-08-24",
           "replacement": null
         },
         {
           "model": "gpt-5.4",
           "version": "2026-03-05",
           "lifecycle": "GA",
-          "retirement_date": "2027-03-05",
+          "retirement_date": "2027-09-02",
           "replacement": null
         },
         {
           "model": "gpt-5.4-mini",
           "version": "2026-03-17",
           "lifecycle": "GA",
-          "retirement_date": "2027-03-18",
+          "retirement_date": "2027-09-21",
           "replacement": null
         },
         {
           "model": "gpt-5.4-nano",
           "version": "2026-03-17",
           "lifecycle": "GA",
-          "retirement_date": "2027-03-18",
+          "retirement_date": "2027-09-21",
           "replacement": null
         },
         {
           "model": "gpt-5.4-pro",
           "version": "2026-03-05",
           "lifecycle": "GA",
-          "retirement_date": "2027-03-06",
+          "retirement_date": "2027-09-07",
           "replacement": null
         },
         {
           "model": "gpt-5.5",
           "version": "2026-04-24",
           "lifecycle": "GA",
-          "retirement_date": "2027-04-23",
+          "retirement_date": "2027-10-26",
           "replacement": null
         },
         {
           "model": "gpt-5.6-luna",
           "version": "2026-07-09",
           "lifecycle": "GA",
-          "retirement_date": "2027-07-09",
+          "retirement_date": "2028-01-11",
           "replacement": null
         },
         {
           "model": "gpt-5.6-sol",
           "version": "2026-07-09",
           "lifecycle": "GA",
-          "retirement_date": "2027-07-09",
+          "retirement_date": "2028-01-11",
           "replacement": null
         },
         {
           "model": "gpt-5.6-terra",
           "version": "2026-07-09",
           "lifecycle": "GA",
-          "retirement_date": "2027-07-09",
+          "retirement_date": "2028-01-11",
           "replacement": null
         },
         {
           "model": "gpt-audio",
           "version": "2025-08-28",
           "lifecycle": "GA",
-          "retirement_date": "2027-02-28",
+          "retirement_date": "2027-03-02",
           "replacement": null
         },
         {
           "model": "gpt-audio-1.5",
           "version": "2026-02-23",
           "lifecycle": "GA",
-          "retirement_date": "2027-02-23",
+          "retirement_date": "2027-08-24",
           "replacement": null
         },
         {
           "model": "gpt-audio-mini",
           "version": "2025-10-06",
           "lifecycle": "GA",
-          "retirement_date": "2026-09-21",
+          "retirement_date": "2027-04-06",
           "replacement": null
         },
         {
           "model": "gpt-audio-mini",
           "version": "2025-12-15",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-15",
+          "retirement_date": "2027-06-15",
           "replacement": null
         },
         {
@@ -359,48 +352,48 @@
           "model": "gpt-image-1.5",
           "version": "2025-12-16",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-16",
+          "retirement_date": "2027-06-16",
           "replacement": null
         },
         {
           "model": "gpt-image-2",
           "version": "2026-04-21",
           "lifecycle": "GA",
-          "retirement_date": "2027-04-21",
+          "retirement_date": "2027-10-21",
           "replacement": null
         },
         {
           "model": "gpt-realtime",
           "version": "2025-08-28",
           "lifecycle": "GA",
-          "retirement_date": "2027-02-28",
+          "retirement_date": "2027-03-02",
           "replacement": null
         },
         {
           "model": "gpt-realtime-1.5",
           "version": "2026-02-23",
           "lifecycle": "GA",
-          "retirement_date": "2027-02-23",
+          "retirement_date": "2027-08-24",
           "replacement": null
         },
         {
           "model": "gpt-realtime-2",
           "version": "2026-05-06",
-          "lifecycle": "GA",
-          "retirement_date": "2027-05-06",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-08-31",
           "replacement": null
         },
         {
           "model": "gpt-realtime-2.1",
           "version": "2026-07-07",
-          "lifecycle": "GA",
+          "lifecycle": "Preview",
           "retirement_date": "2027-06-25",
           "replacement": null
         },
         {
           "model": "gpt-realtime-2.1-mini",
           "version": "2026-07-07",
-          "lifecycle": "GA",
+          "lifecycle": "Preview",
           "retirement_date": "2027-06-25",
           "replacement": null
         },
@@ -408,7 +401,21 @@
           "model": "gpt-realtime-mini",
           "version": "2025-10-06",
           "lifecycle": "GA",
-          "retirement_date": "2026-07-23",
+          "retirement_date": "2027-04-06",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime-mini",
+          "version": "2025-12-15",
+          "lifecycle": "GA",
+          "retirement_date": "2027-06-15",
+          "replacement": null
+        },
+        {
+          "model": "gpt-realtime-mini",
+          "version": "2025-10-06",
+          "lifecycle": "GA",
+          "retirement_date": "2026-09-21",
           "replacement": null
         },
         {
@@ -422,22 +429,22 @@
           "model": "o1",
           "version": "2024-12-17",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-09-16",
-          "replacement": null
+          "retirement_date": "2026-10-21",
+          "replacement": "gpt-5.6-sol"
         },
         {
           "model": "o1-pro",
           "version": "2025-03-19",
           "lifecycle": "GA",
-          "retirement_date": "2026-09-18",
-          "replacement": null
+          "retirement_date": "2026-10-21",
+          "replacement": "gpt-5.6-sol"
         },
         {
           "model": "o3",
           "version": "2025-04-16",
           "lifecycle": "GA",
-          "retirement_date": "2026-10-16",
-          "replacement": null
+          "retirement_date": "2026-10-21",
+          "replacement": "gpt-5.6-sol"
         },
         {
           "model": "o3-deep-research",
@@ -457,7 +464,7 @@
           "model": "o3-pro",
           "version": "2025-06-10",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-10",
+          "retirement_date": "2026-12-17",
           "replacement": null
         },
         {
@@ -485,28 +492,28 @@
           "model": "text-embedding-3-large",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2027-04-15",
+          "retirement_date": "2028-02-09",
           "replacement": null
         },
         {
           "model": "text-embedding-3-small",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2027-04-15",
+          "retirement_date": "2028-02-09",
           "replacement": null
         },
         {
           "model": "text-embedding-ada-002",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2027-04-15",
+          "retirement_date": "2028-02-09",
           "replacement": null
         },
         {
           "model": "text-embedding-ada-002",
           "version": "2",
           "lifecycle": "GA",
-          "retirement_date": "2027-04-15",
+          "retirement_date": "2028-02-09",
           "replacement": null
         },
         {
@@ -621,21 +628,21 @@
         {
           "model": "DeepSeek-R1-0528",
           "version": "1",
-          "lifecycle": "Legacy",
+          "lifecycle": "Retired",
           "retirement_date": "2026-07-13",
           "replacement": "DeepSeek-V4-Pro"
         },
         {
           "model": "DeepSeek-V3-0324",
           "version": "1",
-          "lifecycle": "Legacy",
+          "lifecycle": "Retired",
           "retirement_date": "2026-07-13",
           "replacement": "DeepSeek-V4-Flash"
         },
         {
           "model": "DeepSeek-V3.1",
           "version": "1",
-          "lifecycle": "Legacy",
+          "lifecycle": "Retired",
           "retirement_date": "2026-07-13",
           "replacement": "DeepSeek-V4-Flash"
         },
@@ -657,14 +664,14 @@
           "model": "DeepSeek-V4-Flash",
           "version": "2026-04-23",
           "lifecycle": "GA",
-          "retirement_date": "2027-08-20",
+          "retirement_date": "2028-02-20",
           "replacement": null
         },
         {
           "model": "DeepSeek-V4-Pro",
           "version": "2026-04-23",
           "lifecycle": "GA",
-          "retirement_date": "2027-08-20",
+          "retirement_date": "2028-02-20",
           "replacement": null
         }
       ]
@@ -737,15 +744,15 @@
         {
           "model": "Mistral-Large-3",
           "version": "1",
-          "lifecycle": "GA",
+          "lifecycle": "Preview",
           "retirement_date": null,
           "replacement": null
         },
         {
           "model": "mistral-document-ai-2505",
           "version": "1",
-          "lifecycle": "GA",
-          "retirement_date": "2026-07-15",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-07-20",
           "replacement": "mistral-document-ai-2512, mistral-ocr-4-0"
         },
         {
@@ -894,9 +901,9 @@
         {
           "model": "claude-opus-4-1",
           "version": null,
-          "lifecycle": "Preview",
+          "lifecycle": "Retired",
           "retirement_date": "2026-08-05",
-          "replacement": "claude-opus-4-8"
+          "replacement": "claude-opus-5"
         },
         {
           "model": "claude-opus-4-5",
@@ -956,7 +963,7 @@
         {
           "model": "Cohere-rerank-v3.5",
           "version": "1",
-          "lifecycle": "Deprecated",
+          "lifecycle": "Retired",
           "retirement_date": "2026-05-14",
           "replacement": "Cohere-rerank-v4.0-pro, Cohere-rerank-v4.0-fast"
         },
@@ -983,92 +990,92 @@
         {
           "model": "FW-DeepSeek-V3.1",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-DeepSeek-V3.2",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-GLM-4.7",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-GLM-5",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-GLM-5.1",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-08-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-GPT-OSS-120B",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-Kimi-K2-Instruct-0905",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-Kimi-K2-Thinking",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-Kimi-K2.5",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-MiniMax-M2.5",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-Qwen3-14B",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-Qwen3.5-122B-A10B",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-08-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         },
         {
           "model": "FW-Qwen3.5-397B-A17B",
           "version": "1",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-08-01",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-01",
           "replacement": null
         }
       ]
@@ -1080,14 +1087,14 @@
         {
           "model": "Llama-3.2-11B-Vision-Instruct",
           "version": null,
-          "lifecycle": "Deprecated",
+          "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         },
         {
           "model": "Llama-3.2-90B-Vision-Instruct",
           "version": null,
-          "lifecycle": "Deprecated",
+          "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         },
@@ -1101,21 +1108,21 @@
         {
           "model": "Meta-Llama-3.1-405B-Instruct",
           "version": null,
-          "lifecycle": "Deprecated",
+          "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         },
         {
           "model": "Meta-Llama-3.1-8B",
           "version": null,
-          "lifecycle": "Deprecated",
+          "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         },
         {
           "model": "Meta-Llama-3.1-8B-Instruct",
           "version": null,
-          "lifecycle": "Deprecated",
+          "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         }
