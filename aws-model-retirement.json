@@ -189,15 +189,6 @@
           "legacy_date": "March 10, 2026",
           "eol_date": "September 10, 2026",
           "public_extended_access_start_date": "June 10, 2026"
-        },
-        {
-          "regions": [
-            "us-gov-east-1",
-            "us-gov-west-1"
-          ],
-          "legacy_date": "March 10, 2026",
-          "eol_date": "September 10, 2026",
-          "public_extended_access_start_date": "June 10, 2026"
         }
       ]
     },
@@ -216,16 +207,6 @@
           "legacy_date": "January 30, 2026",
           "eol_date": "July 30, 2026",
           "public_extended_access_start_date": null
-        },
-        {
-          "regions": [
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-southeast-2"
-          ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": "April 30, 2026"
         }
       ]
     },
@@ -242,21 +223,12 @@
           "legacy_date": "January 30, 2026",
           "eol_date": "July 30, 2026",
           "public_extended_access_start_date": "April 30, 2026"
-        },
-        {
-          "regions": [
-            "us-gov-east-1",
-            "us-gov-west-1"
-          ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": "April 30, 2026"
         }
       ]
     },
     {
       "provider": "Anthropic",
-      "model_name": "Claude 3.5 Sonnet v2",
+      "model_name": "Claude 3.5 Sonnet V2:0",
       "model_id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
       "region_groups": [
         {
