@@ -1,0 +1,21 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  models: 122 -> 122
+  changed (0):
+
+=== azure ===
+  models: 151 -> 151
+  changed (0):
+
+=== gcp ===
+  generated: 2026-07-27 -> 2026-08-13
+  groups added (1): Thinkingmachines
+  models: 278 -> 282
+  added (6): [Meta] llama4 (llama-4-scout-17b-16e-instruct), [Mistral AI] ministral-3 (ministral-3-14b-reasoning-2512), [Google] gemini-robotics-er-2-preview-info (default), [Moonshot AI] kimi-k3 (kimi-k3), [NVIDIA] nemotron-3.5-lightning (nemotron-3.5-lightning-bf16), [Thinkingmachines] inkling (inkling-nvfp4)
+  removed (2): [Meta] llama4 (llama-4-scout-17b-16e), [Mistral AI] ministral-3 (ministral-3-3b-base-2512)
+  changed (2):
+    ~ [Google] gemini-3.5-flash (default)
+        s: +1 region(s) gained (australia-southeast1)
+    ~ [Qwen] qwen3-6 (qwen3.6-35b-a3b-fp8)
+        s: +4 region(s) gained (us-east5, us-west1, asia-southeast1, europe-west4)

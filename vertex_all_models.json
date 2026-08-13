@@ -24222,6 +24222,303 @@
   },
   {
     "launchStage": "GA",
+    "name": "publishers/nvidia/models/nemotron-3.5-lightning",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model=gs://vertex-model-garden-restricted-us/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+            "--tensor-parallel-size=1",
+            "--moe-backend=flashinfer_cutlass",
+            "--trust-remote-code",
+            "--max-num-batched-tokens=4096",
+            "--speculative_config.method=mtp",
+            "--speculative_config.num_speculative_tokens=1",
+            "--speculative_config.moe_backend=flashinfer_cutlass",
+            "--mamba-backend=flashinfer",
+            "--enable-prefix-caching",
+            "--mamba-cache-mode=align",
+            "--max-num-seqs=16",
+            "--max-model-len=65536"
+          ],
+          "deploymentTimeout": "7200s",
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "nvidia/Nemotron-3.5-Lightning-BF16"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/ping",
+          "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260730.00_p0",
+          "ports": [
+            {
+              "containerPort": 7080
+            }
+          ],
+          "predictRoute": "/generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_H100_80GB",
+            "machineType": "a3-highgpu-1g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+        },
+        "deployTaskName": "vLLM 64K context spec decode mtp",
+        "modelDisplayName": "NVIDIA-Nemotron-3.5-Lightning-BF16"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=gs://vertex-model-garden-restricted-us/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+                "--tensor-parallel-size=1",
+                "--moe-backend=flashinfer_cutlass",
+                "--trust-remote-code",
+                "--max-num-batched-tokens=4096",
+                "--speculative_config.method=mtp",
+                "--speculative_config.num_speculative_tokens=1",
+                "--speculative_config.moe_backend=flashinfer_cutlass",
+                "--mamba-backend=flashinfer",
+                "--enable-prefix-caching",
+                "--mamba-cache-mode=align",
+                "--max-num-seqs=16",
+                "--max-model-len=65536"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/Nemotron-3.5-Lightning-BF16"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260730.00_p0",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_H100_80GB",
+                "machineType": "a3-highgpu-1g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 64K context spec decode mtp",
+            "modelDisplayName": "NVIDIA-Nemotron-3.5-Lightning-BF16"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=gs://vertex-model-garden-restricted-us/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+                "--tensor-parallel-size=8",
+                "--moe-backend=flashinfer_cutlass",
+                "--trust-remote-code",
+                "--max-model-len=262144",
+                "--max-num-batched-tokens=4096",
+                "--speculative_config.method=mtp",
+                "--speculative_config.num_speculative_tokens=1",
+                "--speculative_config.moe_backend=flashinfer_cutlass",
+                "--mamba-backend=flashinfer",
+                "--enable-prefix-caching",
+                "--mamba-cache-mode=align"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/Nemotron-3.5-Lightning-BF16"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260807.00_p0",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_H100_80GB",
+                "machineType": "a3-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n            \"@requestFormat\": \"chatCompletions\",\n            \"messages\": [\n                {\n                    \"role\": \"user\",\n                    \"content\": \"Give me a short introduction to large language model.\"\n                }\n            ],\n            \"max_tokens\": 128,\n            \"temperature\": 0.6,\n            \"top_p\": 1.0,\n            \"top_k\": -1\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 256K context spec decode mtp",
+            "modelDisplayName": "NVIDIA-Nemotron-3.5-Lightning-BF16"
+          }
+        ]
+      }
+    },
+    "versionId": "nemotron-3.5-lightning-bf16"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/nvidia/models/nemotron-3.5-lightning",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
+            "--model=gs://vertex-model-garden-restricted-us/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+            "--tensor-parallel-size=1",
+            "--trust-remote-code",
+            "--max-num-batched-tokens=4096",
+            "--speculative_config.method=mtp",
+            "--speculative_config.moe_backend=flashinfer_cutlass",
+            "--speculative_config.num_speculative_tokens=1",
+            "--mamba-backend=flashinfer",
+            "--mamba-cache-mode=align",
+            "--max-model-len=65536"
+          ],
+          "deploymentTimeout": "7200s",
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "nvidia/Nemotron-3.5-Lightning-nvfp4"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/ping",
+          "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260807.00_p0",
+          "ports": [
+            {
+              "containerPort": 7080
+            }
+          ],
+          "predictRoute": "/generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 1,
+            "acceleratorType": "NVIDIA_RTX_PRO_6000",
+            "machineType": "g4-standard-48"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n    \"instances\": [\n        {\n          \"prompt\": \"What is a car?\",\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+        },
+        "deployTaskName": "vLLM 64K context spec decode mtp",
+        "modelDisplayName": "NVIDIA-Nemotron-3.5-Lightning-NVFP4"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=gs://vertex-model-garden-restricted-us/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+                "--tensor-parallel-size=1",
+                "--trust-remote-code",
+                "--max-num-batched-tokens=4096",
+                "--speculative_config.method=mtp",
+                "--speculative_config.moe_backend=flashinfer_cutlass",
+                "--speculative_config.num_speculative_tokens=1",
+                "--mamba-backend=flashinfer",
+                "--mamba-cache-mode=align",
+                "--max-model-len=65536"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "nvidia/Nemotron-3.5-Lightning-nvfp4"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260807.00_p0",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 1,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-48"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"prompt\": \"What is a car?\",\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 64K context spec decode mtp",
+            "modelDisplayName": "NVIDIA-Nemotron-3.5-Lightning-NVFP4"
+          }
+        ]
+      }
+    },
+    "versionId": "nemotron-3.5-lightning-nvfp4"
+  },
+  {
+    "launchStage": "GA",
     "name": "publishers/nvidia/models/cosmos3-nano",
     "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
     "supportedActions": {
@@ -24348,8 +24645,8 @@
             "dedicatedResources": {
               "machineSpec": {
                 "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_B200",
-                "machineType": "a4-highgpu-8g"
+                "acceleratorType": "NVIDIA_H100_80GB",
+                "machineType": "a3-highgpu-8g"
               },
               "maxReplicaCount": 1
             },
@@ -24493,8 +24790,8 @@
             "dedicatedResources": {
               "machineSpec": {
                 "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_B200",
-                "machineType": "a4-highgpu-8g"
+                "acceleratorType": "NVIDIA_H100_80GB",
+                "machineType": "a3-highgpu-8g"
               },
               "maxReplicaCount": 1
             },
@@ -44630,6 +44927,218 @@
             "vllm.entrypoints.api_server",
             "--host=0.0.0.0",
             "--port=7080",
+            "--model=gs://vertex-model-garden-restricted-us/deepseek-ai/DeepSeek-V4-Flash-0731",
+            "--trust-remote-code",
+            "--tokenizer-mode=deepseek_v4",
+            "--tool-call-parser=deepseek_v4",
+            "--reasoning-parser=deepseek_v4",
+            "--enable-auto-tool-choice",
+            "--tensor-parallel-size=8",
+            "--enable-expert-parallel",
+            "--kv-cache-dtype=fp8",
+            "--block-size=256",
+            "--attention_config.use_fp4_indexer_cache=True",
+            "--no-enable-flashinfer-autotune"
+          ],
+          "deploymentTimeout": "7200s",
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "deepseek-ai/DeepSeek-V4-Flash-0731"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/ping",
+          "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260725.00_p0",
+          "ports": [
+            {
+              "containerPort": 7080
+            }
+          ],
+          "predictRoute": "/generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_B200",
+            "machineType": "a4-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"1+1=?\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+        },
+        "deployTaskName": "vLLM 1M context",
+        "modelDisplayName": "deepseek-ai/DeepSeek-V4-Flash-0731"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=gs://vertex-model-garden-restricted-us/deepseek-ai/DeepSeek-V4-Flash-0731",
+                "--trust-remote-code",
+                "--tokenizer-mode=deepseek_v4",
+                "--tool-call-parser=deepseek_v4",
+                "--reasoning-parser=deepseek_v4",
+                "--enable-auto-tool-choice",
+                "--tensor-parallel-size=8",
+                "--enable-expert-parallel",
+                "--kv-cache-dtype=fp8",
+                "--block-size=256",
+                "--attention_config.use_fp4_indexer_cache=True",
+                "--no-enable-flashinfer-autotune"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "deepseek-ai/DeepSeek-V4-Flash-0731"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260725.00_p0",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"1+1=?\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 1M context",
+            "modelDisplayName": "deepseek-ai/DeepSeek-V4-Flash-0731"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=7080",
+                "--model=gs://vertex-model-garden-restricted-us/deepseek-ai/DeepSeek-V4-Flash-0731",
+                "--trust-remote-code",
+                "--tool-call-parser=deepseek_v4",
+                "--reasoning-parser=deepseek_v4",
+                "--enable-auto-tool-choice",
+                "--tensor-parallel-size=8",
+                "--enable-expert-parallel",
+                "--kv-cache-dtype=fp8",
+                "--gpu-memory-utilization=0.85"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "deepseek-ai/DeepSeek-V4-Flash-0731"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260730.00_p0",
+              "ports": [
+                {
+                  "containerPort": 7080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_H200_141GB",
+                "machineType": "a3-ultragpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n    \"instances\": [\n        {\n          \"@requestFormat\": \"chatCompletions\",\n          \"messages\": [\n              {\n                  \"role\": \"user\",\n                  \"content\": \"1+1=?\"\n              }\n          ],\n          \"max_tokens\": 100\n        }\n    ]\n}\n"
+            },
+            "deployTaskName": "vLLM 1M context",
+            "modelDisplayName": "deepseek-ai/DeepSeek-V4-Flash-0731"
+          },
+          {
+            "containerSpec": {
+              "args": [
+                "--model=gs://vertex-model-garden-restricted-us/deepseek-ai/DeepSeek-V4-Flash-0731",
+                "--tp=8",
+                "--mem-fraction-static=0.7",
+                "--trust-remote-code"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "deepseek-ai/DeepSeek-V4-Flash-0731"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/sglang-airlock:kimi-k3-v13",
+              "ports": [
+                {
+                  "containerPort": 30000
+                }
+              ],
+              "predictRoute": "/vertex_generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_RTX_PRO_6000",
+                "machineType": "g4-standard-384"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    { \"text\" : \"What is 1+1?\" }\n  ],\n  \"parameters\": {\n    \"sampling_params\": {\n      \"max_new_tokens\": 128,\n      \"temperature\": 1.0,\n      \"top_p\": 0.95\n    }\n  }\n}\n"
+            },
+            "deployTaskName": "SGLang 1M context",
+            "modelDisplayName": "deepseek-ai/DeepSeek-V4-Flash-0731"
+          }
+        ]
+      }
+    },
+    "versionId": "deepseek-v4-flash-0731"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/deepseek-ai/models/deepseek-v4",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=7080",
             "--model=gs://vertex-model-garden-restricted-us/deepseek-ai/DeepSeek-V4-Pro",
             "--trust-remote-code",
             "--kv-cache-dtype=fp8",
@@ -56289,7 +56798,7 @@
             "vllm.entrypoints.api_server",
             "--host=0.0.0.0",
             "--port=7080",
-            "--model=gs://vertex-model-garden-restricted-us/qwen3.6/Qwen3.6-35B-A3B",
+            "--model=gs://vertex-model-garden-restricted-asia/qwen3.6/Qwen3.6-35B-A3B",
             "--tensor-parallel-size=1",
             "--reasoning-parser=qwen3",
             "--speculative-config.method=mtp",
@@ -56338,7 +56847,7 @@
                 "vllm.entrypoints.api_server",
                 "--host=0.0.0.0",
                 "--port=7080",
-                "--model=gs://vertex-model-garden-restricted-us/qwen3.6/Qwen3.6-35B-A3B",
+                "--model=gs://vertex-model-garden-restricted-asia/qwen3.6/Qwen3.6-35B-A3B",
                 "--tensor-parallel-size=1",
                 "--reasoning-parser=qwen3",
                 "--speculative-config.method=mtp",
@@ -56385,7 +56894,7 @@
                 "vllm.entrypoints.api_server",
                 "--host=0.0.0.0",
                 "--port=7080",
-                "--model=gs://vertex-model-garden-restricted-us/qwen3.6/Qwen3.6-35B-A3B",
+                "--model=gs://vertex-model-garden-restricted-asia/qwen3.6/Qwen3.6-35B-A3B",
                 "--tensor-parallel-size=1",
                 "--max-num-seqs=32",
                 "--enable-auto-tool-choice",
@@ -82840,532 +83349,6 @@
   },
   {
     "launchStage": "GA",
-    "name": "publishers/nvidia/models/llama-nemotron-super",
-    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
-    "supportedActions": {
-      "deploy": {
-        "dedicatedResources": {
-          "machineSpec": {
-            "acceleratorCount": 8,
-            "acceleratorType": "NVIDIA_TESLA_A100",
-            "machineType": "a2-highgpu-8g"
-          },
-          "maxReplicaCount": 1
-        },
-        "deployMetadata": {
-          "labels": {
-            "mg-lite-region-asia-northeast1": "true",
-            "mg-lite-region-asia-northeast3": "true",
-            "mg-lite-region-asia-south1": "true",
-            "mg-lite-region-asia-south2": "true",
-            "mg-lite-region-asia-southeast1": "true",
-            "mg-lite-region-australia-southeast1": "true",
-            "mg-lite-region-europe-north1": "true",
-            "mg-lite-region-europe-west1": "true",
-            "mg-lite-region-europe-west2": "true",
-            "mg-lite-region-europe-west3": "true",
-            "mg-lite-region-europe-west4": "true",
-            "mg-lite-region-me-west1": "true",
-            "mg-lite-region-northamerica-northeast2": "true",
-            "mg-lite-region-us-central1": "true",
-            "mg-lite-region-us-east1": "true",
-            "mg-lite-region-us-east4": "true",
-            "mg-lite-region-us-east5": "true",
-            "mg-lite-region-us-south1": "true",
-            "mg-lite-region-us-west1": "true",
-            "mg-lite-region-us-west2": "true",
-            "mg-lite-region-us-west3": "true",
-            "mg-lite-region-us-west4": "true"
-          },
-          "sampleRequest": "Please refer to the code samples in the documentation"
-        },
-        "deployTaskName": "a2-highgpu-8g",
-        "modelDisplayName": "llama-nemotron-super-49b-v-1-5"
-      },
-      "multiDeployVertex": {
-        "multiDeployVertex": [
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_TESLA_A100",
-                "machineType": "a2-highgpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "a2-highgpu-8g",
-            "modelDisplayName": "llama-nemotron-super-49b-v-1-5"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_A100_80GB",
-                "machineType": "a2-ultragpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "a2-ultragpu-8g",
-            "modelDisplayName": "llama-nemotron-super-49b-v-1-5"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 4,
-                "acceleratorType": "NVIDIA_H100_80GB",
-                "machineType": "a3-highgpu-4g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "a3-highgpu-4g",
-            "modelDisplayName": "llama-nemotron-super-49b-v-1-5"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_RTX_PRO_6000",
-                "machineType": "g4-standard-384"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "g4-standard-384",
-            "modelDisplayName": "llama-nemotron-super-49b-v-1-5"
-          }
-        ]
-      },
-      "requestAccess": {
-        "references": {
-          "us-central1": {
-            "uri": "https://console.cloud.google.com/vertex-ai/model-garden/questionnaire?model=publishers/nvidia/models/llama-nemotron-super&mp=nvidia/nvidia-llama-nemotron-super&service=nvidia-872.cloudpartnerservices.goog&skip_questionnaire=true"
-          }
-        }
-      }
-    },
-    "versionId": "49b"
-  },
-  {
-    "launchStage": "GA",
-    "name": "publishers/nvidia/models/nemotron-nano-12b-v2-vl",
-    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
-    "supportedActions": {
-      "deploy": {
-        "dedicatedResources": {
-          "machineSpec": {
-            "acceleratorCount": 8,
-            "acceleratorType": "NVIDIA_TESLA_A100",
-            "machineType": "a2-highgpu-8g"
-          },
-          "maxReplicaCount": 1
-        },
-        "deployMetadata": {
-          "labels": {
-            "mg-lite-region-asia-northeast1": "true",
-            "mg-lite-region-asia-northeast3": "true",
-            "mg-lite-region-asia-south1": "true",
-            "mg-lite-region-asia-south2": "true",
-            "mg-lite-region-asia-southeast1": "true",
-            "mg-lite-region-australia-southeast1": "true",
-            "mg-lite-region-europe-north1": "true",
-            "mg-lite-region-europe-west1": "true",
-            "mg-lite-region-europe-west2": "true",
-            "mg-lite-region-europe-west3": "true",
-            "mg-lite-region-europe-west4": "true",
-            "mg-lite-region-me-west1": "true",
-            "mg-lite-region-northamerica-northeast2": "true",
-            "mg-lite-region-us-central1": "true",
-            "mg-lite-region-us-east1": "true",
-            "mg-lite-region-us-east4": "true",
-            "mg-lite-region-us-east5": "true",
-            "mg-lite-region-us-south1": "true",
-            "mg-lite-region-us-west1": "true",
-            "mg-lite-region-us-west2": "true",
-            "mg-lite-region-us-west3": "true",
-            "mg-lite-region-us-west4": "true"
-          },
-          "sampleRequest": "Please refer to the code samples in the documentation"
-        },
-        "deployTaskName": "a2-highgpu-8g",
-        "modelDisplayName": "nemotron-nano-12b-v2-vl"
-      },
-      "multiDeployVertex": {
-        "multiDeployVertex": [
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_TESLA_A100",
-                "machineType": "a2-highgpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "a2-highgpu-8g",
-            "modelDisplayName": "nemotron-nano-12b-v2-vl"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_A100_80GB",
-                "machineType": "a2-ultragpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "a2-ultragpu-8g",
-            "modelDisplayName": "nemotron-nano-12b-v2-vl"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_H100_80GB",
-                "machineType": "a3-highgpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "a3-highgpu-8g",
-            "modelDisplayName": "nemotron-nano-12b-v2-vl"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_H100_MEGA_80GB",
-                "machineType": "a3-megagpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "a3-megagpu-8g",
-            "modelDisplayName": "nemotron-nano-12b-v2-vl"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_B200",
-                "machineType": "a4-highgpu-8g"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "a4-highgpu-8g",
-            "modelDisplayName": "nemotron-nano-12b-v2-vl"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 2,
-                "acceleratorType": "NVIDIA_RTX_PRO_6000",
-                "machineType": "g4-standard-96"
-              },
-              "maxReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              },
-              "sampleRequest": "Please refer to the code samples in the documentation"
-            },
-            "deployTaskName": "g4-standard-96",
-            "modelDisplayName": "nemotron-nano-12b-v2-vl"
-          }
-        ]
-      },
-      "openNotebook": {
-        "references": {
-          "us-central1": {
-            "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/generative_ai/nemotron_nano_intro.ipynb"
-          }
-        },
-        "title": "Open Notebook"
-      },
-      "openNotebooks": {
-        "notebooks": [
-          {
-            "references": {
-              "us-central1": {
-                "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/generative_ai/nemotron_nano_intro.ipynb"
-              }
-            },
-            "title": "Open Notebook"
-          }
-        ]
-      },
-      "requestAccess": {
-        "references": {
-          "us-central1": {
-            "uri": "https://console.cloud.google.com/vertex-ai/model-garden/questionnaire?model=publishers/nvidia/models/nemotron-nano-12b-v2-vl&mp=nvidia/nvidia-nemotron-nano&service=nvidia-873.cloudpartnerservices.goog&skip_questionnaire=true"
-          }
-        }
-      }
-    },
-    "versionId": "1.5.0"
-  },
-  {
-    "launchStage": "GA",
     "name": "publishers/anthropic/models/claude-opus-4-5",
     "openSourceCategory": "PROPRIETARY",
     "supportedActions": {
@@ -87123,259 +87106,6 @@
   },
   {
     "launchStage": "GA",
-    "name": "publishers/nvidia/models/nemotron-v3-super-120b",
-    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
-    "supportedActions": {
-      "deploy": {
-        "dedicatedResources": {
-          "machineSpec": {
-            "acceleratorCount": 4,
-            "acceleratorType": "NVIDIA_GB200",
-            "machineType": "a4x-highgpu-4g"
-          },
-          "maxReplicaCount": 1,
-          "minReplicaCount": 1
-        },
-        "deployMetadata": {
-          "labels": {
-            "mg-lite-region-asia-northeast1": "true",
-            "mg-lite-region-asia-northeast3": "true",
-            "mg-lite-region-asia-south1": "true",
-            "mg-lite-region-asia-south2": "true",
-            "mg-lite-region-asia-southeast1": "true",
-            "mg-lite-region-australia-southeast1": "true",
-            "mg-lite-region-europe-north1": "true",
-            "mg-lite-region-europe-west1": "true",
-            "mg-lite-region-europe-west2": "true",
-            "mg-lite-region-europe-west3": "true",
-            "mg-lite-region-europe-west4": "true",
-            "mg-lite-region-me-west1": "true",
-            "mg-lite-region-northamerica-northeast2": "true",
-            "mg-lite-region-us-central1": "true",
-            "mg-lite-region-us-east1": "true",
-            "mg-lite-region-us-east4": "true",
-            "mg-lite-region-us-east5": "true",
-            "mg-lite-region-us-south1": "true",
-            "mg-lite-region-us-west1": "true",
-            "mg-lite-region-us-west2": "true",
-            "mg-lite-region-us-west3": "true",
-            "mg-lite-region-us-west4": "true"
-          }
-        },
-        "deployTaskName": "a4x-highgpu-4g",
-        "modelDisplayName": "nemotron-v3-super-120b-a4x-highgpu-4g"
-      },
-      "multiDeployVertex": {
-        "multiDeployVertex": [
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 4,
-                "acceleratorType": "NVIDIA_GB200",
-                "machineType": "a4x-highgpu-4g"
-              },
-              "maxReplicaCount": 1,
-              "minReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              }
-            },
-            "deployTaskName": "a4x-highgpu-4g",
-            "modelDisplayName": "nemotron-v3-super-120b-a4x-highgpu-4g"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_B200",
-                "machineType": "a4-highgpu-8g"
-              },
-              "maxReplicaCount": 1,
-              "minReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              }
-            },
-            "deployTaskName": "a4-highgpu-8g",
-            "modelDisplayName": "nemotron-v3-super-120b-a4-highgpu-8g"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_H200_141GB",
-                "machineType": "a3-ultragpu-8g"
-              },
-              "maxReplicaCount": 1,
-              "minReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              }
-            },
-            "deployTaskName": "a3-ultragpu-8g",
-            "modelDisplayName": "nemotron-v3-super-120b-a3-ultragpu-8g"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_H100_MEGA_80GB",
-                "machineType": "a3-megagpu-8g"
-              },
-              "maxReplicaCount": 1,
-              "minReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              }
-            },
-            "deployTaskName": "a3-megagpu-8g",
-            "modelDisplayName": "nemotron-v3-super-120b-a3-megagpu-8g"
-          },
-          {
-            "dedicatedResources": {
-              "machineSpec": {
-                "acceleratorCount": 8,
-                "acceleratorType": "NVIDIA_H100_80GB",
-                "machineType": "a3-highgpu-8g"
-              },
-              "maxReplicaCount": 1,
-              "minReplicaCount": 1
-            },
-            "deployMetadata": {
-              "labels": {
-                "mg-lite-region-asia-northeast1": "true",
-                "mg-lite-region-asia-northeast3": "true",
-                "mg-lite-region-asia-south1": "true",
-                "mg-lite-region-asia-south2": "true",
-                "mg-lite-region-asia-southeast1": "true",
-                "mg-lite-region-australia-southeast1": "true",
-                "mg-lite-region-europe-north1": "true",
-                "mg-lite-region-europe-west1": "true",
-                "mg-lite-region-europe-west2": "true",
-                "mg-lite-region-europe-west3": "true",
-                "mg-lite-region-europe-west4": "true",
-                "mg-lite-region-me-west1": "true",
-                "mg-lite-region-northamerica-northeast2": "true",
-                "mg-lite-region-us-central1": "true",
-                "mg-lite-region-us-east1": "true",
-                "mg-lite-region-us-east4": "true",
-                "mg-lite-region-us-east5": "true",
-                "mg-lite-region-us-south1": "true",
-                "mg-lite-region-us-west1": "true",
-                "mg-lite-region-us-west2": "true",
-                "mg-lite-region-us-west3": "true",
-                "mg-lite-region-us-west4": "true"
-              }
-            },
-            "deployTaskName": "a3-highgpu-8g",
-            "modelDisplayName": "nemotron-v3-super-120b-a3-highgpu-8g"
-          }
-        ]
-      },
-      "requestAccess": {
-        "references": {
-          "us-central1": {
-            "uri": "https://console.cloud.google.com/vertex-ai/model-garden/questionnaire?model=publishers/nvidia/models/891&mp=nvidia/nvidia-nemotron-3-super-120b&service=nvidia-891.cloudpartnerservices.goog&skip_questionnaire=true"
-          }
-        }
-      }
-    },
-    "versionId": "default"
-  },
-  {
-    "launchStage": "GA",
     "name": "publishers/anthropic/models/claude-opus-4-7",
     "openSourceCategory": "PROPRIETARY",
     "supportedActions": {
@@ -87420,6 +87150,7 @@
     "launchStage": "GA",
     "name": "publishers/anthropic/models/claude-sonnet-5",
     "openSourceCategory": "PROPRIETARY",
+    "publisherModelTemplate": "projects/{project}/locations/{location}/publishers/google/models/claude-sonnet-5@default",
     "supportedActions": {
       "openGenerationAiStudio": {
         "references": {
@@ -87546,7 +87277,15 @@
     "launchStage": "GA",
     "name": "publishers/anthropic/models/claude-opus-5",
     "openSourceCategory": "PROPRIETARY",
+    "publisherModelTemplate": "projects/{project}/locations/{location}/publishers/google/models/claude-opus-5@default",
     "supportedActions": {
+      "openGenerationAiStudio": {
+        "references": {
+          "us-central1": {
+            "uri": "https://console.cloud.google.com/vertex-ai/generative/multimodal/create/text?model=claude-opus-5"
+          }
+        }
+      },
       "openNotebook": {
         "references": {
           "us-central1": {
@@ -88317,8 +88056,18 @@
                 "--speculative-num-steps=5",
                 "--speculative-eagle-topk=1",
                 "--speculative-num-draft-tokens=6",
-                "--cuda-graph-max-bs=32",
-                "--mem-fraction-static=0.8"
+                "--max-running-requests=16",
+                "--max-queued-requests=8",
+                "--mem-fraction-static=0.8",
+                "--tokenizer-worker-num=8",
+                "--enable-metrics",
+                "--log-requests",
+                "--log-requests-level=1",
+                "--decode-log-interval=10",
+                "--enable-cache-report",
+                "--enable-request-time-stats-logging",
+                "--gc-warning-threshold-secs=0.5",
+                "--gc-freeze-on-idle"
               ],
               "env": [
                 {
@@ -88328,10 +88077,22 @@
                 {
                   "name": "DEPLOY_SOURCE",
                   "value": "UI_NATIVE_MODEL"
+                },
+                {
+                  "name": "SGLANG_LOG_TOKENIZER_LOOP_LAG_SECS",
+                  "value": "1.0"
+                },
+                {
+                  "name": "SGLANG_GC_FREEZE_AFTER_WARMUP",
+                  "value": "1"
+                },
+                {
+                  "name": "SGLANG_ENABLE_SCHEDULER_GC_MANAGEMENT",
+                  "value": "1"
                 }
               ],
               "healthRoute": "/health",
-              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-sglang-serve:airlock-v0.5.13.post1",
+              "imageUri": "us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-sglang-serve:airlock-v0.5.15.0710.rc1.debug8",
               "ports": [
                 {
                   "containerPort": 7080
@@ -114299,7 +114060,7 @@
     "versionId": "minimax-m2.7"
   },
   {
-    "launchStage": "PRIVATE_PREVIEW",
+    "launchStage": "GA",
     "name": "publishers/google/models/weather-next-v2",
     "openSourceCategory": "PROPRIETARY",
     "supportedActions": {
@@ -116686,6 +116447,336 @@
   },
   {
     "launchStage": "GA",
+    "name": "publishers/thinkingmachines/models/inkling",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=8080",
+            "--model=gs://vertex-model-garden-restricted-us/thinkingmachines/Inkling-NVFP4",
+            "--tensor-parallel-size=8",
+            "--trust-remote-code",
+            "--tokenizer-mode=inkling",
+            "--kernel-config.enable_flashinfer_autotune=False",
+            "--max-model-len=65536"
+          ],
+          "deploymentTimeout": "7200s",
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "thinkingmachines/Inkling-NVFP4"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/ping",
+          "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260725.00_p0",
+          "ports": [
+            {
+              "containerPort": 8080
+            }
+          ],
+          "predictRoute": "/generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_B200",
+            "machineType": "a4-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"@requestFormat\": \"chatCompletions\",\n      \"messages\": [\n        {\n          \"role\": \"user\",\n          \"content\": \"What is deep learning?\"\n        }\n      ],\n      \"max_tokens\": 1024,\n      \"temperature\": 0.6,\n      \"top_p\": 1,\n      \"top_k\": -1\n    }\n  ]\n}\n"
+        },
+        "deployTaskName": "vLLM 64K context",
+        "modelDisplayName": "Inkling-NVFP4"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=8080",
+                "--model=gs://vertex-model-garden-restricted-us/thinkingmachines/Inkling-NVFP4",
+                "--tensor-parallel-size=8",
+                "--trust-remote-code",
+                "--tokenizer-mode=inkling",
+                "--kernel-config.enable_flashinfer_autotune=False",
+                "--max-model-len=65536"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "thinkingmachines/Inkling-NVFP4"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260725.00_p0",
+              "ports": [
+                {
+                  "containerPort": 8080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"@requestFormat\": \"chatCompletions\",\n      \"messages\": [\n        {\n          \"role\": \"user\",\n          \"content\": \"What is deep learning?\"\n        }\n      ],\n      \"max_tokens\": 1024,\n      \"temperature\": 0.6,\n      \"top_p\": 1,\n      \"top_k\": -1\n    }\n  ]\n}\n"
+            },
+            "deployTaskName": "vLLM 64K context",
+            "modelDisplayName": "Inkling-NVFP4"
+          }
+        ]
+      }
+    },
+    "versionId": "inkling-nvfp4"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/thinkingmachines/models/inkling",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=8080",
+            "--model=gs://vertex-model-garden-restricted-us/thinkingmachines/Inkling-Small",
+            "--tensor-parallel-size=8",
+            "--trust-remote-code",
+            "--tokenizer-mode=inkling",
+            "--kernel-config.enable_flashinfer_autotune=False",
+            "--max-model-len=131072"
+          ],
+          "deploymentTimeout": "7200s",
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "thinkingmachines/Inkling-Small"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/ping",
+          "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260725.00_p0",
+          "ports": [
+            {
+              "containerPort": 8080
+            }
+          ],
+          "predictRoute": "/generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_B200",
+            "machineType": "a4-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"@requestFormat\": \"chatCompletions\",\n      \"messages\": [\n        {\n          \"role\": \"user\",\n          \"content\": \"What is deep learning?\"\n        }\n      ],\n      \"max_tokens\": 1024,\n      \"temperature\": 0.6,\n      \"top_p\": 1,\n      \"top_k\": -1\n    }\n  ]\n}\n"
+        },
+        "deployTaskName": "vLLM 128K context",
+        "modelDisplayName": "Inkling-Small"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=8080",
+                "--model=gs://vertex-model-garden-restricted-us/thinkingmachines/Inkling-Small",
+                "--tensor-parallel-size=8",
+                "--trust-remote-code",
+                "--tokenizer-mode=inkling",
+                "--kernel-config.enable_flashinfer_autotune=False",
+                "--max-model-len=131072"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "thinkingmachines/Inkling-Small"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260725.00_p0",
+              "ports": [
+                {
+                  "containerPort": 8080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"@requestFormat\": \"chatCompletions\",\n      \"messages\": [\n        {\n          \"role\": \"user\",\n          \"content\": \"What is deep learning?\"\n        }\n      ],\n      \"max_tokens\": 1024,\n      \"temperature\": 0.6,\n      \"top_p\": 1,\n      \"top_k\": -1\n    }\n  ]\n}\n"
+            },
+            "deployTaskName": "vLLM 128K context",
+            "modelDisplayName": "Inkling-Small"
+          }
+        ]
+      }
+    },
+    "versionId": "inkling-small"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/thinkingmachines/models/inkling",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "deploy": {
+        "containerSpec": {
+          "args": [
+            "python",
+            "-m",
+            "vllm.entrypoints.api_server",
+            "--host=0.0.0.0",
+            "--port=8080",
+            "--model=gs://vertex-model-garden-restricted-us/thinkingmachines/Inkling-Small-NVFP4",
+            "--tensor-parallel-size=8",
+            "--trust-remote-code",
+            "--tokenizer-mode=inkling",
+            "--kernel-config.enable_flashinfer_autotune=False",
+            "--max-model-len=131072"
+          ],
+          "deploymentTimeout": "7200s",
+          "env": [
+            {
+              "name": "MODEL_ID",
+              "value": "thinkingmachines/Inkling-Small-NVFP4"
+            },
+            {
+              "name": "DEPLOY_SOURCE",
+              "value": "UI_NATIVE_MODEL"
+            }
+          ],
+          "healthRoute": "/ping",
+          "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260725.00_p0",
+          "ports": [
+            {
+              "containerPort": 8080
+            }
+          ],
+          "predictRoute": "/generate"
+        },
+        "dedicatedResources": {
+          "machineSpec": {
+            "acceleratorCount": 8,
+            "acceleratorType": "NVIDIA_B200",
+            "machineType": "a4-highgpu-8g"
+          },
+          "maxReplicaCount": 1
+        },
+        "deployMetadata": {
+          "sampleRequest": "{\n  \"instances\": [\n    {\n      \"@requestFormat\": \"chatCompletions\",\n      \"messages\": [\n        {\n          \"role\": \"user\",\n          \"content\": \"What is deep learning?\"\n        }\n      ],\n      \"max_tokens\": 1024,\n      \"temperature\": 0.6,\n      \"top_p\": 1,\n      \"top_k\": -1\n    }\n  ]\n}\n"
+        },
+        "deployTaskName": "vLLM 128K context",
+        "modelDisplayName": "Inkling-Small-NVFP4"
+      },
+      "multiDeployVertex": {
+        "multiDeployVertex": [
+          {
+            "containerSpec": {
+              "args": [
+                "python",
+                "-m",
+                "vllm.entrypoints.api_server",
+                "--host=0.0.0.0",
+                "--port=8080",
+                "--model=gs://vertex-model-garden-restricted-us/thinkingmachines/Inkling-Small-NVFP4",
+                "--tensor-parallel-size=8",
+                "--trust-remote-code",
+                "--tokenizer-mode=inkling",
+                "--kernel-config.enable_flashinfer_autotune=False",
+                "--max-model-len=131072"
+              ],
+              "deploymentTimeout": "7200s",
+              "env": [
+                {
+                  "name": "MODEL_ID",
+                  "value": "thinkingmachines/Inkling-Small-NVFP4"
+                },
+                {
+                  "name": "DEPLOY_SOURCE",
+                  "value": "UI_NATIVE_MODEL"
+                }
+              ],
+              "healthRoute": "/ping",
+              "imageUri": "us-docker.pkg.dev/agent-platform-mg-public/containers/pytorch-vllm-serve:model-garden.pytorch-vllm-serve-release_20260725.00_p0",
+              "ports": [
+                {
+                  "containerPort": 8080
+                }
+              ],
+              "predictRoute": "/generate"
+            },
+            "dedicatedResources": {
+              "machineSpec": {
+                "acceleratorCount": 8,
+                "acceleratorType": "NVIDIA_B200",
+                "machineType": "a4-highgpu-8g"
+              },
+              "maxReplicaCount": 1
+            },
+            "deployMetadata": {
+              "sampleRequest": "{\n  \"instances\": [\n    {\n      \"@requestFormat\": \"chatCompletions\",\n      \"messages\": [\n        {\n          \"role\": \"user\",\n          \"content\": \"What is deep learning?\"\n        }\n      ],\n      \"max_tokens\": 1024,\n      \"temperature\": 0.6,\n      \"top_p\": 1,\n      \"top_k\": -1\n    }\n  ]\n}\n"
+            },
+            "deployTaskName": "vLLM 128K context",
+            "modelDisplayName": "Inkling-Small-NVFP4"
+          }
+        ]
+      }
+    },
+    "versionId": "inkling-small-nvfp4"
+  },
+  {
+    "launchStage": "GA",
     "name": "publishers/google/models/alphagenome-request",
     "openSourceCategory": "GOOGLE_OWNED_OSS",
     "supportedActions": {
@@ -116728,5 +116819,45 @@
       }
     },
     "versionId": "default"
+  },
+  {
+    "launchStage": "PRIVATE_PREVIEW",
+    "name": "publishers/google/models/gemini-robotics-er-2-preview-info",
+    "publisherModelTemplate": "projects/{project}/locations/{location}/publishers/google/models/gemini-robotics-er-2-preview-info@default",
+    "versionId": "default"
+  },
+  {
+    "launchStage": "GA",
+    "name": "publishers/moonshotai/models/kimi-k3",
+    "openSourceCategory": "THIRD_PARTY_OWNED_OSS",
+    "supportedActions": {
+      "openNotebook": {
+        "references": {
+          "us-central1": {
+            "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_kimi_k3_deployment.ipynb"
+          }
+        },
+        "resourceDescription": "Build and deploy Kimi-K3 on Agent Platform.",
+        "resourceTitle": "Notebook",
+        "resourceUseCase": "Agent Platform Serving",
+        "supportsWorkbench": true
+      },
+      "openNotebooks": {
+        "notebooks": [
+          {
+            "references": {
+              "us-central1": {
+                "uri": "https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_kimi_k3_deployment.ipynb"
+              }
+            },
+            "resourceDescription": "Build and deploy Kimi-K3 on Agent Platform.",
+            "resourceTitle": "Notebook",
+            "resourceUseCase": "Agent Platform Serving",
+            "supportsWorkbench": true
+          }
+        ]
+      }
+    },
+    "versionId": "kimi-k3"
   }
 ]
