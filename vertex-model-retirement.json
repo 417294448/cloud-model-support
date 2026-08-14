@@ -40,7 +40,7 @@
           "model": "gemini-2.5-pro",
           "release_date": "2025-06-17",
           "release_date_note": null,
-          "retirement_date": "2026-10-16",
+          "retirement_date": "2026-10-20",
           "retirement_date_note": null,
           "replacement": "Gemini 3.5 Flash"
         },
@@ -48,7 +48,7 @@
           "model": "gemini-2.5-flash",
           "release_date": "2025-06-17",
           "release_date_note": null,
-          "retirement_date": "2026-10-16",
+          "retirement_date": "2026-10-20",
           "retirement_date_note": null,
           "replacement": "Gemini 3.5 Flash-Lite or Gemini 3.1 Flash-Lite"
         },
@@ -56,7 +56,7 @@
           "model": "gemini-2.5-flash-lite",
           "release_date": "2025-07-22",
           "release_date_note": null,
-          "retirement_date": "2026-10-16",
+          "retirement_date": "2026-10-20",
           "retirement_date_note": null,
           "replacement": "Gemini 3.1 Flash-Lite or Gemma 4"
         }
@@ -87,7 +87,7 @@
           "release_date_note": null,
           "retirement_date": "2026-10-02",
           "retirement_date_note": null,
-          "replacement": null
+          "replacement": "Gemini 3.1 Flash-Lite Image"
         }
       ]
     },
@@ -140,6 +140,14 @@
       "category": "Embeddings models",
       "models": [
         {
+          "model": "gemini-embedding-2",
+          "release_date": "2026-04-22",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": null,
+          "replacement": null
+        },
+        {
           "model": "gemini-embedding-001",
           "release_date": "2025-05-20",
           "release_date_note": null,
@@ -184,6 +192,14 @@
     {
       "category": "Models available for shorter availability periods",
       "models": [
+        {
+          "model": "gemini-3.7-flash",
+          "release_date": "2026-08-13",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
         {
           "model": "gemini-3.6-flash",
           "release_date": "2026-07-21",
@@ -321,7 +337,7 @@
           "model": "textembedding-gecko@002",
           "release_date": "2023-11-02",
           "release_date_note": null,
-          "retirement_date": "2025-04-21",
+          "retirement_date": "2025-05-24",
           "retirement_date_note": null,
           "replacement": "gemini-embedding-001"
         },
@@ -329,7 +345,7 @@
           "model": "textembedding-gecko@001",
           "release_date": "2023-06-07",
           "release_date_note": null,
-          "retirement_date": "2025-04-21",
+          "retirement_date": "2025-05-24",
           "retirement_date_note": null,
           "replacement": "gemini-embedding-001"
         },
