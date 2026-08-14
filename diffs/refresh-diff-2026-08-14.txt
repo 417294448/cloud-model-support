@@ -1,0 +1,32 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  models: 122 -> 122
+  changed (0):
+
+=== azure ===
+  models: 151 -> 151
+  changed (0):
+
+=== gcp ===
+  generated: 2026-08-13 -> 2026-08-14
+  groups added (1): Tencent
+  models: 282 -> 281
+  added (4): [Google] gemini-3.7-flash (default), [NVIDIA] nemotron-3.5-lightning (nemotron-3.5-lightning-nvfp4), [Tencent] tencent-hy3 (hy3-fp8), [Thinkingmachines] inkling (inkling-small-nvfp4)
+  removed (5): [NVIDIA] llama-nemotron-super (49b), [NVIDIA] nemotron-nano-12b-v2-vl (1.5.0), [NVIDIA] nemotron-v3-super-120b (default), [NVIDIA] nemotron-3.5-lightning (nemotron-3.5-lightning-bf16), [Thinkingmachines] inkling (inkling-nvfp4)
+  changed (6):
+    ~ [Anthropic] claude-opus-5 (default)
+        s: 1 region(s) changed support: us-central1: [Self-deploy] -> [Managed API]
+    ~ [Google] gemini-2.5-flash (default)
+        retirementDate: "2026-10-16" -> "2026-10-20"
+    ~ [Google] gemini-2.5-flash-image (default)
+        lifecycle: "Legacy" -> "Deprecated"
+        replacement: null -> "Gemini 3.1 Flash-Lite Image"
+    ~ [Google] gemini-2.5-flash-lite (default)
+        retirementDate: "2026-10-16" -> "2026-10-20"
+    ~ [Google] gemini-2.5-pro (default)
+        retirementDate: "2026-10-16" -> "2026-10-20"
+    ~ [Google] gemini-embedding-2 (default)
+        lifecycle: null -> "Legacy"
+        retirementDate: null -> null
+        replacement: null -> null
