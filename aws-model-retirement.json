@@ -10,9 +10,9 @@
           "regions": [
             "us-east-1"
           ],
-          "legacy_date": "May 26, 2026",
-          "eol_date": "November 26, 2026",
-          "public_extended_access_start_date": "August 26, 2026"
+          "legacy_date": "2026-05-26",
+          "eol_date": "2026-11-26",
+          "public_extended_access_start_date": "2026-08-26"
         }
       ]
     },
@@ -25,9 +25,9 @@
           "regions": [
             "us-east-1"
           ],
-          "legacy_date": "May 26, 2026",
-          "eol_date": "November 26, 2026",
-          "public_extended_access_start_date": "August 26, 2026"
+          "legacy_date": "2026-05-26",
+          "eol_date": "2026-11-26",
+          "public_extended_access_start_date": "2026-08-26"
         }
       ]
     },
@@ -42,8 +42,8 @@
             "eu-west-1",
             "us-east-1"
           ],
-          "legacy_date": "March 30, 2026",
-          "eol_date": "September 30, 2026",
+          "legacy_date": "2026-03-30",
+          "eol_date": "2026-09-30",
           "public_extended_access_start_date": null
         }
       ]
@@ -59,8 +59,8 @@
             "eu-west-1",
             "us-east-1"
           ],
-          "legacy_date": "March 30, 2026",
-          "eol_date": "September 30, 2026",
+          "legacy_date": "2026-03-30",
+          "eol_date": "2026-09-30",
           "public_extended_access_start_date": null
         }
       ]
@@ -74,8 +74,8 @@
           "regions": [
             "us-east-1"
           ],
-          "legacy_date": "March 30, 2026",
-          "eol_date": "September 30, 2026",
+          "legacy_date": "2026-03-30",
+          "eol_date": "2026-09-30",
           "public_extended_access_start_date": null
         }
       ]
@@ -91,8 +91,8 @@
             "us-east-2",
             "us-west-2"
           ],
-          "legacy_date": "March 13, 2026",
-          "eol_date": "September 14, 2026",
+          "legacy_date": "2026-03-13",
+          "eol_date": "2026-09-14",
           "public_extended_access_start_date": null
         }
       ]
@@ -108,8 +108,8 @@
             "eu-north-1",
             "us-east-1"
           ],
-          "legacy_date": "March 13, 2026",
-          "eol_date": "September 14, 2026",
+          "legacy_date": "2026-03-13",
+          "eol_date": "2026-09-14",
           "public_extended_access_start_date": null
         }
       ]
@@ -125,9 +125,9 @@
             "us-east-2",
             "us-west-2"
           ],
-          "legacy_date": "July 8, 2026",
-          "eol_date": "January 8, 2027",
-          "public_extended_access_start_date": "October 8, 2026"
+          "legacy_date": "2026-07-08",
+          "eol_date": "2027-01-08",
+          "public_extended_access_start_date": "2026-10-08"
         }
       ]
     },
@@ -154,7 +154,6 @@
             "ap-northeast-3",
             "ap-south-1",
             "ap-south-2",
-            "me-central-1",
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
@@ -163,9 +162,9 @@
             "ap-southeast-7",
             "il-central-1"
           ],
-          "legacy_date": "April 14, 2026",
-          "eol_date": "October 14, 2026",
-          "public_extended_access_start_date": "July 14, 2026"
+          "legacy_date": "2026-04-14",
+          "eol_date": "2026-10-14",
+          "public_extended_access_start_date": "2026-07-14"
         }
       ]
     },
@@ -186,9 +185,18 @@
             "us-east-2",
             "us-west-2"
           ],
-          "legacy_date": "March 10, 2026",
-          "eol_date": "September 10, 2026",
-          "public_extended_access_start_date": "June 10, 2026"
+          "legacy_date": "2026-03-10",
+          "eol_date": "2026-09-10",
+          "public_extended_access_start_date": "2026-06-10"
+        },
+        {
+          "regions": [
+            "us-gov-east-1",
+            "us-gov-west-1"
+          ],
+          "legacy_date": "2026-03-10",
+          "eol_date": "2026-09-10",
+          "public_extended_access_start_date": "2026-06-10"
         }
       ]
     },
@@ -204,9 +212,19 @@
             "us-east-1",
             "us-west-2"
           ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
+          "legacy_date": "2026-01-30",
+          "eol_date": "2026-07-30",
           "public_extended_access_start_date": null
+        },
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-southeast-2"
+          ],
+          "legacy_date": "2026-01-30",
+          "eol_date": "2026-07-30",
+          "public_extended_access_start_date": "2026-04-30"
         }
       ]
     },
@@ -220,9 +238,18 @@
             "ap-northeast-1",
             "ap-southeast-2"
           ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": "April 30, 2026"
+          "legacy_date": "2026-01-30",
+          "eol_date": "2026-07-30",
+          "public_extended_access_start_date": "2026-04-30"
+        },
+        {
+          "regions": [
+            "us-gov-east-1",
+            "us-gov-west-1"
+          ],
+          "legacy_date": "2026-01-30",
+          "eol_date": "2026-07-30",
+          "public_extended_access_start_date": "2026-04-30"
         }
       ]
     },
@@ -238,9 +265,9 @@
             "ap-south-2",
             "ap-southeast-2"
           ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": "April 30, 2026"
+          "legacy_date": "2026-01-30",
+          "eol_date": "2026-07-30",
+          "public_extended_access_start_date": "2026-04-30"
         }
       ]
     },
@@ -254,9 +281,9 @@
             "us-gov-east-1",
             "us-gov-west-1"
           ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": "April 30, 2026"
+          "legacy_date": "2026-01-30",
+          "eol_date": "2026-07-30",
+          "public_extended_access_start_date": "2026-04-30"
         }
       ]
     },
@@ -270,9 +297,9 @@
             "us-east-1",
             "us-west-2"
           ],
-          "legacy_date": "February 19, 2026",
-          "eol_date": "August 19, 2026",
-          "public_extended_access_start_date": "May 19, 2026"
+          "legacy_date": "2026-02-19",
+          "eol_date": "2026-08-19",
+          "public_extended_access_start_date": "2026-05-19"
         }
       ]
     },
@@ -286,9 +313,9 @@
             "us-east-1",
             "us-west-2"
           ],
-          "legacy_date": "February 19, 2026",
-          "eol_date": "August 19, 2026",
-          "public_extended_access_start_date": "May 19, 2026"
+          "legacy_date": "2026-02-19",
+          "eol_date": "2026-08-19",
+          "public_extended_access_start_date": "2026-05-19"
         }
       ]
     },
@@ -303,9 +330,9 @@
             "eu-west-1",
             "us-east-1"
           ],
-          "legacy_date": "May 29, 2026",
-          "eol_date": "November 30, 2026",
-          "public_extended_access_start_date": "August 29, 2026"
+          "legacy_date": "2026-05-29",
+          "eol_date": "2026-11-30",
+          "public_extended_access_start_date": "2026-08-29"
         }
       ]
     }
