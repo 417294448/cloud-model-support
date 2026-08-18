@@ -44,7 +44,7 @@
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": null
+          "public_extended_access_start_date": "—"
         }
       ]
     },
@@ -61,22 +61,15 @@
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": null
-        }
-      ]
-    },
-    {
-      "provider": "Amazon",
-      "model_name": "Nova Reel",
-      "model_id": "amazon.nova-reel-v1:1",
-      "region_groups": [
+          "public_extended_access_start_date": "—"
+        },
         {
           "regions": [
             "us-east-1"
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": null
+          "public_extended_access_start_date": "—"
         }
       ]
     },
@@ -93,7 +86,7 @@
           ],
           "legacy_date": "2026-03-13",
           "eol_date": "2026-09-14",
-          "public_extended_access_start_date": null
+          "public_extended_access_start_date": "—"
         }
       ]
     },
@@ -110,7 +103,7 @@
           ],
           "legacy_date": "2026-03-13",
           "eol_date": "2026-09-14",
-          "public_extended_access_start_date": null
+          "public_extended_access_start_date": "—"
         }
       ]
     },
@@ -202,93 +195,6 @@
     },
     {
       "provider": "Anthropic",
-      "model_name": "Claude 3 Sonnet",
-      "model_id": "anthropic.claude-3-sonnet-20240229-v1:0",
-      "region_groups": [
-        {
-          "regions": [
-            "eu-west-1",
-            "eu-west-3",
-            "us-east-1",
-            "us-west-2"
-          ],
-          "legacy_date": "2026-01-30",
-          "eol_date": "2026-07-30",
-          "public_extended_access_start_date": null
-        },
-        {
-          "regions": [
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-southeast-2"
-          ],
-          "legacy_date": "2026-01-30",
-          "eol_date": "2026-07-30",
-          "public_extended_access_start_date": "2026-04-30"
-        }
-      ]
-    },
-    {
-      "provider": "Anthropic",
-      "model_name": "Claude 3.5 Sonnet",
-      "model_id": "anthropic.claude-3-5-sonnet-20240620-v1:0",
-      "region_groups": [
-        {
-          "regions": [
-            "ap-northeast-1",
-            "ap-southeast-2"
-          ],
-          "legacy_date": "2026-01-30",
-          "eol_date": "2026-07-30",
-          "public_extended_access_start_date": "2026-04-30"
-        },
-        {
-          "regions": [
-            "us-gov-east-1",
-            "us-gov-west-1"
-          ],
-          "legacy_date": "2026-01-30",
-          "eol_date": "2026-07-30",
-          "public_extended_access_start_date": "2026-04-30"
-        }
-      ]
-    },
-    {
-      "provider": "Anthropic",
-      "model_name": "Claude 3.5 Sonnet V2:0",
-      "model_id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "region_groups": [
-        {
-          "regions": [
-            "ap-northeast-1",
-            "ap-northeast-3",
-            "ap-south-2",
-            "ap-southeast-2"
-          ],
-          "legacy_date": "2026-01-30",
-          "eol_date": "2026-07-30",
-          "public_extended_access_start_date": "2026-04-30"
-        }
-      ]
-    },
-    {
-      "provider": "Anthropic",
-      "model_name": "Claude 3.7 Sonnet",
-      "model_id": "anthropic.claude-3-7-sonnet-20250219-v1:0",
-      "region_groups": [
-        {
-          "regions": [
-            "us-gov-east-1",
-            "us-gov-west-1"
-          ],
-          "legacy_date": "2026-01-30",
-          "eol_date": "2026-07-30",
-          "public_extended_access_start_date": "2026-04-30"
-        }
-      ]
-    },
-    {
-      "provider": "Cohere",
       "model_name": "Command R",
       "model_id": "cohere.command-r-v1:0",
       "region_groups": [
