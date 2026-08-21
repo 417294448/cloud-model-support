@@ -54,6 +54,18 @@ function parseRegionCode(raw) {
   return m ? m[1] : raw.trim();
 }
 
+function toAbsoluteRegionCard(href) {
+  if (!href) return null;
+  if (href.startsWith('http')) return href;
+  if (href.startsWith('./')) {
+    return 'https://docs.aws.amazon.com/bedrock/latest/userguide/' + href.slice(2);
+  }
+  if (href.startsWith('/')) {
+    return 'https://docs.aws.amazon.com' + href;
+  }
+  return 'https://docs.aws.amazon.com/bedrock/latest/userguide/' + href;
+}
+
 function isAvailable(cell) {
   const u = cell.toUpperCase();
   if (u === 'YES') return true;
@@ -73,7 +85,7 @@ function parseRegionTables() {
     if (!t.caption || !t.caption.text) continue;
     const g = t.headingBefore || 'UNKNOWN';
     const n = t.caption.text;
-    const card = t.caption.href;
+    const card = toAbsoluteRegionCard(t.caption.href);
     const key = g + '|' + n;
 
     let model;

@@ -779,6 +779,12 @@
           "bedrock_runtime": false,
           "bedrock_mantle": true,
           "card_url": null
+        },
+        {
+          "model_name": "Grok 4.6",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
         }
       ]
     },

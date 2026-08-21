@@ -44,7 +44,7 @@
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -61,15 +61,22 @@
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": "—"
-        },
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Reel",
+      "model_id": "amazon.nova-reel-v1:1",
+      "region_groups": [
         {
           "regions": [
             "us-east-1"
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -86,7 +93,7 @@
           ],
           "legacy_date": "2026-03-13",
           "eol_date": "2026-09-14",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -103,7 +110,7 @@
           ],
           "legacy_date": "2026-03-13",
           "eol_date": "2026-09-14",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -190,22 +197,14 @@
           "legacy_date": "2026-03-10",
           "eol_date": "2026-09-10",
           "public_extended_access_start_date": "2026-06-10"
-        }
-      ]
-    },
-    {
-      "provider": "Anthropic",
-      "model_name": "Command R",
-      "model_id": "cohere.command-r-v1:0",
-      "region_groups": [
+        },
         {
           "regions": [
-            "us-east-1",
-            "us-west-2"
+            "Command R"
           ],
-          "legacy_date": "2026-02-19",
-          "eol_date": "2026-08-19",
-          "public_extended_access_start_date": "2026-05-19"
+          "legacy_date_note": "cohere.command-r-v1:0",
+          "eol_date_note": "us-east-1, us-west-2",
+          "public_extended_access_start_date": "2026-02-19"
         }
       ]
     },
