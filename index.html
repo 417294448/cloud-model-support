@@ -117,18 +117,20 @@
   .controls{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:18px;animation:rise .5s .15s cubic-bezier(.2,.7,.3,1) both}
   .field{display:flex;flex-direction:column;gap:6px}
   .field label{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);font-weight:700;font-family:var(--font-body)}
-  input[type=search],select{background:var(--panel-2);border:1px solid var(--border);color:var(--ink);padding:9px 12px;border-radius:9px;font-size:14px;font-family:var(--font-body);min-width:180px;outline:none;transition:border-color .15s,box-shadow .15s}
+  input[type=search],select{background:var(--panel-2);border:1px solid var(--border);color:var(--ink);padding:9px 12px;border-radius:9px;font-size:14px;line-height:1.4;font-family:var(--font-body);min-width:180px;outline:none;transition:border-color .15s,box-shadow .15s}
   input[type=search]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
   input[type=search]{min-width:240px}
   .grow{flex:1 1 240px}
 
   .deploybar{display:flex;flex-direction:column;gap:7px;flex:1 1 100%}
+  #f-reset .minibtn{color:var(--faint)}
+  #f-reset .minibtn:hover{color:var(--c-danger);border-color:color-mix(in srgb,var(--c-danger) 45%,transparent)}
   .deployrow{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
   .dgroup{display:flex;align-items:center;gap:6px}
   .dgroup .gl{font-size:10px;text-transform:uppercase;letter-spacing:.05em;font-weight:800;color:var(--faint);margin-right:2px}
-  .chip{background:var(--panel-2);border:1px solid var(--border);color:var(--muted);padding:6px 11px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;font-family:var(--font-body);transition:color .12s,border-color .12s,background .12s;user-select:none}
+  .chip{background:var(--panel-2);border:1px solid var(--border);color:var(--muted);padding:9px 12px;border-radius:9px;cursor:pointer;font-size:13.5px;line-height:1.4;font-weight:600;font-family:var(--font-body);transition:color .12s,border-color .12s,background .12s;user-select:none}
   .chip:hover{color:var(--ink);border-color:var(--border-strong)}
-  .minibtn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:6px 10px;font-size:11.5px;cursor:pointer;font-weight:600;font-family:var(--font-body);transition:color .15s,border-color .15s,background .15s}
+  .minibtn{background:var(--panel-2);border:1px solid var(--border);color:var(--muted);border-radius:9px;padding:9px 12px;font-size:13.5px;line-height:1.4;cursor:pointer;font-weight:600;font-family:var(--font-body);transition:color .15s,border-color .15s,background .15s}
   .minibtn:hover{color:var(--ink);border-color:var(--border-strong)}
 
   .count{color:var(--muted);font-size:13px;margin:0 0 14px}
@@ -264,6 +266,10 @@
       <label id="groupLbl">Group</label>
       <select id="catSel"></select>
     </div>
+    <div class="field" id="f-reset">
+      <label data-i18n="lblReset">Saved filters</label>
+      <div><button class="minibtn" id="resetBtn" data-i18n="btnReset" title="Clear the remembered filters and restore defaults">Reset</button></div>
+    </div>
     <div class="deploybar">
       <label id="axisLbl" style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);font-weight:700"></label>
       <div class="deployrow" id="deployFilter"></div>
@@ -286,6 +292,42 @@ const store={
   set(k,v){try{window.localStorage.setItem(k,v);}catch(e){}}
 };
 function hexRgba(h,a){h=h.replace("#","");const n=parseInt(h,16);return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${a})`;}
+
+// ---- per-provider filter/view state persistence (localStorage) ----
+// Each provider's selections are remembered independently and restored on reload,
+// until the user hits the manual "Reset filters" button.
+const STATE_KEY_PREFIX="filters:";
+const statePersist={ // which state keys are persisted
+  scalar:["view","region","regionB","diffOnly","hideEol","apiFilter","q","cat"],
+  set:["deploy"]
+};
+function filtersKey(id){return STATE_KEY_PREFIX+id;}
+function loadFilters(id){
+  try{const raw=store.get(filtersKey(id));return raw?JSON.parse(raw):null;}catch(e){return null;}
+}
+function saveFilters(){
+  if(!P)return;
+  const o={};
+  statePersist.scalar.forEach(k=>o[k]=state[k]);
+  statePersist.set.forEach(k=>o[k]=[...state[k]]);
+  try{store.set(filtersKey(P.id),JSON.stringify(o));}catch(e){}
+}
+function clearFilters(id){try{store.set(filtersKey(id),"");}catch(e){}}
+// restore a saved snapshot into `state`, clamping to values valid for provider P
+function restoreFilters(snap){
+  if(!snap)return;
+  const regOK=c=>P.regions.some(r=>r.code===c);
+  state.view=["region","compare","model","matrix"].includes(snap.view)?snap.view:"region";
+  state.region=regOK(snap.region)?snap.region:(regOK(P.defA)?P.defA:P.regions[0].code);
+  state.regionB=regOK(snap.regionB)?snap.regionB:(regOK(P.defB)?P.defB:P.regions[Math.min(1,P.regions.length-1)].code);
+  if(state.regionB===state.region&&P.regions.length>1)state.regionB=P.regions[state.region===P.regions[0].code?1:0].code;
+  state.diffOnly=!!snap.diffOnly;state.hideEol=!!snap.hideEol;
+  state.apiFilter=["","rt","mt"].includes(snap.apiFilter)?snap.apiFilter:"";
+  state.q=typeof snap.q==="string"?snap.q:"";
+  state.cat=(snap.cat&&P.groups.includes(snap.cat))?snap.cat:"";
+  const valid=new Set(P.caps.map(c=>c.k));
+  state.deploy=new Set((Array.isArray(snap.deploy)?snap.deploy:[]).filter(k=>valid.has(k)));
+}
 
 // light / dark theme toggle
 const THEME_ICONS={
@@ -322,6 +364,7 @@ const I18N={
     tabRegion:"By Region",tabCompare:"Compare Regions",tabModel:"By Model",tabMatrix:"Full Matrix",
     lblRegion:"Region",lblRegionA:"Region A",lblCompareWith:"Compare with",lblShow:"Show",lblLifecycle:"Lifecycle",lblApi:"API surface",lblSearch:"Search model",
     btnDiff:"Differences only",btnHideEol:"Hide retired/deprecated",btnAll:"All",btnNone:"None",
+    lblReset:"Saved filters",btnReset:"Reset",tipReset:"Clear the remembered filters and restore defaults",
     optAll:"All",optRt:"Runtime API only",optMt:"Mantle API only",phSearch:"Search model name…",
     cntRegion:'<b>{n}</b> {unit}{s} available in <b>{code}</b> ({name}) for the selected {axis}.',
     cntCompare:'Comparing <b>{a}</b> ({an}) vs <b>{b}</b> ({bn}) for the selected {axis}.',
@@ -353,6 +396,7 @@ const I18N={
     tabRegion:"按区域",tabCompare:"区域对比",tabModel:"按模型",tabMatrix:"完整矩阵",
     lblRegion:"区域",lblRegionA:"区域 A",lblCompareWith:"对比区域",lblShow:"显示",lblLifecycle:"生命周期",lblApi:"API 接口",lblSearch:"搜索模型",
     btnDiff:"仅显示差异",btnHideEol:"隐藏已退役/弃用",btnAll:"全选",btnNone:"清空",
+    lblReset:"已保存的筛选",btnReset:"重置",tipReset:"清除已记住的筛选并恢复默认",
     optAll:"全部",optRt:"仅 Runtime API",optMt:"仅 Mantle API",phSearch:"搜索模型名称…",
     cntRegion:'在 <b>{code}</b>（{name}）所选{axis}下可用 <b>{n}</b> 个{unit}。',
     cntCompare:'对比 <b>{a}</b>（{an}）与 <b>{b}</b>（{bn}）在所选{axis}下的差异。',
@@ -450,6 +494,7 @@ function applyLang(){
   document.querySelectorAll("[data-i18n-ph]").forEach(el=>{el.placeholder=t(el.dataset.i18nPh);});
   document.querySelectorAll("[data-i18n-aria]").forEach(el=>{el.setAttribute("aria-label",t(el.dataset.i18nAria));});
   $("#langToggle").textContent=LANG==="zh"?"EN":"中";
+  const rb=$("#resetBtn");if(rb)rb.title=t("tipReset");
 }
 
 // vendor brand logos (SVG). Azure gradient ids are tokenised so multiple instances don't collide.
@@ -489,7 +534,7 @@ const state={view:"region",region:null,regionB:null,diffOnly:true,hideEol:false,
   ALL.forEach(p=>{
     const b=document.createElement("button");b.dataset.id=p.id;
     b.innerHTML=`<span class="mark">${logo(p.id)}</span>${p.name}`;
-    b.onclick=()=>setProvider(p.id);
+    b.onclick=()=>{store.set("provider",p.id);setProvider(p.id);};
     sw.appendChild(b);
   });
 })();
@@ -504,18 +549,19 @@ function setProvider(id){
   PIPMASK=P.pipGroups.map(g=>({...g,mask:g.keys.reduce((a,k)=>a|BIT[k],0)}));
   regionByCode=Object.fromEntries(P.regions.map(r=>[r.code,r]));
 
-  // reset state
+  // default state, then overlay any saved snapshot for this provider
   state.view="region";
   state.region=P.regions.some(r=>r.code===P.defA)?P.defA:P.regions[0].code;
   state.regionB=P.regions.some(r=>r.code===P.defB)?P.defB:P.regions[Math.min(1,P.regions.length-1)].code;
   state.diffOnly=true;state.hideEol=false;state.apiFilter="";state.q="";state.cat="";state.deploy=new Set(P.caps.map(c=>c.k));
+  restoreFilters(loadFilters(id));
   hasLifecycle=P.models.some(mo=>mo.lifecycle&&mo.lifecycle!=="GA");
   hasApi=P.models.some(mo=>mo.api);
 
   // switcher active
   document.querySelectorAll("#switcher button").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
-  // tabs reset
-  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.view==="region"));
+  // tabs reflect restored view
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.view===state.view));
 
   // header
   $("#logo").innerHTML=logo(P.id);
@@ -545,11 +591,17 @@ function setProvider(id){
   buildRegionSelects();
   buildGroupSelect();
   buildChips();
-  $("#diffBtn").style.background=hexRgba(P.accent,.16);
-  $("#diffBtn").style.color=P.accent;$("#diffBtn").style.borderColor=hexRgba(P.accent,.5);
-  $("#lifecycleBtn").style.background="";$("#lifecycleBtn").style.color="";$("#lifecycleBtn").style.borderColor="";
-  $("#apiSel").value="";
-  $("#q").value="";
+  // reflect restored state into controls
+  document.querySelectorAll("#deployFilter .chip").forEach(c=>styleChip(c,capByK[c.dataset.k],state.deploy.has(c.dataset.k)));
+  $("#diffBtn").style.background=state.diffOnly?hexRgba(P.accent,.16):"transparent";
+  $("#diffBtn").style.color=state.diffOnly?P.accent:"";
+  $("#diffBtn").style.borderColor=state.diffOnly?hexRgba(P.accent,.5):"";
+  $("#lifecycleBtn").style.background=state.hideEol?hexRgba(P.accent,.16):"";
+  $("#lifecycleBtn").style.color=state.hideEol?P.accent:"";
+  $("#lifecycleBtn").style.borderColor=state.hideEol?hexRgba(P.accent,.5):"";
+  $("#apiSel").value=state.apiFilter;
+  $("#catSel").value=state.cat;
+  $("#q").value=state.q;
   syncControls();render();
 }
 
@@ -573,7 +625,7 @@ function buildChips(){
   const mkChip=(cap,text)=>{
     const c=document.createElement("span");c.className="chip";c.dataset.k=cap.k;c.title=cap.full;c.textContent=text;
     styleChip(c,cap,true);
-    c.onclick=()=>{const on=!state.deploy.has(cap.k);on?state.deploy.add(cap.k):state.deploy.delete(cap.k);styleChip(c,cap,on);render();};
+    c.onclick=()=>{const on=!state.deploy.has(cap.k);on?state.deploy.add(cap.k):state.deploy.delete(cap.k);styleChip(c,cap,on);saveFilters();render();};
     return c;
   };
   if(P.chipMode==="flat"){
@@ -588,9 +640,9 @@ function buildChips(){
     });
   }
   const all=document.createElement("button");all.className="minibtn";all.textContent=t("btnAll");
-  all.onclick=()=>{state.deploy=new Set(P.caps.map(c=>c.k));document.querySelectorAll("#deployFilter .chip").forEach(c=>styleChip(c,capByK[c.dataset.k],true));render();};
+  all.onclick=()=>{state.deploy=new Set(P.caps.map(c=>c.k));document.querySelectorAll("#deployFilter .chip").forEach(c=>styleChip(c,capByK[c.dataset.k],true));saveFilters();render();};
   const none=document.createElement("button");none.className="minibtn";none.textContent=t("btnNone");
-  none.onclick=()=>{state.deploy.clear();document.querySelectorAll("#deployFilter .chip").forEach(c=>styleChip(c,capByK[c.dataset.k],false));render();};
+  none.onclick=()=>{state.deploy.clear();document.querySelectorAll("#deployFilter .chip").forEach(c=>styleChip(c,capByK[c.dataset.k],false));saveFilters();render();};
   box.appendChild(all);box.appendChild(none);
 }
 function styleChip(el,cap,on){
@@ -605,21 +657,22 @@ document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
   t.classList.add("active");state.view=t.dataset.view;
   state.q="";$("#q").value="";
   state.cat="";$("#catSel").value="";
-  syncControls();render();
+  saveFilters();syncControls();render();
 });
-$("#regionSel").onchange=e=>{state.region=e.target.value;render();};
-$("#regionBSel").onchange=e=>{state.regionB=e.target.value;render();};
-$("#diffBtn").onclick=()=>{state.diffOnly=!state.diffOnly;$("#diffBtn").style.background=state.diffOnly?hexRgba(P.accent,.16):"transparent";render();};
+$("#regionSel").onchange=e=>{state.region=e.target.value;saveFilters();render();};
+$("#regionBSel").onchange=e=>{state.regionB=e.target.value;saveFilters();render();};
+$("#diffBtn").onclick=()=>{state.diffOnly=!state.diffOnly;$("#diffBtn").style.background=state.diffOnly?hexRgba(P.accent,.16):"transparent";saveFilters();render();};
 $("#lifecycleBtn").onclick=()=>{
   state.hideEol=!state.hideEol;
   $("#lifecycleBtn").style.background=state.hideEol?hexRgba(P.accent,.16):"";
   $("#lifecycleBtn").style.color=state.hideEol?P.accent:"";
   $("#lifecycleBtn").style.borderColor=state.hideEol?hexRgba(P.accent,.5):"";
-  render();
+  saveFilters();render();
 };
-$("#q").oninput=e=>{state.q=e.target.value.trim().toLowerCase();render();};
-$("#catSel").onchange=e=>{state.cat=e.target.value;render();};
-$("#apiSel").onchange=e=>{state.apiFilter=e.target.value;render();};
+$("#q").oninput=e=>{state.q=e.target.value.trim().toLowerCase();saveFilters();render();};
+$("#catSel").onchange=e=>{state.cat=e.target.value;saveFilters();render();};
+$("#apiSel").onchange=e=>{state.apiFilter=e.target.value;saveFilters();render();};
+$("#resetBtn").onclick=()=>{clearFilters(P.id);setProvider(P.id);};
 
 function syncControls(){
   const v=state.view;
@@ -790,7 +843,9 @@ $("#langToggle").onclick=()=>{
   if(P)setProvider(P.id);
 };
 applyLang();
-setProvider(ALL[0].id);
+// restore last-selected provider (fall back to the first one)
+const savedProvider=store.get("provider");
+setProvider(ALL.some(p=>p.id===savedProvider)?savedProvider:ALL[0].id);
 </script>
 </body>
 </html>
