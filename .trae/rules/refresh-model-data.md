@@ -11,6 +11,7 @@
 - **禁止在数据 blob 内进行中英文翻译**：`subtitle`、`caps[].full`、`note`、`offer.detail` 等字段必须保持英文
 - 所有中文翻译必须放在页面内联 JS 的 `PROVIDER_ZH` 映射中（数据 blob 外部）
 - 通用 UI 文案翻译放在 `I18N` 字典 / `data-i18n` 属性中
+- **数据行之外的手写表现层会在刷新中被原样保留，不要在数据 blob 里改动它们**：顶部右侧浮动控件条 `.ctlbar`（毛玻璃容器，内包 首页/Home 链接、`#langToggle`、`#themeToggle` 三个控件）、`<head>` 的 Google Fonts 字体 `<link>`（Sora / Manrope / JetBrains Mono）、字体变量 `--font-display/--font-body/--font-mono`、语义状态色板 `--c-info/--c-warn/--c-danger/--c-ok/--c-accent2`（明暗两套），以及主题切换后调用 `render()` 经 `statusColors()`/`cssVar()` 重解析状态色的逻辑。状态徽章色（offer/lifecycle/API/对比区块）已从 JS 硬编码改为读 CSS 变量，编辑时不要再写死 `#3fb950`/`#bc8cff` 之类的字面值
 
 ## 数据驱动文案的 i18n 分层
 
