@@ -1,0 +1,153 @@
+Diff: /tmp/index-original.html -> index.html
+
+=== aws ===
+  generated: 2026-08-21 -> 2026-08-22
+  models: 133 -> 133
+  changed (7):
+    ~ [Amazon] Nova Pro
+        s: +4 region(s) gained (ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1); 1 region(s) changed support: ap-southeast-2: [In-Region] -> [In-Region,Geo]
+    ~ [Amazon] Nova Lite
+        s: +4 region(s) gained (ca-central-1, ap-northeast-2, ap-south-1, ap-southeast-1); 4 region(s) changed support: us-east-2: [Geo] -> [In-Region,Geo]; us-west-2: [Geo] -> [In-Region,Geo]; ap-northeast-1: [In-Region] -> [In-Region,Geo]; ap-southeast-2: [In-Region] -> [In-Region,Geo]
+    ~ [Amazon] Nova Micro
+        s: +4 region(s) gained (ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1); 1 region(s) changed support: ap-southeast-2: [In-Region] -> [In-Region,Geo]
+    ~ [Anthropic] Claude 3 Sonnet
+        lifecycle: "EOL" -> null
+        retirementDate: "2026-07-30" -> null
+    ~ [Anthropic] Claude 3.7 Sonnet
+        lifecycle: "EOL" -> null
+        retirementDate: "2026-07-30" -> null
+    ~ [Anthropic] Claude 3.5 Sonnet V2:0
+        lifecycle: "EOL" -> null
+        retirementDate: "2026-07-30" -> null
+    ~ [Anthropic] Claude 3.5 Sonnet
+        lifecycle: "EOL" -> null
+        retirementDate: "2026-07-30" -> null
+
+=== azure ===
+  generated: 2026-08-21 -> 2026-08-22
+  models: 151 -> 144
+  added (7): [OpenAI] gpt-chat-latest (2026-08-06), [OpenAI] sora-2 (2025-12-08), [DeepSeek] DeepSeek-V4-Flash-0731 (2026-07-31), [Microsoft] MAI-Image-2.5-Pro (2026-06-19), [Microsoft] MAI-Thinking-1 (2026-06-01), [Anthropic] Claude Fable 5, [Anthropic] Claude Opus 5
+  removed (14): [OpenAI] gpt-5-chat (2025-08-07), [OpenAI] gpt-5-chat (2025-10-03), [OpenAI] gpt-5.1-chat (2025-11-13), [OpenAI] gpt-5.2-chat (2025-12-11), [OpenAI] gpt-5.2-chat (2026-02-10), [OpenAI] gpt-5.3-chat (2026-03-03), [DeepSeek] DeepSeek-R1 (1), [DeepSeek] DeepSeek-R1-0528 (1), [DeepSeek] DeepSeek-V3-0324 (1), [DeepSeek] DeepSeek-V3.1 (1), [Microsoft] MAI-Image-2 (2026-02-20), [Anthropic] Claude Opus 4.1, [Anthropic] Claude Fable, [Mistral] Mistral-large
+  changed (58):
+    ~ [OpenAI] gpt-4.1 (2025-04-14)
+        s: 1 region(s) changed support: canadacentral: [Prov·G] -> [Prov·G,Prov·R]
+    ~ [OpenAI] gpt-5-codex (2025-09-15)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-5-pro (2025-10-06)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-5.1 (2025-11-13)
+        s: 2 region(s) changed support: centralus: [Std·G,Std·D,Std·R,Prov·G,Bat·G,Bat·D] -> [Std·G,Std·D,Std·R,Prov·G,Prov·D,Bat·G,Bat·D]; japaneast: [Std·G,Prov·G,Bat·G] -> [Std·G,Prov·G,Prov·R,Bat·G]
+    ~ [OpenAI] gpt-5.1-codex (2025-11-13)
+        s: 1 region(s) changed support: centralus: [Std·G,Prov·G] -> [Std·G,Prov·G,Prov·D]
+    ~ [OpenAI] gpt-5.1-codex-max (2025-12-04)
+        s: +26 region(s) gained (brazilsouth, canadacentral, canadaeast, centralus, eastus, northcentralus, southcentralus, westus, westus3, francecentral, ...)
+    ~ [OpenAI] gpt-5.2 (2025-12-11)
+        s: 1 region(s) changed support: centralus: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]
+    ~ [OpenAI] gpt-5.4 (2026-03-05)
+        s: 7 region(s) changed support: centralus: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D,Prov·R]; swedencentral: [Std·G,Std·D,Prov·G,Prov·D] -> [Std·G,Std·D,Prov·G,Prov·D,Prov·R]; australiaeast: [Std·G,Prov·G,Prov·R] -> [Std·G,Std·D,Prov·G,Prov·R]; japaneast: [Std·G,Prov·G,Prov·R] -> [Std·G,Std·D,Prov·G,Prov·R]; koreacentral: [Std·G,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·R]; ...
+    ~ [OpenAI] gpt-5.4-mini (2026-03-17)
+        s: 19 region(s) changed support: centralus: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; francecentral: [Std·G] -> [Std·G,Std·D,Prov·G,Prov·D]; germanywestcentral: [Std·G] -> [Std·G,Std·D,Prov·G,Prov·D]; italynorth: [Std·G] -> [Std·G,Std·D,Prov·G,Prov·D]; norwayeast: [Std·G] -> [Std·G,Std·D,Prov·G]; ...
+    ~ [OpenAI] gpt-5.4-pro (2026-03-05)
+        s: +24 region(s) gained (brazilsouth, canadacentral, canadaeast, centralus, eastus, northcentralus, westus, westus3, francecentral, germanywestcentral, ...)
+    ~ [OpenAI] gpt-5.5 (2026-04-24)
+        s: 8 region(s) changed support: centralus: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; francecentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; germanywestcentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; italynorth: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; polandcentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; ...
+    ~ [OpenAI] gpt-5.6-sol (2026-07-09)
+        s: 21 region(s) changed support: canadaeast: [Std·G] -> [Std·G,Prov·G]; centralus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G]; southcentralus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G]; westus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G]; westus3: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G]; ...
+    ~ [OpenAI] gpt-5.6-terra (2026-07-09)
+        s: 19 region(s) changed support: brazilsouth: [Std·G] -> [Std·G,Prov·G]; canadacentral: [Std·G] -> [Std·G,Prov·G]; eastus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G]; eastus2: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G]; northcentralus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G]; ...
+    ~ [OpenAI] gpt-chat-latest (2026-05-05)
+        s: +23 region(s) gained (brazilsouth, canadacentral, canadaeast, centralus, eastus, northcentralus, westus, francecentral, germanywestcentral, italynorth, ...)
+    ~ [OpenAI] gpt-chat-latest (2026-06-24)
+        s: -23 region(s) lost (brazilsouth, canadacentral, canadaeast, centralus, eastus, northcentralus, westus, francecentral, germanywestcentral, italynorth, ...)
+    ~ [OpenAI] model-router (2025-05-19)
+        s: 2 region(s) changed support: australiaeast: [Std·G] -> [Std·G,Std·D]; southindia: [Std·G] -> [Std·G,Std·D]
+    ~ [OpenAI] model-router (2025-08-07)
+        s: 2 region(s) changed support: australiaeast: [Std·G] -> [Std·G,Std·D]; southindia: [Std·G] -> [Std·G,Std·D]
+    ~ [OpenAI] model-router (2025-11-18)
+        s: 2 region(s) changed support: australiaeast: [Std·G] -> [Std·G,Std·D]; southindia: [Std·G] -> [Std·G,Std·D]
+    ~ [OpenAI] o4-mini (2025-04-16)
+        s: 1 region(s) changed support: uaenorth: [Std·G,Prov·G] -> [Std·G,Prov·G,Prov·R]
+    ~ [Cohere] cohere-command-a (1)
+        retirementDate: "—" -> null
+    ~ [Cohere] Cohere-rerank-v4.0-fast (1)
+        retirementDate: "—" -> null
+    ~ [Cohere] Cohere-rerank-v4.0-pro (1)
+        retirementDate: "—" -> null
+    ~ [DeepSeek] DeepSeek-V3.2 (1)
+        retirementDate: "—" -> null
+    ~ [DeepSeek] DeepSeek-V3.2-Speciale (1)
+        retirementDate: "—" -> null
+    ~ [DeepSeek] DeepSeek-V4-Flash (2026-04-23)
+        s: 7 region(s) changed support: francecentral: [Std·G] -> [Std·G,Std·D]; germanywestcentral: [Std·G] -> [Std·G,Std·D]; italynorth: [Std·G] -> [Std·G,Std·D]; polandcentral: [Std·G] -> [Std·G,Std·D]; spaincentral: [Std·G] -> [Std·G,Std·D]; ...
+    ~ [Black Forest Labs] FLUX-1.1-pro (1)
+        retirementDate: "—" -> null
+    ~ [Black Forest Labs] FLUX.1-Kontext-pro (1)
+        retirementDate: "—" -> null
+    ~ [Black Forest Labs] FLUX.2-flex (1)
+        retirementDate: "—" -> null
+    ~ [Black Forest Labs] FLUX.2-pro (1)
+        retirementDate: "—" -> null
+    ~ [xAI] grok-4-1-fast-non-reasoning (1)
+        retirementDate: "—" -> null
+    ~ [xAI] grok-4-1-fast-reasoning (1)
+        retirementDate: "—" -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (1)
+        retirementDate: "—" -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (2)
+        retirementDate: "—" -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (3)
+        retirementDate: "—" -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (4)
+        retirementDate: "—" -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (5)
+        retirementDate: "—" -> null
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (9)
+        retirementDate: "—" -> null
+    ~ [Meta Llama] Llama-4-Maverick-17B-128E-Instruct-FP8 (1)
+        retirementDate: "—" -> null
+    ~ [Mistral] Mistral-Large-3 (1)
+        retirementDate: "—" -> null
+    ~ [Microsoft] Phi-4 (2)
+        retirementDate: "—" -> null
+    ... and 18 more changed model(s)
+
+=== gcp ===
+  generated: 2026-08-14 -> 2026-08-22
+  models: 281 -> 281
+  changed (17):
+    ~ [Google] gemini-3-pro-image (default)
+        replacement: null -> null
+    ~ [Google] gemini-3.1-flash-image (default)
+        replacement: null -> null
+    ~ [Google] gemini-3.1-flash-lite-image (default)
+        replacement: null -> null
+    ~ [Google] gemini-3.1-flash-lite (default)
+        replacement: null -> null
+    ~ [Google] gemini-3.5-flash-lite (default)
+        replacement: null -> null
+    ~ [Google] gemini-3.5-flash (default)
+        replacement: null -> null
+    ~ [Google] gemini-3.6-flash (default)
+        replacement: null -> null
+    ~ [Google] gemini-3.7-flash (default)
+        replacement: null -> null
+    ~ [Google] gemini-embedding-001 (default)
+        replacement: null -> null
+    ~ [Google] gemini-embedding-2 (default)
+        replacement: null -> null
+    ~ [Google] gemini-live-2.5-flash-native-audio (default)
+        replacement: null -> null
+    ~ [Google] multimodalembedding (001)
+        replacement: null -> null
+    ~ [Google] text-embedding-005 (default)
+        replacement: null -> null
+    ~ [Google] text-multilingual-embedding-002 (default)
+        replacement: null -> null
+    ~ [Google] textembedding-gecko (latest)
+        lifecycle: null -> "Deprecated"
+        retirementDate: null -> "2025-05-24"
+        replacement: null -> "gemini-embedding-001"
+    ~ [Google] veo-3.1-fast-generate-001 (default)
+        replacement: null -> null
+    ~ [Google] veo-3.1-generate-001 (default)
+        replacement: null -> null

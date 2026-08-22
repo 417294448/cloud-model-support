@@ -265,38 +265,6 @@
                 }
               },
               {
-                "model": "gpt-5-chat",
-                "version": "2025-08-07",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westus": true,
-                  "westus3": false
-                }
-              },
-              {
-                "model": "gpt-5-chat",
-                "version": "2025-10-03",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westus": true,
-                  "westus3": false
-                }
-              },
-              {
                 "model": "gpt-5-codex",
                 "version": "2025-09-15",
                 "regions": {
@@ -309,7 +277,7 @@
                   "northcentralus": true,
                   "southcentralus": true,
                   "westus": true,
-                  "westus3": false
+                  "westus3": true
                 }
               },
               {
@@ -357,27 +325,11 @@
                   "northcentralus": true,
                   "southcentralus": true,
                   "westus": true,
-                  "westus3": false
-                }
-              },
-              {
-                "model": "gpt-5.1",
-                "version": "2025-11-13",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westus": true,
                   "westus3": true
                 }
               },
               {
-                "model": "gpt-5.1-chat",
+                "model": "gpt-5.1",
                 "version": "2025-11-13",
                 "regions": {
                   "brazilsouth": true,
@@ -412,16 +364,16 @@
                 "model": "gpt-5.1-codex-max",
                 "version": "2025-12-04",
                 "regions": {
-                  "brazilsouth": false,
-                  "canadacentral": false,
-                  "canadaeast": false,
-                  "centralus": false,
-                  "eastus": false,
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
                   "eastus2": true,
-                  "northcentralus": false,
-                  "southcentralus": false,
-                  "westus": false,
-                  "westus3": false
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
                 }
               },
               {
@@ -457,56 +409,8 @@
                 }
               },
               {
-                "model": "gpt-5.2-chat",
-                "version": "2025-12-11",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westus": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "gpt-5.2-chat",
-                "version": "2026-02-10",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westus": true,
-                  "westus3": true
-                }
-              },
-              {
                 "model": "gpt-5.2-codex",
                 "version": "2026-01-14",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westus": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "gpt-5.3-chat",
-                "version": "2026-03-03",
                 "regions": {
                   "brazilsouth": true,
                   "canadacentral": true,
@@ -588,16 +492,16 @@
                 "model": "gpt-5.4-pro",
                 "version": "2026-03-05",
                 "regions": {
-                  "brazilsouth": false,
-                  "canadacentral": false,
-                  "canadaeast": false,
-                  "centralus": false,
-                  "eastus": false,
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
                   "eastus2": true,
-                  "northcentralus": false,
+                  "northcentralus": true,
                   "southcentralus": true,
-                  "westus": false,
-                  "westus3": false
+                  "westus": true,
+                  "westus3": true
                 }
               },
               {
@@ -730,17 +634,33 @@
               },
               {
                 "model": "gpt-chat-latest",
+                "version": "2026-08-06",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-chat-latest",
                 "version": "2026-05-05",
                 "regions": {
-                  "brazilsouth": false,
-                  "canadacentral": false,
-                  "canadaeast": false,
-                  "centralus": false,
-                  "eastus": false,
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
                   "eastus2": true,
-                  "northcentralus": false,
+                  "northcentralus": true,
                   "southcentralus": true,
-                  "westus": false,
+                  "westus": true,
                   "westus3": true
                 }
               },
@@ -764,15 +684,15 @@
                 "model": "gpt-chat-latest",
                 "version": "2026-06-24",
                 "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": false,
                   "eastus2": true,
-                  "northcentralus": true,
+                  "northcentralus": false,
                   "southcentralus": true,
-                  "westus": true,
+                  "westus": false,
                   "westus3": true
                 }
               },
@@ -1145,6 +1065,22 @@
                 }
               },
               {
+                "model": "sora-2",
+                "version": "2025-12-08",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": false,
+                  "eastus2": true,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westus": false,
+                  "westus3": false
+                }
+              },
+              {
                 "model": "text-embedding-3-large",
                 "version": "1",
                 "regions": {
@@ -1433,40 +1369,6 @@
                 }
               },
               {
-                "model": "gpt-5-chat",
-                "version": "2025-08-07",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "gpt-5-chat",
-                "version": "2025-10-03",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "westeurope": true
-                }
-              },
-              {
                 "model": "gpt-5-codex",
                 "version": "2025-09-15",
                 "regions": {
@@ -1552,23 +1454,6 @@
                 }
               },
               {
-                "model": "gpt-5.1-chat",
-                "version": "2025-11-13",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "westeurope": true
-                }
-              },
-              {
                 "model": "gpt-5.1-codex",
                 "version": "2025-11-13",
                 "regions": {
@@ -1589,17 +1474,17 @@
                 "model": "gpt-5.1-codex-max",
                 "version": "2025-12-04",
                 "regions": {
-                  "francecentral": false,
-                  "germanywestcentral": false,
-                  "italynorth": false,
-                  "norwayeast": false,
-                  "polandcentral": false,
-                  "spaincentral": false,
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
                   "swedencentral": true,
-                  "switzerlandnorth": false,
-                  "switzerlandwest": false,
-                  "uksouth": false,
-                  "westeurope": false
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
                 }
               },
               {
@@ -1637,59 +1522,8 @@
                 }
               },
               {
-                "model": "gpt-5.2-chat",
-                "version": "2025-12-11",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "gpt-5.2-chat",
-                "version": "2026-02-10",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "westeurope": true
-                }
-              },
-              {
                 "model": "gpt-5.2-codex",
                 "version": "2026-01-14",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "gpt-5.3-chat",
-                "version": "2026-03-03",
                 "regions": {
                   "francecentral": true,
                   "germanywestcentral": true,
@@ -1776,17 +1610,17 @@
                 "model": "gpt-5.4-pro",
                 "version": "2026-03-05",
                 "regions": {
-                  "francecentral": false,
-                  "germanywestcentral": false,
-                  "italynorth": false,
-                  "norwayeast": false,
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
                   "polandcentral": true,
-                  "spaincentral": false,
+                  "spaincentral": true,
                   "swedencentral": true,
-                  "switzerlandnorth": false,
-                  "switzerlandwest": false,
-                  "uksouth": false,
-                  "westeurope": false
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
                 }
               },
               {
@@ -1927,19 +1761,36 @@
               },
               {
                 "model": "gpt-chat-latest",
+                "version": "2026-08-06",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-chat-latest",
                 "version": "2026-05-05",
                 "regions": {
-                  "francecentral": false,
-                  "germanywestcentral": false,
-                  "italynorth": false,
-                  "norwayeast": false,
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
                   "polandcentral": true,
-                  "spaincentral": false,
+                  "spaincentral": true,
                   "swedencentral": true,
-                  "switzerlandnorth": false,
-                  "switzerlandwest": false,
-                  "uksouth": false,
-                  "westeurope": false
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
                 }
               },
               {
@@ -1963,17 +1814,17 @@
                 "model": "gpt-chat-latest",
                 "version": "2026-06-24",
                 "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "italynorth": false,
+                  "norwayeast": false,
                   "polandcentral": true,
-                  "spaincentral": true,
+                  "spaincentral": false,
                   "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "westeurope": true
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": false,
+                  "westeurope": false
                 }
               },
               {
@@ -2368,6 +2219,23 @@
                 }
               },
               {
+                "model": "sora-2",
+                "version": "2025-12-08",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "italynorth": false,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": false,
+                  "westeurope": false
+                }
+              },
+              {
                 "model": "text-embedding-3-large",
                 "version": "1",
                 "regions": {
@@ -2575,28 +2443,6 @@
                 }
               },
               {
-                "model": "gpt-5-chat",
-                "version": "2025-08-07",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "koreacentral": true,
-                  "southeastasia": true,
-                  "southindia": true
-                }
-              },
-              {
-                "model": "gpt-5-chat",
-                "version": "2025-10-03",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "koreacentral": true,
-                  "southeastasia": true,
-                  "southindia": true
-                }
-              },
-              {
                 "model": "gpt-5-codex",
                 "version": "2025-09-15",
                 "regions": {
@@ -2652,7 +2498,7 @@
                 }
               },
               {
-                "model": "gpt-5.1-chat",
+                "model": "gpt-5.1-codex",
                 "version": "2025-11-13",
                 "regions": {
                   "australiaeast": true,
@@ -2663,8 +2509,8 @@
                 }
               },
               {
-                "model": "gpt-5.1-codex",
-                "version": "2025-11-13",
+                "model": "gpt-5.1-codex-max",
+                "version": "2025-12-04",
                 "regions": {
                   "australiaeast": true,
                   "japaneast": true,
@@ -2696,41 +2542,8 @@
                 }
               },
               {
-                "model": "gpt-5.2-chat",
-                "version": "2025-12-11",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "koreacentral": true,
-                  "southeastasia": true,
-                  "southindia": true
-                }
-              },
-              {
-                "model": "gpt-5.2-chat",
-                "version": "2026-02-10",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "koreacentral": true,
-                  "southeastasia": true,
-                  "southindia": true
-                }
-              },
-              {
                 "model": "gpt-5.2-codex",
                 "version": "2026-01-14",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "koreacentral": true,
-                  "southeastasia": true,
-                  "southindia": true
-                }
-              },
-              {
-                "model": "gpt-5.3-chat",
-                "version": "2026-03-03",
                 "regions": {
                   "australiaeast": true,
                   "japaneast": true,
@@ -2775,6 +2588,17 @@
               {
                 "model": "gpt-5.4-nano",
                 "version": "2026-03-17",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-5.4-pro",
+                "version": "2026-03-05",
                 "regions": {
                   "australiaeast": true,
                   "japaneast": true,
@@ -2829,7 +2653,18 @@
               },
               {
                 "model": "gpt-chat-latest",
-                "version": "2026-06-24",
+                "version": "2026-08-06",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-chat-latest",
+                "version": "2026-05-05",
                 "regions": {
                   "australiaeast": true,
                   "japaneast": true,
@@ -3114,22 +2949,6 @@
                 }
               },
               {
-                "model": "gpt-5-chat",
-                "version": "2025-08-07",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
-                "model": "gpt-5-chat",
-                "version": "2025-10-03",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
                 "model": "gpt-5-codex",
                 "version": "2025-09-15",
                 "regions": {
@@ -3170,7 +2989,7 @@
                 }
               },
               {
-                "model": "gpt-5.1-chat",
+                "model": "gpt-5.1-codex",
                 "version": "2025-11-13",
                 "regions": {
                   "southafricanorth": true,
@@ -3178,8 +2997,8 @@
                 }
               },
               {
-                "model": "gpt-5.1-codex",
-                "version": "2025-11-13",
+                "model": "gpt-5.1-codex-max",
+                "version": "2025-12-04",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
@@ -3202,32 +3021,8 @@
                 }
               },
               {
-                "model": "gpt-5.2-chat",
-                "version": "2025-12-11",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
-                "model": "gpt-5.2-chat",
-                "version": "2026-02-10",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
                 "model": "gpt-5.2-codex",
                 "version": "2026-01-14",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
-                "model": "gpt-5.3-chat",
-                "version": "2026-03-03",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
@@ -3260,6 +3055,14 @@
               {
                 "model": "gpt-5.4-nano",
                 "version": "2026-03-17",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-5.4-pro",
+                "version": "2026-03-05",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
@@ -3299,7 +3102,15 @@
               },
               {
                 "model": "gpt-chat-latest",
-                "version": "2026-06-24",
+                "version": "2026-08-06",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-chat-latest",
+                "version": "2026-05-05",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
@@ -3473,78 +3284,6 @@
                 }
               },
               {
-                "model": "DeepSeek-R1",
-                "version": "1",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "DeepSeek-R1-0528",
-                "version": "1",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3-0324",
-                "version": "1",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3.1",
-                "version": "1",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
                 "model": "DeepSeek-V3.2",
                 "version": "1",
                 "regions": {
@@ -3583,6 +3322,24 @@
               {
                 "model": "DeepSeek-V4-Flash",
                 "version": "2026-04-23",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "DeepSeek-V4-Flash-0731",
+                "version": "2026-07-31",
                 "regions": {
                   "brazilsouth": true,
                   "canadacentral": true,
@@ -3959,24 +3716,6 @@
                 }
               },
               {
-                "model": "MAI-Image-2",
-                "version": "2026-02-20",
-                "regions": {
-                  "brazilsouth": false,
-                  "canadacentral": false,
-                  "canadaeast": false,
-                  "centralus": false,
-                  "eastus": true,
-                  "eastus2": false,
-                  "northcentralus": false,
-                  "southcentralus": false,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": false,
-                  "westus3": false
-                }
-              },
-              {
                 "model": "MAI-Image-2.5",
                 "version": "2026-06-02",
                 "regions": {
@@ -4013,6 +3752,24 @@
                 }
               },
               {
+                "model": "MAI-Image-2.5-Pro",
+                "version": "2026-06-19",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": true,
+                  "eastus2": false,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": false,
+                  "westus3": false
+                }
+              },
+              {
                 "model": "MAI-Image-2e",
                 "version": "2026-04-09",
                 "regions": {
@@ -4028,6 +3785,24 @@
                   "westus": true,
                   "westus2": false,
                   "westus3": false
+                }
+              },
+              {
+                "model": "MAI-Thinking-1",
+                "version": "2026-06-01",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
                 }
               },
               {
@@ -4321,78 +4096,6 @@
                 }
               },
               {
-                "model": "DeepSeek-R1",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "DeepSeek-R1-0528",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3-0324",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3.1",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true
-                }
-              },
-              {
                 "model": "DeepSeek-V3.2",
                 "version": "1",
                 "regions": {
@@ -4431,6 +4134,24 @@
               {
                 "model": "DeepSeek-V4-Flash",
                 "version": "2026-04-23",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "ukwest": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "DeepSeek-V4-Flash-0731",
+                "version": "2026-07-31",
                 "regions": {
                   "francecentral": true,
                   "germanywestcentral": true,
@@ -4807,24 +4528,6 @@
                 }
               },
               {
-                "model": "MAI-Image-2",
-                "version": "2026-02-20",
-                "regions": {
-                  "francecentral": false,
-                  "germanywestcentral": false,
-                  "italynorth": false,
-                  "norwayeast": false,
-                  "polandcentral": false,
-                  "spaincentral": false,
-                  "swedencentral": true,
-                  "switzerlandnorth": false,
-                  "switzerlandwest": false,
-                  "uksouth": false,
-                  "ukwest": false,
-                  "westeurope": true
-                }
-              },
-              {
                 "model": "MAI-Image-2.5",
                 "version": "2026-06-02",
                 "regions": {
@@ -4861,6 +4564,24 @@
                 }
               },
               {
+                "model": "MAI-Image-2.5-Pro",
+                "version": "2026-06-19",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "italynorth": false,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": false,
+                  "ukwest": false,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "MAI-Image-2e",
                 "version": "2026-04-09",
                 "regions": {
@@ -4875,6 +4596,24 @@
                   "switzerlandwest": false,
                   "uksouth": false,
                   "ukwest": false,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "MAI-Thinking-1",
+                "version": "2026-06-01",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "ukwest": true,
                   "westeurope": true
                 }
               },
@@ -5141,50 +4880,6 @@
                 }
               },
               {
-                "model": "DeepSeek-R1",
-                "version": "1",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true
-                }
-              },
-              {
-                "model": "DeepSeek-R1-0528",
-                "version": "1",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3-0324",
-                "version": "1",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3.1",
-                "version": "1",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true
-                }
-              },
-              {
                 "model": "DeepSeek-V3.2",
                 "version": "1",
                 "regions": {
@@ -5209,6 +4904,17 @@
               {
                 "model": "DeepSeek-V4-Flash",
                 "version": "2026-04-23",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "japanwest": true,
+                  "koreacentral": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "DeepSeek-V4-Flash-0731",
+                "version": "2026-07-31",
                 "regions": {
                   "australiaeast": true,
                   "japaneast": true,
@@ -5438,17 +5144,6 @@
                 }
               },
               {
-                "model": "MAI-Image-2",
-                "version": "2026-02-20",
-                "regions": {
-                  "australiaeast": false,
-                  "japaneast": false,
-                  "japanwest": false,
-                  "koreacentral": false,
-                  "southindia": true
-                }
-              },
-              {
                 "model": "MAI-Image-2.5",
                 "version": "2026-06-02",
                 "regions": {
@@ -5471,6 +5166,17 @@
                 }
               },
               {
+                "model": "MAI-Image-2.5-Pro",
+                "version": "2026-06-19",
+                "regions": {
+                  "australiaeast": false,
+                  "japaneast": false,
+                  "japanwest": false,
+                  "koreacentral": false,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "MAI-Image-2e",
                 "version": "2026-04-09",
                 "regions": {
@@ -5478,6 +5184,17 @@
                   "japaneast": false,
                   "japanwest": false,
                   "koreacentral": false,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "MAI-Thinking-1",
+                "version": "2026-06-01",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "japanwest": true,
+                  "koreacentral": true,
                   "southindia": true
                 }
               },
@@ -5648,38 +5365,6 @@
                 }
               },
               {
-                "model": "DeepSeek-R1",
-                "version": "1",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
-                "model": "DeepSeek-R1-0528",
-                "version": "1",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3-0324",
-                "version": "1",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3.1",
-                "version": "1",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
                 "model": "DeepSeek-V3.2",
                 "version": "1",
                 "regions": {
@@ -5698,6 +5383,14 @@
               {
                 "model": "DeepSeek-V4-Flash",
                 "version": "2026-04-23",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "DeepSeek-V4-Flash-0731",
+                "version": "2026-07-31",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
@@ -5864,14 +5557,6 @@
                 }
               },
               {
-                "model": "MAI-Image-2",
-                "version": "2026-02-20",
-                "regions": {
-                  "southafricanorth": false,
-                  "uaenorth": true
-                }
-              },
-              {
                 "model": "MAI-Image-2.5",
                 "version": "2026-06-02",
                 "regions": {
@@ -5888,10 +5573,26 @@
                 }
               },
               {
+                "model": "MAI-Image-2.5-Pro",
+                "version": "2026-06-19",
+                "regions": {
+                  "southafricanorth": false,
+                  "uaenorth": true
+                }
+              },
+              {
                 "model": "MAI-Image-2e",
                 "version": "2026-04-09",
                 "regions": {
                   "southafricanorth": false,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "MAI-Thinking-1",
+                "version": "2026-06-01",
+                "regions": {
+                  "southafricanorth": true,
                   "uaenorth": true
                 }
               },
@@ -6589,6 +6290,21 @@
                 }
               },
               {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "gpt-5.5",
                 "version": "2026-04-24",
                 "regions": {
@@ -6838,6 +6554,17 @@
                 }
               },
               {
+                "model": "gpt-5.4",
+                "version": "2026-03-05",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "gpt-5.4-mini",
                 "version": "2026-03-17",
                 "regions": {
@@ -6845,6 +6572,50 @@
                   "japaneast": true,
                   "koreacentral": true,
                   "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "model-router",
+                "version": "2025-05-19",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": false,
+                  "koreacentral": false,
+                  "southeastasia": false,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "model-router",
+                "version": "2025-08-07",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": false,
+                  "koreacentral": false,
+                  "southeastasia": false,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "model-router",
+                "version": "2025-11-18",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": false,
+                  "koreacentral": false,
+                  "southeastasia": false,
                   "southindia": true
                 }
               }
@@ -7064,275 +6835,8 @@
                 }
               },
               {
-                "model": "FLUX-1.1-pro",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "FLUX.1-Kontext-pro",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "FLUX.2-pro",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "Mistral-Large-3",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "mistral-medium-3-5",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "westeurope": true
-                }
-              }
-            ]
-          }
-        },
-        "other_model_collections": {
-          "title": "Availability for other model collections in Foundry Models",
-          "tabs": {
-            "Americas": [
-              {
                 "model": "DeepSeek-V4-Flash",
                 "version": "2026-04-23",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "DeepSeek-V4-Pro",
-                "version": "2026-04-23",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "FLUX-1.1-pro",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "FLUX.1-Kontext-pro",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "FLUX.2-pro",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "grok-4-1-fast-non-reasoning",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "grok-4-1-fast-reasoning",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "grok-4-20-non-reasoning",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "grok-4-20-reasoning",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "grok-4.3",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "Mistral-Large-3",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "mistral-medium-3-5",
-                "version": "1",
-                "regions": {
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              }
-            ],
-            "Europe": [
-              {
-                "model": "Cohere-rerank-v4.0-fast",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "Cohere-rerank-v4.0-pro",
-                "version": "1",
                 "regions": {
                   "francecentral": true,
                   "germanywestcentral": true,
@@ -7991,10 +7495,6 @@
               }
             ]
           }
-        },
-        "other_sold_by_azure": {
-          "title": "Availability for other Foundry Models sold by Azure",
-          "tabs": {}
         }
       }
     }
@@ -8280,6 +7780,38 @@
                 }
               },
               {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": false,
+                  "eastus2": false,
+                  "northcentralus": false,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-5.6-terra",
+                "version": "2026-07-09",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": false,
+                  "westus": false,
+                  "westus3": false
+                }
+              },
+              {
                 "model": "o1",
                 "version": "2024-12-17",
                 "regions": {
@@ -8601,6 +8133,23 @@
                 }
               },
               {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "gpt-5.5",
                 "version": "2026-04-24",
                 "regions": {
@@ -8615,6 +8164,40 @@
                   "switzerlandwest": true,
                   "uksouth": true,
                   "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "italynorth": false,
+                  "norwayeast": true,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": false,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-5.6-terra",
+                "version": "2026-07-09",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": false,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": false,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": true,
+                  "uksouth": false,
+                  "westeurope": false
                 }
               },
               {
@@ -8853,6 +8436,17 @@
                 }
               },
               {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "gpt-5.5",
                 "version": "2026-04-24",
                 "regions": {
@@ -8861,6 +8455,28 @@
                   "koreacentral": true,
                   "southeastasia": true,
                   "southindia": true
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": false,
+                  "koreacentral": false,
+                  "southeastasia": false,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-5.6-terra",
+                "version": "2026-07-09",
+                "regions": {
+                  "australiaeast": false,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": false
                 }
               },
               {
@@ -9030,11 +8646,35 @@
                 }
               },
               {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
                 "model": "gpt-5.5",
                 "version": "2026-04-24",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "southafricanorth": false,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-5.6-terra",
+                "version": "2026-07-09",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": false
                 }
               },
               {
@@ -9077,60 +8717,6 @@
           "tabs": {
             "Americas": [
               {
-                "model": "DeepSeek-R1",
-                "version": "1",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "DeepSeek-R1-0528",
-                "version": "1",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3-0324",
-                "version": "1",
-                "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true
-                }
-              },
-              {
                 "model": "DeepSeek-V3.2",
                 "version": "1",
                 "regions": {
@@ -9168,60 +8754,6 @@
               }
             ],
             "Europe": [
-              {
-                "model": "DeepSeek-R1",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "DeepSeek-R1-0528",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3-0324",
-                "version": "1",
-                "regions": {
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true
-                }
-              },
               {
                 "model": "DeepSeek-V3.2",
                 "version": "1",
@@ -9261,39 +8793,6 @@
             ],
             "Asia Pacific": [
               {
-                "model": "DeepSeek-R1",
-                "version": "1",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true
-                }
-              },
-              {
-                "model": "DeepSeek-R1-0528",
-                "version": "1",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3-0324",
-                "version": "1",
-                "regions": {
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true
-                }
-              },
-              {
                 "model": "DeepSeek-V3.2",
                 "version": "1",
                 "regions": {
@@ -9317,30 +8816,6 @@
               }
             ],
             "Middle East and Africa": [
-              {
-                "model": "DeepSeek-R1",
-                "version": "1",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
-                "model": "DeepSeek-R1-0528",
-                "version": "1",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
-              {
-                "model": "DeepSeek-V3-0324",
-                "version": "1",
-                "regions": {
-                  "southafricanorth": true,
-                  "uaenorth": true
-                }
-              },
               {
                 "model": "DeepSeek-V3.2",
                 "version": "1",
@@ -9373,6 +8848,7 @@
                 "model": "gpt-4.1",
                 "version": "2025-04-14",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9385,6 +8861,7 @@
                 "model": "gpt-4.1-mini",
                 "version": "2025-04-14",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9397,6 +8874,7 @@
                 "model": "gpt-4.1-nano",
                 "version": "2025-04-14",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9409,6 +8887,7 @@
                 "model": "gpt-4o",
                 "version": "2024-05-13",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9421,6 +8900,7 @@
                 "model": "gpt-4o",
                 "version": "2024-08-06",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9433,6 +8913,7 @@
                 "model": "gpt-4o",
                 "version": "2024-11-20",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9445,6 +8926,7 @@
                 "model": "gpt-4o-mini",
                 "version": "2024-07-18",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9457,6 +8939,7 @@
                 "model": "gpt-5",
                 "version": "2025-08-07",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9469,6 +8952,7 @@
                 "model": "gpt-5-mini",
                 "version": "2025-08-07",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9481,6 +8965,7 @@
                 "model": "gpt-5.1",
                 "version": "2025-11-13",
                 "regions": {
+                  "centralus": true,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9493,6 +8978,7 @@
                 "model": "gpt-5.1-codex",
                 "version": "2025-11-13",
                 "regions": {
+                  "centralus": true,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9505,6 +8991,7 @@
                 "model": "gpt-5.2",
                 "version": "2025-12-11",
                 "regions": {
+                  "centralus": true,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9517,6 +9004,7 @@
                 "model": "gpt-5.4",
                 "version": "2026-03-05",
                 "regions": {
+                  "centralus": true,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9529,6 +9017,7 @@
                 "model": "gpt-5.4-mini",
                 "version": "2026-03-17",
                 "regions": {
+                  "centralus": true,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9541,6 +9030,7 @@
                 "model": "gpt-5.5",
                 "version": "2026-04-24",
                 "regions": {
+                  "centralus": true,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9553,6 +9043,7 @@
                 "model": "o1",
                 "version": "2024-12-17",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9565,6 +9056,7 @@
                 "model": "o3",
                 "version": "2025-04-16",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9577,6 +9069,7 @@
                 "model": "o3-mini",
                 "version": "2025-01-31",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9589,6 +9082,7 @@
                 "model": "o4-mini",
                 "version": "2025-04-16",
                 "regions": {
+                  "centralus": false,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
@@ -9606,9 +9100,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9619,9 +9115,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9632,9 +9130,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9645,9 +9145,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9658,9 +9160,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9671,9 +9175,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9684,9 +9190,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9697,9 +9205,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9710,9 +9220,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9723,9 +9235,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9736,9 +9250,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9749,9 +9265,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9762,9 +9280,71 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": false,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-5.5",
+                "version": "2026-04-24",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": false,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-5.6-terra",
+                "version": "2026-07-09",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
                   "westeurope": true
                 }
               },
@@ -9775,9 +9355,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9788,9 +9370,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9801,9 +9385,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               },
@@ -9814,9 +9400,11 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
                   "westeurope": true
                 }
               }
@@ -9896,7 +9484,7 @@
                 "version": "2025-04-14",
                 "regions": {
                   "brazilsouth": true,
-                  "canadacentral": false,
+                  "canadacentral": true,
                   "canadaeast": false,
                   "centralus": true,
                   "eastus": true,
@@ -10065,6 +9653,22 @@
                   "southcentralus": false,
                   "westus": true,
                   "westus3": true
+                }
+              },
+              {
+                "model": "gpt-5.4",
+                "version": "2026-03-05",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": true,
+                  "eastus": false,
+                  "eastus2": false,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westus": false,
+                  "westus3": false
                 }
               },
               {
@@ -10366,7 +9970,23 @@
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
-                  "swedencentral": false,
+                  "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": true,
+                  "westeurope": false
+                }
+              },
+              {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": true,
                   "switzerlandnorth": false,
                   "switzerlandwest": false,
                   "uksouth": true,
@@ -10532,7 +10152,7 @@
                 "version": "2025-11-13",
                 "regions": {
                   "australiaeast": true,
-                  "japaneast": false,
+                  "japaneast": true,
                   "koreacentral": false,
                   "southeastasia": false,
                   "southindia": true
@@ -10555,7 +10175,7 @@
                 "regions": {
                   "australiaeast": true,
                   "japaneast": true,
-                  "koreacentral": false,
+                  "koreacentral": true,
                   "southeastasia": false,
                   "southindia": false
                 }
@@ -10564,9 +10184,9 @@
                 "model": "gpt-5.4-mini",
                 "version": "2026-03-17",
                 "regions": {
-                  "australiaeast": false,
+                  "australiaeast": true,
                   "japaneast": true,
-                  "koreacentral": false,
+                  "koreacentral": true,
                   "southeastasia": true,
                   "southindia": true
                 }
@@ -10680,13 +10300,17 @@
                   "southafricanorth": false,
                   "uaenorth": true
                 }
+              },
+              {
+                "model": "o4-mini",
+                "version": "2025-04-16",
+                "regions": {
+                  "southafricanorth": false,
+                  "uaenorth": true
+                }
               }
             ]
           }
-        },
-        "other_sold_by_azure": {
-          "title": "Availability for other Foundry Models sold by Azure",
-          "tabs": {}
         }
       }
     }
@@ -11259,10 +10883,6 @@
               }
             ]
           }
-        },
-        "other_sold_by_azure": {
-          "title": "Availability for other Foundry Models sold by Azure",
-          "tabs": {}
         }
       }
     },
@@ -11508,10 +11128,6 @@
               }
             ]
           }
-        },
-        "other_sold_by_azure": {
-          "title": "Availability for other Foundry Models sold by Azure",
-          "tabs": {}
         }
       }
     }

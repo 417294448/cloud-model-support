@@ -554,28 +554,28 @@
           "model": "FLUX-1.1-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "FLUX.1-Kontext-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "FLUX.2-flex",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "FLUX.2-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         }
       ]
@@ -588,21 +588,21 @@
           "model": "Cohere-rerank-v4.0-fast",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Cohere-rerank-v4.0-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "cohere-command-a",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
@@ -616,7 +616,7 @@
           "model": "embed-v-4-0",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         }
       ]
@@ -657,14 +657,14 @@
           "model": "DeepSeek-V3.2",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "DeepSeek-V3.2-Speciale",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
@@ -698,14 +698,14 @@
           "model": "Llama-3.3-70B-Instruct",
           "version": "—",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
           "version": "—",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         }
       ]
@@ -766,7 +766,7 @@
           "model": "Mistral-Large-3",
           "version": "1",
           "lifecycle": "Preview",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
@@ -780,7 +780,7 @@
           "model": "mistral-document-ai-2512",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": "mistral-ocr-4-0"
         }
       ]
@@ -820,7 +820,7 @@
           "model": "gpt-oss-120b",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         }
       ]
@@ -847,21 +847,21 @@
           "model": "grok-4",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "grok-4-1-fast-non-reasoning",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "grok-4-1-fast-reasoning",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
@@ -896,7 +896,7 @@
           "model": "grok-code-fast-1",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         }
       ]
@@ -992,14 +992,14 @@
           "model": "Cohere-embed-v3-english",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Cohere-embed-v3-multilingual",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         }
       ]
@@ -1123,7 +1123,7 @@
           "model": "Llama-4-Scout-17B-16E-Instruct",
           "version": "—",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
@@ -1157,35 +1157,35 @@
           "model": "Phi-4",
           "version": "—",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Phi-4-mini-instruct",
           "version": "—",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Phi-4-mini-reasoning",
           "version": "—",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Phi-4-multimodal-instruct",
           "version": "—",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Phi-4-reasoning",
           "version": "—",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         }
       ]
@@ -1198,35 +1198,35 @@
           "model": "Codestral-2501",
           "version": "2",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Ministral-3B",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Mistral-large",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "mistral-medium-2505",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         },
         {
           "model": "mistral-small-2503",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "—",
+          "retirement_date": null,
           "replacement": null
         }
       ]

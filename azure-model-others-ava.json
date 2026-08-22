@@ -2,130 +2,756 @@
   {
     "provider": "Anthropic",
     "deployment_type": "Global Standard",
-    "models": ["Claude Haiku 4.5", "Claude Opus 4.8", "Claude Sonnet 5"],
+    "models": [
+      "Claude Mythos 5"
+    ],
     "offer_availability_region": {
       "base": "Microsoft Managed Countries/Regions",
-      "exclude": ["Belarus", "Russia"],
-      "include_additional": []
-    },
-    "hub_project_region_deployment": ["Central US", "East US", "East US 2", "North Central US", "South Central US", "Sweden Central", "West Central US", "West US", "West US 3"]
-  },
-  {
-    "provider": "Anthropic",
-    "deployment_type": "Global Standard",
-    "models": ["Claude Opus 4.5", "Claude Opus 4.1", "Claude Sonnet 4.5"],
-    "offer_availability_region": {
-      "base": "Microsoft Managed Countries/Regions",
-      "exclude": ["Belarus", "Russia"],
-      "include_additional": []
-    },
-    "hub_project_region_deployment": ["East US 2", "Sweden Central", "West Central US"]
-  },
-  {
-    "provider": "Anthropic",
-    "deployment_type": "Global Standard",
-    "models": ["Claude Fable", "Claude Opus 4.7", "Claude Opus 4.6", "Claude Sonnet 4.6"],
-    "offer_availability_region": {
-      "base": "Microsoft Managed Countries/Regions",
-      "exclude": ["Belarus", "Russia"],
-      "include_additional": []
-    },
-    "hub_project_region_deployment": ["East US 2", "Sweden Central"]
-  },
-  {
-    "provider": "Anthropic",
-    "deployment_type": "Global Standard",
-    "models": ["Claude Mythos 5", "Claude Mythos Preview"],
-    "offer_availability_region": {
-      "base": "Microsoft Managed Countries/Regions",
-      "exclude": ["Belarus", "Russia"],
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
       "include_additional": []
     },
     "hub_project_region_deployment": [],
-    "note": "Gated research preview models (access granted solely at Anthropic's discretion) — not listed in this page's Global Standard region-availability matrix, so no confirmed region for serverless deployment."
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Fable 5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Mythos Preview"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Opus 5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": [
+        "US",
+        "(Hosted",
+        "on",
+        "Azure",
+        "for",
+        "Data",
+        "Zone",
+        "Standard)"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
   },
   {
     "provider": "Anthropic",
     "deployment_type": "Data Zone Standard (US)",
-    "models": ["Claude Opus 4.8", "Claude Sonnet 5"],
+    "models": [
+      "Claude Opus 5"
+    ],
     "offer_availability_region": {
       "base": "US",
       "exclude": [],
       "include_additional": []
     },
-    "hub_project_region_deployment": ["Central US", "East US", "East US 2", "North Central US", "South Central US", "West Central US", "West US", "West US 3"]
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Opus 4.8"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": [
+        "US",
+        "(Hosted",
+        "on",
+        "Azure",
+        "for",
+        "Data",
+        "Zone",
+        "Standard)"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Data Zone Standard (US)",
+    "models": [
+      "Claude Opus 4.8"
+    ],
+    "offer_availability_region": {
+      "base": "US",
+      "exclude": [],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Opus 4.7"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Opus 4.6"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Opus 4.5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central",
+      "West Central US"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Sonnet 5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": [
+        "US",
+        "(Hosted",
+        "on",
+        "Azure",
+        "for",
+        "Data",
+        "Zone",
+        "Standard)"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Data Zone Standard (US)",
+    "models": [
+      "Claude Sonnet 5"
+    ],
+    "offer_availability_region": {
+      "base": "US",
+      "exclude": [],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Sonnet 4.6"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Sonnet 4.5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central",
+      "West Central US"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Haiku 4.5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
   },
   {
     "provider": "Cohere",
-    "models": ["Cohere-embed-v3-english", "Cohere-embed-v3-multilingual"],
+    "deployment_type": "Global Standard",
+    "models": [
+      "Cohere-embed-v3-english"
+    ],
     "offer_availability_region": {
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
-      "include_additional": ["Japan", "Qatar"]
+      "include_additional": [
+        "Japan",
+        "Qatar"
+      ]
     },
     "hub_project_region_deployment": [],
-    "note": "Not listed in this page's Global Standard / Data Zone Standard region matrices (embedding models) — per-region deployment support isn't derivable from this page. Also note the page no longer lists Cohere Command R+/R or Rerank v3.5, which were present in the previous scrape."
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Cohere",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Cohere-embed-v3-multilingual"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [],
+      "include_additional": [
+        "Japan",
+        "Qatar"
+      ]
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Meta",
     "deployment_type": "Global Standard",
-    "models": ["Llama-4-Scout-17B-16E-Instruct"],
+    "models": [
+      "Llama-4-Scout-17B-16E-Instruct"
+    ],
     "offer_availability_region": {
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
       "include_additional": []
     },
-    "hub_project_region_deployment": ["Australia East", "Brazil South", "Canada Central", "Canada East", "Central US", "East US", "East US 2", "France Central", "Germany West Central", "Italy North", "Japan East", "Japan West", "Korea Central", "North Central US", "Norway East", "Poland Central", "South Africa North", "South Central US", "South India", "Spain Central", "Sweden Central", "Switzerland North", "Switzerland West", "UAE North", "UK South", "UK West", "West Central US", "West Europe", "West US", "West US 2", "West US 3"],
-    "note": "This page lists only Llama-4-Scout-17B-16E-Instruct under Meta. All Llama 3.1/3.2/3.3 and Llama Guard models present in the previous scrape are no longer listed here."
+    "hub_project_region_deployment": [
+      "Australia East",
+      "Brazil South",
+      "Canada Central",
+      "Canada East",
+      "Central US",
+      "East US",
+      "East US 2",
+      "France Central",
+      "Germany West Central",
+      "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
+      "Norway East",
+      "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
+      "Spain Central",
+      "Sweden Central",
+      "Switzerland North",
+      "Switzerland West",
+      "UAE North",
+      "UK South",
+      "UK West",
+      "West Central US",
+      "West Europe",
+      "West US",
+      "West US 2",
+      "West US 3"
+    ]
   },
   {
     "provider": "Microsoft",
-    "models": ["Phi-4-mini-instruct", "Phi-4-multimodal-instruct", "Phi-4", "Phi-4-reasoning", "Phi-4-mini-reasoning"],
+    "deployment_type": "Global Standard",
+    "models": [
+      "Phi-4-mini-instruct"
+    ],
     "offer_availability_region": {
       "raw": "Not applicable"
     },
     "hub_project_region_deployment": [],
-    "note": "Offer availability region is explicitly 'Not applicable' on this page, and none of these models appear in the Global Standard / Data Zone Standard matrices — they're evidently managed-compute-only here, whose region availability isn't covered by this page. Also note MAI-DS-R1, present in the previous scrape, is no longer listed under Microsoft."
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Microsoft",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Phi-4-multimodal-instruct"
+    ],
+    "offer_availability_region": {
+      "raw": "Not applicable"
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Microsoft",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Phi-4"
+    ],
+    "offer_availability_region": {
+      "raw": "Not applicable"
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Microsoft",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Phi-4-reasoning"
+    ],
+    "offer_availability_region": {
+      "raw": "Not applicable"
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Microsoft",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Phi-4-mini-reasoning"
+    ],
+    "offer_availability_region": {
+      "raw": "Not applicable"
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Mistral",
     "deployment_type": "Global Standard",
-    "models": ["Codestral-2501", "Ministral-3B", "Mistral-small-2503", "Mistral-medium-2505"],
+    "models": [
+      "Codestral-2501"
+    ],
     "offer_availability_region": {
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
-      "include_additional": ["Brazil", "Hong Kong SAR", "Israel"]
+      "include_additional": [
+        "Brazil",
+        "Hong",
+        "Kong",
+        "SAR",
+        "Israel"
+      ]
     },
-    "hub_project_region_deployment": ["Australia East", "Brazil South", "Canada Central", "Canada East", "Central US", "East US", "East US 2", "France Central", "Germany West Central", "Italy North", "Japan East", "Japan West", "Korea Central", "North Central US", "Norway East", "Poland Central", "South Africa North", "South Central US", "South India", "Spain Central", "Sweden Central", "Switzerland North", "Switzerland West", "UAE North", "UK South", "UK West", "West Central US", "West Europe", "West US", "West US 2", "West US 3"]
+    "hub_project_region_deployment": [
+      "Australia East",
+      "Brazil South",
+      "Canada Central",
+      "Canada East",
+      "Central US",
+      "East US",
+      "East US 2",
+      "France Central",
+      "Germany West Central",
+      "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
+      "Norway East",
+      "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
+      "Spain Central",
+      "Sweden Central",
+      "Switzerland North",
+      "Switzerland West",
+      "UAE North",
+      "UK South",
+      "UK West",
+      "West Central US",
+      "West Europe",
+      "West US",
+      "West US 2",
+      "West US 3"
+    ]
   },
   {
     "provider": "Mistral",
     "deployment_type": "Global Standard",
-    "models": ["Mistral-large"],
+    "models": [
+      "Ministral-3B"
+    ],
     "offer_availability_region": {
-      "raw": null
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [],
+      "include_additional": [
+        "Brazil",
+        "Hong",
+        "Kong",
+        "SAR",
+        "Israel"
+      ]
     },
-    "hub_project_region_deployment": ["Australia East", "Brazil South", "Canada Central", "Canada East", "Central US", "East US", "East US 2", "France Central", "Germany West Central", "Italy North", "Japan East", "Japan West", "Korea Central", "North Central US", "Norway East", "Poland Central", "South Africa North", "South Central US", "South India", "Spain Central", "Sweden Central", "Switzerland North", "Switzerland West", "UAE North", "UK South", "UK West", "West Central US", "West Europe", "West US", "West US 2", "West US 3"],
-    "note": "Anomaly: 'Mistral-large' appears with full region coverage in this page's Global Standard region-availability matrix, but is NOT listed as a row in the page's own 'Mistral AI' provider/capabilities table — likely a stale leftover entry in the matrix. No offer-availability-region text could be sourced for it. Treat with caution."
+    "hub_project_region_deployment": [
+      "Australia East",
+      "Brazil South",
+      "Canada Central",
+      "Canada East",
+      "Central US",
+      "East US",
+      "East US 2",
+      "France Central",
+      "Germany West Central",
+      "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
+      "Norway East",
+      "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
+      "Spain Central",
+      "Sweden Central",
+      "Switzerland North",
+      "Switzerland West",
+      "UAE North",
+      "UK South",
+      "UK West",
+      "West Central US",
+      "West Europe",
+      "West US",
+      "West US 2",
+      "West US 3"
+    ]
   },
   {
     "provider": "Mistral",
-    "models": ["mistralai-Mistral-7B-Instruct-v01", "mistralai-Mistral-7B-Instruct-v0-2", "mistralai-Mixtral-8x7B-Instruct-v01", "mistralai-Mixtral-8x22B-Instruct-v0-1"],
+    "deployment_type": "Global Standard",
+    "models": [
+      "Mistral-small-2503"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [],
+      "include_additional": [
+        "Brazil",
+        "Hong",
+        "Kong",
+        "SAR",
+        "Israel"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Australia East",
+      "Brazil South",
+      "Canada Central",
+      "Canada East",
+      "Central US",
+      "East US",
+      "East US 2",
+      "France Central",
+      "Germany West Central",
+      "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
+      "Norway East",
+      "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
+      "Spain Central",
+      "Sweden Central",
+      "Switzerland North",
+      "Switzerland West",
+      "UAE North",
+      "UK South",
+      "UK West",
+      "West Central US",
+      "West Europe",
+      "West US",
+      "West US 2",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Mistral",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Mistral-medium-2505"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [],
+      "include_additional": [
+        "Brazil",
+        "Hong",
+        "Kong",
+        "SAR",
+        "Israel"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Australia East",
+      "Brazil South",
+      "Canada Central",
+      "Canada East",
+      "Central US",
+      "East US",
+      "East US 2",
+      "France Central",
+      "Germany West Central",
+      "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
+      "Norway East",
+      "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
+      "Spain Central",
+      "Sweden Central",
+      "Switzerland North",
+      "Switzerland West",
+      "UAE North",
+      "UK South",
+      "UK West",
+      "West Central US",
+      "West Europe",
+      "West US",
+      "West US 2",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Mistral",
+    "deployment_type": "Global Standard",
+    "models": [
+      "mistralai-Mistral-7B-Instruct-v01"
+    ],
     "offer_availability_region": {
       "raw": "-"
     },
     "hub_project_region_deployment": [],
-    "note": "Legacy open-weight models with offer availability region marked '-' on this page; not covered by the Global Standard / Data Zone Standard matrices. Also note mistral-document-ai-2505, present in the previous scrape, is no longer listed under Mistral."
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Mistral",
+    "deployment_type": "Global Standard",
+    "models": [
+      "mistralai-Mistral-7B-Instruct-v0-2"
+    ],
+    "offer_availability_region": {
+      "raw": "-"
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Mistral",
+    "deployment_type": "Global Standard",
+    "models": [
+      "mistralai-Mixtral-8x7B-Instruct-v01"
+    ],
+    "offer_availability_region": {
+      "raw": "-"
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Mistral",
+    "deployment_type": "Global Standard",
+    "models": [
+      "mistralai-Mixtral-8x22B-Instruct-v0-1"
+    ],
+    "offer_availability_region": {
+      "raw": "-"
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "NTT DATA",
-    "models": ["tsuzumi-7b"],
+    "deployment_type": "Global Standard",
+    "models": [
+      "tsuzumi-7b"
+    ],
     "offer_availability_region": {
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
       "include_additional": []
     },
     "hub_project_region_deployment": [],
-    "note": "Not listed in this page's Global Standard / Data Zone Standard region matrices."
+    "note": "No region matrix data available on this page for this model/deployment type."
   }
 ]
