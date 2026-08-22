@@ -109,7 +109,7 @@
   .capdef span{display:block;font-size:12px;color:var(--muted);line-height:1.4;margin-top:1px}
 
   .tabs{display:flex;gap:4px;margin:20px 0 16px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:0}
-  .tab{position:relative;padding:10px 16px;border-radius:9px 9px 0 0;border:1px solid transparent;border-bottom:0;background:transparent;color:var(--muted);cursor:pointer;font-weight:600;font-size:13.5px;font-family:var(--font-body);transition:color .15s,background .15s}
+  .tab{position:relative;display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:9px 9px 0 0;border:1px solid transparent;border-bottom:0;background:transparent;color:var(--muted);cursor:pointer;font-weight:600;font-size:13.5px;font-family:var(--font-body);transition:color .15s,background .15s}
   .tab:hover{color:var(--ink);background:var(--panel)}
   .tab.active{color:var(--ink);background:var(--panel)}
   .tab.active::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:2px;border-radius:2px;background:var(--accent)}
@@ -135,6 +135,11 @@
 
   .count{color:var(--muted);font-size:13px;margin:0 0 14px}
   .count b{color:var(--ink);font-weight:700}
+
+  /* inline SVG icons */
+  .ic{width:14px;height:14px;flex:0 0 auto;display:inline-block;vertical-align:-2px}
+  .tab .ic{width:15px;height:15px}
+  .cmp-stat .ic{width:13px;height:13px;vertical-align:-1.5px}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;animation:rise .5s .2s cubic-bezier(.2,.7,.3,1) both}
   .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px 17px;transition:border-color .18s,transform .18s,box-shadow .18s}
@@ -203,6 +208,20 @@
 </style>
 </head>
 <body>
+<!-- inline SVG icon sprite (stroke-based, currentColor) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.3 3.8 5.2 3.8 8.5s-1.3 6.2-3.8 8.5c-2.5-2.3-3.8-5.2-3.8-8.5s1.3-6.2 3.8-8.5z"/></g></symbol>
+    <symbol id="i-columns" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4.5" width="6.8" height="15" rx="1.2"/><rect x="13.2" y="4.5" width="6.8" height="15" rx="1.2"/></g></symbol>
+    <symbol id="i-models" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 20 7.4v9.2l-8 4.2-8-4.2V7.4z"/><path d="M12 12.2 20 7.4M12 12.2 4 7.4M12 12.2v8.6"/></g></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></g></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8.2 12.2 2.6 2.6 5-5.4"/></g></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></g></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3.5 13.8 10.2 20.5 12 13.8 13.8 12 20.5 10.2 13.8 3.5 12 10.2 10.2z"/></g></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.3 15.3 5.2 5.2"/></g></symbol>
+    <symbol id="i-circle-off" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></g></symbol>
+  </defs>
+</svg>
 <div class="ctlbar">
 <a class="home-link" href="https://www.cloudproduct.top/" target="_blank" rel="noopener" data-i18n-aria="homeAria" aria-label="首页 Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span data-i18n="homeLink">首页</span></a>
 <button class="lang-toggle" id="langToggle" aria-label="Switch language / 切换语言">中</button>
@@ -227,10 +246,10 @@
   <div class="capdefs" id="capDefs"></div>
 
   <div class="tabs">
-    <button class="tab active" data-view="region" data-i18n="tabRegion">By Region</button>
-    <button class="tab" data-view="compare" data-i18n="tabCompare">Compare Regions</button>
-    <button class="tab" data-view="model" data-i18n="tabModel">By Model</button>
-    <button class="tab" data-view="matrix" data-i18n="tabMatrix">Full Matrix</button>
+    <button class="tab active" data-view="region"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n="tabRegion">By Region</span></button>
+    <button class="tab" data-view="compare"><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg><span data-i18n="tabCompare">Compare Regions</span></button>
+    <button class="tab" data-view="model"><svg class="ic" aria-hidden="true"><use href="#i-models"/></svg><span data-i18n="tabModel">By Model</span></button>
+    <button class="tab" data-view="matrix"><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg><span data-i18n="tabMatrix">Full Matrix</span></button>
   </div>
 
   <div class="controls">
@@ -733,7 +752,12 @@ function nameCell(mo){
   const nm=mo.card?`<a href="${mo.card}" target="_blank" rel="noopener">${mo.n}</a>`:mo.n;
   return `${nm}${mo.v?` <span class="ver">${mo.v}</span>`:""}${offerTag(mo)}${lifecycleTag(mo)}${apiTag(mo)}`;
 }
-function emptyMsg(t){return `<div class="empty"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><div>${t}</div></div>`;}
+function emptyMsg(t,icId){
+  const icon=icId
+    ?`<svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#${icId}"/></svg>`
+    :`<svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>`;
+  return `<div class="empty">${icon}<div>${t}</div></div>`;
+}
 // axis label ("Inference mode"/"Deployment type") — translated for zh, kept as-is for en
 const AXIS_ZH={"inference mode":"推理模式","deployment type":"部署类型"};
 const axisLow=()=>P.axisLabel.toLowerCase();
@@ -742,7 +766,7 @@ const axisWord=()=>LANG==="zh"?(AXIS_ZH[axisLow()]||P.axisLabel):axisLow()+"(s)"
 function render(){
   const am=activeMask();
   const stage=$("#stage"),cnt=$("#count");
-  if(!am){cnt.innerHTML="";stage.innerHTML=emptyMsg(t("emptySelectAxis",{axisSing:axisLow()}));return;}
+  if(!am){cnt.innerHTML="";stage.innerHTML=emptyMsg(t("emptySelectAxis",{axisSing:axisLow()}),"i-circle-off");return;}
 
   if(state.view==="region"){
     const r=regionByCode[state.region];
@@ -760,7 +784,7 @@ function render(){
   }
   else if(state.view==="compare"){
     const A=regionByCode[state.region],B=regionByCode[state.regionB];
-    if(state.region===state.regionB){cnt.innerHTML="";stage.innerHTML=emptyMsg(t("emptyPickTwo"));return;}
+    if(state.region===state.regionB){cnt.innerHTML="";stage.innerHTML=emptyMsg(t("emptyPickTwo"),"i-columns");return;}
     const rows=filterModels().map(mo=>{
       const ma=(mo.s[state.region]||0)&am,mb=(mo.s[state.regionB]||0)&am;
       let c;if(ma&&mb)c=ma===mb?"same":"diff";else if(ma)c="onlyA";else if(mb)c="onlyB";else c="none";
@@ -770,10 +794,10 @@ function render(){
     cnt.innerHTML=t("cntCompare",{a:A.code,an:A.name,b:B.code,bn:B.name,axis:axisWord()});
     const SC=statusColors();
     let html=`<div class="cmp-summary">
-      <div class="cmp-stat" style="border-left:3px solid ${SC.ok}"><div class="num">${cats.same.length+cats.diff.length}</div><div class="lbl">${t("statBoth")}</div></div>
-      <div class="cmp-stat" style="border-left:3px solid var(--accent)"><div class="num">${cats.onlyA.length}</div><div class="lbl">${t("statOnlyA",{a:A.code})}</div></div>
-      <div class="cmp-stat" style="border-left:3px solid ${SC.accent2}"><div class="num">${cats.onlyB.length}</div><div class="lbl">${t("statOnlyB",{b:B.code})}</div></div>
-      <div class="cmp-stat" style="border-left:3px solid ${SC.warn}"><div class="num">${cats.diff.length}</div><div class="lbl">${t("statDiff",{axis:axisWord()})}</div></div>
+      <div class="cmp-stat" style="border-left:3px solid ${SC.ok}"><div class="num">${cats.same.length+cats.diff.length}</div><div class="lbl"><svg class="ic" aria-hidden="true"><use href="#i-check-circle"/></svg> ${t("statBoth")}</div></div>
+      <div class="cmp-stat" style="border-left:3px solid var(--accent)"><div class="num">${cats.onlyA.length}</div><div class="lbl"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg> ${t("statOnlyA",{a:A.code})}</div></div>
+      <div class="cmp-stat" style="border-left:3px solid ${SC.accent2}"><div class="num">${cats.onlyB.length}</div><div class="lbl"><svg class="ic" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-arrow-right"/></svg> ${t("statOnlyB",{b:B.code})}</div></div>
+      <div class="cmp-stat" style="border-left:3px solid ${SC.warn}"><div class="num">${cats.diff.length}</div><div class="lbl"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg> ${t("statDiff",{axis:axisWord()})}</div></div>
     </div>`;
     const sections=[
       {key:"onlyA",label:t("secOnlyA",{a:A.code,an:A.name}),color:"var(--accent)"},
