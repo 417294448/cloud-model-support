@@ -130,7 +130,7 @@
   .dgroup .gl{font-size:10px;text-transform:uppercase;letter-spacing:.05em;font-weight:800;color:var(--faint);margin-right:2px}
   .chip{background:var(--panel-2);border:1px solid var(--border);color:var(--muted);padding:9px 12px;border-radius:9px;cursor:pointer;font-size:13.5px;line-height:1.4;font-weight:600;font-family:var(--font-body);transition:color .12s,border-color .12s,background .12s;user-select:none}
   .chip:hover{color:var(--ink);border-color:var(--border-strong)}
-  .minibtn{background:var(--panel-2);border:1px solid var(--border);color:var(--muted);border-radius:9px;padding:9px 12px;font-size:13.5px;line-height:1.4;cursor:pointer;font-weight:600;font-family:var(--font-body);transition:color .15s,border-color .15s,background .15s}
+  .minibtn{background:var(--panel-2);border:1px solid var(--border);color:var(--muted);border-radius:9px;padding:9px 12px;font-size:13.5px;line-height:1.4;cursor:pointer;font-weight:600;font-family:var(--font-body);transition:color .15s,border-color .15s,background .15s;display:inline-flex;align-items:center;gap:6px}
   .minibtn:hover{color:var(--ink);border-color:var(--border-strong)}
 
   .count{color:var(--muted);font-size:13px;margin:0 0 14px}
@@ -140,6 +140,13 @@
   .ic{width:14px;height:14px;flex:0 0 auto;display:inline-block;vertical-align:-2px}
   .tab .ic{width:15px;height:15px}
   .cmp-stat .ic{width:13px;height:13px;vertical-align:-1.5px}
+  .site-title .ic{width:22px;height:22px;color:var(--accent);vertical-align:-3px;margin-right:2px}
+  .field>label{display:flex;align-items:center;gap:5px}
+  .field>label .ic{width:12px;height:12px}
+  .minibtn .ic{width:13px;height:13px}
+  #axisLbl{display:flex;align-items:center;gap:5px}
+  #axisLbl .ic{width:12px;height:12px;color:var(--accent)}
+  .capdefgrp-title .ic{width:12px;height:12px;vertical-align:-1.5px;margin-right:5px;color:var(--muted)}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;animation:rise .5s .2s cubic-bezier(.2,.7,.3,1) both}
   .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px 17px;transition:border-color .18s,transform .18s,box-shadow .18s}
@@ -220,6 +227,12 @@
     <symbol id="i-spark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3.5 13.8 10.2 20.5 12 13.8 13.8 12 20.5 10.2 13.8 3.5 12 10.2 10.2z"/></g></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.3 15.3 5.2 5.2"/></g></symbol>
     <symbol id="i-circle-off" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></g></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 3 5 13.5h5L10.5 21l8-10.5h-5z"/></g></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 3.8v2.6M12 17.6v2.6M3.8 12h2.6M17.6 12h2.6M6.2 6.2l1.9 1.9M15.9 15.9l1.9 1.9M17.8 6.2l-1.9 1.9M8.1 15.9l-1.9 1.9"/></g></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v4M12 16.5v4M3.5 12h4M16.5 12h4"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></g></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12V4.5H12l8.5 8.5-7.5 7.5z"/><circle cx="8" cy="9" r="1.3" fill="currentColor" stroke="none"/></g></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 3.5V8h-4.5"/></g></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5"/><circle cx="12" cy="7.8" r="1.1" fill="currentColor" stroke="none"/></g></symbol>
   </defs>
 </svg>
 <div class="ctlbar">
@@ -229,7 +242,7 @@
 </div>
 <div class="wrap">
   <div class="site-head">
-    <h1 class="site-title" data-i18n="siteTitle">Cloud LLM Model Directory</h1>
+    <h1 class="site-title"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg><span data-i18n="siteTitle">Cloud LLM Model Directory</span></h1>
     <p class="site-tagline" data-i18n="siteTagline">Compare foundation model availability, regions &amp; lifecycle across AWS Bedrock, Azure Foundry, and GCP Vertex AI.</p>
   </div>
   <div class="switcher" id="switcher"></div>
@@ -254,23 +267,23 @@
 
   <div class="controls">
     <div class="field" id="f-region">
-      <label id="f-region-lbl" data-i18n="lblRegion">Region</label>
+      <label id="f-region-lbl"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><span id="f-region-lbl-txt" data-i18n="lblRegion">Region</span></label>
       <select id="regionSel"></select>
     </div>
     <div class="field" id="f-regionB">
-      <label data-i18n="lblCompareWith">Compare with</label>
+      <label><svg class="ic" aria-hidden="true"><use href="#i-columns"/></svg><span data-i18n="lblCompareWith">Compare with</span></label>
       <select id="regionBSel"></select>
     </div>
     <div class="field" id="f-diff">
-      <label data-i18n="lblShow">Show</label>
-      <div><button class="minibtn" id="diffBtn" data-i18n="btnDiff">Differences only</button></div>
+      <label><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg><span data-i18n="lblShow">Show</span></label>
+      <div><button class="minibtn" id="diffBtn"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg><span data-i18n="btnDiff">Differences only</span></button></div>
     </div>
     <div class="field" id="f-lifecycle">
-      <label data-i18n="lblLifecycle">Lifecycle</label>
-      <div><button class="minibtn" id="lifecycleBtn" data-i18n="btnHideEol">Hide retired/deprecated</button></div>
+      <label><svg class="ic" aria-hidden="true"><use href="#i-circle-off"/></svg><span data-i18n="lblLifecycle">Lifecycle</span></label>
+      <div><button class="minibtn" id="lifecycleBtn"><svg class="ic" aria-hidden="true"><use href="#i-circle-off"/></svg><span data-i18n="btnHideEol">Hide retired/deprecated</span></button></div>
     </div>
     <div class="field" id="f-api">
-      <label data-i18n="lblApi">API surface</label>
+      <label><svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg><span data-i18n="lblApi">API surface</span></label>
       <select id="apiSel">
         <option value="" data-i18n="optAll">All</option>
         <option value="rt" data-i18n="optRt">Runtime API only</option>
@@ -278,16 +291,16 @@
       </select>
     </div>
     <div class="field grow">
-      <label data-i18n="lblSearch">Search model</label>
+      <label><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><span data-i18n="lblSearch">Search model</span></label>
       <input type="search" id="q" data-i18n-ph="phSearch" placeholder="Search model name…" />
     </div>
     <div class="field">
-      <label id="groupLbl">Group</label>
+      <label id="groupLbl"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg><span id="groupLblTxt">Group</span></label>
       <select id="catSel"></select>
     </div>
     <div class="field" id="f-reset">
-      <label data-i18n="lblReset">Saved filters</label>
-      <div><button class="minibtn" id="resetBtn" data-i18n="btnReset" title="Clear the remembered filters and restore defaults">Reset</button></div>
+      <label><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg><span data-i18n="lblReset">Saved filters</span></label>
+      <div><button class="minibtn" id="resetBtn" title="Clear the remembered filters and restore defaults"><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg><span data-i18n="btnReset">Reset</span></button></div>
     </div>
     <div class="deploybar">
       <label id="axisLbl" style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);font-weight:700"></label>
@@ -447,6 +460,9 @@ function t(key,vars){
 // provider data-driven labels (group/axis) translated for zh, kept as data for en
 const GROUP_ZH={"provider":"提供方","publisher":"发布方"};
 const AXISLABEL_ZH={"inference mode":"推理模式","deployment type":"部署类型"};
+// axis / capdef group title → sprite icon id
+const AXIS_ICON={"inference mode":"i-bolt","deployment type":"i-gear"};
+const CAPDEF_ICON={"deployment type":"i-gear","data residency scope":"i-globe"};
 function groupLabelText(){return LANG==="zh"?(GROUP_ZH[P.groupLabel.toLowerCase()]||P.groupLabel):P.groupLabel;}
 function axisLabelText(){return LANG==="zh"?(AXISLABEL_ZH[P.axisLabel.toLowerCase()]||P.axisLabel):P.axisLabel;}
 // provider-specific copy translations — English data remains the source of truth
@@ -586,8 +602,8 @@ function setProvider(id){
   $("#logo").innerHTML=logo(P.id);
   $("#title").textContent=t("headTitle",{name:P.name});
   $("#sub").innerHTML=`${providerSubtitle()} <span style="color:var(--faint)">${t("headSubStats",{m:P.models.length,unit:P.unit,r:P.regions.length,c:P.caps.length,axis:axisLabelText().toLowerCase()})}</span>`;
-  $("#groupLbl").textContent=groupLabelText();
-  $("#axisLbl").textContent=axisLabelText();
+  $("#groupLblTxt").textContent=groupLabelText();
+  $("#axisLbl").innerHTML=`<svg class="ic" aria-hidden="true"><use href="#${AXIS_ICON[P.axisLabel.toLowerCase()]||"i-tag"}"/></svg><span>${axisLabelText()}</span>`;
   $("#q").placeholder=LANG==="zh"?"搜索模型名称…":(P.id==="aws"?"e.g. Claude Sonnet, Nova, Llama…":"e.g. gpt-5, o3, whisper, embedding…");
   $("#footer").innerHTML=t("footerText",{url:P.source.url,label:P.source.label,date:P.generated})+(P.note?`<br><span style="color:var(--faint)">${providerNote()}</span>`:"");
 
@@ -600,7 +616,7 @@ function setProvider(id){
     capDefs.style.display="";
     capDefs.innerHTML=P.capDefGroups.map(g=>`
       <div class="capdefgrp">
-        ${g.title?`<div class="capdefgrp-title">${capDefTitleZh(g.title)}</div>`:""}
+        ${g.title?`<div class="capdefgrp-title"><svg class="ic" aria-hidden="true"><use href="#${CAPDEF_ICON[g.title.toLowerCase()]||"i-info"}"/></svg>${capDefTitleZh(g.title)}</div>`:""}
         <div class="capdefgrp-row">${g.items.map(it=>`<div class="capdef"><span class="dot" style="background:${it.color}"></span><div><b>${it.label}</b><span>${capDefFullZh(it.label,it.full,g.title)}</span></div></div>`).join("")}</div>
       </div>`).join("");
   } else {
@@ -698,7 +714,7 @@ function syncControls(){
   $("#f-region").style.display=(v==="region"||v==="compare")?"":"none";
   $("#f-regionB").style.display=v==="compare"?"":"none";
   $("#f-diff").style.display=v==="compare"?"":"none";
-  $("#f-region-lbl").textContent=v==="compare"?t("lblRegionA"):t("lblRegion");
+  $("#f-region-lbl-txt").textContent=v==="compare"?t("lblRegionA"):t("lblRegion");
   $("#f-lifecycle").style.display=hasLifecycle?"":"none";
   $("#f-api").style.display=hasApi?"":"none";
 }
