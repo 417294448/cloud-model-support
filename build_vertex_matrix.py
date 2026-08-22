@@ -11,6 +11,11 @@ for this project, unrelated to region).
 Output is a single JSON provider object matching the schema already embedded
 in index.html's #data script (see the "aws"/"azure" provider entries), ready
 to splice into the page's `providers` array.
+
+Authentication is via `gcloud` by default. Pass `--service-account <key.json>`
+to run without gcloud: the catalog is listed through the ModelGardenService
+REST API and the access token is minted from the service-account key via
+`google-auth`, so the only external dependencies are `requests` + `google-auth`.
 """
 
 import argparse
@@ -125,6 +130,48 @@ def fetch_catalog(billing_project, timeout):
     return json.loads(result.stdout or "[]")
 
 
+def fetch_catalog_rest(session, token_fn, project, timeout):
+    """List the catalog via the ModelGardenService REST API (no gcloud).
+
+    Mirrors `gcloud ai model-garden models list` exactly (verified against the
+    SDK's own client): the parent is the wildcard `publishers/*`, the endpoint
+    is the *regional* `us-central1-aiplatform.googleapis.com` host (the global
+    `aiplatform.googleapis.com` host only returns managed-API models), and the
+    request carries `filter=is_hf_wildcard(false)` plus `listAllVersions=True`.
+    Returns entries shaped like `gcloud ai model-garden models list` output --
+    the two sources expose the same fields (name/versionId/launchStage/
+    supportedActions) -- so the result feeds `dedupe_models` unchanged.
+    """
+    print("Fetching Model Garden catalog via REST (publishers/* wildcard)...", file=sys.stderr)
+    entries = []
+    page_token = None
+    while True:
+        params = {
+            "pageSize": 100,
+            "listAllVersions": True,
+            "filter": "is_hf_wildcard(false)",
+        }
+        if page_token:
+            params["pageToken"] = page_token
+        url = "https://us-central1-aiplatform.googleapis.com/v1beta1/publishers/*/models"
+        headers = {
+            "Authorization": f"Bearer {token_fn(timeout)}",
+            "x-goog-user-project": project,
+        }
+        resp = session.get(url, headers=headers, params=params, timeout=timeout)
+        if resp.status_code != 200:
+            raise SystemExit(
+                f"Failed to list Model Garden catalog via REST (HTTP {resp.status_code}):\n{resp.text[:500]}"
+            )
+        data = resp.json()
+        entries.extend(data.get("publisherModels", []))
+        page_token = data.get("nextPageToken")
+        if not page_token:
+            break
+    print(f"  [catalog] {len(entries)} entries fetched.", file=sys.stderr)
+    return entries
+
+
 EXCLUDED_PUBLISHERS = {"internal-test-google"}
 
 
@@ -157,19 +204,48 @@ def dedupe_models(catalog):
     return out
 
 
-def get_token(timeout):
+def gcloud_token_fn(timeout):
     result = run_gcloud(["auth", "print-access-token"], timeout=timeout)
     if result.returncode != 0:
         raise SystemExit(f"Failed to get access token:\n{result.stderr}")
     return result.stdout.strip()
 
 
-class TokenBox:
-    """Caches the gcloud access token and refreshes it if it might have expired."""
+def service_account_token_fn(sa_path):
+    """Return a token function backed by a service-account key file (no gcloud).
 
-    def __init__(self, timeout):
+    Swaps the SA's RSA key for an OAuth access token via the token endpoint
+    declared in the key file. `google-auth` is imported lazily so the default
+    gcloud path keeps working even where it isn't installed.
+    """
+    try:
+        from google.oauth2 import service_account
+        from google.auth.transport.requests import Request as GAuthRequest
+    except ImportError:
+        raise SystemExit(
+            "The --service-account path needs the `google-auth` package "
+            "(pip install google-auth). It is not required for the default gcloud path."
+        )
+
+    with open(sa_path, encoding="utf-8") as f:
+        creds = service_account.Credentials.from_service_account_info(
+            json.load(f), scopes=["https://www.googleapis.com/auth/cloud-platform"]
+        )
+
+    def fn(timeout):
+        creds.refresh(GAuthRequest())
+        return creds.token
+
+    return fn
+
+
+class TokenBox:
+    """Caches an access token and refreshes it before it can expire."""
+
+    def __init__(self, timeout, token_fn):
         self.timeout = timeout
-        self.token = get_token(timeout)
+        self.token_fn = token_fn
+        self.token = token_fn(timeout)
         self.fetched = time.monotonic()
 
     def get(self):
@@ -178,7 +254,7 @@ class TokenBox:
         return self.token
 
     def refresh(self):
-        self.token = get_token(self.timeout)
+        self.token = self.token_fn(self.timeout)
         self.fetched = time.monotonic()
 
 
@@ -257,11 +333,11 @@ def run_pass(session, token_box, project, jobs, workers, timeout, retries, label
     return available, restricted_count, errors
 
 
-def build_provider(project, models, regions, workers, timeout, retries):
+def build_provider(project, models, regions, workers, timeout, retries, token_fn):
     session = requests.Session()
     adapter = requests.adapters.HTTPAdapter(pool_connections=workers, pool_maxsize=workers)
     session.mount("https://", adapter)
-    token_box = TokenBox(timeout=30)
+    token_box = TokenBox(timeout=30, token_fn=token_fn)
 
     jobs = [(m["publisher"], m["model_id"], region) for m in models for region in regions]
     available, restricted_count, errors = run_pass(
@@ -379,7 +455,8 @@ def build_provider(project, models, regions, workers, timeout, retries):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--project", required=True, help="GCP billing/quota project ID to run gcloud against")
+    ap.add_argument("--project", help="GCP billing/quota project ID. Required for the gcloud path; optional with --service-account (defaults to the key's project_id).")
+    ap.add_argument("--service-account", help="Path to a service-account key JSON. Uses it for auth + catalog via REST instead of gcloud (no gcloud install needed).")
     ap.add_argument("--regions", help="Comma-separated region codes to query (default: built-in list of ~35)")
     ap.add_argument("--output", default="vertex.json", help="Output JSON file (default: vertex.json)")
     ap.add_argument("--workers", type=int, default=30, help="Concurrent HTTP checks (default: 30)")
@@ -392,11 +469,28 @@ def main():
     regions = args.regions.split(",") if args.regions else list(REGION_META.keys())
     regions = [r.strip() for r in regions if r.strip()]
 
+    if args.service_account:
+        token_fn = service_account_token_fn(args.service_account)
+        project = args.project
+        if not project:
+            with open(args.service_account, encoding="utf-8") as f:
+                project = json.load(f).get("project_id")
+            if not project:
+                raise SystemExit("Could not determine a project: pass --project or include project_id in the SA key file.")
+        print(f"[auth] using service account (project {project})", file=sys.stderr)
+    else:
+        token_fn = gcloud_token_fn
+        if not args.project:
+            raise SystemExit("--project is required when not using --service-account.")
+        project = args.project
+
     if args.catalog_file:
         with open(args.catalog_file, encoding="utf-8") as f:
             catalog = json.load(f)
+    elif args.service_account:
+        catalog = fetch_catalog_rest(requests.Session(), token_fn, project, timeout=180)
     else:
-        catalog = fetch_catalog(args.project, timeout=180)
+        catalog = fetch_catalog(project, timeout=180)
 
     models = dedupe_models(catalog)
     print(f"{len(models)} unique models across {len(regions)} regions to check.", file=sys.stderr)
@@ -404,7 +498,7 @@ def main():
         models = models[: args.limit]
         print(f"Limiting to first {len(models)} models (--limit).", file=sys.stderr)
 
-    provider = build_provider(args.project, models, regions, args.workers, args.timeout, args.retries)
+    provider = build_provider(project, models, regions, args.workers, args.timeout, args.retries, token_fn)
 
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(provider, f, indent=2, ensure_ascii=False)

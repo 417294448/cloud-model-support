@@ -58,7 +58,11 @@ Run *only* the phase(s) for providers in scope. Skip the GCP preflight check ent
 
 ## If GCP is in scope: preflight the GCP credential
 
-The GCP phase needs an authenticated `gcloud` and a project ID. Before anything else, have the user run these two prerequisites -- the first opens a browser for interactive login, so you can't run it for them (suggest they type `! gcloud auth login` in the prompt so its output lands here):
+The GCP phase needs *either* an authenticated `gcloud` CLI *or* a GCP service-account key file. The service-account path (`--service-account`) removes the gcloud dependency entirely — auth is minted from the key via `google-auth`, and the catalog is listed through the ModelGardenService REST API — so it's the right choice on a machine without gcloud, or for CI. When the user hands you a service-account JSON (the `{"type": "service_account", ...}` shape), use it directly; otherwise fall back to gcloud.
+
+**Path A — service-account key (no gcloud):** skip the interactive login below. Use `--service-account <path>` and, if the key's `project_id` isn't the billing/quota project, also pass `--project`. The key needs the `aiplatform.googleapis.com` API enabled on its project and the `aiplatform.publisherModels.list`/`.get` permission (`roles/aiplatform.user` includes both). Only extra dependency: `pip install google-auth`.
+
+**Path B — gcloud (default):** needs an authenticated `gcloud` and a project ID. Before anything else, have the user run these two prerequisites -- the first opens a browser for interactive login, so you can't run it for them (suggest they type `! gcloud auth login` in the prompt so its output lands here):
 
 ```bash
 gcloud auth login
@@ -89,7 +93,11 @@ If only one provider is in scope, there's no chaining to think about: that provi
 
    ```bash
    python build_vertex_matrix.py --project <PROJECT_ID> --catalog-file vertex_all_models.json --output vertex.json
+   # no-gcloud variant: authenticate with a service-account key instead
+   python build_vertex_matrix.py --service-account <sa.json> [--project <PROJECT_ID>] --catalog-file vertex_all_models.json --output vertex.json
    ```
+
+   With `--service-account`, `--project` is optional (defaults to the key's `project_id`). The catalog dump still feeds in via `--catalog-file` exactly as before; `--service-account` only changes *auth + the catalog re-fetch path* (see below), not the region-probing loop.
 
    This overwrites `vertex.json` in place -- expected, it's a build artifact.
 
@@ -100,6 +108,9 @@ If only one provider is in scope, there's no chaining to think about: that provi
    ```bash
    # 1. refresh the catalog cache (overwrites vertex_all_models.json in place):
    gcloud ai model-garden models list --billing-project <PROJECT_ID> --format=json --limit=unlimited > vertex_all_models.json
+   ```
+
+   Under `--service-account`, catalog re-fetching is cheap (a few paginated REST calls against `publishers/*/models`), so there's no separate catalog snapshot to maintain -- just omit `--catalog-file` and let the script re-list the catalog on that run. The targeted mini-catalog merge below is still the right move for re-probing *newly added* models, regardless of auth path.
    # 2. diff old vs new catalog to get the ADDED entry objects. Parse with node, NOT python --
    #    the ~5MB JSON has non-ASCII that python's default Windows codec (gbk) rejects; node reads utf-8 fine:
    #      added = newCatalog.filter(e => !oldNames.has(e.name))   // oldNames = Set of old entry .name
