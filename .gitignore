@@ -16,6 +16,7 @@ index-old.html
 
 # Temporary GCP service-account key (provided per-run, never commit)
 .gcp-sa.json
+sa.json
 
 # Logs
 *.log
