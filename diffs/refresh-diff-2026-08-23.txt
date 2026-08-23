@@ -1,8 +1,1 @@
-Diff: index.html (2026-08-22) -> index.html (2026-08-23)
-
-=== gcp ===
-  generated: 2026-08-22 -> 2026-08-23
-  models: 281 -> 283
-  added (7): [Google] alphafold3-request (alphafold3-request-001), [Google] paligemma (paligemma2-28b-pt-448), [Meta] llama2 (llama-2-70b-chat), [Meta] llama4 (llama-4-scout-17b-16e), [Mistral AI] ministral-3 (ministral-3-8b-reasoning-2512), [Moonshot AI] kimi-k2 (kimi-k2-instruct-0905), [xAI] grok-4.6 (001)
-  removed (5): [Google] paligemma (paligemma2-3b-pt-896), [Meta] llama2 (llama-2-7b-chat), [Meta] llama4 (llama-4-scout-17b-16e-instruct), [Mistral AI] ministral-3 (ministral-3-14b-reasoning-2512), [Moonshot AI] kimi-k2 (kimi-k2-thinking)
-  changed (0):
+<base64-encoded>
