@@ -1,1 +1,15 @@
-<base64-encoded>
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-08-22 -> 2026-08-23
+  models: 133 -> 133
+  changed (0):
+
+=== azure ===
+  generated: 2026-08-22 -> 2026-08-23
+  models: 144 -> 144
+  changed (0):
+
+=== gcp ===
+  models: 283 -> 283
+  changed (0):
