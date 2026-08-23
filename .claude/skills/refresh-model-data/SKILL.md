@@ -22,6 +22,19 @@ This produces:
 - `scripts/extract_tables.js <html-file> [--index N]` -- pulls every `<table>` out of a fetched page into plain-text rows, tagged with the nearest heading. Run without `--index` first to see how many tables there are and what their headers look like; run with `--index N` to dump one table's full rows once you know which one you need.
 - `scripts/apply_update.js` -- the only thing allowed to touch `index.html`'s embedded data. See "Applying changes" below.
 - `scripts/build_azure_models.js` -- converts `azure-model-openai-ava.json` + `azure-model-others-ava.json` (+ optionally `azure-model-retirement.json`) into the `azure.models[]`/`azure.groups` shape `apply_update.js replace-models` expects. See Phase 3 below -- read its header comment before using it, there are several non-obvious dedup/inference rules baked in.
+- `update-gcp.js` (repo root) -- a low-token, single-command alternative for the GCP phase's merge+tag+diff steps. Reads `vertex_new.json` + `vertex-model-retirement.json` + `index.html`, applies the lifecycle heuristic, splices the gcp block in place, and writes `diffs/refresh-diff-<date>.txt`, printing only a 4-line summary to stderr. See "Token efficiency" below before deciding whether to use it or the standard `apply_update.js` chain.
+
+## Token efficiency (read this before any run -- this skill can burn a lot of tokens)
+
+This skill's token cost is **proportional to how much raw data you pull into the model context, not to the number of HTTP probes** (the ~10000 GCP regional probes cost zero tokens -- they're network calls made by python). The big files are the danger: `vertex_all_models.json` is ~5 MB (**~1.27 M tokens** if read in full), `index.html` is ~250 KB (~64 K tokens), `vertex.json` ~60 KB (~16 K tokens). One careless `Read` of the catalog dump costs more than everything else in the run combined. Practices that keep a run cheap:
+
+1. **Never `Read` `vertex_all_models.json` (or any multi-MB scrape) into context.** Operate on it only through `node -e` / a script that extracts an aggregate (entry count, the *names* of added models) and prints just that. You need the 5-line answer, not the 5 MB file.
+2. **Prefer one consolidating script over many inline `node -e` steps.** Every inline step prints intermediate results that the next step then re-reads, and each tool round-trip re-sends the whole conversation. `update-gcp.js` exists precisely to collapse the GCP "tag → splice → diff" sequence into one invocation whose entire output is a 4-line stderr summary. Same for AWS/Azure: batch the scrape→build→apply into as few script calls as you can, and let scripts print summaries, not data.
+3. **Don't poll a long-running background probe with repeated `sleep`+`tail`.** The harness notifies you when a background task finishes; each manual poll is a full conversation round-trip. Launch it, then wait for the completion notification (or one long wait) instead of checking every minute.
+4. **Write non-trivial JS to a `.js` file and `node file.js`, don't inline it with `node -e`.** Windows quoting/escaping (`\\`, `"`) makes inline one-liners error-prone; a failed `node -e` means rewriting the whole command (and re-sending it) -- a file is written once and re-run cheaply.
+5. **Use `--dry-run` / summary output where a script offers it**, and read only the summary unless something looks wrong.
+
+`update-gcp.js` vs the standard `apply_update.js` chain: `update-gcp.js` edits `index.html` **in place** and skips the `index-new.html` → review → promote safety flow (it's intended for a trusted, already-verified `vertex_new.json`). Its output has been verified byte-identical to what the standard flow produces. Use it when token budget matters and you've already sanity-checked the probe output; use `apply_update.js replace-from-provider` + `patch` + `diff` (below) when you want the reviewable `index-new.html` artifact and the structural diff as a separate gated step. The two are interchangeable on data -- pick per run.
 
 **`/tmp` paths and Windows.** The examples below write scratch files to `/tmp/...`. That's fine on macOS/Linux, and on Windows *as long as the file only moves between bash and node* (they agree on `/tmp`). But **never hand a `/tmp` path to `python` on Windows** -- native-Windows python resolves `/tmp` to a different directory than bash/node do, so a file bash/node wrote to `/tmp/x.json` is `FileNotFoundError` when python reads `--catalog-file /tmp/x.json`. Use a relative, repo-local path (e.g. `mini-catalog.json`) for anything python reads. Also: the ~5 MB `vertex_all_models.json` contains non-ASCII that python's default Windows codec (gbk) rejects -- parse it with `node`, or `open(..., encoding="utf-8")` if you must use python.
 
@@ -52,7 +65,8 @@ This skill can refresh all three providers, or just one. Read the user's request
 
 - They named a provider ("check if Azure has new models", "refresh AWS's retirement dates", "只刷新一下GCP的数据") -> scope is that provider only.
 - They asked generically ("refresh the data", "check for updates", no provider mentioned) -> scope is all three, the default full run.
-- If it's ambiguous which they mean, ask rather than guess -- a wrong guess here means either doing unwanted work (including possibly hitting the GCP credential gate below for a request that had nothing to do with GCP) or silently skipping something they wanted.
+- **They handed you a GCP service-account key (`sa.json`, the `{"type": "service_account", ...}` shape) — anywhere in the request, even without naming GCP — -> `gcp` is in scope, unconditionally.** Providing the credential *is* the request to refresh GCP; nobody supplies a service-account key for a provider they don't want touched. This holds even if they also named AWS/Azure (then it's those + gcp), and even if the phrasing sounds GCP-agnostic. Never let a provided `sa.json` sit unused while the run reports "GCP not in scope."
+- If it's ambiguous which they mean *and no credential was provided*, ask rather than guess -- a wrong guess here means either doing unwanted work (including possibly hitting the GCP credential gate below for a request that had nothing to do with GCP) or silently skipping something they wanted.
 
 Run *only* the phase(s) for providers in scope. Skip the GCP preflight check entirely when GCP isn't in scope -- it exists to unblock Phase 1, not as a mandatory gate for every invocation of this skill. A request to refresh Azure alone should never stop to ask about `gcloud` credentials.
 
@@ -61,6 +75,12 @@ Run *only* the phase(s) for providers in scope. Skip the GCP preflight check ent
 The GCP phase needs *either* an authenticated `gcloud` CLI *or* a GCP service-account key file. The service-account path (`--service-account`) removes the gcloud dependency entirely — auth is minted from the key via `google-auth`, and the catalog is listed through the ModelGardenService REST API — so it's the right choice on a machine without gcloud, or for CI. When the user hands you a service-account JSON (the `{"type": "service_account", ...}` shape), use it directly; otherwise fall back to gcloud.
 
 **Path A — service-account key (no gcloud):** skip the interactive login below. Use `--service-account <path>` and, if the key's `project_id` isn't the billing/quota project, also pass `--project`. The key needs the `aiplatform.googleapis.com` API enabled on its project and the `aiplatform.publisherModels.list`/`.get` permission (`roles/aiplatform.user` includes both). Only extra dependency: `pip install google-auth`.
+
+**When the user has provided a service-account key, completing the GCP refresh is mandatory, not optional.** The credential removes every excuse to skip: no `gcloud` install needed, no interactive login, no billing-project prompt (it defaults from the key). So once a valid `sa.json` is in hand:
+
+- **Do NOT skip GCP**, do NOT downgrade the run to "AWS/Azure only," and do NOT treat the GCP phase as best-effort. Run Phase 1 to completion.
+- **Verify the credential works before the long probe**, with one cheap call so an auth/permission problem surfaces in seconds, not after 15 minutes of probing. E.g. confirm `google-auth` can mint a token and the catalog list returns: a quick `node`/`python` one-shot, or just launch `build_vertex_matrix.py --service-account sa.json` and watch the first stderr lines -- `[auth] using service account (project ...)` followed by `[catalog] N entries fetched.` means auth + the list call both succeeded. If instead it errors (401/403, `aiplatform.googleapis.com` not enabled, missing permission, invalid key), stop and tell the user the *specific* failure -- don't proceed to burn 10000 probes on a dead credential, and don't silently fall back to gcloud when they explicitly gave you a key.
+- **If the GCP phase genuinely cannot complete** (credential rejected, quota exhausted and the merge workaround also fails, etc.), that's a blocker you must *report explicitly* in the final summary -- "GCP was requested (service-account provided) but failed: <reason>" -- never omit GCP from the report as if it were out of scope. A silent skip reads as success and is exactly the failure mode to avoid.
 
 **Path B — gcloud (default):** needs an authenticated `gcloud` and a project ID. Before anything else, have the user run these two prerequisites -- the first opens a browser for interactive login, so you can't run it for them (suggest they type `! gcloud auth login` in the prompt so its output lands here):
 
@@ -125,12 +145,14 @@ If only one provider is in scope, there's no chaining to think about: that provi
 
    This yields the same matrix a full re-fetch would, minus re-probing the models you already probed today -- faster, and it doesn't stall. `mini-catalog.json` and `vertex-newonly.json` are scratch (not tracked); delete them after the merge.
 
-2. Splice it into the page:
+2. Splice it into the page. Two interchangeable options -- see "Token efficiency" above for the trade-off:
 
-   ```bash
-   node .claude/skills/refresh-model-data/scripts/apply_update.js replace-from-provider \
-     index.html gcp vertex.json --out index-new.html --generated $(date +%Y-%m-%d)
-   ```
+   - **Standard (reviewable artifact):**
+     ```bash
+     node .claude/skills/refresh-model-data/scripts/apply_update.js replace-from-provider \
+       index.html gcp vertex.json --out index-new.html --generated $(date +%Y-%m-%d)
+     ```
+   - **Low-token single command:** `node update-gcp.js vertex.json` splices the gcp block into `index.html` in place, applies the lifecycle tags (step 4 below) and writes the dated diff in one go, printing only a summary. Use `--dry-run` to preview. It reads the retirement JSON itself, so with this option you skip the separate `patch` step (step 4) -- but it edits `index.html` directly, so only use it when you've already sanity-checked `vertex.json`. (When GCP is refreshed alongside AWS/Azure in one chained `index-new.html`, use the standard `apply_update.js` path instead so the chaining rule still holds.)
 
    Read the printed added/removed list. If a large chunk of models suddenly vanished, that's more likely a `gcloud` auth/quota hiccup than a real product change -- sanity-check by probing a couple of the vanished models directly before trusting it. The script sends an `x-goog-user-project: <PROJECT_ID>` header on every probe; your manual curl must too, or *every* region returns `403` and looks like EULA-gating when it's really just a missing billing-project header:
 
@@ -153,7 +175,7 @@ If only one provider is in scope, there's no chaining to think about: that provi
 
    This prints each table's heading and header row -- compare against `vertex-model-retirement.json`'s existing `sections[]` to see if anything's shaped differently now. Dump the tables you need (`--index N`) and rebuild `vertex-model-retirement.json` in its current shape (`release_date`/`retirement_date` as ISO dates when exact, `*_note` holding the raw text otherwise, `replacement`).
 
-4. Turn the new retirement data into a `patch.json` (see "Writing a patch.json" below) and apply it:
+4. Turn the new retirement data into a `patch.json` (see "Writing a patch.json" below) and apply it. *(Skip this step entirely if you used `node update-gcp.js` in step 2 -- it already applied these same lifecycle tags via its built-in heuristic, including the `textembedding-gecko` exception noted below.)*
 
    ```bash
    node .claude/skills/refresh-model-data/scripts/apply_update.js patch \
@@ -162,7 +184,7 @@ If only one provider is in scope, there's no chaining to think about: that provi
 
    `vertex-model-retirement.json` carries `release_date`/`retirement_date`/`retirement_date_note`/`replacement` but **no `lifecycle` field** -- you derive it for the patch. The existing `index.html` data follows one consistent rule (an observed convention, not an authoritative source): an exact `retirement_date` (a real ISO date, not a `*_note`) **and** a non-empty `replacement` -> `"Deprecated"`; everything else -> `"Legacy"`. Set `retirementDate` to `retirement_date` when it's an exact date, otherwise to `retirement_date_note` (e.g. `"May 19, 2027 or later"`, `"No retirement date announced"`, `"No sooner than May 20, 2028"`). Edge case: a model whose retirement date has already passed but is still in the catalog (e.g. the Veo 3.0/2.0 series, retired 2026-06-30) still takes `"Deprecated"` under this rule -- leave it; don't invent `"Retired"`/`"EOL"`, the existing data never uses them.
 
-   Match with `matchKeys: ["n"]`. A few doc IDs carry an `@version` suffix (e.g. `multimodalembedding@001`); `build_vertex_matrix.py` stores those **split** -- `n="multimodalembedding"`, `v="001"` -- so `apply_update.js`'s `match.n` must be the **bare name with the `@version` stripped** (`"multimodalembedding"`), not the suffixed form, or it won't match. (Leave "Retired models"-section entries out of the patch entirely -- those models are already out of the catalog, so there's nothing to patch onto; `apply_update.js` would just report them unmatched.)
+   Match with `matchKeys: ["n"]`. A few doc IDs carry an `@version` suffix (e.g. `multimodalembedding@001`); `build_vertex_matrix.py` stores those **split** -- `n="multimodalembedding"`, `v="001"` -- so `apply_update.js`'s `match.n` must be the **bare name with the `@version` stripped** (`"multimodalembedding"`), not the suffixed form, or it won't match. (Leave "Retired models"-section entries out of the patch entirely -- those models are already out of the catalog, so there's nothing to patch onto; `apply_update.js` would just report them unmatched. **Exception:** `textembedding-gecko` still appears in the live catalog as `n="textembedding-gecko" v="latest"` even though the doc lists its `@001/@002/@003` versions under "Retired models" (retired 2025-05-24, replacement `gemini-embedding-001`). Because it's still in the catalog it *does* get a patch: `lifecycle: "Deprecated"`, `retirementDate: "2025-05-24"`, `replacement: "gemini-embedding-001"` -- confirmed with the user 2026-08-23. `update-gcp.js` hardcodes this exception in its `RETIRED_BUT_TAGGED` map.)
 
 ## Phase 2 -- AWS Bedrock
 
@@ -273,8 +295,9 @@ Running `diff` needs no adjustment for a scoped (single-provider) run -- provide
 Build the final report from this output:
 
 - State the scope up front: which provider(s) this run actually touched, so a scoped run is never mistaken for a full one (e.g. "This was an Azure-only refresh, per your request -- AWS and GCP were not touched.").
+- **If the user provided a GCP service-account key this run, the report MUST account for GCP.** Either it shows GCP's deltas like any other in-scope provider, or it carries an explicit line "GCP was requested (service-account provided) but failed: <reason>." A report that lists AWS/Azure results and says nothing about GCP -- when a key was handed over -- is a failed run, not a scoped one. Double-check before sending: did a `sa.json` arrive this run? If yes, is GCP in the report?
 - Per provider in scope: the regions/groups/model-count deltas and the changed-model list this command printed.
-- Anything left out and *why*, distinguishing the two different reasons: out of scope (the user didn't ask for it this run) vs. skipped due to a blocker (e.g. GCP creds unavailable at the preflight step, mid-run).
+- Anything left out and *why*, distinguishing the two different reasons: out of scope (the user didn't ask for it this run) vs. skipped due to a blocker (e.g. GCP creds unavailable at the preflight step, mid-run). Note: a *provided, working* service-account key is never a valid "blocker" for skipping GCP -- the blocker reasons apply to credentials that were needed but absent/rejected, not to one the user supplied.
 - Flag anything that looks like a regression rather than a genuine upstream update -- e.g. a `lifecycle`/`retirementDate` that went from a real value to `null`, or a model that lost most of its regions -- and call it out explicitly rather than reporting it as routine.
 
 ## Promoting index-new.html

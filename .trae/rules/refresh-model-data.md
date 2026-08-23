@@ -27,11 +27,11 @@
 
 ## 刷新流程
 
-1. **确定范围**：全部刷新（gcp、aws、azure）或仅单个/部分厂商
-2. **若 GCP 在范围内**：先确认 `gcloud` 已登录且已设置 project
+1. **确定范围**：全部刷新（gcp、aws、azure）或仅单个/部分厂商。**只要用户在请求中提供了 GCP 服务账号密钥（`sa.json`，`{"type":"service_account",...}`），无论是否点名 GCP，`gcp` 都无条件计入 scope**——提供凭据本身就是刷新 GCP 的请求，没人会为不想动的厂商提供密钥。绝不能让提供的 `sa.json` 被闲置、而报告称"GCP 不在范围内"。
+2. **若 GCP 在范围内**：确认凭据可用。提供了 `sa.json` 时用 `--service-account sa.json`（无需 gcloud、无需交互登录、project 默认取 key 的 `project_id`），此时 **GCP 刷新为必做、不可跳过、不可降级为"仅 AWS/Azure"**；先用一次廉价调用验证凭据（启动 `build_vertex_matrix.py --service-account sa.json` 后看到 `[auth] using service account...` + `[catalog] N entries fetched.` 即认证成功），失败要报出具体原因（401/403、API 未启用、权限不足、key 无效），不要闷头跑 1 万次探测、也不要在用户明确给了 key 时悄悄退回 gcloud。未提供 key 时走 `gcloud` 路径（确认已登录且已设置 project）。
 3. **链式写入**：首次调用读取 `index.html` 写入 `index-new.html`，后续阶段读取/写入 `index-new.html`
 4. **每个阶段使用对应脚本**：
-   - GCP：`build_vertex_matrix.py` + `apply_update.js replace-from-provider`
+   - GCP：`build_vertex_matrix.py` + `apply_update.js replace-from-provider`（标准、产出可审阅的 `index-new.html`）；**或** 低 token 单命令 `node update-gcp.js vertex.json`（就地改 `index.html`，一并完成打标签+生成 diff，仅限已 sanity-check 过的 `vertex.json`，且 GCP 单独刷新时——多厂商链式刷新仍用 `apply_update.js`）
    - AWS：fetch_doc.sh + extract_tables.js + `apply_update.js replace-models` / `patch`
    - Azure：`build_azure_models.js` + `apply_update.js replace-models`
 5. **最终比对**：`apply_update.js diff index.html index-new.html --out diffs/refresh-diff-YYYY-MM-DD.txt`
@@ -45,13 +45,26 @@
 .claude/skills/refresh-model-data/scripts/extract_tables.js
 .claude/skills/refresh-model-data/scripts/fetch_doc.sh
 build_vertex_matrix.py
+update-gcp.js            # 仓库根目录，GCP 低 token 合并/打标/diff 一体脚本
 ```
+
+## Token 优化（控制模型上下文消耗）
+
+本 skill 的 token 消耗 ∝ 读进上下文的原始数据量，与 HTTP 探测次数无关（探测是 python 发的网络请求，不耗 token）。大文件是元凶：`vertex_all_models.json` ~5MB（约 127 万 token）、`index.html` ~250KB、`vertex.json` ~60KB。
+
+- **绝不把整个 `vertex_all_models.json` 读进上下文**：只用 `node -e` 提取聚合信息（条目数、新增模型名），打印摘要而非数据
+- **能用脚本一次完成就不用多个 `node -e` 内联步骤**：每个内联步骤的中间结果都会被下一步重读，且每次工具往返都重传整个对话
+- **后台长任务不要反复 `sleep`+`tail` 轮询**：harness 会在完成时通知，手动轮询每次都烧一整轮对话
+- **非平凡 JS 写进 `.js` 文件再 `node file.js`**，别用 `node -e` 内联（Windows 引号转义易错，失败要整个重发）
+- **GCP 优先用 `node update-gcp.js`**：把"打 lifecycle 标签 → 替换 gcp 块 → 生成 diff"合并成一条命令，stderr 只打 4 行摘要；产出与标准流程逐字节一致（已验证）
 
 ## 安全校验
 
 - 每次写入后 `apply_update.js validate <html>` 必须返回 `OK`
 - `apply_update.js replace-from-provider` 只会替换 `models`/`regions`/`groups`/`generated`，不会覆盖 `subtitle`/`caps`/`note`/`capDefGroups`
 - 修改 `I18N` 或 `PROVIDER_ZH` 后，必须运行 `apply_update.js validate index.html` 确认内联 JS 语法正确
+- GCP lifecycle 标签规则：精确 `retirement_date` + 非空 `replacement` → `Deprecated`，否则 → `Legacy`；「Retired models」段不打标。**例外**：`textembedding-gecko`（目录中仍为 `n=textembedding-gecko v=latest`）虽列于 Retired 段，仍需打 `Deprecated / 2025-05-24 / gemini-embedding-001`（用户 2026-08-23 确认；`update-gcp.js` 已内置此例外）
+- **提供了 `sa.json` 的 run，最终报告必须交代 GCP**：要么展示 GCP 的增删/变化，要么显式写"GCP 应请求刷新（已提供服务账号）但失败：<原因>"。报告只列 AWS/Azure、对 GCP 只字未提（而本次提供了 key）= 失败 run，不是范围限定。提供了且可用的服务账号绝不是跳过 GCP 的"合理 blocker"——blocker 理由只适用于凭据缺失/被拒的情形
 
 ## Windows 注意事项
 
