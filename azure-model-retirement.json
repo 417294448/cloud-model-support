@@ -492,7 +492,7 @@
           "model": "sora-2",
           "version": "2025-12-08",
           "lifecycle": "Preview",
-          "retirement_date": "2026-09-15",
+          "retirement_date": "2026-10-15",
           "replacement": null
         },
         {
@@ -584,6 +584,13 @@
       "category": "Cohere",
       "provider": "Cohere",
       "models": [
+        {
+          "model": "Cohere-parse-v5",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
         {
           "model": "Cohere-rerank-v4.0-fast",
           "version": "1",
@@ -736,9 +743,30 @@
           "replacement": null
         },
         {
+          "model": "MAI-Image-2.5-Pro",
+          "version": "2026-06-19",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-01",
+          "replacement": null
+        },
+        {
+          "model": "MAI-Image-2.5-Flash",
+          "version": "2026-06-02",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-01",
+          "replacement": null
+        },
+        {
+          "model": "MAI-Image-2.5",
+          "version": "2026-06-02",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-10-01",
+          "replacement": null
+        },
+        {
           "model": "MAI-Image-2e",
           "version": "2026-04-09",
-          "lifecycle": "Preview",
+          "lifecycle": "Retired",
           "retirement_date": "2026-08-15",
           "replacement": "MAI-Image-2.5-Flash"
         },
@@ -906,59 +934,101 @@
       "provider": "Anthropic",
       "models": [
         {
-          "model": "claude-haiku-4-5",
-          "version": "—",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-10-19",
+          "model": "claude-sonnet-5",
+          "version": "2",
+          "lifecycle": "GA",
+          "retirement_date": "2027-06-30",
           "replacement": null
         },
         {
-          "model": "claude-mythos-preview (gated research preview)",
-          "version": "—",
-          "lifecycle": "Preview",
-          "retirement_date": "2027-04-02",
-          "replacement": null
-        },
-        {
-          "model": "claude-opus-4-1",
-          "version": "—",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-08-05",
-          "replacement": "claude-opus-5"
-        },
-        {
-          "model": "claude-opus-4-5",
-          "version": "—",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-10-19",
-          "replacement": null
-        },
-        {
-          "model": "claude-opus-4-6",
-          "version": "—",
-          "lifecycle": "Preview",
-          "retirement_date": "2027-02-02",
-          "replacement": null
-        },
-        {
-          "model": "claude-opus-4-7",
-          "version": "—",
-          "lifecycle": "Preview",
-          "retirement_date": "2027-04-06",
-          "replacement": null
-        },
-        {
-          "model": "claude-sonnet-4-5",
-          "version": "—",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-10-19",
+          "model": "claude-sonnet-5",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-06-30",
           "replacement": null
         },
         {
           "model": "claude-sonnet-4-6",
-          "version": "—",
-          "lifecycle": "Preview",
+          "version": "1",
+          "lifecycle": "GA",
           "retirement_date": "2027-02-10",
+          "replacement": null
+        },
+        {
+          "model": "claude-sonnet-4-5",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2026-10-19",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-5",
+          "version": "2",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-08",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-5",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-07-08",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-4-8",
+          "version": "2",
+          "lifecycle": "GA",
+          "retirement_date": "2027-09-01",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-4-8",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-09-01",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-4-7",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-04-06",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-4-6",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-02-02",
+          "replacement": null
+        },
+        {
+          "model": "claude-opus-4-5",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2026-10-19",
+          "replacement": null
+        },
+        {
+          "model": "claude-haiku-4-5",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2026-10-19",
+          "replacement": null
+        },
+        {
+          "model": "claude-haiku-4-5",
+          "version": "2",
+          "lifecycle": "GA",
+          "retirement_date": "2026-10-19",
+          "replacement": null
+        },
+        {
+          "model": "claude-fable-5",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-12-05",
           "replacement": null
         }
       ]

@@ -1,0 +1,75 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-08-23 -> 2026-08-30
+  models: 133 -> 133
+  changed (6):
+    ~ [Google] Gemma 4 31B
+        api: null -> {"rt":false,"mt":true}
+    ~ [Google] Gemma 4 26B-A4B
+        api: null -> {"rt":false,"mt":true}
+    ~ [Google] Gemma 4 E2B
+        api: null -> {"rt":false,"mt":true}
+    ~ [OpenAI] GPT-5.6 Terra
+        s: +2 region(s) gained (us-gov-west-1 (GovCloud West), us-gov-east-1 (GovCloud East))
+    ~ [OpenAI] GPT-5.6 Luna
+        s: +2 region(s) gained (us-gov-west-1 (GovCloud West), us-gov-east-1 (GovCloud East))
+    ~ [xAI] Grok 4.3
+        s: +1 region(s) gained (us-gov-west-1 (GovCloud West))
+
+=== azure ===
+  generated: 2026-08-23 -> 2026-08-30
+  models: 144 -> 144
+  changed (16):
+    ~ [OpenAI] sora-2 (2025-12-08)
+        retirementDate: "2026-09-15" -> "2026-10-15"
+    ~ [Microsoft] MAI-Image-2.5 (2026-06-02)
+        lifecycle: null -> "Preview"
+        retirementDate: null -> "2026-10-01"
+        replacement: null -> null
+    ~ [Microsoft] MAI-Image-2.5-Flash (2026-06-02)
+        lifecycle: null -> "Preview"
+        retirementDate: null -> "2026-10-01"
+        replacement: null -> null
+    ~ [Microsoft] MAI-Image-2.5-Pro (2026-06-19)
+        lifecycle: null -> "Preview"
+        retirementDate: null -> "2026-10-01"
+        replacement: null -> null
+    ~ [Microsoft] MAI-Image-2e (2026-04-09)
+        lifecycle: "Preview" -> "Retired"
+    ~ [Anthropic] Claude Fable 5
+        lifecycle: null -> "Preview"
+        retirementDate: null -> "2027-12-05"
+        replacement: null -> null
+    ~ [Anthropic] Claude Mythos Preview
+        lifecycle: "Preview" -> null
+        retirementDate: "2027-04-02" -> null
+        replacement: null -> null
+    ~ [Anthropic] Claude Opus 5
+        lifecycle: null -> "GA"
+        retirementDate: null -> "2027-07-08"
+        replacement: null -> null
+    ~ [Anthropic] Claude Opus 4.8
+        lifecycle: null -> "GA"
+        retirementDate: null -> "2027-09-01"
+        replacement: null -> null
+    ~ [Anthropic] Claude Opus 4.7
+        lifecycle: "Preview" -> "GA"
+    ~ [Anthropic] Claude Opus 4.6
+        lifecycle: "Preview" -> "GA"
+    ~ [Anthropic] Claude Opus 4.5
+        lifecycle: "Preview" -> "GA"
+    ~ [Anthropic] Claude Sonnet 5
+        lifecycle: null -> "GA"
+        retirementDate: null -> "2027-06-30"
+        replacement: null -> null
+    ~ [Anthropic] Claude Sonnet 4.6
+        lifecycle: "Preview" -> "GA"
+    ~ [Anthropic] Claude Sonnet 4.5
+        lifecycle: "Preview" -> "GA"
+    ~ [Anthropic] Claude Haiku 4.5
+        lifecycle: "Preview" -> "GA"
+
+=== gcp ===
+  models: 283 -> 283
+  changed (0):

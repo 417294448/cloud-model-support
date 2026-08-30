@@ -276,6 +276,24 @@
       "provider": "Google",
       "models": [
         {
+          "model_name": "Gemma 4 31B",
+          "bedrock_runtime": false,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Gemma 4 26B-A4B",
+          "bedrock_runtime": false,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Gemma 4 E2B",
+          "bedrock_runtime": false,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
           "model_name": "Gemma 3 12B IT",
           "bedrock_runtime": true,
           "bedrock_mantle": true,
