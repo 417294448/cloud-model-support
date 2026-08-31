@@ -1,0 +1,19 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-08-30 -> 2026-08-31
+  models: 133 -> 133
+  changed (1):
+    ~ [xAI] Grok 4.6
+        s: +2 region(s) gained (us-gov-west-1 (GovCloud West), us-gov-east-1 (GovCloud East))
+
+=== azure ===
+  generated: 2026-08-30 -> 2026-08-31
+  models: 144 -> 144
+  changed (0):
+
+=== gcp ===
+  generated: 2026-08-23 -> 2026-08-31
+  models: 283 -> 287
+  added (4): [Google] gemini-3.5-transcribe-live-preview (default), [Google] gemini-3.5-transcribe-preview (default), [Google] gemini-omni-1.1-flash-preview (default), [Z.AI] glm-5.2-maas (001)
+  changed (0):
