@@ -73,6 +73,7 @@ function parseLifecycle() {
   const tables = extractTables(html);
   const entries = [];
   let current = null;
+  let currentProvider = null;
   const issues = [];
 
   for (const t of tables) {
@@ -96,10 +97,22 @@ function parseLifecycle() {
         let modelName = row[idx.model_name];
         const normKey = provider + '|' + modelName;
         if (NAME_NORMALIZE[normKey]) modelName = NAME_NORMALIZE[normKey];
+        currentProvider = provider;
         current = {
           provider,
           model_name: modelName,
           model_id: row[idx.model_id],
+          region_groups: []
+        };
+        entries.push(current);
+      } else if (row.length === 4 && currentProvider && /[.:/]/.test(row[1] || '')) {
+        let modelName = row[0] || '';
+        const normKey = currentProvider + '|' + modelName;
+        if (NAME_NORMALIZE[normKey]) modelName = NAME_NORMALIZE[normKey];
+        current = {
+          provider: currentProvider,
+          model_name: modelName,
+          model_id: row[1] || '',
           region_groups: []
         };
         entries.push(current);
