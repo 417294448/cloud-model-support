@@ -753,5 +753,56 @@
     },
     "hub_project_region_deployment": [],
     "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Mistral",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Mistral-large"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [],
+      "include_additional": [
+        "Brazil",
+        "Hong",
+        "Kong",
+        "SAR",
+        "Israel"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Australia East",
+      "Brazil South",
+      "Canada Central",
+      "Canada East",
+      "Central US",
+      "East US",
+      "East US 2",
+      "France Central",
+      "Germany West Central",
+      "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
+      "Norway East",
+      "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
+      "Spain Central",
+      "Sweden Central",
+      "Switzerland North",
+      "Switzerland West",
+      "UAE North",
+      "UK South",
+      "UK West",
+      "West Central US",
+      "West Europe",
+      "West US",
+      "West US 2",
+      "West US 3"
+    ]
   }
 ]

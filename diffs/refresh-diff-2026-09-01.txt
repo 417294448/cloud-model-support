@@ -1,0 +1,19 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-08-31 -> 2026-09-01
+  models: 133 -> 133
+  changed (0):
+
+=== azure ===
+  generated: 2026-08-31 -> 2026-09-01
+  models: 144 -> 146
+  added (2): [xAI] grok-4.6 (1), [Mistral] Mistral-large
+  changed (0):
+
+=== gcp ===
+  generated: 2026-08-31 -> 2026-09-01
+  models: 287 -> 287
+  changed (1):
+    ~ [DeepSeek] deepseek-r1 (deepseek-r1-q4_k_m-gguf)
+        s: +1 region(s) gained (asia-south2)

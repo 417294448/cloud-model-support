@@ -66,6 +66,14 @@
       "category": "Gemini image models",
       "models": [
         {
+          "model": "gemini-3.1-flash-lite-image",
+          "release_date": "2026-06-23",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
           "model": "gemini-3-pro-image",
           "release_date": "2026-05-28",
           "release_date_note": null,
@@ -195,14 +203,6 @@
         {
           "model": "gemini-3.6-flash",
           "release_date": "2026-07-21",
-          "release_date_note": null,
-          "retirement_date": null,
-          "retirement_date_note": "No retirement date announced",
-          "replacement": null
-        },
-        {
-          "model": "gemini-3.1-flash-lite-image",
-          "release_date": "2026-06-30",
           "release_date_note": null,
           "retirement_date": null,
           "retirement_date_note": "No retirement date announced",
