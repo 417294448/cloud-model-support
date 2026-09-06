@@ -1011,6 +1011,13 @@
           "replacement": null
         },
         {
+          "model": "claude-opus-4-1",
+          "version": "—",
+          "lifecycle": "Retired",
+          "retirement_date": "2026-08-05",
+          "replacement": "claude-opus-5"
+        },
+        {
           "model": "claude-haiku-4-5",
           "version": "1",
           "lifecycle": "GA",
@@ -1025,10 +1032,31 @@
           "replacement": null
         },
         {
+          "model": "claude-fable-5-1",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-12-05",
+          "replacement": null
+        },
+        {
           "model": "claude-fable-5",
           "version": "1",
           "lifecycle": "Preview",
           "retirement_date": "2027-12-05",
+          "replacement": null
+        },
+        {
+          "model": "claude-mythos-5-1",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "claude-mythos-preview (gated research preview)",
+          "version": "—",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-04-02",
           "replacement": null
         }
       ]

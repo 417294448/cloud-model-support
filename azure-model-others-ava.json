@@ -804,5 +804,41 @@
       "West US 2",
       "West US 3"
     ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Fable 5.1"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Mythos 5.1"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   }
 ]

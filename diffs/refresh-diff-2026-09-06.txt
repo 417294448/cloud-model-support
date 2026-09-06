@@ -1,0 +1,39 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-09-01 -> 2026-09-06
+  models: 133 -> 135
+  added (2): [Anthropic] Claude Fable 5.1, [Anthropic] Claude Mythos 5.1
+  changed (1):
+    ~ [Anthropic] Claude Opus 5
+        api: null -> {"rt":true,"mt":true}
+
+=== azure ===
+  generated: 2026-09-01 -> 2026-09-06
+  models: 146 -> 150
+  added (5): [OpenAI] gpt-6-astra (2026-09-03), [Microsoft] MAI-Image-2.6 (2026-07-31), [Microsoft] MAI-Image-2.6-Flash (2026-07-31), [Anthropic] Claude Fable 5.1, [Anthropic] Claude Mythos 5.1
+  removed (1): [Microsoft] MAI-Image-2e (2026-04-09)
+  changed (7):
+    ~ [OpenAI] gpt-5.2 (2025-12-11)
+        s: 5 region(s) changed support: australiaeast: [Std·G,Std·D,Prov·G,Prov·R] -> [Std·G,Std·D,Prov·G,Prov·D,Prov·R]; japaneast: [Std·G,Std·D,Prov·G,Prov·R] -> [Std·G,Std·D,Prov·G,Prov·D,Prov·R]; koreacentral: [Std·G,Std·D,Prov·G,Prov·R] -> [Std·G,Std·D,Prov·G,Prov·D,Prov·R]; southeastasia: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; southindia: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]
+    ~ [OpenAI] gpt-5.4 (2026-03-05)
+        s: 22 region(s) changed support: brazilsouth: [Std·G,Prov·G] -> [Std·G,Prov·G,Bat·G]; canadaeast: [Std·G,Prov·G] -> [Std·G,Prov·G,Bat·G]; centralus: [Std·G,Std·D,Prov·G,Prov·D,Prov·R] -> [Std·G,Std·D,Prov·G,Prov·D,Prov·R,Bat·G,Bat·D]; eastus: [Std·G,Std·D,Prov·G,Prov·D] -> [Std·G,Std·D,Prov·G,Prov·D,Bat·G,Bat·D]; eastus2: [Std·G,Std·D,Prov·G,Prov·D] -> [Std·G,Std·D,Prov·G,Prov·D,Bat·G,Bat·D]; ...
+    ~ [OpenAI] gpt-5.4-mini (2026-03-17)
+        s: 22 region(s) changed support: brazilsouth: [Std·G,Prov·G] -> [Std·G,Prov·G,Bat·G]; canadaeast: [Std·G,Prov·G] -> [Std·G,Prov·G,Bat·G]; centralus: [Std·G,Std·D,Prov·G,Prov·D] -> [Std·G,Std·D,Prov·G,Prov·D,Bat·G,Bat·D]; eastus: [Std·G,Std·D,Prov·G,Prov·D] -> [Std·G,Std·D,Prov·G,Prov·D,Bat·G,Bat·D]; eastus2: [Std·G,Std·D,Prov·G,Prov·D] -> [Std·G,Std·D,Prov·G,Prov·D,Bat·G,Bat·D]; ...
+    ~ [OpenAI] gpt-5.6-luna (2026-07-09)
+        s: 28 region(s) changed support: brazilsouth: [Std·G] -> [Std·G,Prov·G]; canadacentral: [Std·G] -> [Std·G,Prov·G]; canadaeast: [Std·G] -> [Std·G,Prov·G]; centralus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G,Prov·D]; eastus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G,Prov·D]; ...
+    ~ [OpenAI] gpt-5.6-sol (2026-07-09)
+        s: 8 region(s) changed support: centralus: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; eastus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·D]; eastus2: [Std·G,Std·D] -> [Std·G,Std·D,Prov·D]; northcentralus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G,Prov·D]; southcentralus: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; ...
+    ~ [OpenAI] gpt-5.6-terra (2026-07-09)
+        s: 16 region(s) changed support: canadaeast: [Std·G] -> [Std·G,Prov·G]; centralus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G,Prov·D]; eastus: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; eastus2: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; northcentralus: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; ...
+    ~ [Anthropic] Claude Mythos Preview
+        lifecycle: null -> "Preview"
+        retirementDate: null -> "2027-04-02"
+        replacement: null -> null
+
+=== gcp ===
+  generated: 2026-09-01 -> 2026-09-06
+  models: 287 -> 290
+  added (4): [Anthropic] claude-fable-5-1 (default), [Google] gemini-3.5-live-translate-preview (default), [Google] gemini-3.8-flash (default), [Moonshot AI] kimi-k2 (kimi-k2-instruct)
+  removed (1): [Moonshot AI] kimi-k2 (kimi-k2-instruct-0905)
+  changed (0):

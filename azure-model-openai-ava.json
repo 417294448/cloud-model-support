@@ -569,6 +569,22 @@
                 }
               },
               {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "gpt-audio",
                 "version": "2025-08-28",
                 "regions": {
@@ -1692,6 +1708,23 @@
                 }
               },
               {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "gpt-audio",
                 "version": "2025-08-28",
                 "regions": {
@@ -2652,6 +2685,17 @@
                 }
               },
               {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "gpt-chat-latest",
                 "version": "2026-08-06",
                 "regions": {
@@ -3095,6 +3139,14 @@
               {
                 "model": "gpt-5.6-terra",
                 "version": "2026-07-09",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
@@ -3550,26 +3602,7 @@
                   "westcentralus": true,
                   "westus": true,
                   "westus2": true,
-                  "westus3": true,
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true,
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true,
-                  "southafricanorth": true,
-                  "uaenorth": true
+                  "westus3": true
                 }
               },
               {
@@ -3807,8 +3840,26 @@
                 }
               },
               {
-                "model": "MAI-Image-2e",
-                "version": "2026-04-09",
+                "model": "MAI-Image-2.6",
+                "version": "2026-07-31",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": true,
+                  "eastus2": false,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": false,
+                  "westus3": false
+                }
+              },
+              {
+                "model": "MAI-Image-2.6-Flash",
+                "version": "2026-07-31",
                 "regions": {
                   "brazilsouth": false,
                   "canadacentral": false,
@@ -4388,18 +4439,6 @@
                 "model": "grok-4.6",
                 "version": "1",
                 "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true,
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
@@ -4411,14 +4450,7 @@
                   "switzerlandwest": true,
                   "uksouth": true,
                   "ukwest": true,
-                  "westeurope": true,
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true,
-                  "southafricanorth": true,
-                  "uaenorth": true
+                  "westeurope": true
                 }
               },
               {
@@ -4656,8 +4688,26 @@
                 }
               },
               {
-                "model": "MAI-Image-2e",
-                "version": "2026-04-09",
+                "model": "MAI-Image-2.6",
+                "version": "2026-07-31",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "italynorth": false,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": false,
+                  "ukwest": false,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "MAI-Image-2.6-Flash",
+                "version": "2026-07-31",
                 "regions": {
                   "francecentral": false,
                   "germanywestcentral": false,
@@ -5111,37 +5161,11 @@
                 "model": "grok-4.6",
                 "version": "1",
                 "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true,
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true,
                   "australiaeast": true,
                   "japaneast": true,
                   "japanwest": true,
                   "koreacentral": true,
-                  "southindia": true,
-                  "southafricanorth": true,
-                  "uaenorth": true
+                  "southindia": true
                 }
               },
               {
@@ -5288,8 +5312,19 @@
                 }
               },
               {
-                "model": "MAI-Image-2e",
-                "version": "2026-04-09",
+                "model": "MAI-Image-2.6",
+                "version": "2026-07-31",
+                "regions": {
+                  "australiaeast": false,
+                  "japaneast": false,
+                  "japanwest": false,
+                  "koreacentral": false,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "MAI-Image-2.6-Flash",
+                "version": "2026-07-31",
                 "regions": {
                   "australiaeast": false,
                   "japaneast": false,
@@ -5591,35 +5626,6 @@
                 "model": "grok-4.6",
                 "version": "1",
                 "regions": {
-                  "brazilsouth": true,
-                  "canadacentral": true,
-                  "canadaeast": true,
-                  "centralus": true,
-                  "eastus": true,
-                  "eastus2": true,
-                  "northcentralus": true,
-                  "southcentralus": true,
-                  "westcentralus": true,
-                  "westus": true,
-                  "westus2": true,
-                  "westus3": true,
-                  "francecentral": true,
-                  "germanywestcentral": true,
-                  "italynorth": true,
-                  "norwayeast": true,
-                  "polandcentral": true,
-                  "spaincentral": true,
-                  "swedencentral": true,
-                  "switzerlandnorth": true,
-                  "switzerlandwest": true,
-                  "uksouth": true,
-                  "ukwest": true,
-                  "westeurope": true,
-                  "australiaeast": true,
-                  "japaneast": true,
-                  "japanwest": true,
-                  "koreacentral": true,
-                  "southindia": true,
                   "southafricanorth": true,
                   "uaenorth": true
                 }
@@ -5729,8 +5735,16 @@
                 }
               },
               {
-                "model": "MAI-Image-2e",
-                "version": "2026-04-09",
+                "model": "MAI-Image-2.6",
+                "version": "2026-07-31",
+                "regions": {
+                  "southafricanorth": false,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "MAI-Image-2.6-Flash",
+                "version": "2026-07-31",
                 "regions": {
                   "southafricanorth": false,
                   "uaenorth": true
@@ -6102,6 +6116,19 @@
               {
                 "model": "gpt-5.6-terra",
                 "version": "2026-07-09",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
                 "regions": {
                   "centralus": true,
                   "eastus": true,
@@ -7928,6 +7955,22 @@
                 }
               },
               {
+                "model": "gpt-5.6-luna",
+                "version": "2026-07-09",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "gpt-5.6-sol",
                 "version": "2026-07-09",
                 "regions": {
@@ -7937,7 +7980,7 @@
                   "centralus": true,
                   "eastus": false,
                   "eastus2": false,
-                  "northcentralus": false,
+                  "northcentralus": true,
                   "southcentralus": true,
                   "westus": true,
                   "westus3": true
@@ -7949,14 +7992,30 @@
                 "regions": {
                   "brazilsouth": true,
                   "canadacentral": true,
-                  "canadaeast": false,
-                  "centralus": false,
+                  "canadaeast": true,
+                  "centralus": true,
                   "eastus": true,
                   "eastus2": true,
                   "northcentralus": true,
-                  "southcentralus": false,
-                  "westus": false,
-                  "westus3": false
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
                 }
               },
               {
@@ -8315,6 +8374,23 @@
                 }
               },
               {
+                "model": "gpt-5.6-luna",
+                "version": "2026-07-09",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "gpt-5.6-sol",
                 "version": "2026-07-09",
                 "regions": {
@@ -8338,14 +8414,31 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
-                  "norwayeast": false,
+                  "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
-                  "swedencentral": false,
-                  "switzerlandnorth": false,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
                   "switzerlandwest": true,
-                  "uksouth": false,
-                  "westeurope": false
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
                 }
               },
               {
@@ -8606,6 +8699,17 @@
                 }
               },
               {
+                "model": "gpt-5.6-luna",
+                "version": "2026-07-09",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "gpt-5.6-sol",
                 "version": "2026-07-09",
                 "regions": {
@@ -8620,11 +8724,22 @@
                 "model": "gpt-5.6-terra",
                 "version": "2026-07-09",
                 "regions": {
-                  "australiaeast": false,
+                  "australiaeast": true,
                   "japaneast": true,
                   "koreacentral": true,
                   "southeastasia": true,
-                  "southindia": false
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
                 }
               },
               {
@@ -8810,6 +8925,14 @@
                 }
               },
               {
+                "model": "gpt-5.6-luna",
+                "version": "2026-07-09",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
                 "model": "gpt-5.6-sol",
                 "version": "2026-07-09",
                 "regions": {
@@ -8822,7 +8945,15 @@
                 "version": "2026-07-09",
                 "regions": {
                   "southafricanorth": true,
-                  "uaenorth": false
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
                 }
               },
               {
@@ -9188,6 +9319,58 @@
                 }
               },
               {
+                "model": "gpt-5.6-luna",
+                "version": "2026-07-09",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-5.6-terra",
+                "version": "2026-07-09",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6-astra",
+                "version": "2026-09-03",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "o1",
                 "version": "2024-12-17",
                 "regions": {
@@ -9556,6 +9739,19 @@
                   "westeurope": true
                 }
               }
+            ],
+            "Asia Pacific": [
+              {
+                "model": "gpt-5.2",
+                "version": "2025-12-11",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              }
             ]
           }
         },
@@ -9816,7 +10012,7 @@
                   "northcentralus": false,
                   "southcentralus": false,
                   "westus": false,
-                  "westus3": false
+                  "westus3": true
                 }
               },
               {
@@ -9848,6 +10044,54 @@
                   "northcentralus": false,
                   "southcentralus": false,
                   "westus": false,
+                  "westus3": false
+                }
+              },
+              {
+                "model": "gpt-5.6-luna",
+                "version": "2026-07-09",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": false,
+                  "eastus2": true,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westus": false,
+                  "westus3": false
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": false,
+                  "eastus2": false,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westus": true,
+                  "westus3": false
+                }
+              },
+              {
+                "model": "gpt-5.6-terra",
+                "version": "2026-07-09",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": false,
+                  "eastus2": false,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westus": true,
                   "westus3": false
                 }
               },
@@ -10114,7 +10358,7 @@
                 "version": "2026-03-05",
                 "regions": {
                   "francecentral": false,
-                  "germanywestcentral": false,
+                  "germanywestcentral": true,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -10135,6 +10379,38 @@
                   "polandcentral": false,
                   "spaincentral": false,
                   "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": true,
+                  "westeurope": false
+                }
+              },
+              {
+                "model": "gpt-5.6-luna",
+                "version": "2026-07-09",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": false,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": true,
+                  "westeurope": false
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": false,
                   "switzerlandnorth": false,
                   "switzerlandwest": false,
                   "uksouth": true,
@@ -10607,6 +10883,36 @@
                 }
               },
               {
+                "model": "gpt-5.4",
+                "version": "2026-03-05",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "o3",
                 "version": "2025-04-16",
                 "regions": {
@@ -10780,6 +11086,34 @@
                 }
               },
               {
+                "model": "gpt-5.4",
+                "version": "2026-03-05",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "o3",
                 "version": "2025-04-16",
                 "regions": {
@@ -10914,6 +11248,26 @@
                 }
               },
               {
+                "model": "gpt-5.4",
+                "version": "2026-03-05",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "o3",
                 "version": "2025-04-16",
                 "regions": {
@@ -11004,6 +11358,20 @@
               {
                 "model": "gpt-5.1",
                 "version": "2025-11-13",
+                "regions": {
+                  "southafricanorth": true
+                }
+              },
+              {
+                "model": "gpt-5.4",
+                "version": "2026-03-05",
+                "regions": {
+                  "southafricanorth": true
+                }
+              },
+              {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
                 "regions": {
                   "southafricanorth": true
                 }
@@ -11135,6 +11503,32 @@
               {
                 "model": "gpt-5.1",
                 "version": "2025-11-13",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-5.4",
+                "version": "2026-03-05",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-5.4-mini",
+                "version": "2026-03-17",
                 "regions": {
                   "centralus": true,
                   "eastus": true,

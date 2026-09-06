@@ -193,6 +193,14 @@
       "category": "Models available for shorter availability periods",
       "models": [
         {
+          "model": "gemini-3.8-flash",
+          "release_date": "2026-09-02",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
           "model": "gemini-3.7-flash",
           "release_date": "2026-08-13",
           "release_date_note": null,
