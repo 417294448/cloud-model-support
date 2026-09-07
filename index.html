@@ -160,6 +160,7 @@
   .rowline:first-of-type{border-top:0}
   .rcode{font-family:var(--font-mono);font-size:12px;color:var(--ink);min-width:118px;font-weight:500}
   .rname{color:var(--muted);font-size:11.5px;flex:1;min-width:80px}
+  .note{display:block;color:var(--faint);font-size:10.5px;font-style:italic;margin-top:2px}
   .mname-line{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
   .badges{display:flex;gap:4px;flex-wrap:wrap}
   .b{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:5px;letter-spacing:.03em;white-space:nowrap;font-family:var(--font-mono)}
@@ -764,6 +765,10 @@ function apiTag(mo){
   if(mo.api.mt)out+=`<span class="offer" title="${t("tipMantle")}"><span class="odot" style="background:${SC.accent2}"></span>Mantle</span>`;
   return out;
 }
+function noteTag(mo){
+  if(!mo.note)return "";
+  return `<span class="note" title="${mo.note}">${mo.note}</span>`;
+}
 function nameCell(mo){
   const nm=mo.card?`<a href="${mo.card}" target="_blank" rel="noopener">${mo.n}</a>`:mo.n;
   return `${nm}${mo.v?` <span class="ver">${mo.v}</span>`:""}${offerTag(mo)}${lifecycleTag(mo)}${apiTag(mo)}`;
@@ -838,7 +843,7 @@ function render(){
     stage.innerHTML=html;
   }
   else if(state.view==="model"){
-    const models=filterModels().filter(mo=>Object.values(mo.s).some(mask=>mask&am));
+    const models=filterModels().filter(mo=>Object.keys(mo.s).length===0||Object.values(mo.s).some(mask=>mask&am));
     cnt.innerHTML=t("cntModel",{n:models.length,unit:P.unit,s:models.length!==1?t("unitPlural"):""});
     if(!models.length){stage.innerHTML=emptyMsg(t("emptyNoMatch"));return;}
     let html='<div class="grid">';
@@ -846,13 +851,13 @@ function render(){
       const regs=P.regions.filter(r=>(mo.s[r.code]||0)&am);
       html+=`<div class="card"><div class="cat">${mo.g}</div><h3>${nameCell(mo)}</h3>`;
       regs.forEach(r=>{html+=`<div class="rowline"><span class="rcode">${r.code}</span><span class="rname">${r.name}</span><span class="badges">${badges(mo.s[r.code]&am)}</span></div>`;});
-      if(!regs.length)html+=`<div class="rowline"><span class="rname">${t("notAvailAxis",{axis:axisWord()})}</span></div>`;
+      if(!regs.length)html+=`<div class="rowline"><span class="rname">${noteTag(mo)||t("notAvailAxis",{axis:axisWord()})}</span></div>`;
       html+='</div>';
     });
     stage.innerHTML=html+'</div>';
   }
   else{ // matrix
-    const models=filterModels().filter(mo=>Object.values(mo.s).some(mask=>mask&am));
+    const models=filterModels().filter(mo=>Object.keys(mo.s).length===0||Object.values(mo.s).some(mask=>mask&am));
     cnt.innerHTML=t("cntMatrix",{n:models.length,unit:P.unit,r:P.regions.length,axis:axisLabelText().toLowerCase()});
     if(!models.length){stage.innerHTML=emptyMsg(t("emptyNoMatch"));return;}
     const groups=[];P.regions.forEach(r=>{const last=groups[groups.length-1];if(last&&last.g===r.group)last.n++;else groups.push({g:r.group,n:1});});
@@ -860,7 +865,7 @@ function render(){
     let head2='<tr><th class="corner"></th>';P.regions.forEach(r=>head2+=`<th title="${r.code} — ${r.name}"><span class="rc">${r.code}</span><span class="rn">${r.name}</span></th>`);head2+='</tr>';
     let body='';
     models.forEach(mo=>{
-      body+=`<tr><td class="mname"><span class="mp">${mo.g}</span><br><span class="mn">${mo.n}</span>${mo.v?` <span class="ver">${mo.v}</span>`:""}${offerTag(mo)}${lifecycleTag(mo)}${apiTag(mo)}</td>`;
+      body+=`<tr><td class="mname"><span class="mp">${mo.g}</span><br><span class="mn">${mo.n}</span>${mo.v?` <span class="ver">${mo.v}</span>`:""}${offerTag(mo)}${lifecycleTag(mo)}${apiTag(mo)}${noteTag(mo)}</td>`;
       P.regions.forEach(r=>{
         const mask=(mo.s[r.code]||0)&am;
         let pips='',tips=[];
