@@ -370,6 +370,20 @@
           "replacement": null
         },
         {
+          "model": "gpt-image-2.5-flare",
+          "version": "2026-09-09",
+          "lifecycle": "GA",
+          "retirement_date": "2027-09-09",
+          "replacement": null
+        },
+        {
+          "model": "gpt-image-2.5-sunburst",
+          "version": "2026-09-09",
+          "lifecycle": "GA",
+          "retirement_date": "2027-09-09",
+          "replacement": null
+        },
+        {
           "model": "gpt-realtime",
           "version": "2025-08-28",
           "lifecycle": "GA",
@@ -436,50 +450,50 @@
           "model": "o1",
           "version": "2024-12-17",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-21",
+          "retirement_date": "2026-11-19",
           "replacement": "gpt-5.6-sol"
         },
         {
           "model": "o1-pro",
           "version": "2025-03-19",
-          "lifecycle": "GA",
-          "retirement_date": "2026-10-21",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-11-19",
           "replacement": "gpt-5.6-sol"
         },
         {
           "model": "o3",
           "version": "2025-04-16",
-          "lifecycle": "GA",
-          "retirement_date": "2026-10-21",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-11-19",
           "replacement": "gpt-5.6-sol"
         },
         {
           "model": "o3-deep-research",
           "version": "2025-06-26",
-          "lifecycle": "GA",
-          "retirement_date": "2026-12-26",
-          "replacement": null
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-11-19",
+          "replacement": "gpt-5.6-sol"
         },
         {
           "model": "o3-mini",
           "version": "2025-01-31",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-01",
-          "replacement": "o4-mini"
+          "retirement_date": "2026-11-19",
+          "replacement": "gpt-5.6-terra"
         },
         {
           "model": "o3-pro",
           "version": "2025-06-10",
-          "lifecycle": "GA",
-          "retirement_date": "2026-12-17",
-          "replacement": null
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-11-19",
+          "replacement": "gpt-5.6-sol"
         },
         {
           "model": "o4-mini",
           "version": "2025-04-16",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-16",
-          "replacement": null
+          "retirement_date": "2026-11-19",
+          "replacement": "gpt-5.6-terra"
         },
         {
           "model": "sora-2",

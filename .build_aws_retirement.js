@@ -1,6 +1,9 @@
 const fs = require('fs');
-const LIFECYCLE_HTML = '/tmp/aws-lifecycle.html';
-const LIFECYCLE_SOURCE = 'https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html';
+// As of 2026-09 the model-lifecycle page was split: models launched on/after
+// 2026-09-07 get their EOL dates on per-model cards, and the actual
+// Provider/Model/Regions/Legacy date/EOL date table now lives here.
+const LIFECYCLE_HTML = '/tmp/aws-lifecycle-legacy.html';
+const LIFECYCLE_SOURCE = 'https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html';
 
 const NAME_NORMALIZE = {
   'Anthropic|Claude 3.5 Sonnet v2': 'Claude 3.5 Sonnet V2:0'
@@ -75,6 +78,29 @@ function parseLifecycle() {
   let current = null;
   const issues = [];
 
+  // The page has been observed with a row whose "Model provider" <td> is missing
+  // (6 cells instead of 7, e.g. Cohere's "Command R"), which shifts every cell
+  // left by one. Learn provider -> model-id-prefix from the well-formed rows so
+  // those rows can be recovered instead of being misread as a region-group
+  // continuation of the previous model.
+  const providerByPrefix = new Map();
+  for (const t of tables) {
+    const header = t.rows[0];
+    const idx = {};
+    header.forEach((h, i) => {
+      const u = h.toUpperCase();
+      if (u.includes('MODEL PROVIDER')) idx.provider = i;
+      if (u.includes('MODEL ID')) idx.model_id = i;
+    });
+    for (let i = 1; i < t.rows.length; i++) {
+      const row = t.rows[i];
+      if (row.length >= 7 && idx.provider !== undefined && row[idx.provider] && idx.model_id !== undefined) {
+        const prefix = (row[idx.model_id] || '').split('.')[0];
+        if (prefix) providerByPrefix.set(prefix, row[idx.provider]);
+      }
+    }
+  }
+
   for (const t of tables) {
     const header = t.rows[0];
     const idx = {};
@@ -91,7 +117,12 @@ function parseLifecycle() {
 
     for (let i = 1; i < t.rows.length; i++) {
       const row = t.rows[i];
-      if (row.length >= 7 && idx.provider !== undefined && row[idx.provider]) {
+      const wellFormed = row.length >= 7 && idx.provider !== undefined && row[idx.provider];
+      // provider-less row: [model_name, model_id, regions, legacy, eol, pea]
+      const providerless = !wellFormed && row.length === 6 && /^[a-z0-9-]+\.[a-z0-9.:_-]+$/i.test(row[1] || '');
+      let regionsRaw, legacyRaw, eolRaw, peaRaw;
+
+      if (wellFormed) {
         let provider = row[idx.provider];
         let modelName = row[idx.model_name];
         const normKey = provider + '|' + modelName;
@@ -103,24 +134,29 @@ function parseLifecycle() {
           region_groups: []
         };
         entries.push(current);
-      } else if (current && row.length >= 4) {
-        issues.push(`continuation row for ${current.provider} / ${current.model_name}: ${row[0]}`);
-      } else {
-        issues.push(`skipped row ${i}: ${JSON.stringify(row)}`);
-        continue;
-      }
-
-      let regionsRaw, legacyRaw, eolRaw, peaRaw;
-      if (row.length >= 7) {
         regionsRaw = row[idx.regions] || '';
         legacyRaw = row[idx.legacy_date] || '';
         eolRaw = row[idx.eol_date] || '';
         peaRaw = row[idx.public_extended_access_start_date] || '';
-      } else {
+      } else if (providerless) {
+        const modelId = row[1];
+        const provider = providerByPrefix.get(modelId.split('.')[0]) || (current && current.provider) || 'UNKNOWN';
+        issues.push(`provider cell missing; recovered provider "${provider}" for ${modelId}`);
+        current = { provider, model_name: row[0], model_id: modelId, region_groups: [] };
+        entries.push(current);
+        regionsRaw = row[2] || '';
+        legacyRaw = row[3] || '';
+        eolRaw = row[4] || '';
+        peaRaw = row[5] || '';
+      } else if (current && row.length >= 4) {
+        issues.push(`continuation row for ${current.provider} / ${current.model_name}: ${row[0]}`);
         regionsRaw = row[0] || '';
         legacyRaw = row[1] || '';
         eolRaw = row[2] || '';
         peaRaw = row[3] || '';
+      } else {
+        issues.push(`skipped row ${i}: ${JSON.stringify(row)}`);
+        continue;
       }
 
       const regions = regionsRaw.split(/,\s*/).map(r => r.trim()).filter(Boolean);

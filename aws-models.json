@@ -870,22 +870,16 @@
     "v": null,
     "card": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-3-haiku.html",
     "s": {
-      "us-east-1": 3,
-      "us-east-2": 2,
-      "us-west-2": 3,
-      "us-gov-east-1 (GovCloud)": 2,
-      "us-gov-west-1 (GovCloud)": 1,
+      "us-east-1": 2,
+      "us-west-2": 2,
       "ca-central-1": 1,
-      "eu-central-1": 3,
+      "eu-central-1": 2,
       "eu-central-2": 1,
-      "eu-west-1": 3,
-      "eu-west-2": 1,
-      "eu-west-3": 3,
-      "ap-northeast-1": 1,
+      "eu-west-1": 2,
+      "eu-west-3": 2,
       "ap-northeast-2": 1,
       "ap-south-1": 1,
       "ap-southeast-1": 1,
-      "ap-southeast-2": 1,
       "sa-east-1": 1
     }
   },
@@ -1737,6 +1731,31 @@
       "ap-southeast-3": 1,
       "us-gov-west-1 (GovCloud)": 3,
       "us-gov-east-1 (GovCloud)": 2
+    }
+  },
+  {
+    "g": "OpenAI",
+    "n": "GPT-6 Astra",
+    "v": null,
+    "card": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-6-astra.html",
+    "s": {
+      "us-east-1": 6,
+      "us-east-2": 6,
+      "us-west-1": 6,
+      "us-west-2": 7,
+      "ca-central-1": 6,
+      "eu-central-1": 4,
+      "eu-north-1": 4,
+      "eu-west-1": 4,
+      "eu-west-2": 4,
+      "eu-west-3": 4,
+      "ap-northeast-1": 4,
+      "ap-northeast-2": 4,
+      "ap-northeast-3": 4,
+      "ap-south-1": 4,
+      "ap-southeast-1": 4,
+      "ap-southeast-2": 4,
+      "sa-east-1": 4
     }
   },
   {

@@ -1,5 +1,5 @@
 {
-  "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+  "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html",
   "models": [
     {
       "provider": "AI21 Labs",
@@ -197,14 +197,22 @@
           "legacy_date": "2026-03-10",
           "eol_date": "2026-09-10",
           "public_extended_access_start_date": "2026-06-10"
-        },
+        }
+      ]
+    },
+    {
+      "provider": "Cohere",
+      "model_name": "Command R",
+      "model_id": "cohere.command-r-v1:0",
+      "region_groups": [
         {
           "regions": [
-            "Command R"
+            "us-east-1",
+            "us-west-2"
           ],
-          "legacy_date_note": "cohere.command-r-v1:0",
-          "eol_date_note": "us-east-1, us-west-2",
-          "public_extended_access_start_date": "2026-02-19"
+          "legacy_date": "2026-02-19",
+          "eol_date": "2026-08-19",
+          "public_extended_access_start_date": "2026-05-19"
         }
       ]
     },
