@@ -359,7 +359,7 @@
           "model": "gpt-image-1.5",
           "version": "2025-12-16",
           "lifecycle": "GA",
-          "retirement_date": "2027-06-16",
+          "retirement_date": "2026-12-16",
           "replacement": null
         },
         {
@@ -407,14 +407,14 @@
         {
           "model": "gpt-realtime-2.1",
           "version": "2026-07-07",
-          "lifecycle": "Preview",
+          "lifecycle": "GA",
           "retirement_date": "2027-06-25",
           "replacement": null
         },
         {
           "model": "gpt-realtime-2.1-mini",
           "version": "2026-07-07",
-          "lifecycle": "Preview",
+          "lifecycle": "GA",
           "retirement_date": "2027-06-25",
           "replacement": null
         },
@@ -630,8 +630,8 @@
           "model": "Cohere-command-a-plus-05-2026",
           "version": "1",
           "lifecycle": "Preview",
-          "retirement_date": "2026-10-13",
-          "replacement": null
+          "retirement_date": "2026-10-16",
+          "replacement": "coherelabs-command-a-plus-05-2026-fp8 1 , coherelabs-command-a-plus-05-2026-bf16 1 , coherelabs-command-a-plus-05-2026-w4a4 1"
         },
         {
           "model": "embed-v-4-0",
@@ -717,14 +717,14 @@
       "models": [
         {
           "model": "Llama-3.3-70B-Instruct",
-          "version": "—",
+          "version": null,
           "lifecycle": "GA",
           "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
-          "version": "—",
+          "version": null,
           "lifecycle": "GA",
           "retirement_date": null,
           "replacement": null
@@ -1026,7 +1026,7 @@
         },
         {
           "model": "claude-opus-4-1",
-          "version": "—",
+          "version": null,
           "lifecycle": "Retired",
           "retirement_date": "2026-08-05",
           "replacement": "claude-opus-5"
@@ -1068,7 +1068,7 @@
         },
         {
           "model": "claude-mythos-preview (gated research preview)",
-          "version": "—",
+          "version": null,
           "lifecycle": "Preview",
           "retirement_date": "2027-04-02",
           "replacement": null
@@ -1219,42 +1219,42 @@
       "models": [
         {
           "model": "Llama-3.2-11B-Vision-Instruct",
-          "version": "—",
+          "version": null,
           "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         },
         {
           "model": "Llama-3.2-90B-Vision-Instruct",
-          "version": "—",
+          "version": null,
           "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         },
         {
           "model": "Llama-4-Scout-17B-16E-Instruct",
-          "version": "—",
+          "version": null,
           "lifecycle": "GA",
           "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Meta-Llama-3.1-405B-Instruct",
-          "version": "—",
+          "version": null,
           "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         },
         {
           "model": "Meta-Llama-3.1-8B",
-          "version": "—",
+          "version": null,
           "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
         },
         {
           "model": "Meta-Llama-3.1-8B-Instruct",
-          "version": "—",
+          "version": null,
           "lifecycle": "Retired",
           "retirement_date": "2026-06-13",
           "replacement": null
@@ -1267,35 +1267,35 @@
       "models": [
         {
           "model": "Phi-4",
-          "version": "—",
+          "version": null,
           "lifecycle": "GA",
           "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Phi-4-mini-instruct",
-          "version": "—",
+          "version": null,
           "lifecycle": "GA",
           "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Phi-4-mini-reasoning",
-          "version": "—",
+          "version": null,
           "lifecycle": "GA",
           "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Phi-4-multimodal-instruct",
-          "version": "—",
+          "version": null,
           "lifecycle": "GA",
           "retirement_date": null,
           "replacement": null
         },
         {
           "model": "Phi-4-reasoning",
-          "version": "—",
+          "version": null,
           "lifecycle": "GA",
           "retirement_date": null,
           "replacement": null

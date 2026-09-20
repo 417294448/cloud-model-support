@@ -153,12 +153,6 @@
           "card_url": null
         },
         {
-          "model_name": "Claude Mythos Preview",
-          "bedrock_runtime": false,
-          "bedrock_mantle": true,
-          "card_url": null
-        },
-        {
           "model_name": "Claude 3 Haiku",
           "bedrock_runtime": true,
           "bedrock_mantle": false,
@@ -517,6 +511,12 @@
     {
       "provider": "Moonshot AI",
       "models": [
+        {
+          "model_name": "Kimi K3",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
         {
           "model_name": "Kimi K2 Thinking",
           "bedrock_runtime": true,
