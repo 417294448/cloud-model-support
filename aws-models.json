@@ -292,6 +292,49 @@
   },
   {
     "g": "Anthropic",
+    "n": "Claude Opus 5.5",
+    "v": null,
+    "card": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-opus-5-5.html",
+    "s": {
+      "us-east-1": 7,
+      "us-east-2": 6,
+      "us-west-1": 6,
+      "us-west-2": 6,
+      "ca-central-1": 6,
+      "ca-west-1": 6,
+      "eu-central-1": 6,
+      "eu-central-2": 6,
+      "eu-north-1": 6,
+      "eu-south-1": 6,
+      "eu-south-2": 6,
+      "eu-west-1": 6,
+      "eu-west-2": 6,
+      "eu-west-3": 6,
+      "ap-southeast-2": 6,
+      "ap-southeast-4": 7,
+      "ap-east-2": 4,
+      "ap-northeast-1": 6,
+      "ap-northeast-2": 4,
+      "ap-northeast-3": 6,
+      "ap-south-1": 4,
+      "ap-south-2": 4,
+      "ap-southeast-1": 4,
+      "ap-southeast-3": 4,
+      "ap-southeast-5": 4,
+      "ap-southeast-6": 4,
+      "ap-southeast-7": 4,
+      "il-central-1": 4,
+      "me-central-1": 4,
+      "me-south-1": 4,
+      "af-south-1": 4,
+      "sa-east-1": 4,
+      "mx-central-1": 4,
+      "us-gov-west-1 (GovCloud West)": 3,
+      "us-gov-east-1 (GovCloud East)": 2
+    }
+  },
+  {
+    "g": "Anthropic",
     "n": "Claude Fable 5.1",
     "v": null,
     "card": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-fable-5-1.html",
@@ -508,16 +551,6 @@
       "af-south-1": 4,
       "sa-east-1": 4,
       "mx-central-1": 4
-    }
-  },
-  {
-    "g": "Anthropic",
-    "n": "Claude Mythos Preview",
-    "v": null,
-    "card": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-mythos-preview.html",
-    "s": {
-      "us-east-1": 1,
-      "ap-southeast-4": 1
     }
   },
   {
@@ -1631,6 +1664,46 @@
       "ap-southeast-2": 1,
       "ap-southeast-3": 1,
       "sa-east-1": 1
+    }
+  },
+  {
+    "g": "Moonshot AI",
+    "n": "Kimi K3",
+    "v": null,
+    "card": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
+    "s": {
+      "us-east-1": 6,
+      "us-east-2": 6,
+      "us-west-1": 6,
+      "us-west-2": 6,
+      "ca-central-1": 6,
+      "ca-west-1": 4,
+      "eu-central-1": 4,
+      "eu-central-2": 4,
+      "eu-north-1": 4,
+      "eu-south-1": 4,
+      "eu-south-2": 4,
+      "eu-west-1": 4,
+      "eu-west-2": 4,
+      "eu-west-3": 4,
+      "ap-east-2": 4,
+      "ap-northeast-1": 4,
+      "ap-northeast-2": 4,
+      "ap-northeast-3": 4,
+      "ap-south-1": 4,
+      "ap-south-2": 4,
+      "ap-southeast-1": 4,
+      "ap-southeast-2": 4,
+      "ap-southeast-3": 4,
+      "ap-southeast-4": 4,
+      "ap-southeast-5": 4,
+      "ap-southeast-6": 4,
+      "ap-southeast-7": 4,
+      "il-central-1": 4,
+      "me-central-1": 4,
+      "me-south-1": 4,
+      "af-south-1": 4,
+      "sa-east-1": 4
     }
   },
   {
