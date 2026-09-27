@@ -15,30 +15,30 @@
         {
           "model": "gpt-4.1",
           "version": "2025-04-14",
-          "lifecycle": "Legacy",
+          "lifecycle": "Deprecated",
           "retirement_date": "2027-04-14",
           "replacement": null
         },
         {
           "model": "gpt-4.1-mini",
           "version": "2025-04-14",
-          "lifecycle": "Legacy",
+          "lifecycle": "Deprecated",
           "retirement_date": "2027-04-14",
           "replacement": null
         },
         {
           "model": "gpt-4.1-nano",
           "version": "2025-04-14",
-          "lifecycle": "Legacy",
-          "retirement_date": "2027-04-14",
+          "lifecycle": "Deprecated",
+          "retirement_date": "2026-10-14",
           "replacement": null
         },
         {
           "model": "gpt-4o",
           "version": "2024-05-13",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-10-01",
-          "replacement": "gpt-5.1"
+          "retirement_date": "2026-12-09",
+          "replacement": "gpt-5.6-sol"
         },
         {
           "model": "gpt-4o",
@@ -401,8 +401,8 @@
           "model": "gpt-realtime-2",
           "version": "2026-05-06",
           "lifecycle": "Preview",
-          "retirement_date": "2026-08-31",
-          "replacement": null
+          "retirement_date": null,
+          "replacement": "gpt-realtime-2.1"
         },
         {
           "model": "gpt-realtime-2.1",

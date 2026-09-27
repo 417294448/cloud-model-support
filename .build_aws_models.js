@@ -50,7 +50,9 @@ function extractTables(html) {
 }
 
 function parseRegionCode(raw) {
-  const m = raw.match(/^([a-z]{2}-[a-z]+-\d+)/);
+  // e.g. "us-east-1 (N. Virginia)" -> "us-east-1"; multi-segment codes like
+  // "us-gov-west-1 (GovCloud)" must also normalize to the bare code.
+  const m = raw.match(/^([a-z]{2}(?:-[a-z]+)+-\d+)/);
   return m ? m[1] : raw.trim();
 }
 
