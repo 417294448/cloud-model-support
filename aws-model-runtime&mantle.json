@@ -117,6 +117,12 @@
       "provider": "Anthropic",
       "models": [
         {
+          "model_name": "Claude Sonnet 5.5",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
           "model_name": "Claude Opus 5.5",
           "bedrock_runtime": true,
           "bedrock_mantle": true,
@@ -570,6 +576,12 @@
       "provider": "OpenAI",
       "models": [
         {
+          "model_name": "GPT-6.1 Sol",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
           "model_name": "GPT-6 Astra",
           "bedrock_runtime": true,
           "bedrock_mantle": true,
@@ -823,14 +835,20 @@
       "provider": "xAI",
       "models": [
         {
-          "model_name": "Grok 4.3",
-          "bedrock_runtime": false,
-          "bedrock_mantle": true,
+          "model_name": "Grok 4.7",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
           "card_url": null
         },
         {
           "model_name": "Grok 4.6",
           "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Grok 4.3",
+          "bedrock_runtime": false,
           "bedrock_mantle": true,
           "card_url": null
         }
