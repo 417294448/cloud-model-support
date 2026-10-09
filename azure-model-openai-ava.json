@@ -585,6 +585,54 @@
                 }
               },
               {
+                "model": "gpt-6-luna",
+                "version": "2026-09-22",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "gpt-audio",
                 "version": "2025-08-28",
                 "regions": {
@@ -763,6 +811,22 @@
               {
                 "model": "gpt-image-2",
                 "version": "2026-04-21",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": false,
+                  "eastus2": true,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westus": false,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-image-2.5-flare",
+                "version": "2026-09-08",
                 "regions": {
                   "brazilsouth": false,
                   "canadacentral": false,
@@ -1153,6 +1217,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1170,6 +1235,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1187,6 +1253,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1204,6 +1271,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1221,6 +1289,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1238,6 +1307,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1255,6 +1325,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1272,6 +1343,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1289,6 +1361,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1306,6 +1379,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1323,6 +1397,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1340,6 +1415,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1357,6 +1433,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1374,6 +1451,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1391,6 +1469,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1408,6 +1487,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1425,6 +1505,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1442,6 +1523,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1459,6 +1541,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1476,6 +1559,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1493,6 +1577,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1510,6 +1595,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1527,6 +1613,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1544,6 +1631,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1561,6 +1649,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1578,6 +1667,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1595,6 +1685,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1612,6 +1703,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1629,6 +1721,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1646,6 +1739,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1663,6 +1757,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1680,6 +1775,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1697,6 +1793,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1714,6 +1811,61 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6-luna",
+                "version": "2026-09-22",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1731,6 +1883,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1748,6 +1901,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": true,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1765,6 +1919,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1782,6 +1937,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1799,6 +1955,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1816,6 +1973,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -1833,6 +1991,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": false,
@@ -1850,6 +2009,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": false,
@@ -1867,6 +2027,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": false,
@@ -1884,6 +2045,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": false,
@@ -1901,6 +2063,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": false,
@@ -1918,6 +2081,25 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
+                  "norwayeast": false,
+                  "polandcentral": true,
+                  "spaincentral": false,
+                  "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": false,
+                  "westeurope": false
+                }
+              },
+              {
+                "model": "gpt-image-2.5-flare",
+                "version": "2026-09-08",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": false,
@@ -1935,6 +2117,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1952,6 +2135,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1969,6 +2153,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -1986,6 +2171,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2003,6 +2189,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2020,6 +2207,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2037,6 +2225,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2054,6 +2243,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2071,6 +2261,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2088,6 +2279,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": true,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2105,6 +2297,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": true,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2122,6 +2315,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": true,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2139,6 +2333,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -2156,6 +2351,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -2173,6 +2369,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2190,6 +2387,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -2207,6 +2405,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2224,6 +2423,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -2241,6 +2441,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2258,6 +2459,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -2275,6 +2477,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -2292,6 +2495,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -2309,6 +2513,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -2687,6 +2892,39 @@
               {
                 "model": "gpt-6-astra",
                 "version": "2026-09-03",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-6-luna",
+                "version": "2026-09-22",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
                 "regions": {
                   "australiaeast": true,
                   "japaneast": true,
@@ -3153,6 +3391,30 @@
                 }
               },
               {
+                "model": "gpt-6-luna",
+                "version": "2026-09-22",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
                 "model": "gpt-chat-latest",
                 "version": "2026-08-06",
                 "regions": {
@@ -3195,6 +3457,14 @@
               {
                 "model": "gpt-image-2",
                 "version": "2026-04-21",
+                "regions": {
+                  "southafricanorth": false,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-image-2.5-flare",
+                "version": "2026-09-08",
                 "regions": {
                   "southafricanorth": false,
                   "uaenorth": true
@@ -3606,6 +3876,24 @@
                 }
               },
               {
+                "model": "grok-4.7",
+                "version": "1",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "Kimi-K2.5",
                 "version": "1",
                 "regions": {
@@ -4454,6 +4742,24 @@
                 }
               },
               {
+                "model": "grok-4.7",
+                "version": "1",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "ukwest": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "Kimi-K2.5",
                 "version": "1",
                 "regions": {
@@ -5169,6 +5475,17 @@
                 }
               },
               {
+                "model": "grok-4.7",
+                "version": "1",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "japanwest": true,
+                  "koreacentral": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "Kimi-K2.5",
                 "version": "1",
                 "regions": {
@@ -5624,6 +5941,14 @@
               },
               {
                 "model": "grok-4.6",
+                "version": "1",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "grok-4.7",
                 "version": "1",
                 "regions": {
                   "southafricanorth": true,
@@ -6140,6 +6465,45 @@
                 }
               },
               {
+                "model": "gpt-6-luna",
+                "version": "2026-09-22",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "gpt-image-1.5",
                 "version": "2025-12-16",
                 "regions": {
@@ -6291,6 +6655,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6306,6 +6671,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6321,6 +6687,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6336,6 +6703,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6351,6 +6719,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6366,6 +6735,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6381,6 +6751,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6396,6 +6767,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6411,6 +6783,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6426,6 +6799,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6441,6 +6815,7 @@
                   "francecentral": true,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -6456,6 +6831,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6471,6 +6847,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6480,12 +6857,29 @@
                 }
               },
               {
+                "model": "gpt-5.4-nano",
+                "version": "2026-03-17",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "italynorth": false,
+                  "northeurope": true,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": false,
+                  "switzerlandnorth": false,
+                  "westeurope": false
+                }
+              },
+              {
                 "model": "gpt-5.5",
                 "version": "2026-04-24",
                 "regions": {
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6501,6 +6895,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6516,6 +6911,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6531,6 +6927,55 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6-luna",
+                "version": "2026-09-22",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6546,6 +6991,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": false,
@@ -6561,6 +7007,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -6576,6 +7023,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -6591,6 +7039,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": true,
                   "norwayeast": false,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -6606,6 +7055,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6621,6 +7071,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6636,6 +7087,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6651,6 +7103,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6666,6 +7119,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6681,6 +7135,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6696,6 +7151,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": false,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -6753,6 +7209,17 @@
               {
                 "model": "gpt-5.6-sol",
                 "version": "2026-07-09",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
                 "regions": {
                   "australiaeast": true,
                   "japaneast": true,
@@ -6938,6 +7405,21 @@
               },
               {
                 "model": "grok-4.3",
+                "version": "1",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "grok-4.7",
                 "version": "1",
                 "regions": {
                   "centralus": true,
@@ -8019,6 +8501,38 @@
                 }
               },
               {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "o1",
                 "version": "2024-12-17",
                 "regions": {
@@ -8091,6 +8605,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8108,6 +8623,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8125,6 +8641,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8142,6 +8659,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8159,6 +8677,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8176,6 +8695,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8193,6 +8713,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8210,6 +8731,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8227,6 +8749,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8244,6 +8767,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8261,6 +8785,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8278,6 +8803,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8295,6 +8821,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8312,6 +8839,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8329,6 +8857,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8346,6 +8875,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8363,6 +8893,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8380,6 +8911,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8397,6 +8929,7 @@
                   "francecentral": false,
                   "germanywestcentral": false,
                   "italynorth": false,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": false,
                   "spaincentral": false,
@@ -8414,6 +8947,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8431,6 +8965,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": false,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8442,12 +8977,67 @@
                 }
               },
               {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-image-2.5-flare",
+                "version": "2026-09-08",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "italynorth": false,
+                  "northeurope": false,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": true,
+                  "swedencentral": false,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": false,
+                  "westeurope": false
+                }
+              },
+              {
                 "model": "o1",
                 "version": "2024-12-17",
                 "regions": {
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8465,6 +9055,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8482,6 +9073,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8499,6 +9091,7 @@
                   "francecentral": true,
                   "germanywestcentral": true,
                   "italynorth": true,
+                  "northeurope": true,
                   "norwayeast": true,
                   "polandcentral": true,
                   "spaincentral": true,
@@ -8743,6 +9336,39 @@
                 }
               },
               {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-image-2",
+                "version": "2026-04-21",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": false,
+                  "koreacentral": false,
+                  "southeastasia": false,
+                  "southindia": false
+                }
+              },
+              {
                 "model": "o1",
                 "version": "2024-12-17",
                 "regions": {
@@ -8951,6 +9577,22 @@
               {
                 "model": "gpt-6-astra",
                 "version": "2026-09-03",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
@@ -9360,6 +10002,32 @@
               {
                 "model": "gpt-6-astra",
                 "version": "2026-09-03",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6.1-sol",
+                "version": "2026-09-29",
                 "regions": {
                   "centralus": true,
                   "eastus": true,
@@ -10704,6 +11372,14 @@
               {
                 "model": "gpt-5.1",
                 "version": "2025-11-13",
+                "regions": {
+                  "southafricanorth": false,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6-sol",
+                "version": "2026-09-22",
                 "regions": {
                   "southafricanorth": false,
                   "uaenorth": true

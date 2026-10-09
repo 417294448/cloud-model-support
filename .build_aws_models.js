@@ -72,7 +72,11 @@ function isAvailable(cell) {
   const u = cell.toUpperCase();
   if (u === 'YES') return true;
   if (u === 'NO') return false;
+  // A retiring region is annotated with a date instead of a yes-icon and still
+  // counts as available (README quirk #4). Two formats are live on the page:
+  // the older "Legacy (EOL: YYYY-MM-DD)" and the newer bare "EOL: YYYY-MM-DD".
   if (/LEGACY\s*\(EOL:/i.test(cell)) return true;
+  if (/\bEOL\s*:/i.test(cell)) return true;
   return false;
 }
 
@@ -101,22 +105,33 @@ function parseRegionTables() {
     }
 
     const header = t.rows[0];
-    const colIdx = {};
+    // The page now splits In-Region into "In-Region (bedrock-mantle)" and
+    // "In-Region (bedrock-runtime)" for models served over the newer Mantle
+    // endpoint; older tables carry a single plain "In-Region" column. The `in`
+    // bit means "request can be processed in-region", so it is set when either
+    // in-region column reports availability.
+    const inCols = [];
+    let geoCol;
+    let globalCol;
     header.forEach((h, i) => {
       const u = h.toUpperCase();
-      if (u.includes('IN-REGION') || u === 'IN-REGION' || u === 'IN REGION') colIdx.in = i;
-      if (u.includes('GEO')) colIdx.geo = i;
-      if (u.includes('GLOBAL')) colIdx.global = i;
+      if (u.includes('IN-REGION') || u === 'IN REGION') inCols.push(i);
+      if (u.includes('GEO')) geoCol = i;
+      if (u.includes('GLOBAL')) globalCol = i;
     });
+    const cellAt = (row, i) => (i === undefined || i < 0 || i >= row.length ? '' : row[i]);
 
     for (let i = 1; i < t.rows.length; i++) {
       const row = t.rows[i];
       if (row.length < 2) continue;
       const region = parseRegionCode(row[0]);
+      if (row.length < header.length) {
+        issues.push(`short row (${row.length}/${header.length} cells) for ${g} / ${n} region ${region}`);
+      }
       let mask = 0;
-      if (colIdx.in !== undefined && isAvailable(row[colIdx.in])) mask |= 1;
-      if (colIdx.geo !== undefined && isAvailable(row[colIdx.geo])) mask |= 2;
-      if (colIdx.global !== undefined && isAvailable(row[colIdx.global])) mask |= 4;
+      if (inCols.some((c) => isAvailable(cellAt(row, c)))) mask |= 1;
+      if (isAvailable(cellAt(row, geoCol))) mask |= 2;
+      if (isAvailable(cellAt(row, globalCol))) mask |= 4;
       if (mask) {
         model.s[region] = (model.s[region] || 0) | mask;
       }
