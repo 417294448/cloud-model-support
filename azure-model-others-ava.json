@@ -3,7 +3,7 @@
     "provider": "Anthropic",
     "deployment_type": "Global Standard",
     "models": [
-      "Claude Mythos 5"
+      "Claude Fable 5.1"
     ],
     "offer_availability_region": {
       "base": "Microsoft Managed Countries/Regions",
@@ -13,8 +13,10 @@
       ],
       "include_additional": []
     },
-    "hub_project_region_deployment": [],
-    "note": "No region matrix data available on this page for this model/deployment type."
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central"
+    ]
   },
   {
     "provider": "Anthropic",
@@ -39,6 +41,98 @@
     "provider": "Anthropic",
     "deployment_type": "Global Standard",
     "models": [
+      "Claude Haiku 5.5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": [
+        "US",
+        "(Hosted",
+        "on",
+        "Azure",
+        "for",
+        "Data",
+        "Zone",
+        "Standard)"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Data Zone Standard (US)",
+    "models": [
+      "Claude Haiku 5.5"
+    ],
+    "offer_availability_region": {
+      "base": "US",
+      "exclude": [],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Mythos 5.1"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Mythos 5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
       "Claude Mythos Preview"
     ],
     "offer_availability_region": {
@@ -51,6 +145,64 @@
     },
     "hub_project_region_deployment": [],
     "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Opus 5.5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": [
+        "US",
+        "(Hosted",
+        "on",
+        "Azure",
+        "for",
+        "Data",
+        "Zone",
+        "Standard)"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Data Zone Standard (US)",
+    "models": [
+      "Claude Opus 5.5"
+    ],
+    "offer_availability_region": {
+      "base": "US",
+      "exclude": [],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
   },
   {
     "provider": "Anthropic",
@@ -183,8 +335,15 @@
       "include_additional": []
     },
     "hub_project_region_deployment": [
+      "Central US",
+      "East US",
       "East US 2",
-      "Sweden Central"
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
     ]
   },
   {
@@ -202,8 +361,15 @@
       "include_additional": []
     },
     "hub_project_region_deployment": [
+      "Central US",
+      "East US",
       "East US 2",
-      "Sweden Central"
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
     ]
   },
   {
@@ -221,9 +387,73 @@
       "include_additional": []
     },
     "hub_project_region_deployment": [
+      "Central US",
+      "East US",
       "East US 2",
+      "North Central US",
+      "South Central US",
       "Sweden Central",
-      "West Central US"
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Sonnet 5.5"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": [
+        "US",
+        "(Hosted",
+        "on",
+        "Azure",
+        "for",
+        "Data",
+        "Zone",
+        "Standard)"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Data Zone Standard (US)",
+    "models": [
+      "Claude Sonnet 5.5"
+    ],
+    "offer_availability_region": {
+      "base": "US",
+      "exclude": [],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
     ]
   },
   {
@@ -299,8 +529,15 @@
       "include_additional": []
     },
     "hub_project_region_deployment": [
+      "Central US",
+      "East US",
       "East US 2",
-      "Sweden Central"
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
     ]
   },
   {
@@ -318,9 +555,15 @@
       "include_additional": []
     },
     "hub_project_region_deployment": [
+      "Central US",
+      "East US",
       "East US 2",
+      "North Central US",
+      "South Central US",
       "Sweden Central",
-      "West Central US"
+      "West Central US",
+      "West US",
+      "West US 3"
     ]
   },
   {
@@ -804,41 +1047,5 @@
       "West US 2",
       "West US 3"
     ]
-  },
-  {
-    "provider": "Anthropic",
-    "deployment_type": "Global Standard",
-    "models": [
-      "Claude Fable 5.1"
-    ],
-    "offer_availability_region": {
-      "base": "Microsoft Managed Countries/Regions",
-      "exclude": [
-        "Belarus",
-        "Russia"
-      ],
-      "include_additional": []
-    },
-    "hub_project_region_deployment": [
-      "East US 2",
-      "Sweden Central"
-    ]
-  },
-  {
-    "provider": "Anthropic",
-    "deployment_type": "Global Standard",
-    "models": [
-      "Claude Mythos 5.1"
-    ],
-    "offer_availability_region": {
-      "base": "Microsoft Managed Countries/Regions",
-      "exclude": [
-        "Belarus",
-        "Russia"
-      ],
-      "include_additional": []
-    },
-    "hub_project_region_deployment": [],
-    "note": "No region matrix data available on this page for this model/deployment type."
   }
 ]
