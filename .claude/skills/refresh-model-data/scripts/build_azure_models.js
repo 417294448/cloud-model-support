@@ -130,7 +130,7 @@ function inferGroup(name, category) {
   if (/^Kimi/i.test(name)) return 'Moonshot AI';
   if (/^grok/i.test(name)) return 'xAI';
   if (/^Llama/i.test(name)) return 'Meta Llama';
-  if (/^MAI-|^Phi-4/i.test(name)) return 'Microsoft';
+  if (/^MAI-|^Phi-4|^Microsoft-/i.test(name)) return 'Microsoft';
   if (/^Mistral/i.test(name)) return 'Mistral';
   return 'UNKNOWN:' + name;
 }
