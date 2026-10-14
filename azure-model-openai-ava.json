@@ -4182,6 +4182,24 @@
                 }
               },
               {
+                "model": "Microsoft-Decision-1",
+                "version": "1",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadacentral": false,
+                  "canadaeast": false,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "Mistral-Large-3",
                 "version": "1",
                 "regions": {
@@ -5048,6 +5066,24 @@
                 }
               },
               {
+                "model": "Microsoft-Decision-1",
+                "version": "1",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": false,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": false,
+                  "switzerlandwest": false,
+                  "uksouth": false,
+                  "ukwest": false,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "Mistral-Large-3",
                 "version": "1",
                 "regions": {
@@ -5662,6 +5698,17 @@
                 }
               },
               {
+                "model": "Microsoft-Decision-1",
+                "version": "1",
+                "regions": {
+                  "australiaeast": false,
+                  "japaneast": false,
+                  "japanwest": false,
+                  "koreacentral": false,
+                  "southindia": false
+                }
+              },
+              {
                 "model": "Mistral-Large-3",
                 "version": "1",
                 "regions": {
@@ -6081,6 +6128,14 @@
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
+                }
+              },
+              {
+                "model": "Microsoft-Decision-1",
+                "version": "1",
+                "regions": {
+                  "southafricanorth": false,
+                  "uaenorth": false
                 }
               },
               {
@@ -7434,6 +7489,21 @@
                 }
               },
               {
+                "model": "Microsoft-Decision-1",
+                "version": "1",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "Mistral-Large-3",
                 "version": "1",
                 "regions": {
@@ -7532,6 +7602,19 @@
               },
               {
                 "model": "FLUX.2-pro",
+                "version": "1",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "Microsoft-Decision-1",
                 "version": "1",
                 "regions": {
                   "francecentral": true,

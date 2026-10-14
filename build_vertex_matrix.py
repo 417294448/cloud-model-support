@@ -93,6 +93,8 @@ PUBLISHER_DISPLAY = {
     "microsoft": "Microsoft",
     "baai": "BAAI",
     "minimaxai": "MiniMax",
+    "elevenlabs": "ElevenLabs",
+    "convaiinnovations": "ConvAI Innovations",
 }
 
 NAME_RE = re.compile(r"publishers/([^/]+)/models/([^/@]+)(?:@(.+))?$")
