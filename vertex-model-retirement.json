@@ -5,6 +5,22 @@
       "category": "Gemini models",
       "models": [
         {
+          "model": "gemini-4-argon",
+          "release_date": "2026-10-13",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "gemini-3.8-live",
+          "release_date": "2026-09-24",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
           "model": "gemini-3.5-flash-lite",
           "release_date": "2026-07-21",
           "release_date_note": null,
@@ -34,7 +50,7 @@
           "release_date_note": null,
           "retirement_date": "2026-10-20",
           "retirement_date_note": null,
-          "replacement": "Gemini 3.5 Flash"
+          "replacement": "gemini-3.8-flash or gemini-3.5-flash"
         },
         {
           "model": "gemini-2.5-flash",
@@ -42,7 +58,7 @@
           "release_date_note": null,
           "retirement_date": "2026-10-20",
           "retirement_date_note": null,
-          "replacement": "Gemini 3.5 Flash-Lite or Gemini 3.1 Flash-Lite"
+          "replacement": "gemini-3.8-flash or gemini-3.5-flash-lite or gemini-3.1-flash-lite"
         },
         {
           "model": "gemini-2.5-flash-lite",
@@ -50,7 +66,7 @@
           "release_date_note": null,
           "retirement_date": "2026-10-20",
           "retirement_date_note": null,
-          "replacement": "Gemini 3.1 Flash-Lite or Gemma 4"
+          "replacement": "gemini-3.8-flash or gemini-3.1-flash-lite or Gemma 4"
         },
         {
           "model": "gemini-live-2.5-flash-native-audio",
@@ -95,7 +111,7 @@
           "release_date_note": null,
           "retirement_date": "2027-03-15",
           "retirement_date_note": null,
-          "replacement": "Gemini 3.1 Flash-Lite Image"
+          "replacement": "gemini-3.1-flash-lite-image"
         }
       ]
     },
@@ -193,6 +209,14 @@
       "category": "Models available for shorter availability periods",
       "models": [
         {
+          "model": "gemini-4-argon-cyber-permissive",
+          "release_date": "2026-10-13",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
           "model": "gemini-3.8-flash-cyber",
           "release_date": "2026-09-16",
           "release_date_note": null,
@@ -212,13 +236,21 @@
           "model": "gemini-3.7-flash",
           "release_date": "2026-08-13",
           "release_date_note": null,
-          "retirement_date": null,
-          "retirement_date_note": "No retirement date announced",
-          "replacement": null
+          "retirement_date": "2027-01-28",
+          "retirement_date_note": null,
+          "replacement": "gemini-3.8-flash"
         },
         {
           "model": "gemini-3.6-flash",
           "release_date": "2026-07-21",
+          "release_date_note": null,
+          "retirement_date": "2026-11-19",
+          "retirement_date_note": null,
+          "replacement": "gemini-3.8-flash"
+        },
+        {
+          "model": "gemini-nano-banana-2.1",
+          "release_date": "2026-10-06",
           "release_date_note": null,
           "retirement_date": null,
           "retirement_date_note": "No retirement date announced",
