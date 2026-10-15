@@ -45,9 +45,12 @@
  * 3. Models with an empty region matrix in others-ava.json (no Global
  *    Standard / Data Zone Standard row for that model at all -- common for
  *    embeddings, gated-preview models, and open-weight legacy models) are
- *    still emitted, with `s: {}` (renders with no availability dots) and a
- *    `note` field explaining why. Don't drop them; the model still exists in
- *    the catalog and the "no data on this page" fact is itself useful.
+ *    still emitted, with `s: {}` and a `note` field explaining why. Don't
+ *    drop them; the model still exists in the catalog and the "no data on
+ *    this page" fact is itself useful. (Rendering: the By Model / Full Matrix
+ *    views list them with their `note` shown under the name -- the views' model
+ *    filter keeps `Object.keys(mo.s).length===0` entries -- while By Region /
+ *    Compare Regions, which filter on region availability, still omit them.)
  *
  * 4. Some providers have NO data in either file (observed: Nixtla, Stability
  *    AI). If index.html currently has those groups and neither source file
@@ -127,7 +130,7 @@ function inferGroup(name, category) {
   if (/^Kimi/i.test(name)) return 'Moonshot AI';
   if (/^grok/i.test(name)) return 'xAI';
   if (/^Llama/i.test(name)) return 'Meta Llama';
-  if (/^MAI-|^Phi-4/i.test(name)) return 'Microsoft';
+  if (/^MAI-|^Phi-4|^Microsoft-/i.test(name)) return 'Microsoft';
   if (/^Mistral/i.test(name)) return 'Mistral';
   return 'UNKNOWN:' + name;
 }

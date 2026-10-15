@@ -1,5 +1,5 @@
 {
-  "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html",
+  "source": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html",
   "models": [
     {
       "provider": "AI21 Labs",
@@ -10,9 +10,9 @@
           "regions": [
             "us-east-1"
           ],
-          "legacy_date": "May 26, 2026",
-          "eol_date": "November 26, 2026",
-          "public_extended_access_start_date": "August 26, 2026"
+          "legacy_date": "2026-05-26",
+          "eol_date": "2026-11-26",
+          "public_extended_access_start_date": "2026-08-26"
         }
       ]
     },
@@ -25,92 +25,54 @@
           "regions": [
             "us-east-1"
           ],
-          "legacy_date": "May 26, 2026",
-          "eol_date": "November 26, 2026",
-          "public_extended_access_start_date": "August 26, 2026"
+          "legacy_date": "2026-05-26",
+          "eol_date": "2026-11-26",
+          "public_extended_access_start_date": "2026-08-26"
         }
       ]
     },
     {
-      "provider": "Amazon",
-      "model_name": "Nova Canvas",
-      "model_id": "amazon.nova-canvas-v1:0",
+      "provider": "Anthropic",
+      "model_name": "Claude Sonnet 4.5",
+      "model_id": "anthropic.claude-sonnet-4-5-20250929-v1:0",
       "region_groups": [
         {
           "regions": [
+            "af-south-1",
+            "ap-east-2",
             "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
+            "ca-central-1",
+            "ca-west-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
             "eu-west-1",
-            "us-east-1"
-          ],
-          "legacy_date": "March 30, 2026",
-          "eol_date": "September 30, 2026",
-          "public_extended_access_start_date": null
-        }
-      ]
-    },
-    {
-      "provider": "Amazon",
-      "model_name": "Nova Reel",
-      "model_id": "amazon.nova-reel-v1:0",
-      "region_groups": [
-        {
-          "regions": [
-            "ap-northeast-1",
-            "eu-west-1",
-            "us-east-1"
-          ],
-          "legacy_date": "March 30, 2026",
-          "eol_date": "September 30, 2026",
-          "public_extended_access_start_date": null
-        }
-      ]
-    },
-    {
-      "provider": "Amazon",
-      "model_name": "Nova Reel",
-      "model_id": "amazon.nova-reel-v1:1",
-      "region_groups": [
-        {
-          "regions": [
-            "us-east-1"
-          ],
-          "legacy_date": "March 30, 2026",
-          "eol_date": "September 30, 2026",
-          "public_extended_access_start_date": null
-        }
-      ]
-    },
-    {
-      "provider": "Amazon",
-      "model_name": "Nova Premier",
-      "model_id": "amazon.nova-premier-v1:0",
-      "region_groups": [
-        {
-          "regions": [
+            "eu-west-2",
+            "eu-west-3",
+            "il-central-1",
+            "mx-central-1",
+            "sa-east-1",
             "us-east-1",
             "us-east-2",
+            "us-west-1",
             "us-west-2"
           ],
-          "legacy_date": "March 13, 2026",
-          "eol_date": "September 14, 2026",
-          "public_extended_access_start_date": null
-        }
-      ]
-    },
-    {
-      "provider": "Amazon",
-      "model_name": "Nova Sonic",
-      "model_id": "amazon.nova-sonic-v1:0",
-      "region_groups": [
-        {
-          "regions": [
-            "ap-northeast-1",
-            "eu-north-1",
-            "us-east-1"
-          ],
-          "legacy_date": "March 13, 2026",
-          "eol_date": "September 14, 2026",
-          "public_extended_access_start_date": null
+          "legacy_date": "2026-10-08",
+          "eol_date": "2027-04-08",
+          "public_extended_access_start_date": "2027-01-08"
         }
       ]
     },
@@ -125,9 +87,9 @@
             "us-east-2",
             "us-west-2"
           ],
-          "legacy_date": "July 8, 2026",
-          "eol_date": "January 8, 2027",
-          "public_extended_access_start_date": "October 8, 2026"
+          "legacy_date": "2026-07-08",
+          "eol_date": "2027-01-08",
+          "public_extended_access_start_date": "2026-10-08"
         }
       ]
     },
@@ -154,7 +116,6 @@
             "ap-northeast-3",
             "ap-south-1",
             "ap-south-2",
-            "me-central-1",
             "ap-southeast-1",
             "ap-southeast-2",
             "ap-southeast-3",
@@ -163,9 +124,669 @@
             "ap-southeast-7",
             "il-central-1"
           ],
-          "legacy_date": "April 14, 2026",
-          "eol_date": "October 14, 2026",
-          "public_extended_access_start_date": "July 14, 2026"
+          "legacy_date": "2026-04-14",
+          "eol_date": "2026-10-14",
+          "public_extended_access_start_date": "2026-07-14"
+        }
+      ]
+    },
+    {
+      "provider": "DeepSeek",
+      "model_name": "DeepSeek-R1",
+      "model_id": "deepseek.r1-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "DeepSeek",
+      "model_name": "DeepSeek-V3.1",
+      "model_id": "deepseek.v3-v1:0 (bedrock-runtime), deepseek.v3.1 (bedrock-mantle)",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Google",
+      "model_name": "Gemma 3 12B IT",
+      "model_id": "google.gemma-3-12b-it",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Google",
+      "model_name": "Gemma 3 27B PT",
+      "model_id": "google.gemma-3-27b-it",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Google",
+      "model_name": "Gemma 3 4B IT",
+      "model_id": "google.gemma-3-4b-it",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Meta",
+      "model_name": "Llama 3 70B Instruct",
+      "model_id": "meta.llama3-70b-instruct-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-south-1",
+            "ca-central-1",
+            "eu-west-2",
+            "us-east-1",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Meta",
+      "model_name": "Llama 3 8B Instruct",
+      "model_id": "meta.llama3-8b-instruct-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-south-1",
+            "ca-central-1",
+            "eu-west-2",
+            "us-east-1",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Meta",
+      "model_name": "Llama 3.1 70B Instruct",
+      "model_id": "meta.llama3-1-70b-instruct-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Meta",
+      "model_name": "Llama 3.1 8B Instruct",
+      "model_id": "meta.llama3-1-8b-instruct-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Meta",
+      "model_name": "Llama 3.3 70B Instruct",
+      "model_id": "meta.llama3-3-70b-instruct-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Meta",
+      "model_name": "Llama 4 Maverick 17B Instruct",
+      "model_id": "meta.llama4-maverick-17b-instruct-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Meta",
+      "model_name": "Llama 4 Scout 17B Instruct",
+      "model_id": "meta.llama4-scout-17b-instruct-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1",
+            "us-east-2",
+            "us-west-1",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "MiniMax",
+      "model_name": "MiniMax M2",
+      "model_id": "minimax.minimax-m2",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "MiniMax",
+      "model_name": "MiniMax M2.1",
+      "model_id": "minimax.minimax-m2.1",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Mistral AI",
+      "model_name": "Devstral 2 123B",
+      "model_id": "mistral.devstral-2-123b",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Mistral AI",
+      "model_name": "Mistral 7B Instruct",
+      "model_id": "mistral.mistral-7b-instruct-v0:2",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-south-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Mistral AI",
+      "model_name": "Mixtral 8x7B Instruct",
+      "model_id": "mistral.mixtral-8x7b-instruct-v0:1",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-south-1",
+            "ap-southeast-2",
+            "ca-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "sa-east-1",
+            "us-east-1",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Mistral AI",
+      "model_name": "Voxtral Mini 3B 2507",
+      "model_id": "mistral.voxtral-mini-3b-2507",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Mistral AI",
+      "model_name": "Voxtral Small 24B 2507",
+      "model_id": "mistral.voxtral-small-24b-2507",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Moonshot AI",
+      "model_name": "Kimi K2 Thinking",
+      "model_id": "moonshot.kimi-k2-thinking (bedrock-runtime), moonshotai.kimi-k2-thinking (bedrock-mantle)",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "NVIDIA",
+      "model_name": "NVIDIA Nemotron Nano 12B v2 VL BF16",
+      "model_id": "nvidia.nemotron-nano-12b-v2",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "NVIDIA",
+      "model_name": "NVIDIA Nemotron Nano 9B v2",
+      "model_id": "nvidia.nemotron-nano-9b-v2",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Qwen",
+      "model_name": "Qwen3-Coder-30B-A3B-Instruct",
+      "model_id": "qwen.qwen3-coder-30b-a3b-v1:0 (bedrock-runtime), qwen.qwen3-coder-30b-a3b-instruct (bedrock-mantle)",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Qwen",
+      "model_name": "Qwen3 Coder 480B A35B Instruct",
+      "model_id": "qwen.qwen3-coder-480b-a35b-v1:0 (bedrock-runtime), qwen.qwen3-coder-480b-a35b-instruct (bedrock-mantle)",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "TwelveLabs",
+      "model_name": "Marengo Embed v2.7",
+      "model_id": "twelvelabs.marengo-embed-2-7-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-2",
+            "eu-west-1",
+            "us-east-1"
+          ],
+          "legacy_date": "2026-05-29",
+          "eol_date": "2026-11-30",
+          "public_extended_access_start_date": "2026-08-29"
+        }
+      ]
+    },
+    {
+      "provider": "Z.AI",
+      "model_name": "GLM 4.7",
+      "model_id": "zai.glm-4.7",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-north-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Z.AI",
+      "model_name": "GLM 4.7 Flash",
+      "model_id": "zai.glm-4.7-flash",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-south-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "eu-central-1",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-west-1",
+            "eu-west-2",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-09-30",
+          "eol_date": "2027-03-30",
+          "public_extended_access_start_date_note": "To be announced"
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Canvas",
+      "model_id": "amazon.nova-canvas-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "eu-west-1",
+            "us-east-1"
+          ],
+          "legacy_date": "2026-03-30",
+          "eol_date": "2026-09-30",
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Reel",
+      "model_id": "amazon.nova-reel-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "eu-west-1",
+            "us-east-1"
+          ],
+          "legacy_date": "2026-03-30",
+          "eol_date": "2026-09-30",
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Reel",
+      "model_id": "amazon.nova-reel-v1:1",
+      "region_groups": [
+        {
+          "regions": [
+            "us-east-1"
+          ],
+          "legacy_date": "2026-03-30",
+          "eol_date": "2026-09-30",
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Amazon",
+      "model_name": "Nova Sonic",
+      "model_id": "amazon.nova-sonic-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "eu-north-1",
+            "us-east-1"
+          ],
+          "legacy_date": "2026-03-13",
+          "eol_date": "2026-09-14",
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -186,77 +807,18 @@
             "us-east-2",
             "us-west-2"
           ],
-          "legacy_date": "March 10, 2026",
-          "eol_date": "September 10, 2026",
-          "public_extended_access_start_date": "June 10, 2026"
-        }
-      ]
-    },
-    {
-      "provider": "Anthropic",
-      "model_name": "Claude 3 Sonnet",
-      "model_id": "anthropic.claude-3-sonnet-20240229-v1:0",
-      "region_groups": [
-        {
-          "regions": [
-            "eu-west-1",
-            "eu-west-3",
-            "us-east-1",
-            "us-west-2"
-          ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": null
-        }
-      ]
-    },
-    {
-      "provider": "Anthropic",
-      "model_name": "Claude 3.5 Sonnet",
-      "model_id": "anthropic.claude-3-5-sonnet-20240620-v1:0",
-      "region_groups": [
-        {
-          "regions": [
-            "ap-northeast-1",
-            "ap-southeast-2"
-          ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": "April 30, 2026"
-        }
-      ]
-    },
-    {
-      "provider": "Anthropic",
-      "model_name": "Claude 3.5 Sonnet V2:0",
-      "model_id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
-      "region_groups": [
-        {
-          "regions": [
-            "ap-northeast-1",
-            "ap-northeast-3",
-            "ap-south-2",
-            "ap-southeast-2"
-          ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": "April 30, 2026"
-        }
-      ]
-    },
-    {
-      "provider": "Anthropic",
-      "model_name": "Claude 3.7 Sonnet",
-      "model_id": "anthropic.claude-3-7-sonnet-20250219-v1:0",
-      "region_groups": [
+          "legacy_date": "2026-03-10",
+          "eol_date": "2026-09-10",
+          "public_extended_access_start_date": "2026-06-10"
+        },
         {
           "regions": [
             "us-gov-east-1",
             "us-gov-west-1"
           ],
-          "legacy_date": "January 30, 2026",
-          "eol_date": "July 30, 2026",
-          "public_extended_access_start_date": "April 30, 2026"
+          "legacy_date": "2026-03-10",
+          "eol_date": "2026-09-10",
+          "public_extended_access_start_date": "2026-06-10"
         }
       ]
     },
@@ -270,9 +832,9 @@
             "us-east-1",
             "us-west-2"
           ],
-          "legacy_date": "February 19, 2026",
-          "eol_date": "August 19, 2026",
-          "public_extended_access_start_date": "May 19, 2026"
+          "legacy_date": "2026-02-19",
+          "eol_date": "2026-08-19",
+          "public_extended_access_start_date": "2026-05-19"
         }
       ]
     },
@@ -286,26 +848,9 @@
             "us-east-1",
             "us-west-2"
           ],
-          "legacy_date": "February 19, 2026",
-          "eol_date": "August 19, 2026",
-          "public_extended_access_start_date": "May 19, 2026"
-        }
-      ]
-    },
-    {
-      "provider": "TwelveLabs",
-      "model_name": "Marengo Embed v2.7",
-      "model_id": "twelvelabs.marengo-embed-2-7-v1:0",
-      "region_groups": [
-        {
-          "regions": [
-            "ap-northeast-2",
-            "eu-west-1",
-            "us-east-1"
-          ],
-          "legacy_date": "May 29, 2026",
-          "eol_date": "November 30, 2026",
-          "public_extended_access_start_date": "August 29, 2026"
+          "legacy_date": "2026-02-19",
+          "eol_date": "2026-08-19",
+          "public_extended_access_start_date": "2026-05-19"
         }
       ]
     }

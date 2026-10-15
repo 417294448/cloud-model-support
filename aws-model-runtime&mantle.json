@@ -58,12 +58,6 @@
           "card_url": null
         },
         {
-          "model_name": "Nova Premier",
-          "bedrock_runtime": true,
-          "bedrock_mantle": false,
-          "card_url": null
-        },
-        {
           "model_name": "Nova Pro",
           "bedrock_runtime": true,
           "bedrock_mantle": false,
@@ -76,19 +70,7 @@
           "card_url": null
         },
         {
-          "model_name": "Nova Sonic",
-          "bedrock_runtime": true,
-          "bedrock_mantle": false,
-          "card_url": null
-        },
-        {
           "model_name": "Titan Embeddings G1 - Text",
-          "bedrock_runtime": true,
-          "bedrock_mantle": false,
-          "card_url": null
-        },
-        {
-          "model_name": "Titan Image Generator G1 v2",
           "bedrock_runtime": true,
           "bedrock_mantle": false,
           "card_url": null
@@ -117,6 +99,42 @@
       "provider": "Anthropic",
       "models": [
         {
+          "model_name": "Claude Haiku 5.5",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Claude Sonnet 5.5",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Claude Opus 5.5",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Claude Fable 5.1",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Claude Mythos 5.1",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
+          "model_name": "Claude Opus 5",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
           "model_name": "Claude Sonnet 5",
           "bedrock_runtime": true,
           "bedrock_mantle": true,
@@ -135,19 +153,7 @@
           "card_url": null
         },
         {
-          "model_name": "Claude Mythos Preview",
-          "bedrock_runtime": false,
-          "bedrock_mantle": true,
-          "card_url": null
-        },
-        {
           "model_name": "Claude 3 Haiku",
-          "bedrock_runtime": true,
-          "bedrock_mantle": false,
-          "card_url": null
-        },
-        {
-          "model_name": "Claude 3.5 Haiku",
           "bedrock_runtime": true,
           "bedrock_mantle": false,
           "card_url": null
@@ -276,6 +282,24 @@
       "provider": "Google",
       "models": [
         {
+          "model_name": "Gemma 4 31B",
+          "bedrock_runtime": false,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Gemma 4 26B-A4B",
+          "bedrock_runtime": false,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Gemma 4 E2B",
+          "bedrock_runtime": false,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
           "model_name": "Gemma 3 12B IT",
           "bedrock_runtime": true,
           "bedrock_mantle": true,
@@ -291,6 +315,17 @@
           "model_name": "Gemma 3 4B IT",
           "bedrock_runtime": true,
           "bedrock_mantle": true,
+          "card_url": null
+        }
+      ]
+    },
+    {
+      "provider": "Luma AI",
+      "models": [
+        {
+          "model_name": "Ray2",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
           "card_url": null
         }
       ]
@@ -482,6 +517,12 @@
       "provider": "Moonshot AI",
       "models": [
         {
+          "model_name": "Kimi K3",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
           "model_name": "Kimi K2 Thinking",
           "bedrock_runtime": true,
           "bedrock_mantle": true,
@@ -528,20 +569,56 @@
       "provider": "OpenAI",
       "models": [
         {
+          "model_name": "GPT-6.1 Sol",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "GPT-6 Astra",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "GPT-6 Sol",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "GPT-6 Luna",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
           "model_name": "GPT-5.6 Sol",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Daybreak Red: GPT-5.6 Cyber",
+          "bedrock_runtime": false,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "Daybreak Blue: GPT-5.6 Sol",
           "bedrock_runtime": false,
           "bedrock_mantle": true,
           "card_url": null
         },
         {
           "model_name": "GPT-5.6 Terra",
-          "bedrock_runtime": false,
+          "bedrock_runtime": true,
           "bedrock_mantle": true,
           "card_url": null
         },
         {
           "model_name": "GPT-5.6 Luna",
-          "bedrock_runtime": false,
+          "bedrock_runtime": true,
           "bedrock_mantle": true,
           "card_url": null
         },
@@ -633,6 +710,24 @@
     {
       "provider": "Stability AI",
       "models": [
+        {
+          "model_name": "Stable Image Ultra 1.0",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
+          "model_name": "Stable Image Core 1.0",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
+          "model_name": "Stable Diffusion 3.5 Large",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
         {
           "model_name": "Stable Image Conservative Upscale",
           "bedrock_runtime": true,
@@ -763,6 +858,18 @@
       "provider": "xAI",
       "models": [
         {
+          "model_name": "Grok 4.7",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
+          "model_name": "Grok 4.6",
+          "bedrock_runtime": true,
+          "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
           "model_name": "Grok 4.3",
           "bedrock_runtime": false,
           "bedrock_mantle": true,
@@ -789,6 +896,12 @@
           "model_name": "GLM 5",
           "bedrock_runtime": true,
           "bedrock_mantle": true,
+          "card_url": null
+        },
+        {
+          "model_name": "GLM 5.3",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
           "card_url": null
         }
       ]
