@@ -317,28 +317,35 @@
           "model": "gpt-chat-latest",
           "version": "2026-05-05",
           "lifecycle": "Preview",
-          "retirement_date": "2026-08-05",
+          "retirement_date": "2026-11-17",
           "replacement": null
         },
         {
           "model": "gpt-chat-latest",
           "version": "2026-05-28",
           "lifecycle": "Preview",
-          "retirement_date": "2026-08-28",
+          "retirement_date": "2026-12-08",
           "replacement": null
         },
         {
           "model": "gpt-chat-latest",
           "version": "2026-06-24",
           "lifecycle": "Preview",
-          "retirement_date": "2026-09-24",
+          "retirement_date": "2026-11-17",
           "replacement": null
         },
         {
           "model": "gpt-chat-latest",
           "version": "2026-08-06",
           "lifecycle": "Preview",
-          "retirement_date": "2026-12-02",
+          "retirement_date": "2027-01-12",
+          "replacement": null
+        },
+        {
+          "model": "gpt-chat-latest",
+          "version": "2026-10-07",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-05-18",
           "replacement": null
         },
         {
