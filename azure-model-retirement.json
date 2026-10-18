@@ -983,6 +983,13 @@
           "replacement": "claude-sonnet-5-5"
         },
         {
+          "model": "claude-opus-5-5-fast",
+          "version": "2",
+          "lifecycle": "GA",
+          "retirement_date": "2027-01-15",
+          "replacement": null
+        },
+        {
           "model": "claude-opus-5",
           "version": "2",
           "lifecycle": "GA",
@@ -1227,29 +1234,22 @@
           "model": "Ministral-3B",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
-        },
-        {
-          "model": "Mistral-large",
-          "version": "1",
-          "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2026-12-09",
+          "replacement": "ministral-ministral-4b-instruct"
         },
         {
           "model": "mistral-medium-2505",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2026-12-09",
+          "replacement": "mistral-medium-3-5"
         },
         {
           "model": "mistral-small-2503",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2026-12-09",
+          "replacement": "mistral-small-4-119b-2603"
         }
       ]
     },

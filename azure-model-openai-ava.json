@@ -7729,6 +7729,20 @@
                   "westeurope": true
                 }
               }
+            ],
+            "Asia Pacific": [
+              {
+                "model": "Microsoft-Decision-1",
+                "version": "1",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "japanwest": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              }
             ]
           }
         }

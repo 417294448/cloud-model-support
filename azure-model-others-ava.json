@@ -150,6 +150,64 @@
     "provider": "Anthropic",
     "deployment_type": "Global Standard",
     "models": [
+      "Claude Opus 5.5 Fast"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": [
+        "US",
+        "(Hosted",
+        "on",
+        "Azure",
+        "for",
+        "Data",
+        "Zone",
+        "Standard)"
+      ]
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Data Zone Standard (US)",
+    "models": [
+      "Claude Opus 5.5 Fast"
+    ],
+    "offer_availability_region": {
+      "base": "US",
+      "exclude": [],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "Central US",
+      "East US",
+      "East US 2",
+      "North Central US",
+      "South Central US",
+      "Sweden Central",
+      "West Central US",
+      "West US",
+      "West US 3"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
       "Claude Opus 5.5"
     ],
     "offer_availability_region": {
