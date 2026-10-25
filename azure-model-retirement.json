@@ -408,7 +408,7 @@
           "model": "gpt-realtime-2",
           "version": "2026-05-06",
           "lifecycle": "Preview",
-          "retirement_date": null,
+          "retirement_date": "2027-01-20",
           "replacement": "gpt-realtime-2.1"
         },
         {
@@ -575,28 +575,28 @@
           "model": "FLUX-1.1-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-01-05",
           "replacement": null
         },
         {
           "model": "FLUX.1-Kontext-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-01-05",
           "replacement": null
         },
         {
           "model": "FLUX.2-flex",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-01-20",
           "replacement": null
         },
         {
           "model": "FLUX.2-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-01-20",
           "replacement": null
         }
       ]
@@ -616,36 +616,36 @@
           "model": "Cohere-rerank-v4.0-fast",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-09-13",
+          "replacement": "Cohere-rerank-v5-fast"
         },
         {
           "model": "Cohere-rerank-v4.0-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-09-13",
+          "replacement": "Cohere-rerank-v5-pro"
         },
         {
           "model": "cohere-command-a",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-02-15",
+          "replacement": "coherelabs-command-a-plus-05-2026-fp8, coherelabs-command-a-plus-05-2026-bf16, coherelabs-command-a-plus-05-2026-w4a4"
         },
         {
           "model": "Cohere-command-a-plus-05-2026",
           "version": "1",
           "lifecycle": "Preview",
           "retirement_date": "2026-10-16",
-          "replacement": "coherelabs-command-a-plus-05-2026-fp8 1 , coherelabs-command-a-plus-05-2026-bf16 1 , coherelabs-command-a-plus-05-2026-w4a4 1"
+          "replacement": "coherelabs-command-a-plus-05-2026-fp8, coherelabs-command-a-plus-05-2026-bf16, coherelabs-command-a-plus-05-2026-w4a4"
         },
         {
           "model": "embed-v-4-0",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-06-01",
+          "replacement": "Coher-embed-v5-fast, Cohere-embed-v5-pro"
         }
       ]
     },
@@ -685,15 +685,15 @@
           "model": "DeepSeek-V3.2",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-11-01",
+          "replacement": "DeepSeek-V4.1-Flash"
         },
         {
           "model": "DeepSeek-V3.2-Speciale",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-11-01",
+          "replacement": "DeepSeek-V4-Pro"
         },
         {
           "model": "DeepSeek-V4-Flash",
@@ -726,14 +726,14 @@
           "model": "Llama-3.3-70B-Instruct",
           "version": null,
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-01-31",
           "replacement": null
         },
         {
           "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
           "version": null,
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2026-11-19",
           "replacement": null
         }
       ]
@@ -856,7 +856,7 @@
           "model": "Kimi-K2.7-Code",
           "version": "2026-06-12",
           "lifecycle": "Preview",
-          "retirement_date": "2026-10-03",
+          "retirement_date": "2027-04-16",
           "replacement": null
         }
       ]
@@ -869,7 +869,7 @@
           "model": "gpt-oss-120b",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-09-15",
           "replacement": null
         }
       ]
@@ -896,21 +896,21 @@
           "model": "grok-4",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-01-31",
           "replacement": null
         },
         {
           "model": "grok-4-1-fast-non-reasoning",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-05-19",
           "replacement": null
         },
         {
           "model": "grok-4-1-fast-reasoning",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-05-19",
           "replacement": null
         },
         {
@@ -945,7 +945,7 @@
           "model": "grok-code-fast-1",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-01-31",
           "replacement": null
         }
       ]
@@ -1118,15 +1118,15 @@
           "model": "Cohere-embed-v3-english",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-02-15",
+          "replacement": "Cohere-embed-v5-fast, Cohere-embed-v5-pro"
         },
         {
           "model": "Cohere-embed-v3-multilingual",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-02-15",
+          "replacement": "Cohere-embed-v5-fast, Cohere-embed-v5-pro"
         }
       ]
     },
@@ -1149,10 +1149,24 @@
           "replacement": null
         },
         {
+          "model": "Llama-3.3-70B-Instruct",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": "2027-01-31",
+          "replacement": null
+        },
+        {
+          "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+          "version": null,
+          "lifecycle": "GA",
+          "retirement_date": "2026-11-19",
+          "replacement": null
+        },
+        {
           "model": "Llama-4-Scout-17B-16E-Instruct",
           "version": null,
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-01-31",
           "replacement": null
         },
         {
@@ -1186,36 +1200,36 @@
           "model": "Phi-4",
           "version": null,
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-01-17",
+          "replacement": "microsoft--phi-4 (Foundry Managed Compute)"
         },
         {
           "model": "Phi-4-mini-instruct",
           "version": null,
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-01-17",
+          "replacement": "microsoft--phi-4 (Foundry Managed Compute)"
         },
         {
           "model": "Phi-4-mini-reasoning",
           "version": null,
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-01-17",
+          "replacement": "microsoft--phi-4 (Foundry Managed Compute)"
         },
         {
           "model": "Phi-4-multimodal-instruct",
           "version": null,
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-01-17",
+          "replacement": "microsoft--phi-4 (Foundry Managed Compute)"
         },
         {
           "model": "Phi-4-reasoning",
           "version": null,
           "lifecycle": "GA",
-          "retirement_date": null,
-          "replacement": null
+          "retirement_date": "2027-01-17",
+          "replacement": "microsoft--phi-4 (Foundry Managed Compute)"
         }
       ]
     },
@@ -1227,7 +1241,7 @@
           "model": "Codestral-2501",
           "version": "2",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-02-15",
           "replacement": null
         },
         {
@@ -1247,9 +1261,9 @@
         {
           "model": "mistral-small-2503",
           "version": "1",
-          "lifecycle": "GA",
-          "retirement_date": "2026-12-09",
-          "replacement": "mistral-small-4-119b-2603"
+          "lifecycle": "Deprecated",
+          "retirement_date": "2027-02-15",
+          "replacement": "mistralai-mistral-small-4-119b-2603"
         }
       ]
     },

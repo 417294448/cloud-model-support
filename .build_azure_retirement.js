@@ -12,6 +12,8 @@ const OUT = '/workspace/azure-model-retirement.json';
 const SOURCE = 'https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule';
 
 function cellText(c) {
+  // <sup>N</sup> footnote markers would otherwise leak into the replacement text
+  c = c.replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, '');
   c = c.replace(/<img[^>]*icon-yes[^>]*>/gi, 'YES').replace(/<img[^>]*icon-no[^>]*>/gi, 'NO');
   return c
     .replace(/<[^>]+>/g, ' ')

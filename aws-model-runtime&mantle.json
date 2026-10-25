@@ -40,6 +40,12 @@
           "card_url": null
         },
         {
+          "model_name": "Nova 2.5 Sonic",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
           "model_name": "Nova Canvas",
           "bedrock_runtime": true,
           "bedrock_mantle": false,
