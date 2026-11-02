@@ -1,0 +1,149 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-10-11 -> 2026-10-14
+  models: 140 -> 141
+  added (1): [TwelveLabs] Pegasus v1.5
+  changed (28):
+    ~ [Amazon] Nova Lite
+        s: +1 region(s) gained (ca-west-1)
+    ~ [Anthropic] Claude Haiku 4.5
+        s: +2 region(s) gained (us-gov-west-1, us-gov-east-1)
+    ~ [Anthropic] Claude 3 Haiku
+        s: 5 region(s) changed support: ap-northeast-1: [In-Region] -> [In-Region,Geo]; ap-northeast-2: [In-Region] -> [In-Region,Geo]; ap-south-1: [In-Region] -> [In-Region,Geo]; ap-southeast-1: [In-Region] -> [In-Region,Geo]; ap-southeast-2: [In-Region] -> [In-Region,Geo]
+    ~ [DeepSeek] DeepSeek-V3.1
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [DeepSeek] DeepSeek-R1
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Google] Gemma 3 27B PT
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Google] Gemma 3 12B IT
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Google] Gemma 3 4B IT
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Meta] Llama 4 Maverick 17B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Meta] Llama 4 Scout 17B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Meta] Llama 3 70B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Meta] Llama 3 8B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Meta] Llama 3.3 70B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Meta] Llama 3.1 70B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Meta] Llama 3.1 8B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [MiniMax] MiniMax M2
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [MiniMax] MiniMax M2.1
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Mistral AI] Voxtral Small 24B 2507
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Mistral AI] Mixtral 8x7B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Mistral AI] Mistral 7B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Mistral AI] Voxtral Mini 3B 2507
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Mistral AI] Devstral 2 123B
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [NVIDIA] NVIDIA Nemotron Nano 12B v2 VL BF16
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [NVIDIA] NVIDIA Nemotron Nano 9B v2
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Qwen] Qwen3 Coder 480B A35B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Qwen] Qwen3-Coder-30B-A3B-Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Z.AI] GLM 4.7 Flash
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+    ~ [Z.AI] GLM 4.7
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-30"
+
+=== azure ===
+  generated: 2026-10-11 -> 2026-10-14
+  models: 158 -> 159
+  added (1): [Microsoft] Microsoft-Decision-1 (1)
+  changed (0):
+
+=== gcp ===
+  generated: 2026-09-20 -> 2026-10-14
+  groups added (2): ConvAI Innovations, ElevenLabs
+  groups removed (1): Elevenlabs
+  models: 291 -> 301
+  added (27): [Anthropic] claude-haiku-5-5 (default), [Anthropic] claude-opus-5-5 (default), [Anthropic] claude-sonnet-5-5 (default), [BAAI] bge (bge-base-en-v1.5), [ConvAI Innovations] laya-typed-decisions (laya-typed-decisions), [DeepSeek] deepseek-v4.1 (deepseek-v4.1-flash), [ElevenLabs] elevenlabs-aligner-v1 (default), [ElevenLabs] elevenlabs-scribe-v2 (default), [ElevenLabs] elevenlabs-scribe-v2-turbo (default), [ElevenLabs] elevenlabs-stt-v1 (default), [ElevenLabs] elevenlabs-tts-multilingual-v2 (default), [ElevenLabs] elevenlabs-tts-v2-5 (default), [ElevenLabs] elevenlabs-turn-v1 (default), [Google] embeddinggemma2 (embeddinggemma-2), [Google] gemini-3.8-live (default), [Google] gemini-4-argon (default), [Google] gemini-nano-banana-2.1 (default), [Google] paligemma (paligemma2-3b-mix-224), [Meta] llama2 (llama-2-7b-chat), [Meta] llama4 (llama-4-scout-17b-16e-instruct), [Meta] muse-glimmer (muse-glimmer-30b), [Mistral AI] ministral-3 (ministral-3-3b-instruct-2512), [Moonshot AI] kimi-k2 (kimi-k2-thinking), [NVIDIA] cosmos-3 (cosmos-3-super-text2image), [NVIDIA] nemotron-3 (nemotron-3-ultra-550b-a55b-nvfp4), ...
+  removed (17): [Anthropic] claude-sonnet-4-5 (20250929), [BAAI] bge (llm-embedder), [Elevenlabs] elevenlabs-tts-v2-5 (default), [Google] imageclassification-efficientnet (001), [Google] imageclassification-vit (001), [Google] imageobjectdetection-yolo (001), [Google] paligemma (paligemma2-28b-pt-448), [Google] resnet50 (001), [Google] tfvision-yolov7 (001), [Meta] llama2 (llama-2-70b-chat), [Meta] llama4 (llama-4-maverick-17b-128e-instruct-fp8), [Mistral AI] ministral-3 (ministral-3-8b-reasoning-2512), [Moonshot AI] kimi-k2 (kimi-k2-instruct), [NVIDIA] cosmos (cosmos-1.0-diffusion-7b-video2world), [NVIDIA] cosmos3-nano (cosmos3-super-text2image), [NVIDIA] nemotron-3.5-lightning (nemotron-3.5-lightning-nvfp4), [NVIDIA] nemotron-v3 (nemotron-3-ultra-550b-a55b-nvfp4)
+  changed (21):
+    ~ [Google] gemini-2.5-flash (default)
+        replacement: "Gemini 3.5 Flash-Lite or Gemini 3.1 Flash-Lite" -> "gemini-3.8-flash or gemini-3.5-flash-lite or gemini-3.1-flash-lite"
+    ~ [Google] gemini-2.5-flash-image (default)
+        replacement: "Gemini 3.1 Flash-Lite Image" -> "gemini-3.1-flash-lite-image"
+    ~ [Google] gemini-2.5-flash-lite (default)
+        replacement: "Gemini 3.1 Flash-Lite or Gemma 4" -> "gemini-3.8-flash or gemini-3.1-flash-lite or Gemma 4"
+    ~ [Google] gemini-2.5-pro (default)
+        replacement: "Gemini 3.5 Flash" -> "gemini-3.8-flash or gemini-3.5-flash"
+    ~ [Google] gemini-3-pro-image (default)
+        s: 1 region(s) changed support: us-central1: [Self-deploy] -> [Managed API]
+    ~ [Google] gemini-3.1-flash-image (default)
+        s: 1 region(s) changed support: us-central1: [Self-deploy] -> [Managed API]
+    ~ [Google] gemini-3.1-flash-lite-image (default)
+        s: 1 region(s) changed support: us-central1: [Self-deploy] -> [Managed API]
+    ~ [Google] gemini-3.6-flash (default)
+        lifecycle: "Legacy" -> "Deprecated"
+        retirementDate: "No retirement date announced" -> "2026-11-19"
+        replacement: null -> "gemini-3.8-flash"
+    ~ [Google] gemini-3.7-flash (default)
+        lifecycle: "Legacy" -> "Deprecated"
+        retirementDate: "No retirement date announced" -> "2027-01-28"
+        replacement: null -> "gemini-3.8-flash"
+    ~ [Google] gemini-3.8-flash (default)
+        s: +2 region(s) gained (asia-southeast1, europe-west2)
+    ~ [Google] gemma3 (gemma-3-4b-pt)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Google] gemma4 (gemma-4-e4b-it)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Google] medgemma (medgemma-4b-pt)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Meta] llama3-2 (llama-3.2-90b-vision-instruct)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Meta] llama3_1 (llama-3.1-8b-instruct-quantized-w8a8)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Qwen] qwen3 (qwen3-8b-fp8)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Qwen] qwen3-5 (qwen3.5-9b-base)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Qwen] qwen3-6 (qwen3.6-35b-a3b-fp8)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Qwen] qwen3.8 (qwen3.8-27b-fp8)
+        s: +3 region(s) gained (us-west1, europe-west4, us-east5)
+    ~ [Z.AI] glm-4.7-flash (glm-4.7-flash)
+        s: +1 region(s) gained (asia-southeast2)
+    ~ [Z.AI] glm-5.2-maas (001)
+        s: +1 region(s) gained (us-east1)

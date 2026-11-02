@@ -1,0 +1,29 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-10-09 -> 2026-10-11
+  models: 140 -> 140
+  changed (1):
+    ~ [Anthropic] Claude Sonnet 4.5
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-04-08"
+
+=== azure ===
+  generated: 2026-10-09 -> 2026-10-11
+  models: 155 -> 158
+  added (3): [Anthropic] Claude Haiku 5.5, [Anthropic] Claude Opus 5.5, [Anthropic] Claude Sonnet 5.5
+  changed (5):
+    ~ [Anthropic] Claude Opus 4.7
+        s: +7 region(s) gained (centralus, eastus, northcentralus, southcentralus, westcentralus, westus, westus3)
+    ~ [Anthropic] Claude Opus 4.6
+        s: +7 region(s) gained (centralus, eastus, northcentralus, southcentralus, westcentralus, westus, westus3)
+    ~ [Anthropic] Claude Opus 4.5
+        s: +6 region(s) gained (centralus, eastus, northcentralus, southcentralus, westus, westus3)
+    ~ [Anthropic] Claude Sonnet 4.6
+        s: +7 region(s) gained (centralus, eastus, northcentralus, southcentralus, westcentralus, westus, westus3)
+    ~ [Anthropic] Claude Sonnet 4.5
+        s: +6 region(s) gained (centralus, eastus, northcentralus, southcentralus, westus, westus3)
+
+=== gcp ===
+  models: 291 -> 291
+  changed (0):

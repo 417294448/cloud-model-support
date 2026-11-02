@@ -47,8 +47,8 @@ Only needed if you're refreshing data, not for viewing the page:
 
 | Tool | Used for | Check |
 |---|---|---|
-| `gcloud` CLI, authenticated, with access to a GCP project | Region probing for the GCP module | `gcloud auth print-access-token` |
-| Python 3 + `requests` | Running `build_vertex_matrix.py` | `python -c "import requests"` |
+| `gcloud` CLI, authenticated, with access to a GCP project — **or** a GCP service-account key file (no gcloud needed) | Region probing for the GCP module | `gcloud auth print-access-token`, or `--service-account <sa.json>` |
+| Python 3 + `requests` (+ `google-auth` only for the service-account path) | Running `build_vertex_matrix.py` | `python -c "import requests"` |
 | Node.js | All table-parsing / merge scripts | `node --version` |
 | `curl` | Fetching vendor documentation pages | Preinstalled on most systems |
 
@@ -156,20 +156,26 @@ GET https://{region}-aiplatform.googleapis.com/v1/publishers/{publisher}/models/
 **Running it manually:**
 
 ```bash
-# Prerequisite: gcloud CLI installed, authenticated, with access to a billing/quota project
+# Prerequisite: gcloud CLI installed & authenticated, OR a service-account key file (--service-account)
 
 # Option 1: full refresh — re-fetches the catalog too (slower, thousands of HTTP requests)
 python build_vertex_matrix.py --project <YOUR_PROJECT_ID> --output vertex.json
+python build_vertex_matrix.py --service-account <sa.json> --output vertex.json   # no gcloud
 
 # Option 2: reuse the cached catalog snapshot, only re-probe availability (faster; recommended for routine updates)
 python build_vertex_matrix.py --project <YOUR_PROJECT_ID> \
   --catalog-file vertex_all_models.json --output vertex.json
 
 # Common flags
+#   --service-account <sa.json>             authenticate with a service-account key instead of gcloud;
+#                                           requires `pip install google-auth`; --project optional (defaults
+#                                           to the key's project_id)
 #   --regions us-central1,europe-west4      probe only specific regions (defaults to ~35 built-in)
 #   --workers 30                            concurrent probe workers (default 30)
 #   --limit 20                              cap to the first N models — useful with --output vertex_test.json for a quick smoke test
 ```
+
+The `--service-account` path replaces gcloud in both places it was used: the access token is minted from the key via `google-auth` (RS256 JWT against the token endpoint), and the catalog is listed through the ModelGardenService REST API — `GET https://us-central1-aiplatform.googleapis.com/v1beta1/publishers/*/models?filter=is_hf_wildcard(false)&listAllVersions=True`. That call is a drop-in equivalent of `gcloud ai model-garden models list` (it returns the same `name`/`versionId`/`launchStage`/`supportedActions` fields and the same ~630 entries); the regional host matters — the global `aiplatform.googleapis.com` host only returns managed-API models.
 
 Once it's done, splice `vertex.json` into `index.html` with `apply_update.js replace-from-provider` (see the skill section below, or the equivalent manual recipe further down).
 

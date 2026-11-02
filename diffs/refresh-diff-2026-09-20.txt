@@ -1,0 +1,33 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-09-13 -> 2026-09-20
+  models: 136 -> 136
+  added (1): [Moonshot AI] Kimi K3
+  removed (1): [Anthropic] Claude Mythos Preview
+  changed (0):
+
+=== azure ===
+  generated: 2026-09-13 -> 2026-09-20
+  models: 150 -> 150
+  changed (4):
+    ~ [OpenAI] gpt-image-1.5 (2025-12-16)
+        retirementDate: "2027-06-16" -> "2026-12-16"
+    ~ [OpenAI] gpt-realtime-2.1 (2026-07-07)
+        lifecycle: "Preview" -> "GA"
+    ~ [OpenAI] gpt-realtime-2.1-mini (2026-07-07)
+        lifecycle: "Preview" -> "GA"
+    ~ [Cohere] Cohere-command-a-plus-05-2026 (1)
+        retirementDate: "2026-10-13" -> "2026-10-16"
+        replacement: null -> "coherelabs-command-a-plus-05-2026-fp8 1 , coherelabs-command-a-plus-05-2026-bf16 1 , coherelabs-command-a-plus-05-2026-w4a4 1"
+
+=== gcp ===
+  generated: 2026-09-13 -> 2026-09-20
+  models: 291 -> 291
+  added (2): [Moonshot AI] kimi-k2 (kimi-k2-instruct), [Z.AI] glm-4.7-flash (glm-4.7-flash)
+  removed (2): [Anthropic] claude-opus-4-1 (20250805), [Moonshot AI] kimi-k2 (kimi-k2-thinking)
+  changed (2):
+    ~ [Google] gemini-2.5-flash-image (default)
+        retirementDate: "2026-10-02" -> "2027-03-15"
+    ~ [Google] gemini-3.1-flash-lite-image (default)
+        retirementDate: "No retirement date announced" -> "June 28, 2027 or later"

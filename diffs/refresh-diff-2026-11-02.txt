@@ -1,0 +1,66 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-10-25 -> 2026-11-02
+  models: 142 -> 142
+  changed (1):
+    ~ [OpenAI] Daybreak Red: GPT-5.6 Cyber
+        s: +1 region(s) gained (us-gov-east-1)
+
+=== azure ===
+  generated: 2026-10-25 -> 2026-11-02
+  models: 165 -> 163
+  added (1): [OpenAI] gpt-6.1-terra (2026-10-26)
+  removed (3): [OpenAI] model-router (2025-05-19), [OpenAI] model-router (2025-08-07), [OpenAI] sora-2 (2025-10-06)
+  changed (23):
+    ~ [OpenAI] gpt-4o (2024-05-13)
+        retirementDate: "2026-12-09" -> "2027-01-14"
+        replacement: "gpt-5.6-sol" -> "gpt-5.1 (2025-11-13)"
+    ~ [OpenAI] gpt-4o-mini-transcribe (2025-03-20)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-4o-mini-transcribe (2025-12-15)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-4o-transcribe (2025-03-20)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-4o-transcribe-diarize (2025-10-15)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-5-mini (2025-08-07)
+        retirementDate: "2027-02-09" -> "2027-07-13"
+    ~ [OpenAI] gpt-5.1 (2025-11-13)
+        retirementDate: "2027-05-15" -> "2027-07-13"
+    ~ [OpenAI] gpt-6-luna (2026-09-22)
+        s: 28 region(s) changed support: brazilsouth: [Std·G] -> [Std·G,Prov·G]; canadacentral: [Std·G] -> [Std·G,Prov·G]; canadaeast: [Std·G] -> [Std·G,Prov·G]; centralus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G,Prov·D]; eastus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G,Prov·D]; ...
+    ~ [OpenAI] gpt-6.1-sol (2026-09-29)
+        s: 7 region(s) changed support: francecentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; germanywestcentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; italynorth: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; polandcentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; spaincentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; ...
+    ~ [OpenAI] gpt-live-1 (2026-09-10)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-live-transcribe (2026-07-28)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime (2025-08-28)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime-1.5 (2026-02-23)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime-2 (2026-05-06)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime-2.1 (2026-07-07)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime-2.1-mini (2026-07-07)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime-mini (2025-10-06)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime-mini (2025-12-15)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime-translate (2026-05-06)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-realtime-whisper (2026-05-06)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] gpt-transcribe (2026-07-28)
+        s: +1 region(s) gained (westus3)
+    ~ [OpenAI] model-router (2025-11-18)
+        s: +23 region(s) gained (brazilsouth, canadacentral, canadaeast, centralus, eastus, northcentralus, southcentralus, westus, francecentral, germanywestcentral, ...)
+    ~ [Anthropic] Claude Mythos 5.1
+        retirementDate: null -> "2027-09-01"
+
+=== gcp ===
+  models: 301 -> 301
+  changed (0):

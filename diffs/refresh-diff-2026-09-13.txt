@@ -1,0 +1,47 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-09-06 -> 2026-09-13
+  models: 135 -> 136
+  added (1): [OpenAI] GPT-6 Astra
+  changed (2):
+    ~ [Anthropic] Claude 3 Haiku
+        s: -6 region(s) lost (us-east-2, us-gov-east-1 (GovCloud), us-gov-west-1 (GovCloud), eu-west-2, ap-northeast-1, ap-southeast-2); 5 region(s) changed support: us-east-1: [In-Region,Geo] -> [Geo]; us-west-2: [In-Region,Geo] -> [Geo]; eu-central-1: [In-Region,Geo] -> [Geo]; eu-west-1: [In-Region,Geo] -> [Geo]; eu-west-3: [In-Region,Geo] -> [Geo]
+    ~ [Cohere] Command R
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-08-19"
+
+=== azure ===
+  generated: 2026-09-06 -> 2026-09-13
+  models: 150 -> 150
+  changed (6):
+    ~ [OpenAI] o1 (2024-12-17)
+        retirementDate: "2026-10-21" -> "2026-11-19"
+    ~ [OpenAI] o3 (2025-04-16)
+        lifecycle: "GA" -> "Deprecated"
+        retirementDate: "2026-10-21" -> "2026-11-19"
+    ~ [OpenAI] o3-deep-research (2025-06-26)
+        lifecycle: "GA" -> "Deprecated"
+        retirementDate: "2026-12-26" -> "2026-11-19"
+        replacement: null -> "gpt-5.6-sol"
+    ~ [OpenAI] o3-mini (2025-01-31)
+        retirementDate: "2026-10-01" -> "2026-11-19"
+        replacement: "o4-mini" -> "gpt-5.6-terra"
+    ~ [OpenAI] o3-pro (2025-06-10)
+        lifecycle: "GA" -> "Deprecated"
+        retirementDate: "2026-12-17" -> "2026-11-19"
+        replacement: null -> "gpt-5.6-sol"
+    ~ [OpenAI] o4-mini (2025-04-16)
+        retirementDate: "2026-10-16" -> "2026-11-19"
+        replacement: null -> "gpt-5.6-terra"
+
+=== gcp ===
+  generated: 2026-09-06 -> 2026-09-13
+  models: 290 -> 291
+  added (4): [Meta] llama4 (llama-4-maverick-17b-128e-instruct-fp8), [Moonshot AI] kimi-k2 (kimi-k2-thinking), [Qwen] qwen3.8 (qwen3.8-27b-fp8), [Z.AI] glm-5-3 (glm-5.3-flash)
+  removed (3): [Google] gemini-3.1-flash-lite-preview (default), [Meta] llama4 (llama-4-scout-17b-16e), [Moonshot AI] kimi-k2 (kimi-k2-instruct)
+  changed (1):
+    ~ [Google] veo-2.0-generate-001 (experimental)
+        lifecycle: "Deprecated" -> null
+        retirementDate: "2026-06-30" -> null
+        replacement: "veo-3.1-generate-001" -> null

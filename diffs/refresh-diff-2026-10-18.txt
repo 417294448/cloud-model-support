@@ -1,0 +1,66 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-10-15 -> 2026-10-18
+  models: 141 -> 141
+  changed (12):
+    ~ [Anthropic] Claude 3 Sonnet
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-11-13"
+    ~ [Anthropic] Claude 3.7 Sonnet
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-11-13"
+    ~ [Anthropic] Claude 3.5 Sonnet V2:0
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-11-13"
+    ~ [Anthropic] Claude 3.5 Sonnet
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-11-13"
+    ~ [Meta] Llama 3.2 90B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-07-07"
+    ~ [Meta] Llama 3.2 11B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-07-07"
+    ~ [Meta] Llama 3.2 3B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-07-07"
+    ~ [Meta] Llama 3.2 1B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-07-07"
+    ~ [Meta] Llama 3.1 405B Instruct
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2026-07-07"
+    ~ [Writer] Palmyra X5
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-21"
+    ~ [Writer] Palmyra X4
+        lifecycle: null -> "EOL"
+        retirementDate: null -> "2027-03-09"
+    ~ [xAI] Grok 4.7
+        s: +1 region(s) gained (ca-west-1)
+
+=== azure ===
+  generated: 2026-10-15 -> 2026-10-18
+  models: 160 -> 161
+  added (1): [Anthropic] Claude Opus 5.5 Fast
+  changed (5):
+    ~ [Microsoft] Microsoft-Decision-1 (1)
+        s: +6 region(s) gained (australiaeast, japaneast, japanwest, koreacentral, southeastasia, southindia)
+    ~ [Mistral] Ministral-3B
+        retirementDate: null -> "2026-12-09"
+        replacement: null -> "ministral-ministral-4b-instruct"
+    ~ [Mistral] Mistral-small-2503
+        retirementDate: null -> "2026-12-09"
+        replacement: null -> "mistral-small-4-119b-2603"
+    ~ [Mistral] Mistral-medium-2505
+        retirementDate: null -> "2026-12-09"
+        replacement: null -> "mistral-medium-3-5"
+    ~ [Mistral] Mistral-large
+        lifecycle: "GA" -> null
+        retirementDate: null -> null
+        replacement: null -> null
+
+=== gcp ===
+  models: 301 -> 301
+  changed (0):

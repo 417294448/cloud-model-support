@@ -66,7 +66,12 @@ const path = require('path');
 
 const DATA_PREFIX = '<script id="data" type="application/json">';
 const DATA_SUFFIX = '</script>';
-const LOGIC_RE = /<script>([\s\S]*)<\/script>\s*<\/body>/;
+// The page's inline logic script is the only bare `<script>` (the data blob
+// carries attributes, and a trailing Cloudflare analytics beacon is a second
+// attributed tag), so match the first bare pair non-greedily. Anchoring on
+// `</script>\s*</body>` no longer works: the deployed page ends with
+// `</script><!-- End Cloudflare Web Analytics --></body>`.
+const LOGIC_RE = /<script>([\s\S]*?)<\/script>/;
 
 function loadData(htmlPath) {
   const html = fs.readFileSync(htmlPath, 'utf8');

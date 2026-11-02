@@ -1,0 +1,33 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-09-27 -> 2026-10-04
+  models: 137 -> 140
+  added (3): [Anthropic] Claude Sonnet 5.5, [OpenAI] GPT-6.1 Sol, [xAI] Grok 4.7
+  changed (5):
+    ~ [Anthropic] Claude Opus 5.5
+        s: 1 region(s) changed support: eu-west-2: [Geo,Global] -> [In-Region,Geo,Global]
+    ~ [Anthropic] Claude Opus 5
+        s: 3 region(s) changed support: ap-northeast-2: [Global] -> [In-Region,Global]; ap-south-1: [Global] -> [Geo,Global]; ap-south-2: [Global] -> [Geo,Global]
+    ~ [Anthropic] Claude Sonnet 5
+        s: 5 region(s) changed support: eu-west-2: [Geo,Global] -> [In-Region,Geo,Global]; ap-northeast-2: [Global] -> [In-Region,Global]; ap-south-1: [Global] -> [Geo,Global]; ap-south-2: [Global] -> [Geo,Global]; ap-southeast-1: [Global] -> [In-Region,Global]
+    ~ [Anthropic] Claude Haiku 4.5
+        s: 2 region(s) changed support: ap-south-1: [Global] -> [Geo,Global]; ap-south-2: [Global] -> [Geo,Global]
+    ~ [OpenAI] GPT-6 Astra
+        s: 1 region(s) changed support: us-east-1: [Geo,Global] -> [In-Region,Geo,Global]
+
+=== azure ===
+  generated: 2026-09-27 -> 2026-10-04
+  models: 150 -> 150
+  changed (3):
+    ~ [Anthropic] Claude Opus 4.5
+        retirementDate: "2026-10-19" -> "2026-11-24"
+    ~ [Anthropic] Claude Sonnet 4.5
+        retirementDate: "2026-10-19" -> "2026-11-30"
+        replacement: null -> "claude-sonnet-5-5"
+    ~ [Anthropic] Claude Haiku 4.5
+        retirementDate: "2026-10-19" -> "2026-11-15"
+
+=== gcp ===
+  models: 291 -> 291
+  changed (0):
