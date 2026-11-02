@@ -14,6 +14,46 @@ all_models.json
 index-new.html
 index-old.html
 
+# Scratch files the refresh pipeline drops in the repo root: regeneratable intermediates that
+# are never part of the deployed page (apply_update.js / build_azure_models.js / update-gcp.js /
+# parse-aws.js inputs & outputs, and patch files fed to `apply_update.js patch`).
+vertex_new.json
+mini-catalog.json
+azure-models-built.json
+azure-groups-built.json
+gcp-retirement-patch.json
+ret-patch.json
+rt-patch.json
+aws-retirement-patch.json
+aws-api-patch.json
+_build_aws_patches.js
+index-aws-copy.html
+diff-aws.txt
+# NOTE: aws-models.json is currently tracked; ignoring it has no effect until `git rm --cached`.
+aws-models.json
+
+# Raw HTML downloaded by fetch_doc.sh when it's pointed at a repo-relative path
+# instead of /tmp (bash and node agree on /tmp; python on Windows does not).
+aws-region.html
+aws-lifecycle.html
+aws-endpoints.html
+gcp-versions.html
+azure-openai-ava.html
+azure-others-ava.html
+azure-retirement.html
+
+# One-off hidden scraper scripts (superseded by .claude/skills/refresh-model-data/scripts/;
+# they hardcode /tmp and /workspace paths, so they only ever run on the author's machine).
+# They are tracked today -- remove them with `git rm --cached` if you want these rules to bite.
+.build_aws_endpoints.js
+.build_aws_models.js
+.build_aws_retirement.js
+.build_azure_openai_ava.js
+.build_azure_others_ava.js
+.build_azure_retirement.js
+.build_gcp_retirement.js
+.read_aws_data.js
+
 # Temporary GCP service-account key (provided per-run, never commit)
 .gcp-sa.json
 sa.json
@@ -23,3 +63,24 @@ sa.json
 
 # Node dependencies (local tooling, e.g. jsdom used for render verification)
 node_modules/
+
+# Python bytecode / virtualenvs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local scratch directories created while iterating on the parsers
+aws-build-test/
+
+# Tool-generated shares and per-machine tool state (Trae dumps a fresh set of zips every run;
+# the Claude Code local settings file holds machine-specific permissions)
+.trae-html-share-packages/
+.claude/settings.local.json
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,66 +1,35 @@
 Diff: index.html -> index-new.html
 
 === aws ===
-  generated: 2026-10-25 -> 2026-11-02
   models: 142 -> 142
-  changed (1):
-    ~ [OpenAI] Daybreak Red: GPT-5.6 Cyber
-        s: +1 region(s) gained (us-gov-east-1)
+  changed (0):
 
 === azure ===
-  generated: 2026-10-25 -> 2026-11-02
-  models: 165 -> 163
-  added (1): [OpenAI] gpt-6.1-terra (2026-10-26)
-  removed (3): [OpenAI] model-router (2025-05-19), [OpenAI] model-router (2025-08-07), [OpenAI] sora-2 (2025-10-06)
-  changed (23):
-    ~ [OpenAI] gpt-4o (2024-05-13)
-        retirementDate: "2026-12-09" -> "2027-01-14"
-        replacement: "gpt-5.6-sol" -> "gpt-5.1 (2025-11-13)"
-    ~ [OpenAI] gpt-4o-mini-transcribe (2025-03-20)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-4o-mini-transcribe (2025-12-15)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-4o-transcribe (2025-03-20)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-4o-transcribe-diarize (2025-10-15)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-5-mini (2025-08-07)
-        retirementDate: "2027-02-09" -> "2027-07-13"
-    ~ [OpenAI] gpt-5.1 (2025-11-13)
-        retirementDate: "2027-05-15" -> "2027-07-13"
-    ~ [OpenAI] gpt-6-luna (2026-09-22)
-        s: 28 region(s) changed support: brazilsouth: [Std·G] -> [Std·G,Prov·G]; canadacentral: [Std·G] -> [Std·G,Prov·G]; canadaeast: [Std·G] -> [Std·G,Prov·G]; centralus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G,Prov·D]; eastus: [Std·G,Std·D] -> [Std·G,Std·D,Prov·G,Prov·D]; ...
-    ~ [OpenAI] gpt-6.1-sol (2026-09-29)
-        s: 7 region(s) changed support: francecentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; germanywestcentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; italynorth: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; polandcentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; spaincentral: [Std·G,Std·D,Prov·G] -> [Std·G,Std·D,Prov·G,Prov·D]; ...
-    ~ [OpenAI] gpt-live-1 (2026-09-10)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-live-transcribe (2026-07-28)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime (2025-08-28)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime-1.5 (2026-02-23)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime-2 (2026-05-06)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime-2.1 (2026-07-07)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime-2.1-mini (2026-07-07)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime-mini (2025-10-06)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime-mini (2025-12-15)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime-translate (2026-05-06)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-realtime-whisper (2026-05-06)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] gpt-transcribe (2026-07-28)
-        s: +1 region(s) gained (westus3)
-    ~ [OpenAI] model-router (2025-11-18)
-        s: +23 region(s) gained (brazilsouth, canadacentral, canadaeast, centralus, eastus, northcentralus, southcentralus, westus, francecentral, germanywestcentral, ...)
-    ~ [Anthropic] Claude Mythos 5.1
-        retirementDate: null -> "2027-09-01"
+  models: 163 -> 163
+  changed (0):
 
 === gcp ===
-  models: 301 -> 301
-  changed (0):
+  generated: 2026-10-15 -> 2026-11-02
+  groups added (1): Reflection
+  models: 301 -> 296
+  added (13): [BAAI] bge (llm-embedder), [DeepSeek] deepseek-v4 (deepseek-v4-pro-0813), [DeepSeek] deepseek-v4.1 (deepseek-v4.1-flash-1017), [DeepSeek] deepseek-v4.1-flash-maas (001), [Google] gemini-3.5-transcribe (default), [Google] gemini-3.5-transcribe-live (default), [Google] gemini-robotics-er-2-preview (default), [Google] paligemma (paligemma2-3b-pt-896), [Meta] muse-spark-open (muse-spark-open-816b-a42b-nvfp4), [Mistral AI] ministral-3 (ministral-3-8b-reasoning-2512), [NVIDIA] nemotron-3.5 (nemotron-3.5-super-vl-nvfp4), [Reflection] beam (beam-1.0-501b-a23b), [Xiaomimimo] mimo-v2.6 (mimo-v2.6-pro-rl)
+  removed (18): [BAAI] bge (bge-base-en-v1.5), [DeepSeek] deepseek-ocr-maas (001), [DeepSeek] deepseek-v3.2-maas (001), [DeepSeek] deepseek-v4 (deepseek-v4-pro), [DeepSeek] deepseek-v4.1 (deepseek-v4.1-flash), [Google] paligemma (paligemma2-3b-mix-224), [Google] veo-2.0-generate-001 (experimental), [Google] veo-3.0-fast-generate-001 (default), [Google] veo-3.0-generate-001 (default), [Intfloat] multilingual-e5-large-instruct-maas (001), [Meta] llama-3.3-70b-instruct-maas (001), [Mistral AI] ministral-3 (ministral-3-3b-instruct-2512), [Moonshot AI] kimi-k2-thinking-maas (001), [NVIDIA] nemotron-3.5 (nemotron-3.5-lightning-nvfp4), [Qwen] qwen3-235b-a22b-instruct-2507-maas (001), [Qwen] qwen3-coder-480b-a35b-instruct-maas (001), [Z.AI] glm-4.7-maas (001), [Z.AI] glm-5-maas (001)
+  changed (9):
+    ~ [DeepSeek] deepseek-r1-0528-maas (001)
+        s: -1 region(s) lost (us-central1)
+    ~ [DeepSeek] deepseek-v3.1-maas (001)
+        s: -1 region(s) lost (us-central1)
+    ~ [Google] gemini-3.5-flash (default)
+        s: -1 region(s) lost (europe-west4)
+    ~ [Google] gemini-3.8-live (default)
+        s: -1 region(s) lost (europe-west4)
+    ~ [Google] gemini-4-argon (default)
+        s: +2 region(s) gained (europe-west2, asia-southeast1)
+    ~ [MiniMax] minimax-m2-maas (001)
+        s: -1 region(s) lost (us-central1)
+    ~ [Qwen] qwen3-next-80b-a3b-instruct-maas (001)
+        s: -2 region(s) lost (us-east5, us-central1)
+    ~ [Qwen] qwen3-next-80b-a3b-thinking-maas (001)
+        s: -2 region(s) lost (us-central1, us-east5)
+    ~ [Qwen] qwen3.8 (qwen3.8-27b-fp8)
+        s: +2 region(s) gained (asia-southeast2, asia-southeast1)
