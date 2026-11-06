@@ -1,0 +1,32 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-11-02 -> 2026-11-06
+  models: 142 -> 143
+  added (1): [OpenAI] GPT-6.1 Terra
+  changed (2):
+    ~ [OpenAI] GPT-5.6 Terra
+        s: 2 region(s) changed support: us-gov-west-1: [In-Region] -> [In-Region,Geo]; us-gov-east-1: [In-Region] -> [In-Region,Geo]
+    ~ [OpenAI] GPT-5.6 Luna
+        s: 2 region(s) changed support: us-gov-west-1: [In-Region] -> [In-Region,Geo]; us-gov-east-1: [In-Region] -> [In-Region,Geo]
+
+=== azure ===
+  generated: 2026-11-02 -> 2026-11-06
+  models: 163 -> 163
+  changed (1):
+    ~ [OpenAI] gpt-5.6-sol (2026-07-09)
+        s: 2 region(s) changed support: australiaeast: [Std·G,Std·D,Prov·G,Prov·D,Prov·R] -> [Std·G,Std·D,Std·R,Prov·G,Prov·D,Prov·R]; uaenorth: [Std·G,Prov·G] -> [Std·G,Prov·G,Prov·R]
+
+=== gcp ===
+  generated: 2026-11-02 -> 2026-11-06
+  groups removed (1): Openlm Research
+  models: 296 -> 287
+  added (5): [ElevenLabs] elevenlabs-scribe-v2-realtime (default), [ElevenLabs] elevenlabs-v3-conversational (default), [Google] gemini-3.8-flash-lite-tts (default), [Google] gemini-3.8-flash-tts (default), [Google] gemini-omni-1.2-flash (default)
+  removed (14): [DeepSeek] deepseek-r1-0528-maas (001), [DeepSeek] deepseek-v3.1-maas (001), [Google] cloudnerf-pytorch-zipnerf (001), [Google] imageclassification-proprietary-maxvit (001), [Google] imageobjectdetection-proprietary-yolo (001), [Google] imagesegmentation-deeplabv3 (001), [Meta] roberta-large (roberta-large), [Meta] xlm-roberta-large (xlm-roberta-large), [MiniMax] minimax-m2-maas (001), [Openlm Research] openllama (open_llama_7b), [Qwen] qwen3-next-80b-a3b-instruct-maas (001), [Qwen] qwen3-next-80b-a3b-thinking-maas (001), [xAI] grok-4.1-fast-non-reasoning (001), [xAI] grok-4.1-fast-reasoning (001)
+  changed (3):
+    ~ [Google] gemini-3.8-flash (default)
+        s: +2 region(s) gained (northamerica-northeast1, asia-northeast1)
+    ~ [Google] veo-3.1-fast-generate-001 (default)
+        retirementDate: "November 17, 2026 or later" -> "May 4, 2027 or later"
+    ~ [Google] veo-3.1-generate-001 (default)
+        retirementDate: "November 17, 2026 or later" -> "May 4, 2027 or later"

@@ -8225,6 +8225,21 @@
                 }
               },
               {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "brazilsouth": false,
+                  "canadaeast": false,
+                  "centralus": false,
+                  "eastus": false,
+                  "eastus2": false,
+                  "northcentralus": false,
+                  "southcentralus": false,
+                  "westus": false,
+                  "westus3": false
+                }
+              },
+              {
                 "model": "o1",
                 "version": "2024-12-17",
                 "regions": {
@@ -8467,6 +8482,21 @@
                 }
               },
               {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "francecentral": false,
+                  "germanywestcentral": false,
+                  "norwayeast": false,
+                  "polandcentral": false,
+                  "spaincentral": false,
+                  "swedencentral": false,
+                  "switzerlandnorth": false,
+                  "uksouth": false,
+                  "westeurope": false
+                }
+              },
+              {
                 "model": "o1",
                 "version": "2024-12-17",
                 "regions": {
@@ -8611,6 +8641,17 @@
                 }
               },
               {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": false,
+                  "koreacentral": false,
+                  "southeastasia": false,
+                  "southindia": false
+                }
+              },
+              {
                 "model": "text-embedding-3-large",
                 "version": "1",
                 "regions": {
@@ -8656,6 +8697,14 @@
               }
             ],
             "Middle East and Africa": [
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "southafricanorth": false,
+                  "uaenorth": false
+                }
+              },
               {
                 "model": "text-embedding-3-large",
                 "version": "1",
@@ -12045,6 +12094,14 @@
                 "version": "2025-11-13",
                 "regions": {
                   "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-5.6-sol",
+                "version": "2026-07-09",
+                "regions": {
+                  "southafricanorth": false,
                   "uaenorth": true
                 }
               },

@@ -210,12 +210,13 @@ This page has a few structural quirks worth knowing about (the `refresh-model-da
 2. Availability is rendered as `<img src=".../icon-yes.png">` / `icon-no.png`, not as text.
 3. Some models (where one display name maps to multiple underlying model IDs) have **two `<table>`s sharing the same `<caption>`** — their region data must be unioned into a single record, not treated as two models or overwritten.
 4. Models nearing retirement can show a literal cell value like `Legacy (EOL: YYYY-MM-DD)` instead of a yes-icon — that still counts as *available* (just scheduled to retire); only an explicit no-icon means unavailable.
+5. Some tables now carry **two In-Region columns** — `In-Region ( bedrock-mantle )` and `In-Region ( bedrock-runtime )`. The page's `in` cap means "the request stays in the Region" regardless of API surface, so both are unioned into bit 1; the Runtime-vs-Mantle split is carried separately by `api.rt` / `api.mt`. Trailing cells can also be omitted when empty (treated as unavailable).
 
 **Two supplementary files:**
 
 | File | Source | Content |
 |---|---|---|
-| `aws-model-retirement.json` | <https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html> | Per-model, per-region-group `legacy_date` (enters Legacy status), `eol_date` (fully retired), and `public_extended_access_start_date` |
+| `aws-model-retirement.json` | <https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html> | Per-model, per-region-group `legacy_date` (enters Legacy status), `eol_date` (fully retired), and `public_extended_access_start_date` |
 | `aws-model-runtime&mantle.json` | <https://docs.aws.amazon.com/bedrock/latest/userguide/models-endpoint-availability.html> | Per-model `bedrock_runtime` (classic Runtime API) / `bedrock_mantle` (newer Mantle API) boolean support |
 
 `index.html`'s AWS `lifecycle`/`retirementDate`/`replacement` fields come from `aws-model-retirement.json` (Legacy → `"Legacy"`, EOL → `"EOL"`; `retirementDate` is the `eol_date`). `api.rt`/`api.mt` come from `aws-model-runtime&mantle.json`.

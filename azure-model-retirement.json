@@ -829,7 +829,7 @@
           "model": "mistral-document-ai-2512",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": null,
+          "retirement_date": "2027-02-15",
           "replacement": "mistral-ocr-4-0"
         }
       ]

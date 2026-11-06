@@ -124,6 +124,19 @@
       ]
     },
     {
+      "category": "Gemini Omni models",
+      "models": [
+        {
+          "model": "gemini-omni-1.2-flash",
+          "release_date": "2026-11-05",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "November 5, 2027 or later",
+          "replacement": null
+        }
+      ]
+    },
+    {
       "category": "Veo models",
       "models": [
         {
@@ -131,7 +144,7 @@
           "release_date": "2025-11-17",
           "release_date_note": null,
           "retirement_date": null,
-          "retirement_date_note": "November 17, 2026 or later",
+          "retirement_date_note": "May 4, 2027 or later",
           "replacement": null
         },
         {
@@ -139,7 +152,7 @@
           "release_date": "2025-11-17",
           "release_date_note": null,
           "retirement_date": null,
-          "retirement_date_note": "November 17, 2026 or later",
+          "retirement_date_note": "May 4, 2027 or later",
           "replacement": null
         }
       ]

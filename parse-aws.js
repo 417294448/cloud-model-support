@@ -2,11 +2,13 @@
 const fs = require('fs');
 
 const REGION_HTML = '/tmp/aws-region.html';
-const LIFECYCLE_HTML = '/tmp/aws-lifecycle.html';
+// The Legacy/EOL table moved off model-lifecycle.html to model-lifecycle-legacy.html
+// (the parent page now only links to it under "Legacy and end-of-life (EOL) models").
+const LIFECYCLE_HTML = '/tmp/aws-lifecycle-legacy.html';
 const ENDPOINTS_HTML = '/tmp/aws-endpoints.html';
 
 const REGION_SOURCE = 'https://docs.aws.amazon.com/bedrock/latest/userguide/models-region-compatibility.html';
-const LIFECYCLE_SOURCE = 'https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html';
+const LIFECYCLE_SOURCE = 'https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html';
 const ENDPOINTS_SOURCE = 'https://docs.aws.amazon.com/bedrock/latest/userguide/models-endpoint-availability.html';
 
 function cellText(c) {
@@ -70,8 +72,8 @@ function toAbsoluteRegionCard(href) {
 }
 
 function parseRegionCode(raw) {
-  // e.g. "us-east-1 (N. Virginia)" -> "us-east-1"
-  const m = raw.match(/^([a-z]{2}-[a-z]+-\d+)/);
+  // e.g. "us-east-1 (N. Virginia)" -> "us-east-1", "us-gov-west-1 (AWS GovCloud (US-West))" -> "us-gov-west-1"
+  const m = raw.match(/([a-z]{2}-[a-z]+(?:-[a-z]+)?-\d+)/);
   return m ? m[1] : raw.trim();
 }
 
@@ -79,7 +81,9 @@ function isAvailable(cell) {
   const u = cell.toUpperCase();
   if (u === 'YES') return true;
   if (u === 'NO') return false;
-  if (/LEGACY\s*\(EOL:/i.test(cell)) return true;
+  // Retiring-but-still-available cells: "Legacy (EOL: 2026-10-14)" (older format)
+  // or a bare "EOL: 2026-10-14" (current format). Both still mean available.
+  if (/EOL:/i.test(cell)) return true;
   return false;
 }
 
@@ -105,24 +109,29 @@ function parseRegionTables() {
       models.push(model);
     }
 
+    // Some tables carry TWO in-region columns ("In-Region ( bedrock-mantle )" and
+    // "In-Region ( bedrock-runtime )"); the page's `in` cap means "stays in the
+    // region" regardless of API surface, so union both columns into bit 1.
     const header = t.rows[0];
-    const colIdx = {};
+    const colIdx = { in: [] };
     header.forEach((h, i) => {
       const u = h.toUpperCase();
-      if (u.includes('IN-REGION') || u === 'IN-REGION' || u === 'IN REGION') colIdx.in = i;
+      if (u.includes('IN-REGION') || u === 'IN-REGION' || u === 'IN REGION') colIdx.in.push(i);
       if (u.includes('GEO')) colIdx.geo = i;
       if (u.includes('GLOBAL')) colIdx.global = i;
     });
     const regionCol = 0;
+    // Trailing cells can be omitted when empty (e.g. Global) -- treat as unavailable.
+    const available = (row, i) => i !== undefined && row[i] !== undefined && isAvailable(row[i]);
 
     for (let i = 1; i < t.rows.length; i++) {
       const row = t.rows[i];
       if (row.length < 2) continue;
       const region = parseRegionCode(row[regionCol]);
       let mask = 0;
-      if (colIdx.in !== undefined && isAvailable(row[colIdx.in])) mask |= 1;
-      if (colIdx.geo !== undefined && isAvailable(row[colIdx.geo])) mask |= 2;
-      if (colIdx.global !== undefined && isAvailable(row[colIdx.global])) mask |= 4;
+      if (colIdx.in.some((idx) => available(row, idx))) mask |= 1;
+      if (available(row, colIdx.geo)) mask |= 2;
+      if (available(row, colIdx.global)) mask |= 4;
       if (mask) {
         // union with existing mask if any
         model.s[region] = (model.s[region] || 0) | mask;
@@ -154,6 +163,8 @@ function parseLifecycle() {
   const html = fs.readFileSync(LIFECYCLE_HTML, 'utf8');
   const tables = extractTables(html);
   const models = [];
+  const byKey = new Map();
+  let prev = { provider: '', model_name: '', model_id: '' };
   for (const t of tables) {
     const header = t.rows[0];
     const idx = {};
@@ -168,7 +179,10 @@ function parseLifecycle() {
       if (u.includes('PUBLIC EXTENDED ACCESS')) idx.public_extended_access_start_date = i;
     });
     for (let i = 1; i < t.rows.length; i++) {
-      const row = t.rows[i];
+      let row = t.rows[i];
+      // Continuation rows (one model listed once per region group) omit the leading
+      // provider/name/id cells via rowspan -- carry them over from the previous row.
+      if (row.length < header.length) row = [prev.provider, prev.model_name, prev.model_id, ...row];
       if (row.length < 4) continue;
       const regionsRaw = row[idx.regions] || '';
       const regions = regionsRaw.split(/,\s*/).map(r => r.trim()).filter(Boolean);
@@ -178,18 +192,24 @@ function parseLifecycle() {
       const legacyDate = parseDate(legacyRaw);
       const eolDate = parseDate(eolRaw);
       const peaDate = parseDate(peaRaw);
-      const entry = {
-        provider: row[idx.provider] || '',
-        model_name: row[idx.model_name] || '',
-        model_id: row[idx.model_id] || '',
-        region_groups: [{
-          regions,
-          legacy_date: legacyDate || legacyRaw,
-          eol_date: eolDate || eolRaw,
-          public_extended_access_start_date: peaDate || peaRaw
-        }]
+      const provider = row[idx.provider] || '';
+      const modelName = row[idx.model_name] || '';
+      const modelId = row[idx.model_id] || '';
+      prev = { provider, model_name: modelName, model_id: modelId };
+      const group = {
+        regions,
+        legacy_date: legacyDate || legacyRaw,
+        eol_date: eolDate || eolRaw,
+        public_extended_access_start_date: peaDate || peaRaw
       };
-      models.push(entry);
+      const key = provider + '|' + modelName + '|' + modelId;
+      if (byKey.has(key)) {
+        byKey.get(key).region_groups.push(group);
+      } else {
+        const entry = { provider, model_name: modelName, model_id: modelId, region_groups: [group] };
+        byKey.set(key, entry);
+        models.push(entry);
+      }
     }
   }
   return { source: LIFECYCLE_SOURCE, models };

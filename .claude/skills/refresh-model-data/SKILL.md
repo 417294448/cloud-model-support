@@ -212,11 +212,11 @@ If only one provider is in scope, there's no chaining to think about: that provi
 
    ```bash
    bash .claude/skills/refresh-model-data/scripts/fetch_doc.sh \
-     "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html" /tmp/aws-lifecycle.html
+     "https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html" /tmp/aws-lifecycle.html
    node .claude/skills/refresh-model-data/scripts/extract_tables.js /tmp/aws-lifecycle.html
    ```
 
-   Rebuild `aws-model-retirement.json` in its existing shape, write a `patch.json` (`lifecycle: "Legacy"`/`"EOL"`, `retirementDate`, matched on `g`+`n`), apply it.
+   The Legacy/EOL table moved off `model-lifecycle.html` (that page now only links to it); <https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html> has no `<table>` any more. Rebuild `aws-model-retirement.json` in its existing shape, write a `patch.json` (`lifecycle: "Legacy"`/`"EOL"`, `retirementDate`, matched on `g`+`n`), apply it. Continuation rows (one model, several region groups) omit the leading provider/name/id cells via `rowspan` — carry them down from the previous row rather than dropping the row.
 
 3. Runtime/Mantle API support:
 
