@@ -145,7 +145,7 @@
           "release_date_note": null,
           "retirement_date": null,
           "retirement_date_note": "May 4, 2027 or later",
-          "replacement": null
+          "replacement": "gemini-omni-1.2-flash"
         },
         {
           "model": "veo-3.1-fast-generate-001",
@@ -153,7 +153,7 @@
           "release_date_note": null,
           "retirement_date": null,
           "retirement_date_note": "May 4, 2027 or later",
-          "replacement": null
+          "replacement": "gemini-omni-1.2-flash"
         }
       ]
     },
@@ -444,24 +444,24 @@
         },
         {
           "model": "text-bison",
-          "release_date": "2023-05",
-          "release_date_note": null,
+          "release_date": null,
+          "release_date_note": "May 2023",
           "retirement_date": "2025-04-21",
           "retirement_date_note": null,
           "replacement": "gemini-2.5-flash-lite"
         },
         {
           "model": "chat-bison",
-          "release_date": "2023-05",
-          "release_date_note": null,
+          "release_date": null,
+          "release_date_note": "May 2023",
           "retirement_date": "2025-04-21",
           "retirement_date_note": null,
           "replacement": "gemini-2.5-flash-lite"
         },
         {
           "model": "code-gecko",
-          "release_date": "2023-05",
-          "release_date_note": null,
+          "release_date": null,
+          "release_date_note": "May 2023",
           "retirement_date": "2025-04-21",
           "retirement_date_note": null,
           "replacement": "gemini-2.5-flash-lite"

@@ -523,6 +523,12 @@
       "provider": "Moonshot AI",
       "models": [
         {
+          "model_name": "Kimi K3.1 Pro - Highspeed",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
           "model_name": "Kimi K3",
           "bedrock_runtime": true,
           "bedrock_mantle": false,
