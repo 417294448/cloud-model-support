@@ -62,31 +62,6 @@
           "legacy_date": "2026-10-15",
           "eol_date": "2026-11-27",
           "public_extended_access_start_date": "2026-10-15"
-        },
-        {
-          "regions": [
-            "ap-northeast-1",
-            "ap-southeast-2",
-            "eu-central-1",
-            "eu-west-1",
-            "eu-west-2",
-            "eu-west-3",
-            "us-east-1",
-            "us-east-2",
-            "us-west-2"
-          ],
-          "legacy_date": "2026-03-10",
-          "eol_date": "2026-09-10",
-          "public_extended_access_start_date": "2026-06-10"
-        },
-        {
-          "regions": [
-            "us-gov-east-1",
-            "us-gov-west-1"
-          ],
-          "legacy_date": "2026-03-10",
-          "eol_date": "2026-09-10",
-          "public_extended_access_start_date": "2026-06-10"
         }
       ]
     },
@@ -142,7 +117,7 @@
     },
     {
       "provider": "Anthropic",
-      "model_name": "Claude 3.5 Sonnet v2",
+      "model_name": "Claude 3.5 Sonnet V2:0",
       "model_id": "anthropic.claude-3-5-sonnet-20241022-v2:0",
       "region_groups": [
         {
@@ -215,6 +190,15 @@
           "legacy_date": "2026-10-08",
           "eol_date": "2027-04-08",
           "public_extended_access_start_date": "2027-01-08"
+        },
+        {
+          "regions": [
+            "us-gov-east-1",
+            "us-gov-west-1"
+          ],
+          "legacy_date": "2026-10-27",
+          "eol_date": "2027-04-27",
+          "public_extended_access_start_date": "2027-01-27"
         }
       ]
     },
@@ -248,7 +232,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -270,7 +254,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -294,7 +278,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -318,7 +302,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -342,7 +326,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -361,7 +345,15 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
+        },
+        {
+          "regions": [
+            "us-gov-west-1"
+          ],
+          "legacy_date": "2026-11-09",
+          "eol_date": "2027-05-09",
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -380,7 +372,15 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
+        },
+        {
+          "regions": [
+            "us-gov-west-1"
+          ],
+          "legacy_date": "2026-11-09",
+          "eol_date": "2027-05-09",
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -397,7 +397,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -414,7 +414,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -431,7 +431,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -449,7 +449,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -467,7 +467,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -491,7 +491,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -518,7 +518,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -545,7 +545,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -568,7 +568,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -591,7 +591,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -615,7 +615,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -639,7 +639,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -660,7 +660,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -684,7 +684,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -708,7 +708,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -735,7 +735,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -757,7 +757,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -789,7 +789,7 @@
           ],
           "legacy_date": "2026-09-22",
           "eol_date": "2027-03-22",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -833,7 +833,7 @@
           ],
           "legacy_date": "2026-09-22",
           "eol_date": "2027-03-22",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -851,7 +851,7 @@
           ],
           "legacy_date": "2026-09-09",
           "eol_date": "2027-03-09",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -869,7 +869,7 @@
           ],
           "legacy_date": "2026-09-21",
           "eol_date": "2027-03-21",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -893,7 +893,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -920,7 +920,7 @@
           ],
           "legacy_date": "2026-09-30",
           "eol_date": "2027-03-30",
-          "public_extended_access_start_date": "To be announced"
+          "public_extended_access_start_date_note": "To be announced"
         }
       ]
     },
@@ -937,7 +937,7 @@
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -954,7 +954,7 @@
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -969,7 +969,7 @@
           ],
           "legacy_date": "2026-03-30",
           "eol_date": "2026-09-30",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
         }
       ]
     },
@@ -986,7 +986,39 @@
           ],
           "legacy_date": "2026-03-13",
           "eol_date": "2026-09-14",
-          "public_extended_access_start_date": "—"
+          "public_extended_access_start_date": null
+        }
+      ]
+    },
+    {
+      "provider": "Anthropic",
+      "model_name": "Claude 3 Haiku",
+      "model_id": "anthropic.claude-3-haiku-20240307-v1:0",
+      "region_groups": [
+        {
+          "regions": [
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "eu-central-1",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2"
+          ],
+          "legacy_date": "2026-03-10",
+          "eol_date": "2026-09-10",
+          "public_extended_access_start_date": "2026-06-10"
+        },
+        {
+          "regions": [
+            "us-gov-east-1",
+            "us-gov-west-1"
+          ],
+          "legacy_date": "2026-03-10",
+          "eol_date": "2026-09-10",
+          "public_extended_access_start_date": "2026-06-10"
         }
       ]
     },

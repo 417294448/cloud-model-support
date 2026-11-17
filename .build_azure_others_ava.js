@@ -37,9 +37,13 @@ const headings = [];
 for (const m of html.matchAll(/<h([1-6])[^>]*>([\s\S]*?)<\/h\1>/gi)) headings.push({ pos: m.index, level: +m[1], text: cellText(m[2]) });
 const tables = [];
 for (const m of html.matchAll(/<table[\s\S]*?<\/table>/gi)) {
-  const rows = [...m[0].matchAll(/<tr[\s\S]*?<\/tr>/gi)].map((r) =>
-    [...r[0].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((c) => cellText(c[1])));
-  tables.push({ pos: m.index, rows });
+  const rowMatches = [...m[0].matchAll(/<tr[\s\S]*?<\/tr>/gi)];
+  const cellMatches = rowMatches.map((r) => [...r[0].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)]);
+  tables.push({
+    pos: m.index,
+    rows: cellMatches.map((cells) => cells.map((c) => cellText(c[1]))),
+    rawRows: cellMatches.map((cells) => cells.map((c) => c[1])),
+  });
 }
 function nearest(pos, level) {
   let n = null;
@@ -50,18 +54,21 @@ function nearest(pos, level) {
 const issues = [];
 
 // ---- offer cell -> structured shape (mirrors how the committed file stores it) ----
-function parseOffer(cell) {
-  const t = (cell || '').trim();
+// The page separates extra countries with <br>, so parse from the raw cell HTML:
+// splitting the flattened text on whitespace splinters names like "Hong Kong SAR".
+function parseOffer(rawHtml, t) {
+  t = (t || '').trim();
   if (t === 'Not applicable' || t === '-') return { raw: t };
   if (t.startsWith('Microsoft Managed Countries/Regions')) {
-    let rest = t.slice('Microsoft Managed Countries/Regions'.length).trim();
     let exclude = [];
-    const em = rest.match(/^\(except\s+(.*?)\)/i);
-    if (em) {
-      exclude = em[1].split(/\s+and\s+|\s*,\s*|\s+/).filter(Boolean);
-      rest = rest.slice(em[0].length).trim();
-    }
-    const include_additional = rest ? rest.split(/\s+/).filter(Boolean) : [];
+    const em = t.match(/\(except\s+(.*?)\)/i);
+    if (em) exclude = em[1].split(/\s+and\s+|,\s*|\s+&\s+/i).map((s) => s.trim()).filter(Boolean);
+    const afterAnchor = (rawHtml || '').split(/<\/a>/i).slice(1).join('</a>');
+    const include_additional = afterAnchor
+      .split(/<br\s*\/?>/i)
+      .map((c) => cellText(c).replace(/^\(except[\s\S]*?\)/i, '').trim())
+      .filter(Boolean)
+      .flatMap((c) => c.split(/\s*,\s*|\s+and\s+/i).map((s) => s.trim()).filter(Boolean));
     return { base: 'Microsoft Managed Countries/Regions', exclude, include_additional };
   }
   if (/^US$/i.test(t)) return { base: 'US', exclude: [], include_additional: [] };
@@ -98,7 +105,8 @@ for (const t of tables) {
     const row = t.rows[i];
     if (!row[0]) continue;
     const name = row[0].replace(/\s+\d+$/, '').trim(); // strip footnote marker
-    providerModels.get(provider).push({ name, offer: parseOffer(row[3]) });
+    const rawOffer = (t.rawRows[i] || [])[3] || '';
+    providerModels.get(provider).push({ name, offer: parseOffer(rawOffer, row[3]) });
   }
 }
 

@@ -746,14 +746,14 @@
           "model": "model-router",
           "version": "2025-05-19",
           "lifecycle": "Preview",
-          "retirement_date": "2026-08-30",
+          "retirement_date": "2027-01-27",
           "replacement": null
         },
         {
           "model": "model-router",
           "version": "2025-08-07",
           "lifecycle": "Preview",
-          "retirement_date": "2026-08-30",
+          "retirement_date": "2027-01-27",
           "replacement": null
         },
         {
@@ -813,6 +813,13 @@
       "models": [
         {
           "model": "Mistral-Large-3",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": null,
+          "replacement": null
+        },
+        {
+          "model": "mistral-large-4-latest",
           "version": "1",
           "lifecycle": "Preview",
           "retirement_date": null,
@@ -1042,8 +1049,8 @@
           "model": "claude-opus-4-5",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2026-11-24",
-          "replacement": null
+          "retirement_date": "2027-02-22",
+          "replacement": "claude-opus-5-5"
         },
         {
           "model": "claude-opus-4-1",
@@ -1056,15 +1063,15 @@
           "model": "claude-haiku-4-5",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2026-11-15",
-          "replacement": null
+          "retirement_date": "2027-02-22",
+          "replacement": "claude-haiku-5-5"
         },
         {
           "model": "claude-haiku-4-5",
           "version": "2",
           "lifecycle": "GA",
-          "retirement_date": "2026-11-15",
-          "replacement": null
+          "retirement_date": "2027-02-22",
+          "replacement": "claude-haiku-5-5"
         },
         {
           "model": "claude-fable-5-1",
@@ -1249,7 +1256,7 @@
           "version": "2",
           "lifecycle": "GA",
           "retirement_date": "2027-02-15",
-          "replacement": null
+          "replacement": "mistral-large-4-latest"
         },
         {
           "model": "Ministral-3B",

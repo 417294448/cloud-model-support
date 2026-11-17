@@ -105,6 +105,18 @@
       "provider": "Anthropic",
       "models": [
         {
+          "model_name": "Claude Fable 5.2",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
+          "model_name": "Claude Mythos 5.2",
+          "bedrock_runtime": true,
+          "bedrock_mantle": false,
+          "card_url": null
+        },
+        {
           "model_name": "Claude Haiku 5.5",
           "bedrock_runtime": true,
           "bedrock_mantle": true,

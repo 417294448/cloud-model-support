@@ -3,6 +3,44 @@
     "provider": "Anthropic",
     "deployment_type": "Global Standard",
     "models": [
+      "Claude Fable 5.2"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Fable 5.2 Fast"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [
+      "East US 2",
+      "Sweden Central"
+    ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
       "Claude Fable 5.1"
     ],
     "offer_availability_region": {
@@ -59,10 +97,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -82,10 +120,45 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
       "West US 3"
     ]
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Mythos 5.2"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
+  },
+  {
+    "provider": "Anthropic",
+    "deployment_type": "Global Standard",
+    "models": [
+      "Claude Mythos 5.2 Fast"
+    ],
+    "offer_availability_region": {
+      "base": "Microsoft Managed Countries/Regions",
+      "exclude": [
+        "Belarus",
+        "Russia"
+      ],
+      "include_additional": []
+    },
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Anthropic",
@@ -101,7 +174,8 @@
       ],
       "include_additional": []
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Anthropic",
@@ -117,7 +191,8 @@
       ],
       "include_additional": []
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Anthropic",
@@ -133,7 +208,8 @@
       ],
       "include_additional": []
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Anthropic",
@@ -157,10 +233,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -180,6 +256,7 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
       "West US 3"
@@ -207,10 +284,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -230,6 +307,7 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
       "West US 3"
@@ -257,10 +335,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -280,6 +358,7 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
       "West US 3"
@@ -307,10 +386,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -330,6 +409,7 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
       "West US 3"
@@ -355,10 +435,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -381,10 +461,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -407,10 +487,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -435,10 +515,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -458,6 +538,7 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
       "West US 3"
@@ -485,10 +566,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -508,6 +589,7 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
       "West US 3"
@@ -533,10 +615,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -559,10 +641,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -585,10 +667,10 @@
       "East US 2",
       "North Central US",
       "South Central US",
+      "Sweden Central",
       "West Central US",
       "West US",
-      "West US 3",
-      "Sweden Central"
+      "West US 3"
     ]
   },
   {
@@ -605,7 +687,8 @@
         "Qatar"
       ]
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Cohere",
@@ -621,7 +704,8 @@
         "Qatar"
       ]
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Meta",
@@ -635,37 +719,37 @@
       "include_additional": []
     },
     "hub_project_region_deployment": [
+      "Australia East",
       "Brazil South",
       "Canada Central",
       "Canada East",
       "Central US",
       "East US",
       "East US 2",
-      "North Central US",
-      "South Central US",
-      "West Central US",
-      "West US",
-      "West US 2",
-      "West US 3",
       "France Central",
       "Germany West Central",
       "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
       "Norway East",
       "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
       "Spain Central",
       "Sweden Central",
       "Switzerland North",
       "Switzerland West",
+      "UAE North",
       "UK South",
       "UK West",
+      "West Central US",
       "West Europe",
-      "Australia East",
-      "Japan East",
-      "Japan West",
-      "Korea Central",
-      "South India",
-      "South Africa North",
-      "UAE North"
+      "West US",
+      "West US 2",
+      "West US 3"
     ]
   },
   {
@@ -677,7 +761,8 @@
     "offer_availability_region": {
       "raw": "Not applicable"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Microsoft",
@@ -688,7 +773,8 @@
     "offer_availability_region": {
       "raw": "Not applicable"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Microsoft",
@@ -699,7 +785,8 @@
     "offer_availability_region": {
       "raw": "Not applicable"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Microsoft",
@@ -710,7 +797,8 @@
     "offer_availability_region": {
       "raw": "Not applicable"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Microsoft",
@@ -721,7 +809,8 @@
     "offer_availability_region": {
       "raw": "Not applicable"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Mistral",
@@ -733,43 +822,43 @@
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
       "include_additional": [
-        "Hong Kong SAR",
         "Brazil",
+        "Hong Kong SAR",
         "Israel"
       ]
     },
     "hub_project_region_deployment": [
+      "Australia East",
       "Brazil South",
       "Canada Central",
       "Canada East",
       "Central US",
       "East US",
       "East US 2",
-      "North Central US",
-      "South Central US",
-      "West Central US",
-      "West US",
-      "West US 2",
-      "West US 3",
       "France Central",
       "Germany West Central",
       "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
       "Norway East",
       "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
       "Spain Central",
       "Sweden Central",
       "Switzerland North",
       "Switzerland West",
+      "UAE North",
       "UK South",
       "UK West",
+      "West Central US",
       "West Europe",
-      "Australia East",
-      "Japan East",
-      "Japan West",
-      "Korea Central",
-      "South India",
-      "South Africa North",
-      "UAE North"
+      "West US",
+      "West US 2",
+      "West US 3"
     ]
   },
   {
@@ -782,43 +871,43 @@
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
       "include_additional": [
-        "Hong Kong SAR",
         "Brazil",
+        "Hong Kong SAR",
         "Israel"
       ]
     },
     "hub_project_region_deployment": [
+      "Australia East",
       "Brazil South",
       "Canada Central",
       "Canada East",
       "Central US",
       "East US",
       "East US 2",
-      "North Central US",
-      "South Central US",
-      "West Central US",
-      "West US",
-      "West US 2",
-      "West US 3",
       "France Central",
       "Germany West Central",
       "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
       "Norway East",
       "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
       "Spain Central",
       "Sweden Central",
       "Switzerland North",
       "Switzerland West",
+      "UAE North",
       "UK South",
       "UK West",
+      "West Central US",
       "West Europe",
-      "Australia East",
-      "Japan East",
-      "Japan West",
-      "Korea Central",
-      "South India",
-      "South Africa North",
-      "UAE North"
+      "West US",
+      "West US 2",
+      "West US 3"
     ]
   },
   {
@@ -831,43 +920,43 @@
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
       "include_additional": [
-        "Hong Kong SAR",
         "Brazil",
+        "Hong Kong SAR",
         "Israel"
       ]
     },
     "hub_project_region_deployment": [
+      "Australia East",
       "Brazil South",
       "Canada Central",
       "Canada East",
       "Central US",
       "East US",
       "East US 2",
-      "North Central US",
-      "South Central US",
-      "West Central US",
-      "West US",
-      "West US 2",
-      "West US 3",
       "France Central",
       "Germany West Central",
       "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
       "Norway East",
       "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
       "Spain Central",
       "Sweden Central",
       "Switzerland North",
       "Switzerland West",
+      "UAE North",
       "UK South",
       "UK West",
+      "West Central US",
       "West Europe",
-      "Australia East",
-      "Japan East",
-      "Japan West",
-      "Korea Central",
-      "South India",
-      "South Africa North",
-      "UAE North"
+      "West US",
+      "West US 2",
+      "West US 3"
     ]
   },
   {
@@ -880,43 +969,43 @@
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
       "include_additional": [
-        "Hong Kong SAR",
         "Brazil",
+        "Hong Kong SAR",
         "Israel"
       ]
     },
     "hub_project_region_deployment": [
+      "Australia East",
       "Brazil South",
       "Canada Central",
       "Canada East",
       "Central US",
       "East US",
       "East US 2",
-      "North Central US",
-      "South Central US",
-      "West Central US",
-      "West US",
-      "West US 2",
-      "West US 3",
       "France Central",
       "Germany West Central",
       "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
       "Norway East",
       "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
       "Spain Central",
       "Sweden Central",
       "Switzerland North",
       "Switzerland West",
+      "UAE North",
       "UK South",
       "UK West",
+      "West Central US",
       "West Europe",
-      "Australia East",
-      "Japan East",
-      "Japan West",
-      "Korea Central",
-      "South India",
-      "South Africa North",
-      "UAE North"
+      "West US",
+      "West US 2",
+      "West US 3"
     ]
   },
   {
@@ -928,7 +1017,8 @@
     "offer_availability_region": {
       "raw": "-"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Mistral",
@@ -939,7 +1029,8 @@
     "offer_availability_region": {
       "raw": "-"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Mistral",
@@ -950,7 +1041,8 @@
     "offer_availability_region": {
       "raw": "-"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Mistral",
@@ -961,7 +1053,8 @@
     "offer_availability_region": {
       "raw": "-"
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "NTT DATA",
@@ -974,7 +1067,8 @@
       "exclude": [],
       "include_additional": []
     },
-    "hub_project_region_deployment": []
+    "hub_project_region_deployment": [],
+    "note": "No region matrix data available on this page for this model/deployment type."
   },
   {
     "provider": "Mistral",
@@ -986,43 +1080,43 @@
       "base": "Microsoft Managed Countries/Regions",
       "exclude": [],
       "include_additional": [
-        "Hong Kong SAR",
         "Brazil",
+        "Hong Kong SAR",
         "Israel"
       ]
     },
     "hub_project_region_deployment": [
+      "Australia East",
       "Brazil South",
       "Canada Central",
       "Canada East",
       "Central US",
       "East US",
       "East US 2",
-      "North Central US",
-      "South Central US",
-      "West Central US",
-      "West US",
-      "West US 2",
-      "West US 3",
       "France Central",
       "Germany West Central",
       "Italy North",
+      "Japan East",
+      "Japan West",
+      "Korea Central",
+      "North Central US",
       "Norway East",
       "Poland Central",
+      "South Africa North",
+      "South Central US",
+      "South India",
       "Spain Central",
       "Sweden Central",
       "Switzerland North",
       "Switzerland West",
+      "UAE North",
       "UK South",
       "UK West",
+      "West Central US",
       "West Europe",
-      "Australia East",
-      "Japan East",
-      "Japan West",
-      "Korea Central",
-      "South India",
-      "South Africa North",
-      "UAE North"
+      "West US",
+      "West US 2",
+      "West US 3"
     ]
   }
 ]

@@ -4513,7 +4513,43 @@
                 }
               },
               {
+                "model": "mistral-large-4-latest",
+                "version": "1",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "mistral-medium-3-5",
+                "version": "1",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "mistral-ocr-4-0",
                 "version": "1",
                 "regions": {
                   "brazilsouth": true,
@@ -5397,7 +5433,43 @@
                 }
               },
               {
+                "model": "mistral-large-4-latest",
+                "version": "1",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "ukwest": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "mistral-medium-3-5",
+                "version": "1",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "ukwest": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "mistral-ocr-4-0",
                 "version": "1",
                 "regions": {
                   "francecentral": true,
@@ -6015,7 +6087,29 @@
                 }
               },
               {
+                "model": "mistral-large-4-latest",
+                "version": "1",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "japanwest": true,
+                  "koreacentral": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "mistral-medium-3-5",
+                "version": "1",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "japanwest": true,
+                  "koreacentral": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "mistral-ocr-4-0",
                 "version": "1",
                 "regions": {
                   "australiaeast": true,
@@ -6442,7 +6536,23 @@
                 }
               },
               {
+                "model": "mistral-large-4-latest",
+                "version": "1",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
                 "model": "mistral-medium-3-5",
+                "version": "1",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "mistral-ocr-4-0",
                 "version": "1",
                 "regions": {
                   "southafricanorth": true,
@@ -7960,7 +8070,37 @@
                 }
               },
               {
+                "model": "mistral-large-4-latest",
+                "version": "1",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "mistral-medium-3-5",
+                "version": "1",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": true,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westcentralus": true,
+                  "westus": true,
+                  "westus2": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "mistral-ocr-4-0",
                 "version": "1",
                 "regions": {
                   "centralus": true,
@@ -8081,7 +8221,33 @@
                 }
               },
               {
+                "model": "mistral-large-4-latest",
+                "version": "1",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "mistral-medium-3-5",
+                "version": "1",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "mistral-ocr-4-0",
                 "version": "1",
                 "regions": {
                   "francecentral": true,
