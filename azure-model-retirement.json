@@ -9,7 +9,7 @@
           "model": "codex-mini",
           "version": "2025-05-16",
           "lifecycle": "Deprecated",
-          "retirement_date": "2026-11-15",
+          "retirement_date": "2026-11-17",
           "replacement": null
         },
         {
@@ -65,7 +65,7 @@
           "model": "gpt-4o-mini-transcribe",
           "version": "2025-03-20",
           "lifecycle": "GA",
-          "retirement_date": "2026-10-15",
+          "retirement_date": "2027-01-20",
           "replacement": null
         },
         {
@@ -79,7 +79,7 @@
           "model": "gpt-4o-mini-tts",
           "version": "2025-03-20",
           "lifecycle": "Preview",
-          "retirement_date": "2026-10-15",
+          "retirement_date": "2027-01-20",
           "replacement": null
         },
         {
@@ -93,7 +93,7 @@
           "model": "gpt-4o-transcribe",
           "version": "2025-03-20",
           "lifecycle": "GA",
-          "retirement_date": "2026-10-15",
+          "retirement_date": "2027-02-26",
           "replacement": null
         },
         {
@@ -109,20 +109,6 @@
           "lifecycle": "GA",
           "retirement_date": "2027-02-09",
           "replacement": null
-        },
-        {
-          "model": "gpt-5-chat",
-          "version": "2025-08-07",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-29",
-          "replacement": "gpt-chat-latest"
-        },
-        {
-          "model": "gpt-5-chat",
-          "version": "2025-10-03",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-13",
-          "replacement": "gpt-chat-latest"
         },
         {
           "model": "gpt-5-codex",
@@ -160,13 +146,6 @@
           "replacement": null
         },
         {
-          "model": "gpt-5.1-chat",
-          "version": "2025-11-13",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-29",
-          "replacement": "gpt-chat-latest"
-        },
-        {
           "model": "gpt-5.1-codex",
           "version": "2025-11-13",
           "lifecycle": "GA",
@@ -195,32 +174,11 @@
           "replacement": null
         },
         {
-          "model": "gpt-5.2-chat",
-          "version": "2025-12-11",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-13",
-          "replacement": "gpt-chat-latest"
-        },
-        {
-          "model": "gpt-5.2-chat",
-          "version": "2026-02-10",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-29",
-          "replacement": "gpt-chat-latest"
-        },
-        {
           "model": "gpt-5.2-codex",
           "version": "2026-01-14",
           "lifecycle": "GA",
           "retirement_date": "2027-07-13",
           "replacement": null
-        },
-        {
-          "model": "gpt-5.3-chat",
-          "version": "2026-03-03",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-29",
-          "replacement": "gpt-chat-latest"
         },
         {
           "model": "gpt-5.3-codex",
@@ -286,6 +244,41 @@
           "replacement": null
         },
         {
+          "model": "gpt-6-astra",
+          "version": "2026-09-03",
+          "lifecycle": "GA",
+          "retirement_date": "2028-01-11",
+          "replacement": null
+        },
+        {
+          "model": "gpt-6-luna",
+          "version": "2026-09-22",
+          "lifecycle": "GA",
+          "retirement_date": "2028-03-11",
+          "replacement": null
+        },
+        {
+          "model": "gpt-6-sol",
+          "version": "2026-09-22",
+          "lifecycle": "GA",
+          "retirement_date": "2028-03-11",
+          "replacement": null
+        },
+        {
+          "model": "gpt-6.1-sol",
+          "version": "2026-09-29",
+          "lifecycle": "GA",
+          "retirement_date": "2028-03-11",
+          "replacement": null
+        },
+        {
+          "model": "gpt-6.1-terra",
+          "version": "2026-10-26",
+          "lifecycle": "GA",
+          "retirement_date": "2027-10-26",
+          "replacement": null
+        },
+        {
           "model": "gpt-audio",
           "version": "2025-08-28",
           "lifecycle": "GA",
@@ -345,14 +338,14 @@
           "model": "gpt-chat-latest",
           "version": "2026-10-07",
           "lifecycle": "Preview",
-          "retirement_date": "2027-05-18",
+          "retirement_date": "2027-02-02",
           "replacement": null
         },
         {
           "model": "gpt-image-1",
           "version": "2025-04-15",
           "lifecycle": "Preview",
-          "retirement_date": "2026-10-23",
+          "retirement_date": "2026-10-28",
           "replacement": null
         },
         {
@@ -366,7 +359,7 @@
           "model": "gpt-image-1.5",
           "version": "2025-12-16",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-16",
+          "retirement_date": "2027-06-16",
           "replacement": null
         },
         {
@@ -388,6 +381,20 @@
           "version": "2026-09-09",
           "lifecycle": "GA",
           "retirement_date": "2027-09-09",
+          "replacement": null
+        },
+        {
+          "model": "gpt-live-1",
+          "version": "2026-09-10",
+          "lifecycle": "GA",
+          "retirement_date": "2027-09-10",
+          "replacement": null
+        },
+        {
+          "model": "gpt-live-transcribe",
+          "version": "2026-07-28",
+          "lifecycle": "GA",
+          "retirement_date": "2028-02-01",
           "replacement": null
         },
         {
@@ -415,14 +422,14 @@
           "model": "gpt-realtime-2.1",
           "version": "2026-07-07",
           "lifecycle": "GA",
-          "retirement_date": "2027-06-25",
+          "retirement_date": "2027-07-31",
           "replacement": null
         },
         {
           "model": "gpt-realtime-2.1-mini",
           "version": "2026-07-07",
           "lifecycle": "GA",
-          "retirement_date": "2027-06-25",
+          "retirement_date": "2027-07-31",
           "replacement": null
         },
         {
@@ -440,17 +447,24 @@
           "replacement": null
         },
         {
-          "model": "gpt-realtime-mini",
-          "version": "2025-10-06",
+          "model": "gpt-realtime-translate",
+          "version": "2026-05-06",
           "lifecycle": "GA",
-          "retirement_date": "2026-09-21",
+          "retirement_date": "2027-11-09",
           "replacement": null
         },
         {
-          "model": "gpt-realtime-mini",
-          "version": "2025-12-15",
+          "model": "gpt-realtime-whisper",
+          "version": "2026-05-06",
           "lifecycle": "GA",
-          "retirement_date": "2026-12-15",
+          "retirement_date": "2027-11-09",
+          "replacement": null
+        },
+        {
+          "model": "gpt-transcribe",
+          "version": "2026-07-28",
+          "lifecycle": "GA",
+          "retirement_date": "2028-02-01",
           "replacement": null
         },
         {
@@ -501,20 +515,6 @@
           "lifecycle": "Deprecated",
           "retirement_date": "2026-11-19",
           "replacement": "gpt-5.6-terra"
-        },
-        {
-          "model": "sora-2",
-          "version": "2025-10-06",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-07-15",
-          "replacement": "sora-2 (2025-12-08)"
-        },
-        {
-          "model": "sora-2",
-          "version": "2025-12-08",
-          "lifecycle": "Preview",
-          "retirement_date": "2026-10-15",
-          "replacement": null
         },
         {
           "model": "text-embedding-3-large",
@@ -606,6 +606,20 @@
       "provider": "Cohere",
       "models": [
         {
+          "model": "Cohere-Embed-V5-Fast",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-01-23",
+          "replacement": null
+        },
+        {
+          "model": "Cohere-Embed-V5-Pro",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-01-23",
+          "replacement": null
+        },
+        {
           "model": "Cohere-parse-v5",
           "version": "1",
           "lifecycle": "Preview",
@@ -616,15 +630,29 @@
           "model": "Cohere-rerank-v4.0-fast",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2027-09-13",
+          "retirement_date": "2027-09-14",
           "replacement": "Cohere-rerank-v5-fast"
         },
         {
           "model": "Cohere-rerank-v4.0-pro",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2027-09-13",
+          "retirement_date": "2027-09-14",
           "replacement": "Cohere-rerank-v5-pro"
+        },
+        {
+          "model": "Cohere-rerank-v5-fast",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-02-12",
+          "replacement": null
+        },
+        {
+          "model": "Cohere-rerank-v5-pro",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-02-12",
+          "replacement": null
         },
         {
           "model": "cohere-command-a",
@@ -654,38 +682,10 @@
       "provider": "DeepSeek",
       "models": [
         {
-          "model": "DeepSeek-R1",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-08-13",
-          "replacement": "DeepSeek-V4-Pro"
-        },
-        {
-          "model": "DeepSeek-R1-0528",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-07-13",
-          "replacement": "DeepSeek-V4-Pro"
-        },
-        {
-          "model": "DeepSeek-V3-0324",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-07-13",
-          "replacement": "DeepSeek-V4-Flash"
-        },
-        {
-          "model": "DeepSeek-V3.1",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-07-13",
-          "replacement": "DeepSeek-V4-Flash"
-        },
-        {
           "model": "DeepSeek-V3.2",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2027-11-01",
+          "retirement_date": "2027-11-02",
           "replacement": "DeepSeek-V4.1-Flash"
         },
         {
@@ -699,7 +699,7 @@
           "model": "DeepSeek-V4-Flash",
           "version": "2026-04-23",
           "lifecycle": "GA",
-          "retirement_date": "2028-02-20",
+          "retirement_date": "2028-02-22",
           "replacement": "DeepSeek-V4-Flash-0731"
         },
         {
@@ -713,7 +713,28 @@
           "model": "DeepSeek-V4-Pro",
           "version": "2026-04-23",
           "lifecycle": "GA",
-          "retirement_date": "2028-02-20",
+          "retirement_date": "2028-02-22",
+          "replacement": null
+        },
+        {
+          "model": "DeepSeek-V4-Pro-0813",
+          "version": "2026-08-13",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
+        {
+          "model": "DeepSeek-V4.1-Flash",
+          "version": "2026-09-10",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-12-15",
+          "replacement": null
+        },
+        {
+          "model": "DeepSeek-V4.1-Flash-1017",
+          "version": "2026-10-17",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-03-06",
           "replacement": null
         }
       ]
@@ -767,36 +788,50 @@
           "model": "MAI-Image-2.5-Pro",
           "version": "2026-06-19",
           "lifecycle": "Preview",
-          "retirement_date": "2026-10-01",
+          "retirement_date": "2026-11-24",
           "replacement": null
         },
         {
           "model": "MAI-Image-2.5-Flash",
           "version": "2026-06-02",
           "lifecycle": "Preview",
-          "retirement_date": "2026-10-01",
+          "retirement_date": "2026-11-24",
           "replacement": null
         },
         {
           "model": "MAI-Image-2.5",
           "version": "2026-06-02",
           "lifecycle": "Preview",
-          "retirement_date": "2026-10-01",
+          "retirement_date": "2026-11-24",
+          "replacement": null
+        },
+        {
+          "model": "MAI-Image-2.6",
+          "version": "2026-07-31",
+          "lifecycle": "GA",
+          "retirement_date": "2027-05-01",
+          "replacement": null
+        },
+        {
+          "model": "MAI-Image-2.6-Flash",
+          "version": "2026-07-31",
+          "lifecycle": "GA",
+          "retirement_date": "2027-05-01",
           "replacement": null
         },
         {
           "model": "MAI-Image-2e",
           "version": "2026-04-09",
           "lifecycle": "Retired",
-          "retirement_date": "2026-08-15",
+          "retirement_date": "2026-08-28",
           "replacement": "MAI-Image-2.5-Flash"
         },
         {
-          "model": "MAI-Image-2",
-          "version": "2026-02-20",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-08-15",
-          "replacement": "MAI-Image-2.5"
+          "model": "MAI-Thinking-1",
+          "version": "2026-06-01",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-03-02",
+          "replacement": null
         },
         {
           "model": "MAI-Transcribe-1",
@@ -804,6 +839,20 @@
           "lifecycle": "Preview",
           "retirement_date": "2026-09-15",
           "replacement": "MAI-Transcribe-1.5"
+        },
+        {
+          "model": "MAI-Transcribe-2-Streaming",
+          "version": "2026-08-06",
+          "lifecycle": "Preview",
+          "retirement_date": "2026-12-04",
+          "replacement": null
+        },
+        {
+          "model": "Microsoft-Decision-1",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-02-04",
+          "replacement": null
         }
       ]
     },
@@ -826,18 +875,18 @@
           "replacement": null
         },
         {
-          "model": "mistral-document-ai-2505",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-07-20",
-          "replacement": "mistral-document-ai-2512, mistral-ocr-4-0"
-        },
-        {
           "model": "mistral-document-ai-2512",
           "version": "1",
           "lifecycle": "GA",
           "retirement_date": "2027-02-15",
           "replacement": "mistral-ocr-4-0"
+        },
+        {
+          "model": "mistral-ocr-4-0",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-10-01",
+          "replacement": null
         }
       ]
     },
@@ -865,13 +914,6 @@
           "lifecycle": "Preview",
           "retirement_date": "2027-04-16",
           "replacement": null
-        },
-        {
-          "model": "Kimi-K3.1-Pro",
-          "version": "2026-11-04",
-          "lifecycle": "GA",
-          "retirement_date": "2027-11-04",
-          "replacement": null
         }
       ]
     },
@@ -892,20 +934,6 @@
       "category": "xAI",
       "provider": "xAI",
       "models": [
-        {
-          "model": "grok-3",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-01",
-          "replacement": "grok-4"
-        },
-        {
-          "model": "grok-3-mini",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-01",
-          "replacement": "grok-4-1-fast-reasoning"
-        },
         {
           "model": "grok-4",
           "version": "1",
@@ -942,18 +970,25 @@
           "replacement": null
         },
         {
-          "model": "grok-4-fast-non-reasoning",
+          "model": "grok-4.3",
           "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-01",
-          "replacement": "grok-4-1-fast-non-reasoning"
+          "lifecycle": "Preview",
+          "retirement_date": "2027-05-12",
+          "replacement": null
         },
         {
-          "model": "grok-4-fast-reasoning",
+          "model": "grok-4.6",
           "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-01",
-          "replacement": "grok-4-1-fast-reasoning"
+          "lifecycle": "Preview",
+          "retirement_date": "2027-08-24",
+          "replacement": null
+        },
+        {
+          "model": "grok-4.7",
+          "version": "1",
+          "lifecycle": "GA",
+          "retirement_date": "2027-10-05",
+          "replacement": null
         },
         {
           "model": "grok-code-fast-1",
@@ -1053,13 +1088,6 @@
           "replacement": "claude-opus-5-5"
         },
         {
-          "model": "claude-opus-4-1",
-          "version": null,
-          "lifecycle": "Retired",
-          "retirement_date": "2026-08-05",
-          "replacement": "claude-opus-5"
-        },
-        {
           "model": "claude-haiku-4-5",
           "version": "1",
           "lifecycle": "GA",
@@ -1077,21 +1105,21 @@
           "model": "claude-fable-5-1",
           "version": "1",
           "lifecycle": "Preview",
-          "retirement_date": "2027-12-05",
+          "retirement_date": "2027-12-07",
           "replacement": null
         },
         {
           "model": "claude-fable-5",
           "version": "1",
           "lifecycle": "Preview",
-          "retirement_date": "2027-12-05",
+          "retirement_date": "2027-12-07",
           "replacement": null
         },
         {
           "model": "claude-mythos-5-1",
           "version": "1",
           "lifecycle": "Preview",
-          "retirement_date": "2027-09-01",
+          "retirement_date": "2027-12-07",
           "replacement": null
         },
         {
@@ -1107,27 +1135,6 @@
       "category": "Cohere",
       "provider": "Cohere",
       "models": [
-        {
-          "model": "Cohere-command-r-08-2024",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-12",
-          "replacement": null
-        },
-        {
-          "model": "Cohere-command-r-plus-08-2024",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-12",
-          "replacement": null
-        },
-        {
-          "model": "Cohere-rerank-v3.5",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-05-14",
-          "replacement": "Cohere-rerank-v4.0-pro, Cohere-rerank-v4.0-fast"
-        },
         {
           "model": "Cohere-embed-v3-english",
           "version": "1",
@@ -1149,20 +1156,6 @@
       "provider": "Meta",
       "models": [
         {
-          "model": "Llama-3.2-11B-Vision-Instruct",
-          "version": null,
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-13",
-          "replacement": null
-        },
-        {
-          "model": "Llama-3.2-90B-Vision-Instruct",
-          "version": null,
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-13",
-          "replacement": null
-        },
-        {
           "model": "Llama-3.3-70B-Instruct",
           "version": null,
           "lifecycle": "GA",
@@ -1181,27 +1174,6 @@
           "version": null,
           "lifecycle": "GA",
           "retirement_date": "2027-01-31",
-          "replacement": null
-        },
-        {
-          "model": "Meta-Llama-3.1-405B-Instruct",
-          "version": null,
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-13",
-          "replacement": null
-        },
-        {
-          "model": "Meta-Llama-3.1-8B",
-          "version": null,
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-13",
-          "replacement": null
-        },
-        {
-          "model": "Meta-Llama-3.1-8B-Instruct",
-          "version": null,
-          "lifecycle": "Retired",
-          "retirement_date": "2026-06-13",
           "replacement": null
         }
       ]
@@ -1273,6 +1245,13 @@
           "replacement": "mistral-medium-3-5"
         },
         {
+          "model": "mistral-medium-3-5",
+          "version": "1",
+          "lifecycle": "Preview",
+          "retirement_date": "2027-10-01",
+          "replacement": null
+        },
+        {
           "model": "mistral-small-2503",
           "version": "1",
           "lifecycle": "Deprecated",
@@ -1304,33 +1283,6 @@
           "lifecycle": "Legacy",
           "retirement_date": "2026-08-31",
           "replacement": "tsuzumi2"
-        }
-      ]
-    },
-    {
-      "category": "StabilityAI",
-      "provider": "StabilityAI",
-      "models": [
-        {
-          "model": "Stable-Diffusion-3.5-Large",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-07-31",
-          "replacement": null
-        },
-        {
-          "model": "Stable-Image-Core",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-07-31",
-          "replacement": null
-        },
-        {
-          "model": "Stable-Image-Ultra",
-          "version": "1",
-          "lifecycle": "Retired",
-          "retirement_date": "2026-07-31",
-          "replacement": null
         }
       ]
     }

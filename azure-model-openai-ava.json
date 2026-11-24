@@ -649,6 +649,38 @@
                 }
               },
               {
+                "model": "gpt-6.2-astra",
+                "version": "2026-11-17",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": false,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6.2-sol",
+                "version": "2026-11-17",
+                "regions": {
+                  "brazilsouth": true,
+                  "canadacentral": true,
+                  "canadaeast": true,
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": false,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
                 "model": "gpt-audio",
                 "version": "2025-08-28",
                 "regions": {
@@ -1943,6 +1975,42 @@
                 }
               },
               {
+                "model": "gpt-6.2-astra",
+                "version": "2026-11-17",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6.2-sol",
+                "version": "2026-11-17",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "switzerlandwest": true,
+                  "uksouth": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "gpt-audio",
                 "version": "2025-08-28",
                 "regions": {
@@ -3047,6 +3115,28 @@
                 }
               },
               {
+                "model": "gpt-6.2-astra",
+                "version": "2026-11-17",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-6.2-sol",
+                "version": "2026-11-17",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "gpt-chat-latest",
                 "version": "2026-10-07",
                 "regions": {
@@ -3584,6 +3674,22 @@
               {
                 "model": "gpt-6.1-terra",
                 "version": "2026-10-26",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6.2-astra",
+                "version": "2026-11-17",
+                "regions": {
+                  "southafricanorth": true,
+                  "uaenorth": true
+                }
+              },
+              {
+                "model": "gpt-6.2-sol",
+                "version": "2026-11-17",
                 "regions": {
                   "southafricanorth": true,
                   "uaenorth": true
@@ -4477,7 +4583,7 @@
                 }
               },
               {
-                "model": "Microsoft-Decision-1",
+                "model": "Microsoft-Decision-1.1",
                 "version": "1",
                 "regions": {
                   "brazilsouth": false,
@@ -5397,7 +5503,7 @@
                 }
               },
               {
-                "model": "Microsoft-Decision-1",
+                "model": "Microsoft-Decision-1.1",
                 "version": "1",
                 "regions": {
                   "francecentral": true,
@@ -6065,7 +6171,7 @@
                 }
               },
               {
-                "model": "Microsoft-Decision-1",
+                "model": "Microsoft-Decision-1.1",
                 "version": "1",
                 "regions": {
                   "australiaeast": false,
@@ -6520,7 +6626,7 @@
                 }
               },
               {
-                "model": "Microsoft-Decision-1",
+                "model": "Microsoft-Decision-1.1",
                 "version": "1",
                 "regions": {
                   "southafricanorth": false,
@@ -6979,6 +7085,32 @@
               {
                 "model": "gpt-6.1-terra",
                 "version": "2026-10-26",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": false,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6.2-astra",
+                "version": "2026-11-17",
+                "regions": {
+                  "centralus": true,
+                  "eastus": true,
+                  "eastus2": false,
+                  "northcentralus": true,
+                  "southcentralus": true,
+                  "westus": true,
+                  "westus3": true
+                }
+              },
+              {
+                "model": "gpt-6.2-sol",
+                "version": "2026-11-17",
                 "regions": {
                   "centralus": true,
                   "eastus": true,
@@ -7558,6 +7690,38 @@
                 }
               },
               {
+                "model": "gpt-6.2-astra",
+                "version": "2026-11-17",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "westeurope": true
+                }
+              },
+              {
+                "model": "gpt-6.2-sol",
+                "version": "2026-11-17",
+                "regions": {
+                  "francecentral": true,
+                  "germanywestcentral": true,
+                  "italynorth": true,
+                  "northeurope": false,
+                  "norwayeast": true,
+                  "polandcentral": true,
+                  "spaincentral": true,
+                  "swedencentral": true,
+                  "switzerlandnorth": true,
+                  "westeurope": true
+                }
+              },
+              {
                 "model": "gpt-image-1.5",
                 "version": "2025-12-16",
                 "regions": {
@@ -7813,6 +7977,28 @@
                 }
               },
               {
+                "model": "gpt-6.2-astra",
+                "version": "2026-11-17",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
+                "model": "gpt-6.2-sol",
+                "version": "2026-11-17",
+                "regions": {
+                  "australiaeast": true,
+                  "japaneast": true,
+                  "koreacentral": true,
+                  "southeastasia": true,
+                  "southindia": true
+                }
+              },
+              {
                 "model": "gpt-chat-latest",
                 "version": "2026-10-07",
                 "regions": {
@@ -8040,7 +8226,7 @@
                 }
               },
               {
-                "model": "Microsoft-Decision-1",
+                "model": "Microsoft-Decision-1.1",
                 "version": "1",
                 "regions": {
                   "centralus": true,
@@ -8195,7 +8381,7 @@
                 }
               },
               {
-                "model": "Microsoft-Decision-1",
+                "model": "Microsoft-Decision-1.1",
                 "version": "1",
                 "regions": {
                   "francecentral": true,
@@ -8262,7 +8448,7 @@
             ],
             "Asia Pacific": [
               {
-                "model": "Microsoft-Decision-1",
+                "model": "Microsoft-Decision-1.1",
                 "version": "1",
                 "regions": {
                   "australiaeast": true,
