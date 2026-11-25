@@ -1,0 +1,33 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-11-24 -> 2026-11-25
+  models: 146 -> 146
+  changed (1):
+    ~ [OpenAI] Daybreak Red: GPT-5.6 Cyber
+        s: +1 region(s) gained (us-gov-west-1); 1 region(s) changed support: us-gov-east-1: [In-Region] -> [In-Region,Geo]
+
+=== azure ===
+  generated: 2026-11-24 -> 2026-11-25
+  models: 171 -> 171
+  changed (8):
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (1)
+        retirementDate: "2027-01-31" -> "2027-02-03"
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (2)
+        retirementDate: "2027-01-31" -> "2027-02-03"
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (3)
+        retirementDate: "2027-01-31" -> "2027-02-03"
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (4)
+        retirementDate: "2027-01-31" -> "2027-02-03"
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (5)
+        retirementDate: "2027-01-31" -> "2027-02-03"
+    ~ [Meta Llama] Llama-3.3-70B-Instruct (9)
+        retirementDate: "2027-01-31" -> "2027-02-03"
+    ~ [Meta Llama] Llama-4-Maverick-17B-128E-Instruct-FP8 (1)
+        retirementDate: "2026-11-19" -> "2027-02-03"
+    ~ [Meta Llama] Llama-4-Scout-17B-16E-Instruct
+        retirementDate: "2027-01-31" -> "2027-02-03"
+
+=== gcp ===
+  models: 287 -> 287
+  changed (0):
