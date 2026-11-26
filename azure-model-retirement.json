@@ -945,7 +945,7 @@
           "model": "grok-4",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2027-01-31",
+          "retirement_date": "2027-02-03",
           "replacement": null
         },
         {
@@ -1001,7 +1001,7 @@
           "model": "grok-code-fast-1",
           "version": "1",
           "lifecycle": "GA",
-          "retirement_date": "2027-01-31",
+          "retirement_date": "2027-02-03",
           "replacement": null
         }
       ]

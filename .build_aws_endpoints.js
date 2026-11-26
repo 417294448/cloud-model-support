@@ -38,12 +38,27 @@ function extractTables(html) {
   const tableRe = /<table[\s\S]*?<\/table>/g;
   let m;
   while ((m = tableRe.exec(html))) {
-    const rows = [...m[0].matchAll(/<tr[\s\S]*?<\/tr>/g)].map((r) =>
-      [...r[0].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)].map((c) => cellText(c[1]))
+    // Keep the raw <tr> markup too: the model-name cell holds the model-card link
+    // (`<b><a href="./model-card-....html">`), which has no text representation.
+    const rawRows = [...m[0].matchAll(/<tr[\s\S]*?<\/tr>/g)].map((r) => r[0]);
+    const rows = rawRows.map((r) =>
+      [...r.matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)].map((c) => cellText(c[1]))
     );
-    tables.push({ index: tables.length, headingBefore: nearestHeading(m.index), rows });
+    tables.push({ index: tables.length, headingBefore: nearestHeading(m.index), rows, rawRows });
   }
   return tables;
+}
+
+function toAbsoluteCard(href) {
+  if (!href) return null;
+  if (href.startsWith('http')) return href;
+  if (href.startsWith('./')) {
+    return 'https://docs.aws.amazon.com/bedrock/latest/userguide/' + href.slice(2);
+  }
+  if (href.startsWith('/')) {
+    return 'https://docs.aws.amazon.com' + href;
+  }
+  return 'https://docs.aws.amazon.com/bedrock/latest/userguide/' + href;
 }
 
 function boolFromCell(cell) {
@@ -77,11 +92,12 @@ function parseEndpoints() {
       let modelName = row[idx.name] || '';
       const normKey = t.headingBefore + '|' + modelName;
       if (NAME_NORMALIZE[normKey]) modelName = NAME_NORMALIZE[normKey];
+      const cardMatch = (t.rawRows[i] || '').match(/<a[^>]*href="([^"]*model-card[^"]*)"[^>]*>/i);
       models.push({
         model_name: modelName,
         bedrock_runtime: boolFromCell(row[idx.rt] || ''),
         bedrock_mantle: boolFromCell(row[idx.mt] || ''),
-        card_url: null
+        card_url: cardMatch ? toAbsoluteCard(cardMatch[1]) : null
       });
     }
     providers.push({ provider: t.headingBefore, models });
@@ -105,7 +121,7 @@ function buildPatch(endpoints) {
 
 const result = parseEndpoints();
 const { issues, ...endpoints } = result;
-fs.writeFileSync('/workspace/aws-model-runtime&mantle.json', JSON.stringify(endpoints, null, 2));
+fs.writeFileSync('/workspace/aws-model-runtime&mantle.json', JSON.stringify(endpoints, null, 2) + '\n');
 const patch = buildPatch(endpoints);
 fs.writeFileSync('/tmp/aws-api-patch.json', JSON.stringify(patch, null, 2));
 console.log('providers:', endpoints.providers.length);

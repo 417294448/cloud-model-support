@@ -1,0 +1,15 @@
+Diff: index.html -> index-new.html
+
+=== aws ===
+  generated: 2026-11-25 -> 2026-11-26
+  models: 146 -> 146
+  changed (0):
+
+=== azure ===
+  generated: 2026-11-25 -> 2026-11-26
+  models: 171 -> 171
+  changed (0):
+
+=== gcp ===
+  models: 287 -> 287
+  changed (0):

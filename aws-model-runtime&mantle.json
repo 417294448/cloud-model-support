@@ -338,7 +338,7 @@
       ]
     },
     {
-      "provider": "Luma",
+      "provider": "Luma AI",
       "models": [
         {
           "model_name": "Ray2",

@@ -217,7 +217,7 @@ function buildPatch(retirement) {
 
 const result = parseLifecycle();
 const { issues, ...retirement } = result;
-fs.writeFileSync('/workspace/aws-model-retirement.json', JSON.stringify(retirement, null, 2));
+fs.writeFileSync('/workspace/aws-model-retirement.json', JSON.stringify(retirement, null, 2) + '\n');
 const patch = buildPatch(retirement);
 fs.writeFileSync('/tmp/aws-retirement-patch.json', JSON.stringify(patch, null, 2));
 console.log('models:', retirement.models.length);

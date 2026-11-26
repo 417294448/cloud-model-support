@@ -2243,7 +2243,8 @@
     "card": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-openai-gpt-56-cyber.html",
     "s": {
       "us-east-2": 1,
-      "us-gov-east-1": 1
+      "us-gov-east-1": 3,
+      "us-gov-west-1": 2
     }
   },
   {
