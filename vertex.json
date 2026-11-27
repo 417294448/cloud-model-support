@@ -52,7 +52,6 @@
     "Advimman",
     "Aisingapore",
     "Anthropic",
-    "Autogluon Ai",
     "BAAI",
     "Black Forest Labs",
     "Bytedance",
@@ -66,7 +65,6 @@
     "ElevenLabs",
     "Google",
     "Hidream Ai",
-    "Ifzhang",
     "Impira",
     "Instantx",
     "Intfloat",
@@ -103,7 +101,7 @@
     "Z.AI",
     "xAI"
   ],
-  "generated": "2026-11-08",
+  "generated": "2026-11-27",
   "regions": [
     {
       "code": "asia-east1",
@@ -274,8 +272,8 @@
       "card": null,
       "s": {
         "europe-west4": 2,
-        "us-east4": 2,
-        "us-central1": 2
+        "us-central1": 2,
+        "us-east4": 2
       }
     },
     {
@@ -316,6 +314,15 @@
     },
     {
       "g": "Anthropic",
+      "n": "claude-fable-5-2",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Anthropic",
       "n": "claude-haiku-4-5",
       "v": "20251001",
       "card": null,
@@ -327,15 +334,6 @@
       "g": "Anthropic",
       "n": "claude-haiku-5-5",
       "v": "default",
-      "card": null,
-      "s": {
-        "us-central1": 1
-      }
-    },
-    {
-      "g": "Anthropic",
-      "n": "claude-opus-4-5",
-      "v": "20251101",
       "card": null,
       "s": {
         "us-central1": 1
@@ -414,15 +412,6 @@
       }
     },
     {
-      "g": "Autogluon Ai",
-      "n": "autogluon",
-      "v": "001",
-      "card": null,
-      "s": {
-        "us-central1": 2
-      }
-    },
-    {
       "g": "BAAI",
       "n": "bge",
       "v": "llm-embedder",
@@ -474,10 +463,10 @@
       "card": null,
       "s": {
         "asia-southeast1": 2,
+        "europe-west2": 2,
         "europe-west4": 2,
-        "asia-south2": 2,
         "us-central1": 2,
-        "europe-west2": 2
+        "asia-south2": 2
       }
     },
     {
@@ -514,8 +503,8 @@
       "card": null,
       "s": {
         "us-east4": 2,
-        "us-central1": 2,
-        "us-west1": 2
+        "us-west1": 2,
+        "us-central1": 2
       }
     },
     {
@@ -562,8 +551,8 @@
       "v": "deepseek-v3-base",
       "card": null,
       "s": {
-        "us-east4": 2,
-        "us-central1": 2
+        "us-central1": 2,
+        "us-east4": 2
       }
     },
     {
@@ -604,14 +593,24 @@
     },
     {
       "g": "DeepSeek",
+      "n": "deepseek-v4.1-flash-1017-maas",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "asia-southeast1": 2
+      }
+    },
+    {
+      "g": "DeepSeek",
       "n": "deepseek-v4.1-flash-maas",
       "v": "001",
       "card": null,
       "s": {
-        "europe-west4": 2,
         "us-central1": 2,
         "us-east1": 2,
-        "asia-southeast1": 2
+        "asia-southeast1": 2,
+        "europe-west4": 2
       }
     },
     {
@@ -620,9 +619,9 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-central1": 2,
+        "asia-south2": 2,
         "asia-south1": 2,
-        "asia-south2": 2
+        "us-central1": 2
       }
     },
     {
@@ -631,9 +630,9 @@
       "v": "default",
       "card": null,
       "s": {
-        "asia-south2": 2,
+        "asia-south1": 2,
         "us-central1": 2,
-        "asia-south1": 2
+        "asia-south2": 2
       }
     },
     {
@@ -642,9 +641,9 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-central1": 2,
+        "asia-south2": 2,
         "asia-south1": 2,
-        "asia-south2": 2
+        "us-central1": 2
       }
     },
     {
@@ -654,8 +653,8 @@
       "card": null,
       "s": {
         "asia-south2": 2,
-        "us-central1": 2,
-        "asia-south1": 2
+        "asia-south1": 2,
+        "us-central1": 2
       }
     },
     {
@@ -664,8 +663,8 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-central1": 2,
         "asia-south1": 2,
+        "us-central1": 2,
         "asia-south2": 2
       }
     },
@@ -675,14 +674,14 @@
       "v": "default",
       "card": null,
       "s": {
-        "asia-south2": 2,
-        "us-east4": 2,
-        "us-central1": 2,
-        "us-east1": 2,
-        "us-west1": 2,
-        "asia-south1": 2,
         "asia-southeast1": 2,
-        "asia-southeast2": 2
+        "asia-south1": 2,
+        "us-east4": 2,
+        "asia-southeast2": 2,
+        "us-west1": 2,
+        "us-central1": 2,
+        "asia-south2": 2,
+        "us-east1": 2
       }
     },
     {
@@ -691,14 +690,14 @@
       "v": "default",
       "card": null,
       "s": {
+        "asia-southeast1": 2,
+        "asia-south1": 2,
+        "asia-southeast2": 2,
+        "us-central1": 2,
         "asia-south2": 2,
         "us-east4": 2,
-        "us-central1": 2,
-        "asia-south1": 2,
         "us-east1": 2,
-        "asia-southeast1": 2,
-        "us-west1": 2,
-        "asia-southeast2": 2
+        "us-west1": 2
       }
     },
     {
@@ -707,8 +706,8 @@
       "v": "default",
       "card": null,
       "s": {
-        "asia-south1": 2,
         "asia-south2": 2,
+        "asia-south1": 2,
         "us-central1": 2
       }
     },
@@ -718,20 +717,20 @@
       "v": "default",
       "card": null,
       "s": {
-        "asia-south2": 2,
-        "us-east4": 2,
-        "us-central1": 2,
-        "asia-south1": 2,
-        "us-east1": 2,
         "asia-southeast1": 2,
+        "asia-southeast2": 2,
+        "us-central1": 2,
+        "us-east4": 2,
+        "us-east1": 2,
         "us-west1": 2,
-        "asia-southeast2": 2
+        "asia-south2": 2,
+        "asia-south1": 2
       }
     },
     {
       "g": "Google",
-      "n": "alphafold3-request",
-      "v": "alphafold3-request-001",
+      "n": "alphafold3",
+      "v": "v3_0_4",
       "card": null,
       "s": {
         "us-central1": 2
@@ -739,8 +738,8 @@
     },
     {
       "g": "Google",
-      "n": "alphagenome-request",
-      "v": "alphagenome-request-002",
+      "n": "alphagenome",
+      "v": "alphagenome-004",
       "card": null,
       "s": {
         "us-central1": 2
@@ -786,15 +785,6 @@
       "g": "Google",
       "n": "bert-base",
       "v": "001",
-      "card": null,
-      "s": {
-        "us-central1": 2
-      }
-    },
-    {
-      "g": "Google",
-      "n": "bert-base-uncased",
-      "v": "bert-base-uncased",
       "card": null,
       "s": {
         "us-central1": 2
@@ -950,29 +940,29 @@
       "v": "default",
       "card": null,
       "s": {
-        "asia-southeast1": 1,
-        "europe-west9": 1,
+        "europe-southwest1": 1,
         "europe-north1": 1,
-        "europe-west4": 1,
-        "australia-southeast1": 1,
-        "europe-west1": 1,
-        "europe-west3": 1,
         "us-east5": 1,
-        "us-east4": 1,
-        "northamerica-northeast1": 1,
+        "europe-west1": 1,
+        "asia-southeast1": 1,
+        "asia-northeast3": 1,
+        "australia-southeast1": 1,
+        "asia-south1": 1,
         "us-central1": 1,
-        "us-south1": 1,
-        "us-east1": 1,
+        "europe-west2": 1,
+        "europe-west8": 1,
+        "europe-west4": 1,
+        "europe-west3": 1,
+        "us-east4": 1,
         "asia-northeast1": 1,
+        "us-east1": 1,
         "us-west1": 1,
         "europe-central2": 1,
-        "asia-northeast3": 1,
-        "europe-west2": 1,
+        "us-south1": 1,
+        "northamerica-northeast1": 1,
         "southamerica-east1": 1,
-        "europe-southwest1": 1,
-        "us-west4": 1,
-        "asia-south1": 1,
-        "europe-west8": 1
+        "europe-west9": 1,
+        "us-west4": 1
       }
     },
     {
@@ -981,19 +971,19 @@
       "v": "default",
       "card": null,
       "s": {
-        "europe-north1": 1,
-        "europe-west4": 1,
-        "europe-west1": 1,
-        "us-east5": 1,
         "us-east4": 1,
+        "us-west1": 1,
         "us-central1": 1,
         "us-south1": 1,
         "europe-west8": 1,
+        "us-west4": 1,
         "us-east1": 1,
-        "us-west1": 1,
-        "europe-central2": 1,
         "europe-southwest1": 1,
-        "us-west4": 1
+        "europe-central2": 1,
+        "europe-north1": 1,
+        "us-east5": 1,
+        "europe-west1": 1,
+        "europe-west4": 1
       }
     },
     {
@@ -1002,22 +992,22 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-east5": 2,
-        "us-east4": 2,
-        "northamerica-northeast1": 2,
-        "us-central1": 2,
-        "us-south1": 2,
-        "europe-west8": 2,
-        "us-east1": 2,
-        "us-west1": 2,
-        "europe-central2": 2,
-        "europe-southwest1": 2,
-        "us-west4": 2,
-        "asia-southeast1": 2,
-        "europe-west9": 2,
-        "europe-north1": 2,
-        "europe-west4": 2,
-        "europe-west1": 2
+        "europe-west8": 1,
+        "europe-west4": 1,
+        "us-east4": 1,
+        "us-west4": 1,
+        "us-east1": 1,
+        "us-west1": 1,
+        "europe-central2": 1,
+        "us-south1": 1,
+        "northamerica-northeast1": 1,
+        "europe-west9": 1,
+        "europe-southwest1": 1,
+        "europe-north1": 1,
+        "us-east5": 1,
+        "europe-west1": 1,
+        "asia-southeast1": 1,
+        "us-central1": 1
       }
     },
     {
@@ -1026,24 +1016,24 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-west4": 1,
-        "us-central1": 1,
-        "europe-west8": 1,
-        "us-east1": 1,
-        "us-west1": 1,
-        "europe-west3": 1,
-        "europe-west9": 1,
-        "europe-north1": 1,
-        "europe-west4": 1,
-        "europe-west1": 1,
-        "us-south1": 1,
-        "us-east5": 1,
-        "us-east4": 1,
         "europe-central2": 1,
-        "europe-west2": 1,
+        "us-south1": 1,
+        "europe-west1": 1,
         "northamerica-northeast1": 1,
         "southamerica-east1": 1,
-        "europe-southwest1": 1
+        "europe-west9": 1,
+        "europe-southwest1": 1,
+        "europe-north1": 1,
+        "us-east5": 1,
+        "europe-west2": 1,
+        "europe-west3": 1,
+        "us-central1": 1,
+        "europe-west8": 1,
+        "europe-west4": 1,
+        "us-east4": 1,
+        "us-west4": 1,
+        "us-east1": 1,
+        "us-west1": 1
       }
     },
     {
@@ -1052,22 +1042,22 @@
       "v": "default",
       "card": null,
       "s": {
-        "northamerica-northeast1": 1,
-        "europe-southwest1": 1,
-        "us-west4": 1,
         "us-central1": 1,
         "europe-west8": 1,
+        "europe-west4": 1,
+        "us-east4": 1,
+        "asia-northeast1": 1,
+        "us-west4": 1,
         "us-east1": 1,
         "us-west1": 1,
-        "europe-west9": 1,
-        "europe-west4": 1,
-        "us-east5": 1,
-        "europe-north1": 1,
-        "europe-west1": 1,
+        "europe-central2": 1,
         "us-south1": 1,
-        "asia-northeast1": 1,
-        "us-east4": 1,
-        "europe-central2": 1
+        "europe-west1": 1,
+        "northamerica-northeast1": 1,
+        "europe-west9": 1,
+        "europe-southwest1": 1,
+        "europe-north1": 1,
+        "us-east5": 1
       }
     },
     {
@@ -1076,20 +1066,20 @@
       "v": "default",
       "card": null,
       "s": {
-        "europe-west1": 1,
-        "europe-west3": 1,
-        "us-east5": 1,
         "us-east4": 1,
-        "us-south1": 1,
-        "europe-central2": 1,
-        "europe-southwest1": 1,
         "us-west4": 1,
-        "us-central1": 1,
-        "europe-west8": 1,
         "us-east1": 1,
         "us-west1": 1,
+        "europe-central2": 1,
+        "us-south1": 1,
+        "europe-west1": 1,
         "europe-west9": 1,
+        "europe-southwest1": 1,
         "europe-north1": 1,
+        "us-east5": 1,
+        "europe-west3": 1,
+        "us-central1": 1,
+        "europe-west8": 1,
         "europe-west4": 1
       }
     },
@@ -1180,15 +1170,15 @@
       "v": "default",
       "card": null,
       "s": {
-        "australia-southeast1": 1,
         "europe-west3": 1,
-        "northamerica-northeast1": 1,
-        "us-central1": 1,
         "asia-northeast1": 1,
-        "europe-west2": 1,
+        "northamerica-northeast1": 1,
         "southamerica-east1": 1,
         "asia-south1": 1,
-        "asia-southeast1": 1
+        "europe-west2": 1,
+        "asia-southeast1": 1,
+        "australia-southeast1": 1,
+        "us-central1": 1
       }
     },
     {
@@ -1207,7 +1197,7 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-central1": 2
+        "us-central1": 1
       }
     },
     {
@@ -1225,7 +1215,7 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-central1": 2
+        "us-central1": 1
       }
     },
     {
@@ -1270,11 +1260,11 @@
       "v": "default",
       "card": null,
       "s": {
-        "asia-southeast1": 1,
         "northamerica-northeast1": 1,
+        "europe-west2": 1,
+        "asia-southeast1": 1,
         "us-central1": 1,
-        "asia-northeast1": 1,
-        "europe-west2": 1
+        "asia-northeast1": 1
       }
     },
     {
@@ -1301,8 +1291,8 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "asia-south1": 2
+        "asia-south1": 1,
+        "us-central1": 1
       }
     },
     {
@@ -1312,8 +1302,37 @@
       "card": null,
       "s": {
         "us-central1": 1,
+        "asia-southeast1": 1,
+        "europe-west2": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-4-carbon",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-4-hydrogen",
+      "v": "default",
+      "card": null,
+      "s": {
         "europe-west2": 1,
-        "asia-southeast1": 1
+        "asia-southeast1": 1,
+        "us-central1": 1
+      }
+    },
+    {
+      "g": "Google",
+      "n": "gemini-4-neon",
+      "v": "default",
+      "card": null,
+      "s": {
+        "us-central1": 1
       }
     },
     {
@@ -1322,35 +1341,35 @@
       "v": "default",
       "card": null,
       "s": {
-        "europe-north1": 2,
-        "europe-west4": 2,
-        "australia-southeast1": 2,
-        "europe-west1": 2,
-        "me-west1": 2,
-        "europe-west3": 2,
-        "us-east5": 2,
-        "me-central2": 2,
-        "us-east4": 2,
-        "northamerica-northeast1": 2,
-        "me-central1": 2,
-        "us-central1": 2,
-        "us-south1": 2,
-        "us-east1": 2,
-        "asia-northeast1": 2,
-        "us-west1": 2,
-        "europe-central2": 2,
-        "asia-northeast3": 2,
-        "europe-west2": 2,
-        "southamerica-east1": 2,
-        "europe-southwest1": 2,
+        "europe-west9": 2,
         "us-west4": 2,
-        "asia-south1": 2,
-        "europe-west8": 2,
-        "europe-west6": 2,
+        "us-east1": 2,
+        "us-west1": 2,
+        "europe-southwest1": 2,
+        "europe-central2": 2,
+        "europe-north1": 2,
+        "us-east5": 2,
+        "europe-west1": 2,
         "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "europe-west6": 2,
         "asia-east2": 2,
+        "australia-southeast1": 2,
+        "me-central1": 2,
+        "asia-south1": 2,
+        "europe-west2": 2,
+        "europe-west4": 2,
+        "europe-west3": 2,
+        "us-central1": 2,
+        "me-west1": 2,
         "asia-east1": 2,
-        "europe-west9": 2
+        "us-south1": 2,
+        "europe-west8": 2,
+        "me-central2": 2,
+        "northamerica-northeast1": 2,
+        "southamerica-east1": 2,
+        "us-east4": 2,
+        "asia-northeast1": 2
       }
     },
     {
@@ -1368,19 +1387,19 @@
       "v": "default",
       "card": null,
       "s": {
-        "europe-north1": 2,
-        "europe-west4": 2,
-        "europe-west1": 2,
-        "us-east5": 2,
-        "us-east4": 2,
-        "us-central1": 2,
-        "us-south1": 2,
-        "europe-west8": 2,
-        "us-east1": 2,
-        "us-west1": 2,
-        "europe-central2": 2,
-        "europe-southwest1": 2,
-        "us-west4": 2
+        "europe-southwest1": 1,
+        "europe-north1": 1,
+        "us-east5": 1,
+        "europe-west1": 1,
+        "us-central1": 1,
+        "europe-west8": 1,
+        "europe-west4": 1,
+        "us-east4": 1,
+        "us-east1": 1,
+        "us-west1": 1,
+        "europe-central2": 1,
+        "us-south1": 1,
+        "us-west4": 1
       }
     },
     {
@@ -1470,12 +1489,12 @@
       "v": "gemma-3-4b-pt",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "us-west1": 2,
         "asia-southeast1": 2,
+        "us-east5": 2,
         "asia-southeast2": 2,
+        "us-central1": 2,
         "europe-west4": 2,
-        "us-east5": 2
+        "us-west1": 2
       }
     },
     {
@@ -1493,10 +1512,10 @@
       "v": "gemma-4-e4b-it",
       "card": null,
       "s": {
-        "asia-southeast1": 2,
-        "asia-southeast2": 2,
-        "europe-west4": 2,
         "us-east5": 2,
+        "asia-southeast1": 2,
+        "europe-west4": 2,
+        "asia-southeast2": 2,
         "us-central1": 2,
         "us-west1": 2
       }
@@ -1516,19 +1535,19 @@
       "v": "default",
       "card": null,
       "s": {
-        "europe-west1": 2,
-        "europe-west3": 2,
+        "us-central1": 2,
+        "northamerica-northeast1": 2,
         "us-east4": 2,
         "asia-northeast1": 2,
-        "europe-west2": 2,
-        "northamerica-northeast1": 2,
+        "europe-west9": 2,
         "us-west4": 2,
-        "us-central1": 2,
-        "asia-southeast1": 2,
         "us-west1": 2,
-        "europe-west4": 2,
+        "europe-west1": 2,
+        "asia-southeast1": 2,
         "asia-northeast3": 2,
-        "europe-west9": 2
+        "europe-west2": 2,
+        "europe-west4": 2,
+        "europe-west3": 2
       }
     },
     {
@@ -1570,15 +1589,6 @@
     {
       "g": "Google",
       "n": "jax-owl-vit-v2",
-      "v": "001",
-      "card": null,
-      "s": {
-        "us-central1": 2
-      }
-    },
-    {
-      "g": "Google",
-      "n": "keras-yolov8",
       "v": "001",
       "card": null,
       "s": {
@@ -1645,7 +1655,7 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-central1": 2
+        "us-central1": 1
       }
     },
     {
@@ -1690,12 +1700,12 @@
       "v": "medgemma-4b-pt",
       "card": null,
       "s": {
+        "europe-west4": 2,
+        "asia-southeast2": 2,
         "us-central1": 2,
         "us-west1": 2,
-        "asia-southeast1": 2,
-        "asia-southeast2": 2,
-        "europe-west4": 2,
-        "us-east5": 2
+        "us-east5": 2,
+        "asia-southeast1": 2
       }
     },
     {
@@ -1713,35 +1723,35 @@
       "v": "001",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "us-south1": 2,
-        "us-east1": 2,
+        "europe-southwest1": 2,
+        "europe-central2": 2,
+        "europe-north1": 2,
+        "us-east5": 2,
+        "europe-west1": 2,
+        "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "europe-west6": 2,
         "asia-east2": 2,
+        "australia-southeast1": 2,
+        "me-central1": 2,
+        "asia-south1": 2,
+        "europe-west2": 2,
+        "europe-west4": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
         "asia-northeast1": 2,
         "us-west1": 2,
-        "europe-central2": 2,
-        "asia-northeast3": 2,
-        "europe-west2": 2,
-        "southamerica-east1": 2,
-        "europe-southwest1": 2,
-        "us-west4": 2,
-        "asia-south1": 2,
-        "europe-west8": 2,
-        "europe-west6": 2,
-        "asia-southeast1": 2,
-        "asia-east1": 2,
-        "europe-west9": 2,
-        "europe-north1": 2,
-        "europe-west4": 2,
-        "australia-southeast1": 2,
-        "europe-west1": 2,
+        "us-central1": 2,
         "me-west1": 2,
-        "europe-west3": 2,
+        "asia-east1": 2,
+        "us-south1": 2,
+        "europe-west8": 2,
         "me-central2": 2,
-        "us-east5": 2,
-        "us-east4": 2,
         "northamerica-northeast1": 2,
-        "me-central1": 2
+        "southamerica-east1": 2,
+        "europe-west9": 2,
+        "us-west4": 2,
+        "us-east1": 2
       }
     },
     {
@@ -1793,15 +1803,6 @@
       "g": "Google",
       "n": "people-blur",
       "v": "001",
-      "card": null,
-      "s": {
-        "us-central1": 2
-      }
-    },
-    {
-      "g": "Google",
-      "n": "pic2word",
-      "v": "pic2word",
       "card": null,
       "s": {
         "us-central1": 2
@@ -1921,35 +1922,35 @@
       "v": "default",
       "card": null,
       "s": {
-        "us-south1": 2,
+        "us-central1": 2,
+        "me-west1": 2,
+        "asia-east1": 2,
+        "europe-west8": 2,
+        "europe-west4": 2,
+        "me-central2": 2,
+        "us-east4": 2,
         "asia-northeast1": 2,
+        "us-east1": 2,
+        "us-west1": 2,
         "europe-central2": 2,
-        "europe-west2": 2,
+        "us-south1": 2,
+        "europe-west6": 2,
+        "asia-east2": 2,
         "northamerica-northeast1": 2,
         "southamerica-east1": 2,
-        "me-central1": 2,
-        "europe-southwest1": 2,
-        "us-west4": 2,
-        "us-central1": 2,
-        "asia-south1": 2,
-        "europe-west8": 2,
-        "europe-west6": 2,
-        "us-east1": 2,
-        "asia-southeast1": 2,
-        "asia-east2": 2,
-        "asia-east1": 2,
-        "us-west1": 2,
-        "asia-northeast3": 2,
         "europe-west9": 2,
+        "us-west4": 2,
+        "asia-south1": 2,
+        "europe-southwest1": 2,
         "europe-north1": 2,
-        "europe-west4": 2,
-        "australia-southeast1": 2,
-        "me-west1": 2,
-        "europe-west3": 2,
-        "me-central2": 2,
         "us-east5": 2,
-        "us-east4": 2,
-        "europe-west1": 2
+        "europe-west2": 2,
+        "europe-west1": 2,
+        "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "europe-west3": 2,
+        "australia-southeast1": 2,
+        "me-central1": 2
       }
     },
     {
@@ -1967,35 +1968,35 @@
       "v": "default",
       "card": null,
       "s": {
-        "asia-east2": 2,
-        "us-west1": 2,
-        "asia-northeast3": 2,
-        "europe-west2": 2,
-        "australia-southeast1": 2,
-        "me-west1": 2,
-        "europe-west6": 2,
-        "asia-southeast1": 2,
         "asia-east1": 2,
-        "europe-west3": 2,
-        "europe-west9": 2,
-        "me-central2": 2,
-        "europe-north1": 2,
+        "europe-west8": 2,
         "europe-west4": 2,
-        "europe-west1": 2,
-        "us-south1": 2,
-        "asia-northeast1": 2,
-        "us-east5": 2,
+        "me-central2": 2,
         "us-east4": 2,
+        "asia-northeast1": 2,
+        "us-west4": 2,
+        "us-east1": 2,
+        "us-west1": 2,
         "europe-central2": 2,
+        "us-south1": 2,
+        "europe-west1": 2,
+        "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "europe-west6": 2,
+        "asia-east2": 2,
         "northamerica-northeast1": 2,
         "southamerica-east1": 2,
-        "me-central1": 2,
-        "europe-southwest1": 2,
-        "us-west4": 2,
-        "us-central1": 2,
+        "europe-west9": 2,
         "asia-south1": 2,
-        "europe-west8": 2,
-        "us-east1": 2
+        "europe-southwest1": 2,
+        "europe-north1": 2,
+        "us-east5": 2,
+        "europe-west2": 2,
+        "europe-west3": 2,
+        "australia-southeast1": 2,
+        "me-central1": 2,
+        "us-central1": 2,
+        "me-west1": 2
       }
     },
     {
@@ -2013,53 +2014,35 @@
       "v": "latest",
       "card": null,
       "s": {
-        "europe-central2": 2,
-        "asia-northeast3": 2,
         "europe-west2": 2,
-        "europe-southwest1": 2,
-        "asia-south1": 2,
-        "australia-southeast1": 2,
-        "me-west1": 2,
-        "europe-west6": 2,
-        "asia-southeast1": 2,
-        "asia-east1": 2,
-        "europe-west9": 2,
-        "me-central2": 2,
-        "europe-north1": 2,
         "europe-west4": 2,
-        "europe-west1": 2,
-        "us-south1": 2,
-        "asia-northeast1": 2,
         "europe-west3": 2,
-        "us-east5": 2,
-        "us-east4": 2,
+        "us-central1": 2,
+        "me-west1": 2,
+        "asia-east1": 2,
+        "us-south1": 2,
+        "europe-west8": 2,
+        "me-central2": 2,
         "northamerica-northeast1": 2,
         "southamerica-east1": 2,
-        "me-central1": 2,
+        "us-east4": 2,
+        "asia-northeast1": 2,
+        "europe-west9": 2,
         "us-west4": 2,
-        "us-central1": 2,
-        "europe-west8": 2,
         "us-east1": 2,
+        "us-west1": 2,
+        "europe-southwest1": 2,
+        "europe-central2": 2,
+        "europe-north1": 2,
+        "us-east5": 2,
+        "europe-west1": 2,
+        "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "europe-west6": 2,
         "asia-east2": 2,
-        "us-west1": 2
-      }
-    },
-    {
-      "g": "Google",
-      "n": "tfvision-movinet-var",
-      "v": "001",
-      "card": null,
-      "s": {
-        "us-central1": 2
-      }
-    },
-    {
-      "g": "Google",
-      "n": "tfvision-movinet-vcn",
-      "v": "001",
-      "card": null,
-      "s": {
-        "us-central1": 2
+        "australia-southeast1": 2,
+        "me-central1": 2,
+        "asia-south1": 2
       }
     },
     {
@@ -2158,32 +2141,23 @@
       "v": "default",
       "card": null,
       "s": {
-        "europe-west9": 1,
-        "europe-north1": 1,
-        "europe-west4": 1,
-        "asia-southeast1": 1,
-        "us-east5": 1,
         "us-east4": 1,
-        "europe-west1": 1,
-        "us-south1": 1,
         "asia-northeast1": 1,
+        "us-east1": 1,
+        "us-west1": 1,
         "europe-central2": 1,
+        "us-south1": 1,
         "northamerica-northeast1": 1,
-        "europe-southwest1": 1,
+        "europe-west9": 1,
         "us-west4": 1,
+        "europe-southwest1": 1,
+        "europe-north1": 1,
+        "us-east5": 1,
+        "europe-west1": 1,
+        "asia-southeast1": 1,
         "us-central1": 1,
         "europe-west8": 1,
-        "us-east1": 1,
-        "us-west1": 1
-      }
-    },
-    {
-      "g": "Google",
-      "n": "vit-jax",
-      "v": "001",
-      "card": null,
-      "s": {
-        "us-central1": 2
+        "europe-west4": 1
       }
     },
     {
@@ -2208,15 +2182,6 @@
       "g": "Hidream Ai",
       "n": "hidream-i1",
       "v": "hidream-i1-full",
-      "card": null,
-      "s": {
-        "us-central1": 2
-      }
-    },
-    {
-      "g": "Ifzhang",
-      "n": "bytetrack-multi-object-tracking",
-      "v": "001",
       "card": null,
       "s": {
         "us-central1": 2
@@ -2255,24 +2220,24 @@
       "v": "default",
       "card": null,
       "s": {
-        "europe-west1": 2,
-        "asia-northeast1": 2,
+        "europe-west2": 2,
+        "europe-west4": 2,
+        "me-central2": 2,
         "europe-west3": 2,
         "us-east4": 2,
-        "us-west4": 2,
-        "us-central1": 2,
+        "asia-northeast1": 2,
         "us-east1": 2,
         "us-west1": 2,
-        "asia-northeast3": 2,
-        "europe-west2": 2,
-        "northamerica-northeast2": 2,
-        "asia-south1": 2,
-        "europe-west6": 2,
-        "asia-southeast1": 2,
         "asia-east1": 2,
+        "us-west4": 2,
+        "asia-south1": 2,
+        "europe-west1": 2,
+        "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "northamerica-northeast2": 2,
+        "europe-west6": 2,
         "asia-southeast2": 2,
-        "me-central2": 2,
-        "europe-west4": 2
+        "us-central1": 2
       }
     },
     {
@@ -2381,12 +2346,12 @@
       "v": "llama-3.2-90b-vision-instruct",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "us-west1": 2,
-        "asia-southeast2": 2,
-        "europe-west4": 2,
+        "us-east5": 2,
         "asia-southeast1": 2,
-        "us-east5": 2
+        "asia-southeast2": 2,
+        "us-central1": 2,
+        "europe-west4": 2,
+        "us-west1": 2
       }
     },
     {
@@ -2395,11 +2360,11 @@
       "v": "llama-3.3-70b-instruct",
       "card": null,
       "s": {
-        "asia-southeast1": 2,
-        "europe-west4": 2,
+        "us-west1": 2,
         "us-east5": 2,
+        "asia-southeast1": 2,
         "us-central1": 2,
-        "us-west1": 2
+        "europe-west4": 2
       }
     },
     {
@@ -2408,12 +2373,12 @@
       "v": "llama-3.1-8b-instruct-quantized-w8a8",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "us-west1": 2,
+        "us-east5": 2,
         "asia-southeast1": 2,
-        "asia-southeast2": 2,
         "europe-west4": 2,
-        "us-east5": 2
+        "asia-southeast2": 2,
+        "us-west1": 2,
+        "us-central1": 2
       }
     },
     {
@@ -2422,13 +2387,13 @@
       "v": "llama-4-scout-17b-16e-instruct",
       "card": null,
       "s": {
-        "europe-west4": 2,
-        "asia-southeast1": 2,
-        "us-east5": 2,
-        "asia-south2": 2,
         "us-east4": 2,
+        "us-west1": 2,
+        "us-east5": 2,
+        "asia-southeast1": 2,
+        "europe-west4": 2,
         "us-central1": 2,
-        "us-west1": 2
+        "asia-south2": 2
       }
     },
     {
@@ -2437,6 +2402,16 @@
       "v": "001",
       "card": null,
       "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "muse-ember-1.0",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-east5": 2,
         "us-central1": 2
       }
     },
@@ -2451,10 +2426,30 @@
     },
     {
       "g": "Meta",
+      "n": "muse-spark-1.3",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-central1": 2,
+        "us-east5": 2
+      }
+    },
+    {
+      "g": "Meta",
       "n": "muse-spark-open",
       "v": "muse-spark-open-816b-a42b-nvfp4",
       "card": null,
       "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Meta",
+      "n": "muse-wonder-1.0",
+      "v": "001",
+      "card": null,
+      "s": {
+        "us-east5": 2,
         "us-central1": 2
       }
     },
@@ -2554,8 +2549,8 @@
       "v": "001",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "europe-west4": 2
+        "europe-west4": 2,
+        "us-central1": 2
       }
     },
     {
@@ -2601,8 +2596,8 @@
       "v": "001",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "europe-west4": 2
+        "europe-west4": 2,
+        "us-central1": 2
       }
     },
     {
@@ -2621,8 +2616,8 @@
       "v": "001",
       "card": null,
       "s": {
-        "europe-west4": 2,
-        "us-central1": 2
+        "us-central1": 2,
+        "europe-west4": 2
       }
     },
     {
@@ -2650,26 +2645,26 @@
       "card": null,
       "s": {
         "australia-southeast1": 2,
-        "europe-west1": 2,
-        "me-west1": 2,
-        "europe-west3": 2,
-        "me-central2": 2,
-        "us-east5": 2,
-        "us-east4": 2,
         "us-central1": 2,
-        "us-east1": 2,
+        "me-west1": 2,
+        "europe-west4": 2,
+        "me-central2": 2,
+        "europe-west3": 2,
+        "us-east4": 2,
         "asia-northeast1": 2,
+        "us-east1": 2,
         "us-west1": 2,
-        "asia-northeast3": 2,
-        "europe-west2": 2,
-        "northamerica-northeast2": 2,
+        "asia-east1": 2,
+        "europe-west6": 2,
         "us-west4": 2,
         "asia-south1": 2,
-        "europe-west6": 2,
-        "asia-southeast1": 2,
-        "asia-east1": 2,
         "europe-north1": 2,
-        "europe-west4": 2
+        "us-east5": 2,
+        "europe-west2": 2,
+        "europe-west1": 2,
+        "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "northamerica-northeast2": 2
       }
     },
     {
@@ -2678,24 +2673,24 @@
       "v": "latest",
       "card": null,
       "s": {
-        "asia-northeast3": 2,
         "europe-west2": 2,
-        "northamerica-northeast2": 2,
-        "asia-south1": 2,
-        "australia-southeast1": 2,
-        "me-west1": 2,
         "asia-southeast1": 2,
-        "asia-east1": 2,
-        "europe-north1": 2,
-        "europe-west4": 2,
-        "europe-west1": 2,
-        "asia-northeast1": 2,
+        "northamerica-northeast2": 2,
         "europe-west3": 2,
-        "us-east5": 2,
-        "us-east4": 2,
-        "us-west4": 2,
+        "australia-southeast1": 2,
         "us-central1": 2,
-        "us-west1": 2
+        "me-west1": 2,
+        "asia-east1": 2,
+        "europe-west4": 2,
+        "us-east4": 2,
+        "asia-northeast1": 2,
+        "us-west4": 2,
+        "us-west1": 2,
+        "europe-west1": 2,
+        "asia-northeast3": 2,
+        "asia-south1": 2,
+        "europe-north1": 2,
+        "us-east5": 2
       }
     },
     {
@@ -2704,27 +2699,27 @@
       "v": "latest",
       "card": null,
       "s": {
-        "australia-southeast1": 2,
-        "me-west1": 2,
-        "europe-west3": 2,
-        "me-central2": 2,
-        "us-east5": 2,
-        "us-east4": 2,
-        "europe-west1": 2,
-        "asia-northeast1": 2,
-        "europe-west2": 2,
-        "us-west4": 2,
-        "us-central1": 2,
-        "asia-south1": 2,
-        "europe-west6": 2,
-        "us-east1": 2,
-        "asia-southeast1": 2,
         "asia-east1": 2,
+        "me-central2": 2,
+        "us-east4": 2,
+        "asia-northeast1": 2,
+        "us-west4": 2,
+        "us-east1": 2,
         "us-west1": 2,
-        "asia-northeast3": 2,
         "europe-north1": 2,
+        "europe-west1": 2,
+        "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "europe-west6": 2,
+        "australia-southeast1": 2,
+        "asia-south1": 2,
+        "us-east5": 2,
+        "europe-west2": 2,
         "northamerica-northeast2": 2,
-        "europe-west4": 2
+        "europe-west4": 2,
+        "europe-west3": 2,
+        "us-central1": 2,
+        "me-west1": 2
       }
     },
     {
@@ -2733,26 +2728,26 @@
       "v": "latest",
       "card": null,
       "s": {
-        "northamerica-northeast2": 2,
-        "europe-west4": 2,
-        "australia-southeast1": 2,
-        "me-west1": 2,
-        "europe-west6": 2,
-        "asia-southeast1": 2,
-        "europe-west3": 2,
-        "me-central2": 2,
-        "us-east5": 2,
-        "europe-north1": 2,
-        "europe-west1": 2,
-        "asia-northeast1": 2,
-        "us-east4": 2,
-        "europe-west2": 2,
-        "us-west4": 2,
         "us-central1": 2,
-        "asia-south1": 2,
+        "me-west1": 2,
         "asia-east1": 2,
+        "europe-west4": 2,
+        "me-central2": 2,
+        "us-east4": 2,
+        "asia-northeast1": 2,
+        "us-west4": 2,
         "us-west1": 2,
-        "asia-northeast3": 2
+        "europe-west1": 2,
+        "asia-southeast1": 2,
+        "asia-northeast3": 2,
+        "europe-west6": 2,
+        "asia-south1": 2,
+        "europe-north1": 2,
+        "us-east5": 2,
+        "europe-west2": 2,
+        "northamerica-northeast2": 2,
+        "europe-west3": 2,
+        "australia-southeast1": 2
       }
     },
     {
@@ -2795,6 +2790,15 @@
       "g": "Moonshot AI",
       "n": "kimi-k3",
       "v": "kimi-k3",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
+      "g": "Moonshot AI",
+      "n": "kimi-k3-1-pro",
+      "v": "kimi-k3.1-pro",
       "card": null,
       "s": {
         "us-central1": 2
@@ -2860,16 +2864,10 @@
       "v": "001",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "us-east1": 2
-      }
-    },
-    {
-      "g": "OpenAI",
-      "n": "openclip",
-      "v": "001",
-      "card": null,
-      "s": {
+        "europe-west4": 2,
+        "us-east1": 2,
+        "us-west1": 2,
+        "us-east5": 2,
         "us-central1": 2
       }
     },
@@ -2888,8 +2886,8 @@
       "v": "001",
       "card": null,
       "s": {
-        "us-central1": 2,
-        "europe-west4": 2
+        "europe-west4": 2,
+        "us-central1": 2
       }
     },
     {
@@ -2916,12 +2914,12 @@
       "v": "qwen3-8b-fp8",
       "card": null,
       "s": {
-        "us-east5": 2,
-        "us-central1": 2,
-        "us-west1": 2,
-        "asia-southeast1": 2,
+        "europe-west4": 2,
         "asia-southeast2": 2,
-        "europe-west4": 2
+        "us-west1": 2,
+        "us-east5": 2,
+        "asia-southeast1": 2,
+        "us-central1": 2
       }
     },
     {
@@ -2930,12 +2928,12 @@
       "v": "qwen3.5-9b-base",
       "card": null,
       "s": {
-        "asia-southeast1": 2,
-        "asia-southeast2": 2,
         "europe-west4": 2,
-        "us-east5": 2,
+        "asia-southeast2": 2,
         "us-central1": 2,
-        "us-west1": 2
+        "us-west1": 2,
+        "us-east5": 2,
+        "asia-southeast1": 2
       }
     },
     {
@@ -2944,12 +2942,12 @@
       "v": "qwen3.6-35b-a3b-fp8",
       "card": null,
       "s": {
-        "us-central1": 2,
         "us-west1": 2,
-        "asia-southeast2": 2,
         "asia-southeast1": 2,
-        "europe-west4": 2,
-        "us-east5": 2
+        "us-east5": 2,
+        "asia-southeast2": 2,
+        "us-central1": 2,
+        "europe-west4": 2
       }
     },
     {
@@ -3003,12 +3001,12 @@
       "v": "qwen3.8-27b-fp8",
       "card": null,
       "s": {
-        "asia-southeast1": 2,
         "europe-west4": 2,
-        "us-east5": 2,
-        "us-central1": 2,
+        "asia-southeast2": 2,
         "us-west1": 2,
-        "asia-southeast2": 2
+        "us-east5": 2,
+        "asia-southeast1": 2,
+        "us-central1": 2
       }
     },
     {
@@ -3129,6 +3127,15 @@
       }
     },
     {
+      "g": "Thinkingmachines",
+      "n": "inkling-2",
+      "v": "inkling-2-small-mxfp8",
+      "card": null,
+      "s": {
+        "us-central1": 2
+      }
+    },
+    {
       "g": "Thudm",
       "n": "cogvideox",
       "v": "cogvideox-2b",
@@ -3242,12 +3249,12 @@
       "v": "glm-4.7-flash",
       "card": null,
       "s": {
-        "us-west1": 2,
-        "asia-southeast2": 2,
-        "asia-southeast1": 2,
         "europe-west4": 2,
+        "asia-southeast2": 2,
+        "us-central1": 2,
+        "us-west1": 2,
         "us-east5": 2,
-        "us-central1": 2
+        "asia-southeast1": 2
       }
     },
     {
@@ -3283,11 +3290,11 @@
       "v": "001",
       "card": null,
       "s": {
+        "us-east4": 2,
         "us-central1": 2,
         "us-east1": 2,
-        "asia-southeast1": 2,
         "europe-north1": 2,
-        "us-east4": 2
+        "asia-southeast1": 2
       }
     },
     {
@@ -3314,8 +3321,8 @@
       "v": "001",
       "card": null,
       "s": {
-        "us-east4": 2,
-        "us-central1": 2
+        "us-central1": 2,
+        "us-east4": 2
       }
     },
     {

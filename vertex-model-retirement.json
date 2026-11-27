@@ -214,6 +214,46 @@
       "category": "Models available for shorter availability periods",
       "models": [
         {
+          "model": "gemini-4-neon",
+          "release_date": "2026-11-18",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "gemini-4-neon-cyber-permissive",
+          "release_date": "2026-11-23",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "gemini-4-hydrogen",
+          "release_date": "2026-11-12",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "gemini-4-carbon",
+          "release_date": "2026-11-10",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
+          "model": "gemini-4-carbon-cyber-permissive",
+          "release_date": "2026-11-10",
+          "release_date_note": null,
+          "retirement_date": null,
+          "retirement_date_note": "No retirement date announced",
+          "replacement": null
+        },
+        {
           "model": "gemini-4-argon-cyber-permissive",
           "release_date": "2026-10-13",
           "release_date_note": null,
@@ -235,15 +275,15 @@
           "release_date_note": null,
           "retirement_date": "2027-01-28",
           "retirement_date_note": null,
-          "replacement": "gemini-3.8-flash"
+          "replacement": "gemini-4-hydrogen"
         },
         {
           "model": "gemini-3.6-flash",
           "release_date": "2026-07-21",
           "release_date_note": null,
-          "retirement_date": "2026-11-19",
+          "retirement_date": "2027-01-28",
           "retirement_date_note": null,
-          "replacement": "gemini-3.8-flash"
+          "replacement": "gemini-4-hydrogen"
         },
         {
           "model": "gemini-nano-banana-2.1",

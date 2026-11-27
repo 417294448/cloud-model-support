@@ -1,0 +1,28 @@
+Diff: index.html (HEAD) -> index.html (working tree)
+
+=== gcp ===
+  generated: 2026-11-08 -> 2026-11-27
+  groups removed (2): Autogluon Ai, Ifzhang
+  models: 287 -> 287
+  added (12): [Anthropic] claude-fable-5-2 (default), [DeepSeek] deepseek-v4.1-flash-1017-maas (001), [Google] alphafold3 (v3_0_4), [Google] alphagenome (alphagenome-004), [Google] gemini-4-carbon (default), [Google] gemini-4-hydrogen (default), [Google] gemini-4-neon (default), [Meta] muse-ember-1.0 (001), [Meta] muse-spark-1.3 (001), [Meta] muse-wonder-1.0 (001), [Moonshot AI] kimi-k3-1-pro (kimi-k3.1-pro), [Thinkingmachines] inkling-2 (inkling-2-small-mxfp8)
+  removed (12): [Anthropic] claude-opus-4-5 (20251101), [Autogluon Ai] autogluon (001), [Google] alphafold3-request (alphafold3-request-001), [Google] alphagenome-request (alphagenome-request-002), [Google] bert-base-uncased (bert-base-uncased), [Google] keras-yolov8 (001), [Google] pic2word (pic2word), [Google] tfvision-movinet-var (001), [Google] tfvision-movinet-vcn (001), [Google] vit-jax (001), [Ifzhang] bytetrack-multi-object-tracking (001), [OpenAI] openclip (001)
+  changed (9):
+    ~ [Google] gemini-2.5-flash-lite (default)
+        s: 16 region(s) changed support: us-east5: [Self-deploy] -> [Managed API]; us-east4: [Self-deploy] -> [Managed API]; northamerica-northeast1: [Self-deploy] -> [Managed API]; us-central1: [Self-deploy] -> [Managed API]; us-south1: [Self-deploy] -> [Managed API]; europe-west8: [Self-deploy] -> [Managed API]; us-east1: [Self-deploy] -> [Managed API]; us-west1: [Self-deploy] -> [Managed API]; europe-central2: [Self-deploy] -> [Managed API]; europe-southwest1: [Self-deploy] -> [Managed API]; us-west4: [Self-deploy] -> [Managed API]; asia-southeast1: [Self-deploy] -> [Managed API]; europe-west9: [Self-deploy] -> [Managed API]; europe-north1: [Self-deploy] -> [Managed API]; europe-west4: [Self-deploy] -> [Managed API]; europe-west1: [Self-deploy] -> [Managed API]
+    ~ [Google] gemini-3.5-live-translate-preview (default)
+        s: 1 region(s) changed support: us-central1: [Self-deploy] -> [Managed API]
+    ~ [Google] gemini-3.5-transcribe-live (default)
+        s: 1 region(s) changed support: us-central1: [Self-deploy] -> [Managed API]
+    ~ [Google] gemini-3.6-flash (default)
+        retirementDate: "2026-11-19" -> "2027-01-28"
+        replacement: "gemini-3.8-flash" -> "gemini-4-hydrogen"
+    ~ [Google] gemini-3.7-flash (default)
+        replacement: "gemini-3.8-flash" -> "gemini-4-hydrogen"
+    ~ [Google] gemini-3.8-live (default)
+        s: 2 region(s) changed support: us-central1: [Self-deploy] -> [Managed API]; asia-south1: [Self-deploy] -> [Managed API]
+    ~ [Google] gemini-live-2.5-flash-native-audio (default)
+        s: 13 region(s) changed support: europe-north1: [Self-deploy] -> [Managed API]; europe-west4: [Self-deploy] -> [Managed API]; europe-west1: [Self-deploy] -> [Managed API]; us-east5: [Self-deploy] -> [Managed API]; us-east4: [Self-deploy] -> [Managed API]; us-central1: [Self-deploy] -> [Managed API]; us-south1: [Self-deploy] -> [Managed API]; europe-west8: [Self-deploy] -> [Managed API]; us-east1: [Self-deploy] -> [Managed API]; us-west1: [Self-deploy] -> [Managed API]; europe-central2: [Self-deploy] -> [Managed API]; europe-southwest1: [Self-deploy] -> [Managed API]; us-west4: [Self-deploy] -> [Managed API]
+    ~ [Google] lyria-002 (default)
+        s: 1 region(s) changed support: us-central1: [Self-deploy] -> [Managed API]
+    ~ [OpenAI] gpt-oss-120b-maas (001)
+        s: +3 region(s) gained (europe-west4, us-west1, us-east5)
